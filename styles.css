@@ -533,6 +533,24 @@ img {
   text-decoration-color: var(--coral);
 }
 
+.mentor-questions {
+  display: block;
+  margin-top: var(--space-sm);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.mentor-questions a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(94, 84, 68, 0.3);
+}
+
+.mentor-questions a:hover {
+  text-decoration-color: var(--text-secondary);
+}
+
 /* --- Who It's For --- */
 .audience-list {
   list-style: none;
