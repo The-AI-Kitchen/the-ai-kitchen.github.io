@@ -173,8 +173,17 @@ img {
 /* --- Hero --- */
 .hero {
   text-align: center;
-  padding-top: clamp(64px, 14vh, 112px);
+  padding-top: clamp(40px, 10vh, 80px);
   padding-bottom: clamp(64px, 14vh, 112px);
+}
+
+.hero-logo {
+  display: block;
+  max-width: 140px;
+  height: auto;
+  margin: 0 auto var(--space-lg);
+  opacity: 0.85;
+  animation: fadeUp 600ms var(--ease-out) 0ms both;
 }
 
 .hero-badges {
@@ -615,6 +624,13 @@ img {
   height: 2px;
   background: var(--coral);
   border-radius: 1px;
+}
+
+.footer-logo {
+  display: block;
+  max-width: 180px;
+  height: auto;
+  opacity: 0.9;
 }
 
 .footer a {
