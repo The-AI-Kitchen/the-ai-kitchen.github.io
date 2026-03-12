@@ -493,6 +493,22 @@ img {
   font-size: 0.9375rem;
 }
 
+.tier-link {
+  display: inline-block;
+  margin-top: var(--space-md);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--mint);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(122, 170, 138, 0.4);
+}
+
+.tier-link:hover {
+  text-decoration-color: var(--mint);
+}
+
 /* --- Mentor Callout --- */
 .mentor-callout {
   margin-top: var(--space-xl);
