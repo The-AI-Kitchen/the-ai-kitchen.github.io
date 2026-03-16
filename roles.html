@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leadership Roles — AI Kitchen</title>
+  <meta name="description" content="Join the AI Kitchen leadership team at SCU. We're looking for a Studio Lead, Outreach Lead, and Creative Lead.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Leadership Roles — AI Kitchen">
+  <meta property="og:description" content="Join the AI Kitchen leadership team at SCU. We're looking for a Studio Lead, Outreach Lead, and Creative Lead.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .roles-intro {
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+      color: var(--text-secondary);
+      max-width: 55ch;
+      line-height: 1.6;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .role-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .role-card {
+      border-radius: var(--radius-md);
+      padding: var(--space-xl) var(--space-lg);
+      border-left: 5px solid;
+      transition: transform 250ms var(--ease-out), box-shadow 250ms var(--ease-out);
+    }
+
+    .role-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lifted);
+    }
+
+    .role-card--studio {
+      background: var(--coral-light);
+      border-color: var(--coral);
+    }
+
+    .role-card--outreach {
+      background: var(--mint-light);
+      border-color: var(--mint);
+    }
+
+    .role-card--creative {
+      background: var(--lavender-light);
+      border-color: var(--lavender);
+    }
+
+    .role-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: var(--space-xs);
+    }
+
+    .role-card--studio .role-label { color: #8a6030; }
+    .role-card--outreach .role-label { color: #3a6a4a; }
+    .role-card--creative .role-label { color: #4a5570; }
+
+    .role-card h3 {
+      font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+      margin-bottom: var(--space-sm);
+    }
+
+    .role-card p {
+      font-size: clamp(0.875rem, 1.2vw, 1rem);
+      line-height: 1.6;
+      max-width: 55ch;
+      margin-bottom: var(--space-md);
+    }
+
+    .role-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .role-card li {
+      font-size: clamp(0.875rem, 1.2vw, 1rem);
+      line-height: 1.5;
+      padding-left: 1.4em;
+      position: relative;
+      margin-bottom: var(--space-sm);
+    }
+
+    .role-card li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .role-card--studio li::before { background: var(--coral); }
+    .role-card--outreach li::before { background: var(--mint); }
+    .role-card--creative li::before { background: var(--lavender); }
+
+    .role-commitment {
+      margin-top: var(--space-md);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .roles-note {
+      margin-top: var(--space-2xl);
+      padding: var(--space-lg) var(--space-xl);
+      border: 1px dashed var(--coral);
+      border-radius: var(--radius-sm);
+      background: rgba(196, 136, 74, 0.04);
+    }
+
+    .roles-note p {
+      font-size: clamp(0.875rem, 1.2vw, 1rem);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 55ch;
+    }
+
+    .roles-note strong {
+      color: var(--text-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" role="navigation" aria-label="Main">
+    <a href="index.html" class="nav-wordmark" style="text-decoration:none;">AI Kitchen</a>
+    <div style="display:flex; align-items:center; gap:20px;">
+      <a href="tools.html" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; font-weight:600; color:var(--text-secondary); text-decoration:none;">Tools Guide</a>
+      <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="section hero" id="hero" style="padding-bottom: clamp(32px, 6vh, 48px);">
+    <div class="blob blob--1" aria-hidden="true"></div>
+    <div class="blob blob--2" aria-hidden="true"></div>
+
+    <div class="container">
+      <h1 style="font-size: clamp(2rem, 5.5vw, 3.5rem);">Join the <em>Leadership Team</em></h1>
+      <p class="hero-sub">
+        AI Kitchen is looking for students who are curious, experimental, and
+        ready to help shape something new. These roles are how the Kitchen runs.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== ROLES ===== -->
+  <section class="section" id="roles" style="padding-top: 0; overflow: visible;">
+    <div class="container">
+      <p class="roles-intro reveal">
+        All leadership roles involve about <strong>8 hours per week</strong>. We're looking for
+        people who are AI-forward (or at least AI-curious), willing to experiment, and
+        deliberate about how they use AI in their work.
+      </p>
+
+      <div class="role-grid">
+
+        <!-- Studio Lead -->
+        <div class="role-card role-card--studio reveal delay-1">
+          <div class="role-label">Now recruiting</div>
+          <h3>Studio Lead</h3>
+          <p>
+            The backbone of AI Kitchen. Studio Leads run the Friday sessions,
+            coordinate guest mentors, and make sure the space works for everyone
+            who shows up.
+          </p>
+          <ul>
+            <li>Plan and facilitate weekly Taste Test sessions</li>
+            <li>Coordinate with industry mentors and guest speakers</li>
+            <li>Support students working on Slow Roast projects</li>
+            <li>Help onboard new leadership team members</li>
+          </ul>
+          <p class="role-commitment">~8 hours/week</p>
+        </div>
+
+        <!-- Outreach Lead -->
+        <div class="role-card role-card--outreach reveal delay-2">
+          <div class="role-label">Now recruiting</div>
+          <h3>Outreach Lead</h3>
+          <p>
+            The voice of AI Kitchen on campus and beyond. The Outreach Lead owns
+            marketing and promotion, making sure students across every major know
+            AI Kitchen exists and feel invited.
+          </p>
+          <ul>
+            <li>Run social media, email announcements, and campus outreach</li>
+            <li>Build partnerships with other student orgs and departments</li>
+            <li>Grow attendance and awareness across non-engineering majors</li>
+          </ul>
+          <p class="role-commitment">~8 hours/week</p>
+        </div>
+
+        <!-- Creative Lead -->
+        <div class="role-card role-card--creative reveal delay-3">
+          <div class="role-label">Now recruiting</div>
+          <h3>Creative Lead</h3>
+          <p>
+            The person who shapes the look, feel, and personality of AI Kitchen.
+            This role combines design skills with a willingness to leverage AI
+            tools in the creative process.
+          </p>
+          <ul>
+            <li>Define AI Kitchen's visual identity and brand tone</li>
+            <li>Design graphics, custom Discord emojis, and event materials</li>
+            <li>Create a welcoming, inclusive feel across all touchpoints</li>
+            <li>Use AI tools as part of the creative workflow (not required for everything, but be experimental)</li>
+          </ul>
+          <p class="role-commitment">~8 hours/week</p>
+        </div>
+
+      </div>
+
+      <div class="roles-note reveal">
+        <p>
+          <strong>Interested?</strong> Fill out the
+          <a href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">Get Involved form</a>
+          and mention which role you're interested in, or email
+          <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a> directly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-wordmark">AI Kitchen</div>
+      <div class="footer-divider" aria-hidden="true"></div>
+      <p>
+        Co-led by Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a> and Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a><br>
+        Senior Advisor: Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a>
+      </p>
+      <p>
+        Santa Clara University
+      </p>
+      <img src="scu-logo.png" alt="Santa Clara University" class="footer-logo">
+      <p>
+        Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===== Scroll Reveal Script ===== -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
