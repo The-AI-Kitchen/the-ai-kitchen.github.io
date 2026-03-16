@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student AI Tools Guide — AI Kitchen</title>
+  <meta name="description" content="A curated guide to the best free AI tools for SCU students across every major. Updated March 2026.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Student AI Tools Guide — AI Kitchen">
+  <meta property="og:description" content="Free AI tools with premium student access. Curated for SCU students across every major.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main site styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Tools page styles -->
+  <style>
+    .tools-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 5vw, 32px);
+    }
+
+    .tools-hero {
+      padding-top: clamp(40px, 6vh, 64px);
+      padding-bottom: clamp(24px, 4vh, 40px);
+    }
+
+    .tools-hero h1 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--text-primary);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .tools-hero h1 em {
+      font-style: italic;
+      color: var(--coral);
+    }
+
+    .tools-subtitle {
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+      margin-bottom: 0;
+    }
+
+    /* Category headings */
+    .cat-heading {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 1.3125rem;
+      line-height: 1.2;
+      margin-top: 36px;
+      margin-bottom: 0;
+      padding: 10px 14px;
+      background: var(--cta-bg);
+      color: white;
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    }
+
+    .cat-heading .cat-num {
+      opacity: 0.7;
+      font-weight: normal;
+      margin-right: 6px;
+    }
+
+    .cat-heading[id] { scroll-margin-top: 60px; }
+
+    /* Category blocks */
+    .category-block {
+      background: white;
+      border: 1px solid var(--bg-alt);
+      border-top: none;
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* Top pick callout */
+    .top-pick {
+      background: var(--mint-light);
+      border-left: 4px solid var(--mint);
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .top-pick .label {
+      font-weight: 700;
+      color: var(--mint);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tool-name {
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--text-primary);
+    }
+
+    .tool-name a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-decoration-color: rgba(53, 46, 36, 0.3);
+      text-underline-offset: 2px;
+    }
+
+    .tool-name a:hover { text-decoration-color: var(--text-primary); }
+
+    a.tool-link {
+      color: var(--coral);
+      text-decoration: underline;
+      text-decoration-color: rgba(196, 136, 74, 0.4);
+      text-underline-offset: 2px;
+    }
+
+    a.tool-link:hover { text-decoration-color: var(--coral); }
+
+    /* Price tags */
+    .price-tag {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+
+    .price-tag.free { background: var(--mint-light); color: #3d6b4e; }
+    .price-tag.edu { background: var(--coral-light); color: #8a5c30; }
+    .price-tag.paid { background: rgba(196, 122, 106, 0.15); color: #943d2e; }
+
+    /* Content within category blocks */
+    .category-block ul { margin: 6px 0 12px 0; padding-left: 20px; }
+    .category-block li { margin-bottom: 6px; font-size: 0.9375rem; line-height: 1.6; color: var(--text-secondary); }
+    .category-block p { font-size: 0.9375rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 10px; }
+    .category-block ol { margin: 6px 0 12px 0; padding-left: 20px; }
+    .category-block ol li { margin-bottom: 6px; }
+
+    .alt-tool { border-top: 1px solid var(--bg-alt); padding-top: 12px; margin-top: 12px; }
+
+    .category-block h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      margin: 18px 0 6px 0;
+      color: var(--text-primary);
+    }
+
+    .category-block h3:first-child { margin-top: 0; }
+
+    .note {
+      background: var(--bg-cta);
+      border: 1px solid rgba(196, 136, 74, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 14px;
+      margin-top: 12px;
+    }
+
+    .cc-req { color: #943d2e; font-weight: 600; font-size: 13px; }
+    .no-cc { color: #3d6b4e; font-weight: 600; font-size: 13px; }
+
+    /* Summary table */
+    table.summary { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    table.summary th { background: var(--cta-bg); color: white; padding: 8px 10px; text-align: left; font-weight: 600; }
+    table.summary td { padding: 8px 10px; border-bottom: 1px solid var(--bg-alt); }
+    table.summary td a:not(.tool-link) { color: var(--text-primary); text-decoration: none; }
+    table.summary td a:not(.tool-link):hover { color: var(--cta-bg); }
+    table.summary tr:nth-child(even) { background: var(--bg-page); }
+
+    /* Pending categories */
+    .pending-banner {
+      background: #fff3cd;
+      border: 1px solid #e0c96b;
+      border-radius: var(--radius-sm);
+      padding: 8px 14px;
+      font-size: 13px;
+      color: #7a6520;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .pending-category { opacity: 0.7; }
+
+    /* Standalone blocks (quick reference, notes) */
+    .standalone-block {
+      background: white;
+      border: 1px solid var(--bg-alt);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .standalone-heading {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 1.3125rem;
+      line-height: 1.2;
+      margin-top: 36px;
+      margin-bottom: 0;
+      padding: 10px 14px;
+      background: var(--cta-bg);
+      color: white;
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    }
+
+    .standalone-heading + .standalone-block {
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+      border-top: none;
+    }
+
+    /* Tools footer note */
+    .tools-footer-note {
+      margin-top: 36px;
+      padding-top: 16px;
+      border-top: 2px solid var(--bg-alt);
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: clamp(48px, 6vh, 64px);
+    }
+
+    /* Responsive table */
+    .table-wrap { overflow-x: auto; }
+
+    /* Nav link active state for tools page */
+    .nav-tools-link {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 8px 0;
+    }
+
+    .nav-tools-link:hover {
+      color: var(--coral);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" role="navigation" aria-label="Main">
+    <a href="index.html" class="nav-wordmark" style="text-decoration:none; color:var(--text-primary);">AI Kitchen</a>
+    <div style="display:flex; align-items:center; gap:20px;">
+      <a href="tools.html" class="nav-tools-link" style="color:var(--coral); font-weight:700;">Tools Guide</a>
+      <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
+    </div>
+  </nav>
+
+  <!-- ===== TOOLS HERO ===== -->
+  <section class="section tools-hero">
+    <div class="tools-container">
+      <h1>Student <em>AI Tools</em> Guide</h1>
+      <p class="tools-subtitle">Santa Clara University, Spring 2026. Last updated March 14, 2026.<br>
+      A curated reference for students in CS, business, arts, and other disciplines.</p>
+    </div>
+  </section>
+
+  <!-- ===== TOOLS CONTENT ===== -->
+  <section class="section" style="padding-top:0; overflow:visible;">
+    <div class="tools-container">
+
+<!-- QUICK REFERENCE TABLE -->
+
+<h2 class="standalone-heading">Top Picks by Category</h2>
+<div class="standalone-block table-wrap" style="border-top:none; border-radius: 0 0 var(--radius-sm) var(--radius-sm);">
+<p style="font-size:14px; color:#6b5d4d; margin: 0 0 12px 0;">We prioritize free tools that offer premium capabilities for students.</p>
+<table class="summary">
+<tr>
+  <th>Category</th>
+  <th>Top Pick</th>
+  <th>Why It's Great</th>
+</tr>
+<tr>
+  <td><a href="#general-ai">General-Purpose AI</a></td>
+  <td><a class="tool-link" href="https://gemini.google.com" target="_blank">Google Gemini</a></td>
+  <td>Built into every Google Workspace tool you already use</td>
+</tr>
+<tr>
+  <td><a href="#code">Code Generation</a></td>
+  <td><a class="tool-link" href="https://cursor.com" target="_blank">Cursor Pro</a></td>
+  <td>Access to the best AI models, free for a full year</td>
+</tr>
+<tr>
+  <td><a href="#design">Visual Design / UI</a></td>
+  <td><a class="tool-link" href="https://www.figma.com/education/" target="_blank">Figma</a></td>
+  <td>Industry standard for design, free Pro plan for students</td>
+</tr>
+<tr>
+  <td><a href="#image">Image Generation</a></td>
+  <td><a class="tool-link" href="https://gemini.google.com" target="_blank">Google Gemini</a></td>
+  <td>Best-in-class image gen, included with your SCU account</td>
+</tr>
+<tr>
+  <td><a href="#video">Video / Animation</a></td>
+  <td style="color:#7a6520;">Pending review</td>
+  <td style="color:#7a6520;">We're still evaluating tools in this space</td>
+</tr>
+<tr>
+  <td><a href="#research">Research</a></td>
+  <td><a class="tool-link" href="https://gemini.google.com" target="_blank">Gemini Deep Research</a></td>
+  <td>Automates hours of multi-source research for you</td>
+</tr>
+<tr>
+  <td><a href="#audio">Audio / Music</a></td>
+  <td style="color:#7a6520;">Pending review</td>
+  <td style="color:#7a6520;">We're still evaluating tools in this space</td>
+</tr>
+<tr>
+  <td><a href="#data-science">Data Science</a></td>
+  <td><a class="tool-link" href="https://colab.research.google.com" target="_blank">Google Colab</a></td>
+  <td>Free GPU access and AI coding help in your browser</td>
+</tr>
+<tr>
+  <td><a href="#presentations">Presentations</a></td>
+  <td><a class="tool-link" href="https://gamma.app" target="_blank">Gamma</a></td>
+  <td>Describe your topic, get a polished deck in seconds</td>
+</tr>
+<tr>
+  <td><a href="#nocode">No-Code App Building</a></td>
+  <td><a class="tool-link" href="https://bolt.new" target="_blank">Bolt.new</a></td>
+  <td>Build and deploy a full web app from a text description</td>
+</tr>
+</table>
+</div>
+
+<!-- 1. GENERAL-PURPOSE AI ASSISTANT -->
+
+<h2 class="cat-heading" id="general-ai"><span class="cat-num">1.</span> General-Purpose AI Assistant</h2>
+<div class="category-block">
+
+<div class="top-pick">
+  <div class="label">Top Pick (Free)</div>
+  <div class="tool-name"><a href="https://gemini.google.com" target="_blank">Google Gemini</a> <span class="price-tag free">FREE for SCU students</span></div>
+</div>
+
+<p><strong>What it does:</strong> Google's flagship AI assistant. Chat, brainstorm, write, analyze documents, generate images, summarize content, and get help with code. Gemini Pro is integrated across Google Workspace (Docs, Slides, Sheets, Gmail), so it works inside the tools you already use for schoolwork.</p>
+
+<p><strong>SCU student access:</strong> SCU students get Gemini through Google Workspace for Education (included with your university account). Features available to Education Plus users 18 and older include Gemini in Docs (Help Me Write), Gemini in Slides (generate images and slides), Gemini in Forms (auto-create forms), and Gemini in Vids (create videos from text prompts). Students can also access <a href="https://one.google.com/explore-plan/gemini-advanced" target="_blank">Gemini Advanced</a> free for one year with a personal Gmail and .edu verification, which adds Deep Research (long-form, source-cited outputs) and the most capable models.</p>
+
+<p><strong>Limitations:</strong> Gemini in Workspace uses your SCU account, but the free Gemini Advanced trial requires a personal Gmail (Workspace accounts don't qualify for that specific offer). The Workspace integration is strong for productivity tasks but less flexible than standalone AI assistants for open-ended creative or technical work.</p>
+
+<p class="no-cc">No credit card required.</p>
+
+<div class="alt-tool">
+<h3>Also Consider</h3>
+<ul>
+  <li><strong><a class="tool-link" href="https://claude.ai" target="_blank">Claude</a></strong> <span class="price-tag free">FREE tier</span> / <span class="price-tag paid">Pro $20/mo</span> - Anthropic's AI assistant, known for strong writing quality, nuanced reasoning, and handling very long documents. The free tier offers approximately 50-80 messages per reset window and includes artifacts (live code previews, documents, charts in a side panel). Pro ($20/mo) unlocks <strong>Cowork</strong>, a persistent shared workspace where Claude can manage files, execute multi-step tasks, and collaborate on complex projects alongside you, like an AI co-worker with a desk next to yours. Cowork is genuinely unlike anything else available right now. <strong>If there's one AI tool worth paying for, this is the one we'd recommend.</strong> No student discount currently.</li>
+  <li><strong><a class="tool-link" href="https://chatgpt.com" target="_blank">ChatGPT</a></strong> <span class="price-tag free">FREE tier available</span> - OpenAI's assistant. Free tier: 10 messages per 5-hour window on the main model, then unlimited on the lighter model. Includes web search and 2-3 image generations/day. Plus ($20/mo) adds higher limits, voice mode, and more. Strong all-rounder. Check if SCU provides institutional access via ChatGPT Edu. <span class="cc-req">Ads now appear on the free tier.</span></li>
+</ul>
+</div>
+
+<div class="note">
+<strong>Recommendation:</strong> Start with Gemini since it's free through your SCU account and integrated into Google Workspace. Claude's free tier is excellent for writing and analysis. If you find yourself hitting Claude's free limits regularly, Claude Pro ($20/mo) with Cowork is the single best AI investment you can make right now. ChatGPT is a solid free alternative for everyday tasks.
+</div>
+</div>
+
+<!-- 2. CODE GENERATION -->
+
+<h2 class="cat-heading" id="code"><span class="cat-num">2.</span> Code Generation / Software Development</h2>
+<div class="category-block">
+
+<div class="top-pick">
+  <div class="label">Top Pick</div>
+  <div class="tool-name"><a href="https://cursor.com" target="_blank">Cursor Pro</a> (Student Plan) <span class="price-tag free">FREE for 1 year (students)</span></div>
+</div>
+
+<p><strong>What it does:</strong> A VS Code fork with AI deeply integrated into every part of the editor. Code completions, chat, and Composer mode (describe changes across multiple files and Cursor applies them). Direct access to the best available models: GPT-5.4, Claude Opus 4.6, Claude Sonnet 4.6, Gemini 3 Pro, and more, with the ability to choose which model handles each task.</p>
+
+<p><strong>Student access:</strong> Verified students get a full year of Cursor Pro free ($240 value). Sign up at <a href="https://cursor.com/students" target="_blank">cursor.com/students</a> and verify with your SCU .edu email via SheerID. Includes 500 fast premium requests/month and unlimited slow requests.</p>
+
+<p><strong>Why it's the top pick:</strong> Model quality matters enormously for code generation. Cursor Pro gives you direct access to the most capable models (Claude Opus, GPT-5.4) and lets you choose which model to use per task. GitHub Copilot's student plan recently removed direct model selection, routing students through "Auto mode" instead. For serious development work, the ability to pick the right model and use Composer for multi-file edits makes a real difference.</p>
+
+<p><strong>Limitations:</strong> Cursor is a standalone editor (you switch from VS Code rather than adding an extension). The transition is smooth since it's a VS Code fork, but it's still a new app to install. After the free year, it's $20/mo.</p>
+
+<p class="no-cc">No credit card required.</p>
+
+<div class="alt-tool">
+<h3>Also Consider</h3>
+<ul>
+  <li><strong><a class="tool-link" href="https://github.com/features/copilot" target="_blank">GitHub Copilot</a></strong> <span class="price-tag free">FREE for students</span> - AI pair programmer that works as an extension in VS Code, JetBrains, and other IDEs. Free via the <a href="https://education.github.com/pack" target="_blank">GitHub Student Developer Pack</a>. Includes unlimited code completions and access to premium models via Auto mode (300 premium requests/month). A solid option if you prefer to stay in your existing editor rather than switching to Cursor. Note: as of March 2026, students can no longer directly select premium models like GPT-5.4 or Claude; these are only available through Auto mode.</li>
+</ul>
+</div>
+
+<div class="note">
+<strong>Recommendation:</strong> Cursor Pro is the strongest AI coding tool available to students for free. The direct access to top-tier models and Composer mode for multi-file edits set it apart. GitHub Copilot is a fine alternative if you prefer working in your existing IDE without switching editors.
+</div>
+</div>
+
+<!-- 3. VISUAL DESIGN / UI/UX -->
+
+<h2 class="cat-heading" id="design"><span class="cat-num">3.</span> Visual Design / UI/UX</h2>
+<div class="category-block">
+
+<div class="top-pick">
+  <div class="label">Top Pick</div>
+  <div class="tool-name"><a href="https://www.figma.com" target="_blank">Figma</a> (Education Plan) <span class="price-tag free">FREE for higher ed students</span></div>
+</div>
+
+<p><strong>What it does:</strong> Industry-standard design tool for UI/UX, prototyping, and collaboration. The AI features include Figma Make (generates UI designs from text prompts), auto-layout suggestions, and AI-powered asset search.</p>
+
+<p><strong>Student access:</strong> Higher education students get the full Professional plan free, verified via <a href="https://www.figma.com/education/" target="_blank">figma.com/education</a>. This includes 3,000 AI credits/month for Figma Make, unlimited files, and collaboration features.</p>
+
+<p><strong>Limitations:</strong> Some advanced AI features are limited compared to Organization/Enterprise plans. K-12 students do not get Figma Make or Sites access. AI credits are monthly-capped at 3,000.</p>
+
+<p class="no-cc">No credit card required.</p>
+
+<div class="alt-tool">
+<h3>Also Consider</h3>
+<ul>
+  <li><strong><a class="tool-link" href="https://www.canva.com/education/students/" target="_blank">Canva</a></strong> <span class="price-tag free">FREE for students (via Canva for Campus)</span> - All-in-one design platform with AI features including Magic Write (text generation), Magic Animate, and an AI image generator. Not a UI/UX prototyping tool like Figma, but excellent for social media graphics, posters, presentations, and marketing materials. University students can access free Pro features through <a href="https://www.canva.com/education/" target="_blank">Canva for Campus</a> if their institution participates. Great for non-design students who need to create polished visuals quickly.</li>
+</ul>
+</div>
+
+<div class="note">
+<strong>Recommendation:</strong> Figma is the clear winner for UI/UX design and prototyping (the industry standard, and SCU HCI/design students are likely already using it). Canva is better for non-designers who need quick marketing materials, social media graphics, or posters.
+</div>
+</div>
+
+<!-- 4. IMAGE GENERATION -->
+
+<h2 class="cat-heading" id="image"><span class="cat-num">4.</span> Image Generation</h2>
+<div class="category-block">
+
+<div class="top-pick">
+  <div class="label">Top Pick</div>
+  <div class="tool-name"><a href="https://gemini.google.com" target="_blank">Google Gemini</a> (Nano Banana 2) <span class="price-tag free">FREE for SCU students</span></div>
+</div>
+
+<p><strong>What it does:</strong> Google's best-in-class image generation model, Nano Banana 2 (technically Gemini 3.1 Flash Image), generates and edits images directly within Gemini. Produces highly realistic images with strong text rendering, supports image editing and style transfer, and can leverage real-time web search to inform image creation. Also available as Nano Banana Pro (Gemini 3 Pro Image) for even higher quality.</p>
+
+<p><strong>SCU student access:</strong> SCU students get Gemini through Google Workspace for Education, which is included in your university account. Students 18 and older can also access <a href="https://one.google.com/explore-plan/gemini-advanced" target="_blank">Gemini Advanced</a> free for one year with a .edu email. This means generous image generation at no cost, with no separate signup required beyond your existing SCU Google account.</p>
+
+<p><strong>Key features:</strong> Text rendering and translations within images, upscaling to 2K/4K, image editing and inpainting, and the ability to generate images informed by web search context. Nano Banana 2 delivers Pro-level quality at Flash speed.</p>
+
+<p><strong>Limitations:</strong> Generation limits depend on your account tier (Workspace for Education vs. Gemini Advanced). Some advanced features may require Gemini Advanced. Student data is not used to train AI models when using Google Workspace for Education.</p>
+
+<p class="no-cc">No credit card required. Use your SCU Google account.</p>
+
+<div class="alt-tool">
+<h3>Also Consider</h3>
+<ul>
+  <li><strong><a class="tool-link" href="https://chatgpt.com" target="_blank">ChatGPT</a> (DALL-E 3 / GPT Image)</strong> <span class="price-tag free">FREE: 2-3 images/day</span> - Generate images from text prompts within ChatGPT. Free tier gives 2-3 images per day. Good for quick one-off generations. No student discount. ChatGPT Plus ($20/mo) provides higher volume.</li>
+  <li><strong><a class="tool-link" href="https://www.midjourney.com" target="_blank">Midjourney</a></strong> <span class="price-tag paid">$10/mo (Basic)</span> - Widely regarded as producing the most aesthetically striking AI images, with a distinctive artistic quality. No free tier. Basic plan ($10/mo) includes ~200 image generations/month. Best for students doing creative or artistic work who want the highest visual quality and are willing to pay. No student discount.</li>
+</ul>
+</div>
+
+<div class="note">
+<strong>Recommendation:</strong> Start with Gemini (Nano Banana 2) since you already have access through your SCU Google account. It's currently the best free image generation model available. ChatGPT's image generation is a solid free alternative for quick one-offs. If you're doing serious creative work and want the most visually striking results, Midjourney ($10/mo) is worth the investment.
+</div>
+</div>
+
+<!-- 5. VIDEO / ANIMATION -->
+
+<h2 class="cat-heading" id="video"><span class="cat-num">5.</span> Video / Animation</h2>
+<div class="category-block pending-category">
+<div class="pending-banner">Pending review: recommendations in this category have not been fully vetted. Want to help? Let us know.</div>
+
+<div class="top-pick">
+  <div class="label">Top Pick</div>
+  <div class="tool-name"><a href="https://www.capcut.com" target="_blank">CapCut</a> <span class="price-tag free">FREE with generous AI features</span></div>
+</div>
+
+<p><strong>What it does:</strong> Full video editor (desktop, web, mobile) with built-in AI features: auto captions in 130+ languages, AI avatars, text-to-speech, background removal, face effects, and trending templates. Optimized for short-form content.</p>
+
+<p><strong>Free tier:</strong> Most core editing tools are free, including auto captions, basic AI features, and 1080p export. No account verification needed.</p>
+
+<p><strong>Limitations:</strong> Watermarks on some templates. Advanced AI tools (camera tracking, flicker removal, vocal isolation) are Pro-only. Cloud storage limited to 1GB. Export capped at 1080p (no 4K). Optimized for videos under 15 minutes.</p>
+
+<p class="no-cc">No credit card required.</p>
+
+<div class="alt-tool">
+<h3>Alternatives</h3>
+<ul>
+  <li><strong><a class="tool-link" href="https://runwayml.com" target="_blank">Runway</a></strong> <span class="price-tag edu">20% student discount; education program available</span> - The leading AI video generation platform. Create video from text, images, or video input using Gen-3 and newer models. Free plan gives a one-time 125 credits for testing. Students get 20% off paid plans ($12/mo Standard) via <a href="https://runwayml.com/education" target="_blank">runwayml.com/education</a>. Student Ambassadors can earn up to 100,000 credits. Best for AI-generated video content rather than traditional editing.</li>
+  <li><strong><a class="tool-link" href="https://pika.art" target="_blank">Pika</a></strong> <span class="price-tag free">FREE: 80 credits/month</span> - AI video generation from text and images. Free plan includes 80 monthly credits at 480p with watermark. Good for quick experiments. Standard plan at $8/mo removes watermark and gives 700 credits. No student discount.</li>
+</ul>
+</div>
+
+<div class="note">
+<strong>Recommendation:</strong> CapCut is the best all-around free video editor with AI features, ideal for social media content, presentations, and class projects. Use Runway when you need AI-generated video clips (text-to-video, image-to-video). Pika is worth exploring for quick creative experiments.
+</div>
+</div>
+
+<!-- 6. RESEARCH -->
+
+<h2 class="cat-heading" id="research"><span class="cat-num">6.</span> Research</h2>
+<div class="category-block">
+
+<div class="top-pick">
+  <div class="label">Top Pick</div>
+  <div class="tool-name"><a href="https://gemini.google.com" target="_blank">Gemini Deep Research</a> <span class="price-tag free">FREE for SCU students</span></div>
+</div>
+
+<p><strong>What it does:</strong> Gemini's Deep Research automates multi-step web research that would normally take hours. Give it a research question and it creates a research plan, searches dozens of sources, synthesizes findings, and produces a long-form, source-cited report. It iterates through multiple rounds of search and analysis automatically, surfacing connections and evidence you might miss manually.</p>
+
+<p><strong>Student access:</strong> Deep Research is available through <a href="https://gemini.google/students/" target="_blank">Gemini Advanced</a>, which students can access free for one year by verifying with a personal Gmail and .edu email. It may also be accessible through SCU's Google Workspace for Education, depending on the institution's tier. Deep Research runs on Gemini 3 Pro.</p>
+
+<p><strong>Limitations:</strong> Deep Research queries take several minutes to complete (it's doing extensive work). Best for substantial research questions rather than quick lookups. The free student plan sign-up window closed January 31, 2026, but check <a href="https://gemini.google/students/" target="_blank">gemini.google/students</a> for current availability.</p>
+
+<p class="no-cc">No credit card required.</p>
+
+<div class="alt-tool">
+<h3>Also Consider</h3>
+<ul>
+  <li><strong><a class="tool-link" href="https://notebooklm.google" target="_blank">Google NotebookLM</a></strong> <span class="price-tag free">FREE</span> - Upload PDFs, Google Docs, websites, YouTube videos, and other sources, then ask questions across all of them. Synthesizes information, generates summaries, finds connections, and creates AI-generated audio overviews ("podcasts") of your material. Free tier: 100 notebooks, 50 sources per notebook, 50 chat queries/day, 3 audio generations/day. Best for working with your own documents (papers, lecture notes, reports) rather than searching the web.</li>
+  <li><strong><a class="tool-link" href="https://www.perplexity.ai/students" target="_blank">Perplexity</a></strong> <span class="price-tag edu">FREE Pro for 1 year (students)</span> - AI-powered research engine that searches the web, synthesizes information, and cites its sources. Students get Pro free for one year via <a href="https://www.perplexity.ai/students" target="_blank">perplexity.ai/students</a> (verify with SheerID). Excellent for quick web research with verified citations, literature reviews, and fact-checking. Complements Deep Research well: Perplexity is faster for targeted questions, Deep Research is better for comprehensive investigations.</li>
+</ul>
+</div>
+
+<div class="note">
+<strong>Recommendation:</strong> Use Gemini Deep Research for substantial research questions where you need comprehensive, multi-source analysis. Use NotebookLM when you have specific documents you want to synthesize (papers, lecture notes, reports). Use Perplexity for quick, citation-backed web lookups. All three are free and complementary.
+</div>
+</div>
+
+<!-- 7. AUDIO / MUSIC -->
+
+<h2 class="cat-heading" id="audio"><span class="cat-num">7.</span> Audio / Music</h2>
+<div class="category-block pending-category">
+<div class="pending-banner">Pending review: recommendations in this category have not been fully vetted. Want to help? Let us know.</div>
+
+<div class="top-pick">
+  <div class="label">Top Pick</div>
+  <div class="tool-name"><a href="https://suno.com" target="_blank">Suno</a> <span class="price-tag free">FREE: 50 credits/day (~10 songs)</span></div>
+</div>
+
+<p><strong>What it does:</strong> Generate full songs (vocals, instruments, lyrics) from text prompts or descriptions. Supports multiple genres. Can generate songs up to several minutes long with coherent structure, verses, and choruses.</p>
+
+<p><strong>Free tier:</strong> 50 daily credits, enough for approximately 10 songs per day. Can download as MP3. 2 concurrent generation jobs.</p>
+
+<p><strong>Limitations:</strong> Free-tier songs cannot be used commercially. No student discount available. Pro plan ($10/mo) adds 2,500 monthly credits and commercial rights.</p>
+
+<p class="no-cc">No credit card required.</p>
+
+<div class="alt-tool">
+<h3>Alternatives</h3>
+<ul>
+  <li><strong><a class="tool-link" href="https://elevenlabs.io" target="_blank">ElevenLabs</a></strong> <span class="price-tag edu">Student perks available</span> - Leading AI voice platform for text-to-speech, voice cloning, and audio dubbing. Free plan: 10,000 credits/month (~10 minutes of audio). Students with .edu emails get 1 year of ElevenLabs Reader Ultra free, plus 3 months free of the Creator Plan ($55 value) via the <a href="https://elevenlabs.io/students" target="_blank">AI Student Pack</a>. Best for voiceovers, narration, and podcasts rather than music.</li>
+  <li><strong><a class="tool-link" href="https://notebooklm.google" target="_blank">NotebookLM Audio Overviews</a></strong> <span class="price-tag free">FREE</span> - Google NotebookLM can generate podcast-style audio discussions about your uploaded content. Not a music tool, but excellent for converting study materials into listenable format. 3 audio generations per day on the free tier. Great for reviewing course content on the go.</li>
+</ul>
+</div>
+
+<div class="note">
+<strong>Recommendation:</strong> Suno is the best free option for AI music creation, and its daily free credits are generous enough for most student projects. ElevenLabs fills a different niche (voice/narration) and the student perks make it worth signing up. NotebookLM Audio Overviews are a hidden gem for studying.
+</div>
+</div>
+
+<!-- 8. DATA SCIENCE -->
+
+<h2 class="cat-heading" id="data-science"><span class="cat-num">8.</span> Data Science</h2>
+<div class="category-block">
+
+<div class="top-pick">
+  <div class="label">Top Pick</div>
+  <div class="tool-name"><a href="https://colab.research.google.com" target="_blank">Google Colab</a> + Gemini <span class="price-tag free">FREE</span></div>
+</div>
+
+<p><strong>What it does:</strong> A cloud-based Jupyter notebook environment where you can write and run Python code with AI assistance. Gemini is built in to help generate code, explain errors, and suggest analyses. Free tier includes GPU and TPU access for machine learning. Upload CSVs, connect to Google Sheets, create charts, run statistical analyses, and train models.</p>
+
+<p><strong>Free tier:</strong> Generous free tier with AI code assistance (Gemini-powered), GPU access (usage-limited), and unlimited notebooks. No installation required; runs entirely in the browser.</p>
+
+<p><strong>Limitations:</strong> Requires some Python comfort (though Gemini helps a lot with code generation). Sessions time out after periods of inactivity. GPU access has daily usage caps on the free tier.</p>
+
+<p class="no-cc">No credit card required.</p>
+
+<div class="alt-tool">
+<h3>Also Consider</h3>
+<ul>
+  <li><strong><a class="tool-link" href="https://julius.ai" target="_blank">Julius AI</a></strong> <span class="price-tag edu">50% student discount available</span> - Upload data and ask questions in plain language to get charts, statistical analysis, and insights without coding. Free plan: 5-15 messages/month (very limited). Student discount brings paid plans to $10-20/mo. Best for students who want data analysis without writing any code.</li>
+  <li><strong><a class="tool-link" href="https://claude.ai" target="_blank">Claude</a> (with file upload)</strong> <span class="price-tag free">FREE tier</span> - Upload CSVs and data files directly. Claude can analyze data, write code, and explain statistical results. Strong at interpreting complex datasets and generating clear explanations. Good for one-off analyses when you don't need a full notebook environment.</li>
+</ul>
+</div>
+
+<div class="note">
+<strong>Recommendation:</strong> Google Colab is the best free option for real data science work. The built-in Gemini assistant makes it accessible even if you're still learning Python. For quick, no-code data questions, try Claude with file uploads or Julius AI.
+</div>
+</div>
+
+<!-- 9. PRESENTATIONS -->
+
+<h2 class="cat-heading" id="presentations"><span class="cat-num">9.</span> Presentation / Slides</h2>
+<div class="category-block">
+
+<div class="top-pick">
+  <div class="label">Top Pick</div>
+  <div class="tool-name"><a href="https://gamma.app" target="_blank">Gamma</a> <span class="price-tag free">FREE: 400 AI credits (one-time)</span></div>
+</div>
+
+<p><strong>What it does:</strong> AI-powered presentation, document, and website builder. Describe your topic and Gamma generates a full slide deck with content, layout, and visuals. Supports export to PowerPoint, PDF, PNG, and Google Slides. Real-time collaboration included.</p>
+
+<p><strong>Free tier:</strong> 400 one-time AI credits (enough for approximately 10 full presentations). Credits do not refresh. Gamma branding/watermark on free presentations.</p>
+
+<p><strong>Limitations:</strong> Credits are one-time only and never replenish. Branding on exports. Plus plan ($8/mo) removes branding and provides unlimited AI generations.</p>
+
+<p class="no-cc">No credit card required.</p>
+
+<div class="alt-tool">
+<h3>Alternatives</h3>
+<ul>
+  <li><strong><a class="tool-link" href="https://www.beautiful.ai" target="_blank">Beautiful.ai</a></strong> <span class="price-tag edu">FREE for 1 year (students with .edu email)</span> - AI-powered presentation maker with smart templates that auto-adjust layouts. Students with .edu emails get a full year free at <a href="https://www.beautiful.ai/education" target="_blank">beautiful.ai/education</a>. Produces polished, professional-looking decks. After the free year, Pro is $12/mo. Great for business students or anyone who needs consistently professional slides.</li>
+  <li><strong>Google Slides + Gemini</strong> <span class="price-tag free">FREE (basic) / Paid for AI features</span> - Google Slides is free for all SCU students. However, the new Gemini AI features (auto-generate presentations, smart layouts) require Google AI Pro or Ultra subscription ($19.99+/mo), which is not free. The base Google Slides experience remains free and functional.</li>
+  <li><strong><a class="tool-link" href="https://claude.ai" target="_blank">Claude</a> + slide creation skills</strong> <span class="price-tag free">FREE tier</span> - Claude can generate polished, animation-rich HTML presentations using community-built skills (such as <a class="tool-link" href="https://github.com/ZaraZhang-SCU/frontend-slides" target="_blank">Zara Zhang's frontend-slides skill</a> for Claude Code). The results are surprisingly good: smooth transitions, custom layouts, and responsive design, all from a text description. Requires some comfort with Claude Code or Claude Pro, but produces presentation-quality slides without any design tool. Worth trying if you're already using Claude for other work.</li>
+</ul>
+</div>
+
+<div class="note">
+<strong>Recommendation:</strong> Gamma is the fastest way to generate a complete AI presentation for free. Beautiful.ai's free student year is excellent for polished, professional decks (business students take note). Google Slides remains the default for collaborative class projects. For a more hands-on approach, Claude with slide creation skills can produce impressive HTML presentations, especially if you want full control over content and design.
+</div>
+</div>
+
+<!-- 10. NO-CODE APP BUILDING -->
+
+<h2 class="cat-heading" id="nocode"><span class="cat-num">10.</span> No-Code App Building</h2>
+<div class="category-block">
+
+<div class="top-pick">
+  <div class="label">Top Pick</div>
+  <div class="tool-name"><a href="https://bolt.new" target="_blank">Bolt.new</a> <span class="price-tag free">FREE: 1M tokens/month</span></div>
+</div>
+
+<p><strong>What it does:</strong> AI-powered app builder. Describe what you want to build in plain language, and Bolt generates a full-stack web application with code, deploys it, and lets you iterate via conversation. Supports databases, hosting, and deployment out of the box.</p>
+
+<p><strong>Free tier:</strong> 1 million tokens/month with a 300,000 token daily cap. Includes public and private projects, website hosting, unlimited databases, and up to 333,000 web requests.</p>
+
+<p><strong>Limitations:</strong> Bolt branding on deployed sites. No custom domain support. 10MB file upload limit. Free plan is sufficient for learning and prototyping but not production apps.</p>
+
+<p class="no-cc">No credit card required.</p>
+
+<div class="alt-tool">
+<h3>Alternatives</h3>
+<ul>
+  <li><strong><a class="tool-link" href="https://lovable.dev" target="_blank">Lovable</a></strong> <span class="price-tag edu">50% student discount on Pro</span> - AI app builder focused on polished, production-ready output. Free plan: 5 credits/day, public projects, up to 5 deployed subdomains. Students get 50% off Pro ($12.50/mo instead of $25/mo) for a full year. Verify at <a href="https://lovable.dev/students" target="_blank">lovable.dev/students</a>. Best for students who want to ship a polished MVP.</li>
+  <li><strong><a class="tool-link" href="https://v0.dev" target="_blank">v0 by Vercel</a></strong> <span class="price-tag free">FREE: $5 in monthly credits</span> - AI UI component generator by Vercel. Generates React/Next.js components from text descriptions. Free plan: $5 in monthly credits, 7 messages/day, GitHub sync, and deploy to Vercel. Best for frontend/UI generation rather than full apps. Ideal for CS students building React projects.</li>
+  <li><strong><a class="tool-link" href="https://replit.com" target="_blank">Replit</a></strong> <span class="price-tag free">FREE starter tier</span> - Browser-based IDE with AI assistance. The free Starter plan includes daily AI Agent credits, one published app, and a collaborative environment for up to 50 users. No local setup required: everything runs in the browser. Great for quick prototyping, classroom demos, and beginners who want to build without installing anything. Core plan is $20/mo for heavier use.</li>
+</ul>
+</div>
+
+<div class="note">
+<strong>Recommendation:</strong> Bolt.new offers the most generous free tier for full-stack app building. Non-CS students can build functional web apps from descriptions alone. Lovable's student discount makes it a strong second choice for more polished output. v0 is best for CS students who want AI-generated React components. Replit is ideal for beginners who want a browser-based environment with zero setup.
+</div>
+</div>
+
+<!-- IMPORTANT NOTES -->
+
+<h2 class="standalone-heading">Important Notes</h2>
+<div class="standalone-block" style="border-top:none; border-radius: 0 0 var(--radius-sm) var(--radius-sm);">
+<ul style="margin:0; padding-left:20px;">
+  <li style="margin-bottom:6px; font-size:0.9375rem; line-height:1.6; color:var(--text-secondary);"><strong>Data privacy:</strong> Be cautious about uploading sensitive, proprietary, or personal data to any AI tool. Review each tool's data usage policy, especially for student/research data.</li>
+  <li style="margin-bottom:6px; font-size:0.9375rem; line-height:1.6; color:var(--text-secondary);"><strong>AI output quality:</strong> Free tiers sometimes use older or lighter AI models. If output quality seems low, that may be a tier limitation rather than a tool limitation.</li>
+  <li style="margin-bottom:0; font-size:0.9375rem; line-height:1.6; color:var(--text-secondary);"><strong>Pricing changes:</strong> AI tool pricing shifts frequently. Verify current pricing at each tool's website before committing. This guide reflects pricing as of March 2026.</li>
+</ul>
+</div>
+
+<div class="tools-footer-note">
+  AI Kitchen Tools Guide, Santa Clara University. Compiled March 2026. Pricing and features verified as of publication date and subject to change.
+</div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-wordmark">AI Kitchen</div>
+      <div class="footer-divider" aria-hidden="true"></div>
+      <p>
+        Co-led by Prof. Kai Lukoff and Prof. Yi Fang<br>
+        Senior Advisor: Prof. Sanjiv Das
+      </p>
+      <p>
+        Santa Clara University
+      </p>
+      <img src="scu-logo.png" alt="Santa Clara University" class="footer-logo">
+      <p>
+        Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===== Scroll Reveal Script ===== -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
