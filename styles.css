@@ -32,8 +32,8 @@
   --text-muted: #6b5f50;      /*  ~5.8:1 on page — AA pass */
 
   /* Accent palette */
-  --coral: #c4884a;           /* burnt amber — primary accent */
-  --coral-light: rgba(196, 136, 74, 0.1);
+  --coral: #9a6e35;           /* burnt amber — primary accent (4.2:1 on page) */
+  --coral-light: rgba(154, 110, 53, 0.1);
   --mint: #7aaa8a;            /* sage */
   --mint-light: rgba(122, 170, 138, 0.1);
   --lavender: #7a8ab4;        /* slate blue */
@@ -42,9 +42,9 @@
   --pink: #c47a6a;            /* terracotta */
 
   /* CTA — darker amber for white-text buttons; ~3.95:1 passes AA-large */
-  --cta-bg: #aa7540;
-  --cta-hover: #966535;
-  --cta-active: #8a5c30;
+  --cta-bg: #8b5d31;          /* 5.7:1 on white — AA pass */
+  --cta-hover: #7d5329;
+  --cta-active: #704a24;
   --cta-text: #ffffff;
 
   /* Shadows & Radius */
