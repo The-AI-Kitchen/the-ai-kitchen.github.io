@@ -255,9 +255,13 @@
   <!-- ===== NAV ===== -->
   <nav class="nav" role="navigation" aria-label="Main">
     <a href="index.html" class="nav-wordmark" style="text-decoration:none; color:var(--text-primary);">AI Kitchen</a>
-    <div style="display:flex; align-items:center; gap:20px;">
-      <a href="tools.html" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; font-weight:700; color:var(--coral); text-decoration:none;">Tools Guide</a>
-      <a href="roles.html" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; font-weight:600; color:var(--text-secondary); text-decoration:none;">Leadership Roles</a>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="const links=this.nextElementSibling;const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open);">
+      <svg viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-links">
+      <a href="tools.html" class="nav-link active">Tools Guide</a>
+      <a href="roles.html" class="nav-link">Leadership Roles</a>
+      <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" class="nav-link" target="_blank" rel="noopener noreferrer">Projects</a>
       <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
     </div>
   </nav>
