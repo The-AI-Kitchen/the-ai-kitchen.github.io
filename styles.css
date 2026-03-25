@@ -567,6 +567,125 @@ img {
   text-decoration-color: var(--text-secondary);
 }
 
+/* --- Schedule --- */
+.schedule-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.schedule-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  background: var(--bg-page);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  border-left: 4px solid var(--coral);
+  transition: transform 250ms var(--ease-out), box-shadow 250ms var(--ease-out);
+}
+
+.schedule-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lifted);
+}
+
+.schedule-date {
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  font-weight: 700;
+  color: var(--coral);
+  white-space: nowrap;
+  min-width: 4.5rem;
+  padding-top: 2px;
+}
+
+.schedule-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.schedule-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(154, 110, 53, 0.4);
+}
+
+.schedule-name:hover {
+  text-decoration-color: var(--coral);
+  color: var(--coral);
+}
+
+.schedule-title {
+  font-size: clamp(0.8125rem, 1.2vw, 0.9375rem);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.schedule-topic {
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.schedule-note {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.schedule-note a {
+  color: var(--coral);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(154, 110, 53, 0.4);
+}
+
+.schedule-note a:hover {
+  text-decoration-color: var(--coral);
+}
+
+.schedule-quarter {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+.schedule-card--tbd {
+  border-left-color: var(--lavender);
+  opacity: 0.7;
+}
+
+.schedule-card--tbd .schedule-date {
+  color: var(--lavender);
+}
+
+.schedule-name--tbd {
+  font-style: italic;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .schedule-card {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  .schedule-date {
+    min-width: auto;
+  }
+}
+
 /* --- Who It's For --- */
 .audience-list {
   list-style: none;
