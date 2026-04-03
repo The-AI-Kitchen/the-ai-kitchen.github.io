@@ -74,6 +74,25 @@
     </div>
   </section>
 
+  <!-- ===== NEXT TASTE TEST SPOTLIGHT ===== -->
+  <section class="section" id="next-session" style="padding-top: 0; padding-bottom: clamp(24px, 4vh, 48px);">
+    <div class="container" style="max-width: 700px;">
+      <div id="spotlight-card" class="schedule-card reveal delay-1" style="display: none;">
+        <div class="schedule-date" id="spotlight-date"></div>
+        <div class="schedule-info">
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 600;">Next Taste Test</span>
+          <a id="spotlight-name" class="schedule-name" target="_blank" rel="noopener noreferrer"></a>
+          <span class="schedule-title" id="spotlight-title"></span>
+          <span class="schedule-topic" id="spotlight-topic"></span>
+        </div>
+        <div class="speaker-avatar" id="spotlight-avatar" aria-hidden="true"></div>
+      </div>
+      <p class="schedule-note reveal delay-1" style="margin-top: var(--space-md);">
+        <a href="schedule.html">See full schedule &rarr;</a>
+      </p>
+    </div>
+  </section>
+
   <!-- ===== WHAT IS AI KITCHEN? ===== -->
   <section class="section section--alt" id="what">
     <div class="container">
@@ -281,9 +300,14 @@
             <a href="http://scuhci.com/" target="_blank" rel="noopener noreferrer">Human-Computer Interaction (HCI) Lab</a>
             is a research lab (by application only) focused on human-computer
             interaction. Prof. Kai Lukoff leads both, but AI Kitchen involves
-            faculty from across departments. Ideas and projects that emerge in
-            AI Kitchen may grow into HCI Lab research projects, projects in other
-            labs across campus, or entrepreneurial and social impact ventures.
+            faculty from across departments.
+            AI Kitchen also addresses a practical challenge: the HCI Lab receives
+            over 500 applications from interested students but can only accept a
+            very limited number. AI Kitchen is an open space where any student can
+            show up and start exploring AI workflows and incubating project ideas.
+            Projects that emerge here may grow into research projects in any
+            faculty lab involved with AI Kitchen, or into entrepreneurial and
+            social impact ventures.
           </p>
         </details>
 
@@ -449,6 +473,41 @@
     }, { threshold: 0.15 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+  <!-- ===== Next Taste Test Spotlight ===== -->
+  <script>
+    (function() {
+      var sessions = [
+        { date: '2026-04-24', label: 'Apr 24', name: 'Sherrie Cao', title: 'AI Engineer, Electronic Arts \u00b7 CMU', topic: 'Build Your Own Wordle Game: Prototyping with AI Agents', url: 'https://www.linkedin.com/in/sherriecao/', photo: 'speakers/sherrie-cao.jpeg' },
+        { date: '2026-05-01', label: 'May 1', name: 'Luis Sarmenta', title: 'Software Engineer \u00b7 MIT PhD EECS', topic: 'How to Think Like an Engineer (Building a Game with AI)', url: 'https://www.linkedin.com/in/ACoAAAKXFzwByxtFT4agESe5Vbpyk1T6nGMkkbw', photo: 'speakers/luis-sarmenta.jpeg' },
+        { date: '2026-05-08', label: 'May 8', name: 'Cameron Behar', title: 'CTO & Co-founder, Sprinter Health', topic: 'Ralph Loops for Travel Planning', url: 'https://www.linkedin.com/in/cameron-behar/', photo: 'speakers/cameron-behar.jpeg' },
+        { date: '2026-05-15', label: 'May 15', name: 'Neo Zhang', title: 'Founder, Argn', topic: 'AI Workflows for Real-World Conversations', url: 'https://www.linkedin.com/in/neozhang/', photo: 'speakers/neo-zhang.jpeg' },
+        { date: '2026-05-22', label: 'May 22', name: 'Prof. Sanjiv Das', title: 'Professor of Finance, Santa Clara University', topic: 'AI + Finance with Jupyter Notebooks', url: 'https://www.linkedin.com/in/sanjivd/', photo: 'speakers/sanjiv-das.jpeg' },
+        { date: '2026-05-29', label: 'May 29', name: 'Xiaohan Liu', title: 'Autonomy Systems Engineer, DiDi Global', topic: 'OpenClaw for Work', url: 'https://www.linkedin.com/in/xiaohan-liu-5b3914110/', photo: 'speakers/xiaohan-liu.jpeg' }
+      ];
+
+      var today = new Date();
+      today.setHours(0, 0, 0, 0);
+      var next = null;
+      for (var i = 0; i < sessions.length; i++) {
+        var sessionDate = new Date(sessions[i].date + 'T23:59:59');
+        if (sessionDate >= today) { next = sessions[i]; break; }
+      }
+
+      if (!next) return;
+
+      var card = document.getElementById('spotlight-card');
+      card.style.display = '';
+      document.getElementById('spotlight-date').textContent = next.label;
+      var nameEl = document.getElementById('spotlight-name');
+      nameEl.textContent = next.name;
+      nameEl.href = next.url;
+      document.getElementById('spotlight-title').textContent = next.title;
+      document.getElementById('spotlight-topic').textContent = next.topic;
+      var avatar = document.getElementById('spotlight-avatar');
+      avatar.style.backgroundImage = "url('" + next.photo + "')";
+    })();
   </script>
 
 </body>
