@@ -706,6 +706,29 @@ img {
   text-decoration: none;
 }
 
+.schedule-card--featured {
+  border-left-color: var(--coral);
+  background: linear-gradient(135deg, var(--bg-page), var(--coral-light));
+  box-shadow: var(--shadow-card);
+}
+
+.schedule-card--featured .schedule-date {
+  color: var(--coral);
+}
+
+.schedule-card--featured .schedule-name {
+  color: var(--coral);
+  font-weight: 700;
+}
+
+.schedule-card--featured .speaker-avatar {
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--coral-light);
+}
+
 @media (max-width: 480px) {
   .schedule-card {
     flex-direction: column;
