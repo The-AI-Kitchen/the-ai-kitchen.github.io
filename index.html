@@ -70,7 +70,7 @@
         <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="cta-button" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
       </div>
 
-      <p class="hero-launch">Launch: Friday, April 24</p>
+      <p class="hero-launch" data-expires="2026-04-24">Launch: Friday, April 24</p>
     </div>
   </section>
 
@@ -450,8 +450,12 @@
     <div class="container">
       <h2 class="section-heading reveal">Get Involved</h2>
       <span class="section-accent reveal delay-1" aria-hidden="true"></span>
-      <p class="cta-sub reveal delay-1">
+      <p class="cta-sub reveal delay-1" data-expires="2026-04-24">
         Our first Taste Test is Friday, April 24, 1:00–5:30 p.m.<br>
+        Lucas 306, Santa Clara University. 🍽️
+      </p>
+      <p class="cta-sub reveal delay-1" data-visible-from="2026-04-25" style="display: none;">
+        Taste Tests every Friday, 1:00–5:30 p.m.<br>
         Lucas 306, Santa Clara University. 🍽️
       </p>
       <div class="reveal delay-2">
@@ -484,6 +488,24 @@
   </footer>
 
   </main>
+
+  <!-- ===== Date-based visibility ===== -->
+  <!-- Elements with data-expires="YYYY-MM-DD" hide after that day passes.
+       Elements with data-visible-from="YYYY-MM-DD" stay hidden until that day. -->
+  <script>
+    (function() {
+      var today = new Date();
+      today.setHours(0, 0, 0, 0);
+      document.querySelectorAll('[data-expires]').forEach(function(el) {
+        var exp = new Date(el.getAttribute('data-expires') + 'T23:59:59');
+        if (exp < today) el.style.display = 'none';
+      });
+      document.querySelectorAll('[data-visible-from]').forEach(function(el) {
+        var from = new Date(el.getAttribute('data-visible-from') + 'T00:00:00');
+        if (from <= today) el.style.display = '';
+      });
+    })();
+  </script>
 
   <!-- ===== Scroll Reveal Script ===== -->
   <script>
