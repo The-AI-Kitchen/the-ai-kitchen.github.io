@@ -93,6 +93,15 @@
     </div>
   </section>
 
+  <!-- ===== LATEST NEWS ===== -->
+  <section class="section" id="news" style="padding-top: clamp(24px, 4vh, 48px); padding-bottom: clamp(24px, 4vh, 48px); display: none;">
+    <div class="container" style="max-width: 700px;">
+      <h2 class="section-heading reveal">Latest <em>News</em></h2>
+      <span class="section-accent reveal delay-1" aria-hidden="true"></span>
+      <ul class="news-list" id="news-list"></ul>
+    </div>
+  </section>
+
   <!-- ===== WHAT IS AI KITCHEN? ===== -->
   <section class="section" id="what">
     <div class="container">
@@ -558,6 +567,45 @@
       document.getElementById('spotlight-topic').textContent = next.topic;
       var avatar = document.getElementById('spotlight-avatar');
       avatar.style.backgroundImage = "url('" + next.photo + "')";
+    })();
+  </script>
+
+  <!-- ===== Latest News ===== -->
+  <script src="news.js"></script>
+  <script>
+    (function() {
+      var list = document.getElementById('news-list');
+      var section = document.getElementById('news');
+      if (!list || !section) return;
+      var items = window.AI_KITCHEN_NEWS || [];
+
+      var today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      var visible = items.filter(function(n) {
+        if (!n.expires) return true;
+        var exp = new Date(n.expires + 'T23:59:59');
+        return exp >= today;
+      }).sort(function(a, b) {
+        return new Date(b.date) - new Date(a.date);
+      });
+
+      if (visible.length === 0) return; // section stays hidden
+
+      function esc(s) { return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+      function fmtDate(s) {
+        var d = new Date(s + 'T12:00:00');
+        return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      }
+
+      list.innerHTML = visible.map(function(n) {
+        return '<li class="news-item reveal">' +
+          '<div class="news-date">' + esc(fmtDate(n.date)) + '</div>' +
+          '<div class="news-headline">' + esc(n.headline) + '</div>' +
+          '<div class="news-body">' + esc(n.body) + '</div>' +
+        '</li>';
+      }).join('');
+      section.style.display = '';
     })();
   </script>
 
