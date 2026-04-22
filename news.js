@@ -12,6 +12,6 @@ window.AI_KITCHEN_NEWS = [
   {
     date: '2026-04-20',
     headline: 'Funded by the Regents Experiential Learning Initiative',
-    body: 'We\'re grateful to the <a href="https://www.scu.edu/aboutscu/leadership/board-of-regents/regents-experiential-learning-initiative-reli/" target="_blank" rel="noopener noreferrer">Regents Experiential Learning Initiative (RELI)</a> for the support that makes this program possible.'
+    body: 'We\'re grateful to the <a href="https://www.scu.edu/aboutscu/leadership/board-of-regents/regents-experiential-learning-initiative-reli/" target="_blank" rel="noopener noreferrer">Regents Experiential Learning Initiative (RELI)</a> for the support that makes this program possible. We\'re also excited to welcome SCU Regents as mentors and guest speakers in the kitchen!'
   }
 ];
