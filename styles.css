@@ -823,6 +823,46 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-md);
+  scroll-margin-top: 80px;
+}
+
+.faq-question > span {
+  flex: 1;
+}
+
+.faq-link {
+  color: rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1rem;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 150ms var(--ease-out), color 150ms var(--ease-out);
+  padding: 0 4px;
+}
+
+.faq-item:hover .faq-link,
+.faq-link:focus-visible {
+  opacity: 1;
+}
+
+.faq-link:hover {
+  color: var(--coral);
+}
+
+.faq-link.copied {
+  opacity: 1;
+  color: var(--mint);
+}
+
+.faq-link.copied::after {
+  content: ' copied';
+  font-size: 0.75rem;
+}
+
+/* On touch devices, always show the link since there's no hover. */
+@media (hover: none) {
+  .faq-link { opacity: 0.4; }
 }
 
 .faq-question::-webkit-details-marker {
