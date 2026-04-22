@@ -840,6 +840,17 @@ img {
   line-height: 1.65;
 }
 
+.news-body a {
+  color: var(--coral);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(196, 136, 74, 0.4);
+}
+
+.news-body a:hover {
+  text-decoration-color: var(--coral);
+}
+
 .faq-item {
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-sm);

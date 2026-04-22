@@ -507,19 +507,6 @@
     })();
   </script>
 
-  <!-- ===== Scroll Reveal Script ===== -->
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
-
   <!-- ===== FAQ Deep-Linking ===== -->
   <script>
     (function() {
@@ -621,14 +608,29 @@
       }
 
       list.innerHTML = visible.map(function(n) {
+        // body is allowed to contain HTML (e.g., links) since news.js is
+        // an author-controlled file. Headline and date are still escaped.
         return '<li class="news-item reveal">' +
           '<div class="news-date">' + esc(fmtDate(n.date)) + '</div>' +
           '<div class="news-headline">' + esc(n.headline) + '</div>' +
-          '<div class="news-body">' + esc(n.body) + '</div>' +
+          '<div class="news-body">' + (n.body || '') + '</div>' +
         '</li>';
       }).join('');
       section.style.display = '';
     })();
+  </script>
+
+  <!-- ===== Scroll Reveal Script (runs last so it picks up dynamic content) ===== -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 
 </body>
