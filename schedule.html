@@ -47,77 +47,7 @@
         Fridays, 1:00&ndash;5:30 p.m. &middot; Lucas 306, Santa Clara University &middot; Demo at 2:30
       </p>
 
-      <div class="schedule-grid">
-        <div class="schedule-card reveal delay-1">
-          <div class="schedule-date">Apr 24</div>
-          <div class="schedule-info">
-            <a href="https://kailukoff.com/" class="schedule-name" target="_blank" rel="noopener noreferrer">Kai Lukoff</a>
-            <span class="schedule-title">Professor of Human-Computer Interaction, Santa Clara University</span>
-            <span class="schedule-topic">Slide Deck Recipes with Claude Design</span>
-          </div>
-          <div class="speaker-avatar" style="background-image: url('speakers/kai-lukoff.jpeg');" aria-hidden="true">KL</div>
-        </div>
-
-        <div class="schedule-card reveal delay-1">
-          <div class="schedule-date">May 1</div>
-          <div class="schedule-info">
-            <a href="https://www.linkedin.com/in/ACoAAAKXFzwByxtFT4agESe5Vbpyk1T6nGMkkbw" class="schedule-name" target="_blank" rel="noopener noreferrer">Luis Sarmenta</a>
-            <span class="schedule-title">Software Engineer &middot; MIT PhD EECS</span>
-            <span class="schedule-topic">How to Think Like an Engineer (Building a Game with AI)</span>
-          </div>
-          <div class="speaker-avatar" style="background-image: url('speakers/luis-sarmenta.jpeg');" aria-hidden="true">LS</div>
-        </div>
-
-        <div class="schedule-card reveal delay-2">
-          <div class="schedule-date">May 8</div>
-          <div class="schedule-info">
-            <a href="https://www.linkedin.com/in/cameron-behar/" class="schedule-name" target="_blank" rel="noopener noreferrer">Cameron Behar</a>
-            <span class="schedule-title">CTO &amp; Co-founder, Sprinter Health</span>
-            <span class="schedule-topic">Ralph Loops for Travel Planning</span>
-          </div>
-          <div class="speaker-avatar" style="background-image: url('speakers/cameron-behar.jpeg');" aria-hidden="true">CB</div>
-        </div>
-
-        <div class="schedule-card reveal delay-2">
-          <div class="schedule-date">May 15</div>
-          <div class="schedule-info">
-            <a href="https://www.linkedin.com/in/neozhang/" class="schedule-name" target="_blank" rel="noopener noreferrer">Neo Zhang</a>
-            <span class="schedule-title">Founder, Argn</span>
-            <span class="schedule-topic">AI Workflows for Real-World Conversations</span>
-          </div>
-          <div class="speaker-avatar" style="background-image: url('speakers/neo-zhang.jpeg');" aria-hidden="true">NZ</div>
-        </div>
-
-        <div class="schedule-card reveal delay-2">
-          <div class="schedule-date">May 22</div>
-          <div class="schedule-info">
-            <a href="https://www.linkedin.com/in/sanjivd/" class="schedule-name" target="_blank" rel="noopener noreferrer">Sanjiv Das</a>
-            <span class="schedule-title">Professor of Finance, Santa Clara University</span>
-            <span class="schedule-topic">AI + Finance with Jupyter Notebooks</span>
-          </div>
-          <div class="speaker-avatar" style="background-image: url('speakers/sanjiv-das.jpeg');" aria-hidden="true">SD</div>
-        </div>
-
-        <div class="schedule-card reveal delay-3">
-          <div class="schedule-date">May 29</div>
-          <div class="schedule-info">
-            <a href="https://www.linkedin.com/in/xiaohan-liu-5b3914110/" class="schedule-name" target="_blank" rel="noopener noreferrer">Xiaohan Liu</a>
-            <span class="schedule-title">Autonomy Systems Engineer, DiDi Global</span>
-            <span class="schedule-topic">OpenClaw for Work</span>
-          </div>
-          <div class="speaker-avatar" style="background-image: url('speakers/xiaohan-liu.jpeg');" aria-hidden="true">XL</div>
-        </div>
-
-        <div class="schedule-card schedule-card--featured reveal delay-3">
-          <div class="schedule-date">Jun 5</div>
-          <div class="schedule-info">
-            <span class="schedule-name" style="text-decoration: none; pointer-events: none;">AI Kitchen Demo Night</span>
-            <span class="schedule-title">5:30&ndash;7:30 p.m. &middot; Open to the public</span>
-            <span class="schedule-topic">Students from across SCU showcase their AI projects. Gallery-style demos, lightning pitches, and food.</span>
-          </div>
-          <div class="speaker-avatar" style="text-indent: 0; font-size: 2rem; background-color: var(--coral-light);" aria-hidden="true">&#x1F373;</div>
-        </div>
-      </div>
+      <div class="schedule-grid" id="schedule-grid"></div>
     </div>
   </section>
 
@@ -152,6 +82,42 @@
       </p>
     </div>
   </footer>
+
+  <!-- ===== Schedule data (single source of truth, shared with index.html) ===== -->
+  <script src="sessions.js"></script>
+
+  <!-- ===== Render schedule cards from sessions.js ===== -->
+  <script>
+    (function() {
+      var grid = document.getElementById('schedule-grid');
+      var sessions = window.AI_KITCHEN_SESSIONS || [];
+      function esc(s) { return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+      var html = sessions.map(function(s, i) {
+        var delay = 'delay-' + Math.min(3, Math.floor(i / 2) + 1);
+        if (s.featured) {
+          return '<div class="schedule-card schedule-card--featured reveal ' + delay + '">' +
+            '<div class="schedule-date">' + esc(s.label) + '</div>' +
+            '<div class="schedule-info">' +
+              '<span class="schedule-name" style="text-decoration: none; pointer-events: none;">' + esc(s.name) + '</span>' +
+              '<span class="schedule-title">' + esc(s.title) + '</span>' +
+              '<span class="schedule-topic">' + esc(s.topic) + '</span>' +
+            '</div>' +
+            '<div class="speaker-avatar" style="text-indent: 0; font-size: 2rem; background-color: var(--coral-light);" aria-hidden="true">' + (s.emoji || '') + '</div>' +
+          '</div>';
+        }
+        return '<div class="schedule-card reveal ' + delay + '">' +
+          '<div class="schedule-date">' + esc(s.label) + '</div>' +
+          '<div class="schedule-info">' +
+            '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>' +
+            '<span class="schedule-title">' + esc(s.title) + '</span>' +
+            '<span class="schedule-topic">' + esc(s.topic) + '</span>' +
+          '</div>' +
+          '<div class="speaker-avatar" style="background-image: url(\'' + esc(s.photo) + '\');" aria-hidden="true">' + esc(s.initials || '') + '</div>' +
+        '</div>';
+      }).join('');
+      grid.innerHTML = html;
+    })();
+  </script>
 
   <!-- ===== Scroll Reveal Script ===== -->
   <script>
