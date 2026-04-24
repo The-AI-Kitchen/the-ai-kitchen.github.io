@@ -8,6 +8,7 @@ window.AI_KITCHEN_SESSIONS = [
     name: 'Kai Lukoff',
     title: 'Professor of Human-Computer Interaction, Santa Clara University',
     topic: 'Slide Deck Recipes with Claude Design',
+    topicUrl: 'slide-recipes.html',
     url: 'https://kailukoff.com/',
     photo: 'speakers/kai-lukoff.jpeg',
     initials: 'KL'

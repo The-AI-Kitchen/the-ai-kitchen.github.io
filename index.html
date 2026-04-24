@@ -575,7 +575,17 @@
       nameEl.textContent = next.name;
       nameEl.href = next.url;
       document.getElementById('spotlight-title').textContent = next.title;
-      document.getElementById('spotlight-topic').textContent = next.topic;
+      var topicEl = document.getElementById('spotlight-topic');
+      if (next.topicUrl) {
+        topicEl.innerHTML = '';
+        var a = document.createElement('a');
+        a.href = next.topicUrl;
+        a.className = 'schedule-topic';
+        a.textContent = next.topic + ' \u2192';
+        topicEl.replaceWith(a);
+      } else {
+        topicEl.textContent = next.topic;
+      }
       var avatar = document.getElementById('spotlight-avatar');
       avatar.style.backgroundImage = "url('" + next.photo + "')";
     })();

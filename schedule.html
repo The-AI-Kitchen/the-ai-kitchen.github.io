@@ -105,12 +105,15 @@
             '<div class="speaker-avatar" style="text-indent: 0; font-size: 2rem; background-color: var(--coral-light);" aria-hidden="true">' + (s.emoji || '') + '</div>' +
           '</div>';
         }
+        var topicHtml = s.topicUrl
+          ? '<a href="' + esc(s.topicUrl) + '" class="schedule-topic">' + esc(s.topic) + ' &rarr;</a>'
+          : '<span class="schedule-topic">' + esc(s.topic) + '</span>';
         return '<div class="schedule-card reveal ' + delay + '">' +
           '<div class="schedule-date">' + esc(s.label) + '</div>' +
           '<div class="schedule-info">' +
             '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>' +
             '<span class="schedule-title">' + esc(s.title) + '</span>' +
-            '<span class="schedule-topic">' + esc(s.topic) + '</span>' +
+            topicHtml +
           '</div>' +
           '<div class="speaker-avatar" style="background-image: url(\'' + esc(s.photo) + '\');" aria-hidden="true">' + esc(s.initials || '') + '</div>' +
         '</div>';

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide Deck Recipes with Claude Design — AI Kitchen</title>
+  <meta name="description" content="Session resources for Slide Deck Recipes with Claude Design at AI Kitchen, Santa Clara University.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Slide Deck Recipes with Claude Design — AI Kitchen">
+  <meta property="og:description" content="Materials, exercises, and links for the April 24, 2026 AI Kitchen session on making on-brand decks with AI.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main site styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Session page styles -->
+  <style>
+    .session-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 5vw, 32px);
+    }
+
+    .session-hero {
+      padding-top: clamp(40px, 6vh, 64px);
+      padding-bottom: clamp(20px, 3vh, 32px);
+    }
+
+    .session-hero .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--coral);
+      margin-bottom: 8px;
+    }
+
+    .session-hero h1 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--text-primary);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .session-hero h1 em {
+      font-style: italic;
+      color: var(--coral);
+    }
+
+    .session-hero .session-sub {
+      color: var(--text-secondary);
+      font-size: 1.0625rem;
+      line-height: 1.5;
+      max-width: 700px;
+      margin-bottom: 6px;
+    }
+
+    .session-hero .session-meta {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-top: 8px;
+    }
+
+    /* Section headings */
+    .session-heading {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+
+    .session-heading em { font-style: italic; color: var(--coral); }
+
+    .session-intro {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Downloads grid */
+    .downloads-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .download-card {
+      background: white;
+      border: 1px solid var(--bg-alt);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.18s var(--ease-out), box-shadow 0.18s var(--ease-out);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .download-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-card);
+      text-decoration: none;
+    }
+
+    .download-card .dl-type {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--coral);
+      margin-bottom: 4px;
+    }
+
+    .download-card .dl-title {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .download-card .dl-desc {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .download-card.pending {
+      opacity: 0.6;
+      cursor: default;
+    }
+    .download-card.pending .dl-type { color: var(--text-muted); }
+
+    /* Outline list */
+    .outline {
+      background: white;
+      border: 1px solid var(--bg-alt);
+      border-radius: var(--radius-sm);
+      padding: 10px 6px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .outline-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 14px;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--bg-alt);
+    }
+
+    .outline-item:last-child { border-bottom: none; }
+
+    .outline-time {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.8125rem;
+      color: var(--coral);
+      padding-top: 2px;
+    }
+
+    .outline-body .outline-title {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+    }
+
+    .outline-body .outline-desc {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    /* Exercise boxes */
+    .exercise {
+      background: white;
+      border: 1px solid var(--bg-alt);
+      border-left: 4px solid var(--coral);
+      border-radius: var(--radius-sm);
+      padding: 18px 22px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .exercise.design {
+      border-left-color: var(--lavender);
+    }
+
+    .exercise h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1875rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 4px 0;
+    }
+
+    .exercise .exercise-sub {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    .exercise ol {
+      margin: 0 0 10px 0;
+      padding-left: 22px;
+    }
+
+    .exercise ol li {
+      margin-bottom: 8px;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+
+    .exercise .exercise-note {
+      background: var(--bg-cta);
+      border: 1px solid rgba(196, 136, 74, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      margin-top: 12px;
+    }
+
+    /* Recipes row */
+    .recipes-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .recipe-card {
+      background: var(--mint-light);
+      border-left: 4px solid var(--mint);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+    }
+
+    .recipe-card .recipe-num {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: var(--mint);
+      margin-bottom: 4px;
+    }
+
+    .recipe-card .recipe-title {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .recipe-card .recipe-desc {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Going further list */
+    .further-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .further-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--bg-alt);
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+    }
+
+    .further-list li:last-child { border-bottom: none; }
+
+    .further-list a {
+      color: var(--coral);
+      text-decoration: underline;
+      text-decoration-color: rgba(154, 110, 53, 0.35);
+      text-underline-offset: 2px;
+    }
+
+    .further-list a:hover { text-decoration-color: var(--coral); }
+
+    /* Join row (QR + copy) */
+    .join-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      background: white;
+      border: 1px solid var(--bg-alt);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      box-shadow: var(--shadow-soft);
+      align-items: center;
+    }
+
+    @media (min-width: 640px) {
+      .join-row {
+        grid-template-columns: 1fr 180px;
+      }
+    }
+
+    .join-row .join-text h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+      color: var(--text-primary);
+    }
+
+    .join-row .join-text p {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin: 0 0 8px 0;
+    }
+
+    .join-row img {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      border-radius: var(--radius-sm);
+      margin: 0 auto;
+      display: block;
+    }
+
+    .session-footer-note {
+      margin-top: 36px;
+      padding-top: 16px;
+      border-top: 2px solid var(--bg-alt);
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: clamp(48px, 6vh, 64px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" role="navigation" aria-label="Main">
+    <a href="index.html" class="nav-wordmark" style="text-decoration:none; color:var(--text-primary);">AI Kitchen</a>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="const links=this.nextElementSibling;const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open);">
+      <svg viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-links">
+      <a href="schedule.html" class="nav-link">Schedule</a>
+      <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" class="nav-link" target="_blank" rel="noopener noreferrer">Projects &#8599;</a>
+      <a href="tools.html" class="nav-link">Tools Guide</a>
+      <a href="roles.html" class="nav-link">Leadership Roles</a>
+      <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
+    </div>
+  </nav>
+
+  <main>
+
+  <!-- ===== HERO ===== -->
+  <section class="section session-hero">
+    <div class="session-container">
+      <div class="eyebrow">Apr 24, 2026 · Taste Test</div>
+      <h1><em>Slide Deck Recipes</em> with Claude Design</h1>
+      <p class="session-sub">
+        Take a four-slide source deck and remake it three ways: a baseline AI draft,
+        a Cowork session with a custom SCU skill, and a polished Claude Design output
+        with a full design system. Plus a bonus on combining AI services via API.
+      </p>
+      <p class="session-meta">Presenter: Kai Lukoff · Lucas 306 · 1:00 to 5:30 p.m. · Demo at 2:30</p>
+    </div>
+  </section>
+
+  <!-- ===== DOWNLOADS ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Starter <em>kit</em></h2>
+      <p class="session-intro">
+        Grab these before the exercises. Everything you need to install the skill,
+        convert the sample deck, and experiment with Claude Design on your own.
+      </p>
+
+      <div class="downloads-grid">
+        <a class="download-card" href="slide-recipes/sample-deck-source.pptx" download>
+          <div class="dl-type">.pptx · Source</div>
+          <div class="dl-title">Sample deck (SCU template)</div>
+          <div class="dl-desc">The four-slide AI Kitchen deck in the stock SCU template. Use as the input for both exercises.</div>
+        </a>
+
+        <a class="download-card" href="slide-recipes/demo-output-out-of-box.pptx" download>
+          <div class="dl-type">.pptx · Baseline</div>
+          <div class="dl-title">Claude out of the box</div>
+          <div class="dl-desc">What Claude produces with no brand context: generic, unbranded, fine but forgettable.</div>
+        </a>
+
+        <a class="download-card" href="slide-recipes/demo-output-scu-skill.pptx" download>
+          <div class="dl-type">.pptx · SCU skill</div>
+          <div class="dl-title">Claude Cowork + SCU skill</div>
+          <div class="dl-desc">The same source, on-brand: SCU Red, Bronco Red, Adobe Light, Figtree, Crimson Pro, logos in the right places.</div>
+        </a>
+
+        <div class="download-card pending" aria-label="Coming soon">
+          <div class="dl-type">.zip · Coming soon</div>
+          <div class="dl-title">SCU brand skill</div>
+          <div class="dl-desc">Upload this ZIP to Claude Cowork (Customize &rarr; Skills &rarr; Upload a skill) to reproduce the branded output.</div>
+        </div>
+
+        <div class="download-card pending" aria-label="Coming soon">
+          <div class="dl-type">.md · Coming soon</div>
+          <div class="dl-title">Conversion prompt</div>
+          <div class="dl-desc">A short prompt you can paste into Cowork to convert any deck using the SCU skill.</div>
+        </div>
+
+        <div class="download-card pending" aria-label="Coming soon">
+          <div class="dl-type">.md · Coming soon</div>
+          <div class="dl-title">SCU design tokens</div>
+          <div class="dl-desc">Colors, fonts, and voice notes you can paste into Claude Design to bootstrap a design system.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OUTLINE ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Tutorial <em>outline</em></h2>
+      <p class="session-intro">
+        Four stages, same source content, visibly different outputs. The progression
+        shows what changes when you give Claude more design context.
+      </p>
+
+      <div class="outline">
+        <div class="outline-item">
+          <div class="outline-time">2:30-2:35</div>
+          <div class="outline-body">
+            <div class="outline-title">Open</div>
+            <div class="outline-desc">The problem: consistency at scale across a course, not one pretty slide.</div>
+          </div>
+        </div>
+        <div class="outline-item">
+          <div class="outline-time">2:35-2:48</div>
+          <div class="outline-body">
+            <div class="outline-title">Stage 1 · Baseline</div>
+            <div class="outline-desc">Claude with no brand context. Competent but generic.</div>
+          </div>
+        </div>
+        <div class="outline-item">
+          <div class="outline-time">2:48-3:00</div>
+          <div class="outline-body">
+            <div class="outline-title">Stage 2 · Cowork + SCU skill</div>
+            <div class="outline-desc">Same input, SCU-branded output. The skill is ~200 lines of encoded institutional knowledge.</div>
+          </div>
+        </div>
+        <div class="outline-item">
+          <div class="outline-time">3:00-3:12</div>
+          <div class="outline-body">
+            <div class="outline-title">Stage 3 · Claude Design</div>
+            <div class="outline-desc">A design system, not a skill. Richer visual polish for single decks. Different sweet spot.</div>
+          </div>
+        </div>
+        <div class="outline-item">
+          <div class="outline-time">3:12-3:20</div>
+          <div class="outline-body">
+            <div class="outline-title">Stage 4 · Composability</div>
+            <div class="outline-desc">Claude orchestrating Gemini for palette-matched images. The pattern generalizes to voice, data, and more.</div>
+          </div>
+        </div>
+        <div class="outline-item">
+          <div class="outline-time">3:20-3:30</div>
+          <div class="outline-body">
+            <div class="outline-title">Four recipes &amp; handoff</div>
+            <div class="outline-desc">Summarize the transferable techniques, then move to the hands-on exercises.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RECIPES ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">The four <em>recipes</em></h2>
+      <p class="session-intro">
+        Transferable techniques, tool-agnostic. They work in Cowork, Claude Design,
+        or any AI slide tool you pick up next year.
+      </p>
+
+      <div class="recipes-row">
+        <div class="recipe-card">
+          <div class="recipe-num">Recipe 1</div>
+          <div class="recipe-title">Anchor to a template</div>
+          <div class="recipe-desc">Upload a .pptx or a reference image. Don't describe the template in prose.</div>
+        </div>
+        <div class="recipe-card">
+          <div class="recipe-num">Recipe 2</div>
+          <div class="recipe-title">Specify slide types</div>
+          <div class="recipe-desc">"Title, then two-column, then bullets, then CTA" beats "make slides about X."</div>
+        </div>
+        <div class="recipe-card">
+          <div class="recipe-num">Recipe 3</div>
+          <div class="recipe-title">Provide design tokens</div>
+          <div class="recipe-desc">Hex codes, font names, voice adjectives. Pass the style guide as context, not hope.</div>
+        </div>
+        <div class="recipe-card">
+          <div class="recipe-num">Recipe 4</div>
+          <div class="recipe-title">Iterate at the slide level</div>
+          <div class="recipe-desc">First pass is a draft. Refine one slide at a time with targeted edits.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXERCISES ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Hands-on <em>exercises</em></h2>
+      <p class="session-intro">
+        You'll need a Claude Pro account for both. Both exercises use separate usage
+        buckets, so they won't exhaust your chat limits.
+      </p>
+
+      <!-- Exercise 1 -->
+      <div class="exercise">
+        <h3>Exercise 1: Convert a deck with the SCU skill</h3>
+        <div class="exercise-sub">Target time: 30 min · Uses: Claude Cowork</div>
+        <ol>
+          <li>Open Claude Cowork on your Pro account.</li>
+          <li>Go to <strong>Customize &rarr; Skills &rarr; "+" &rarr; "Upload a skill"</strong>.</li>
+          <li>Upload <code>scu-brand-skill.zip</code> from the starter kit above.</li>
+          <li>Enable the skill (toggle it on).</li>
+          <li>Start a new Cowork session. Upload <code>sample-deck-source.pptx</code>.</li>
+          <li>Paste the conversion prompt (from the starter kit) and run it.</li>
+          <li>Compare the output to the baseline "out of the box" version.</li>
+          <li>Extension: edit one slide's prompt to change the tone or layout. Regenerate just that slide.</li>
+        </ol>
+        <div class="exercise-note">
+          Skill won't install? Check that the ZIP contains a folder with a <code>SKILL.md</code> at the root,
+          not nested inside another folder. Kai is circulating during the exercise if you get stuck.
+        </div>
+      </div>
+
+      <!-- Exercise 2 -->
+      <div class="exercise design">
+        <h3>Exercise 2: Make it your own with Claude Design</h3>
+        <div class="exercise-sub">Target time: 30 min · Uses: Claude Design (separate weekly bucket from chat)</div>
+        <ol>
+          <li>Open <a href="https://claude.ai/design" target="_blank" rel="noopener noreferrer">Claude Design</a> on your Pro account.</li>
+          <li>Set up a quick design system for a brand you invent or pick:
+            your club, a fake coffee shop, an 80s arcade, a zine aesthetic, whatever. Two to three colors, a font vibe, a voice adjective.
+          </li>
+          <li>Use the same four-slide AI Kitchen content as the input.</li>
+          <li>Let Claude Design regenerate the deck in your new identity.</li>
+          <li>Swap screens with a neighbor. Compare.</li>
+          <li>Reflection: same content, same model, very different output. What moved the needle?</li>
+        </ol>
+        <div class="exercise-note">
+          The lesson: content stays constant, design system does the work.
+          Design tokens are modular and swappable. Recipe 3 in the wild.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GOING FURTHER ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Going <em>further</em></h2>
+      <ul class="further-list">
+        <li><a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude" target="_blank" rel="noopener noreferrer">Use skills in Claude</a> · How to create, upload, and manage custom skills on Pro and higher tiers.</li>
+        <li><a href="https://support.claude.com/en/articles/14604416-get-started-with-claude-design" target="_blank" rel="noopener noreferrer">Get started with Claude Design</a> · Official guide to the new design-focused interface.</li>
+        <li><a href="https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design" target="_blank" rel="noopener noreferrer">Set up a design system in Claude Design</a> · How to configure colors, fonts, and voice.</li>
+        <li><a href="https://claude.com/plugins" target="_blank" rel="noopener noreferrer">Plugin directory</a> · Community and Anthropic-built plugins you can install into Cowork.</li>
+        <li><a href="tools.html">AI Tools Guide for SCU Students</a> · Free and education-tier tools across ten categories.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== JOIN ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Stay in the <em>loop</em></h2>
+      <div class="join-row">
+        <div class="join-text">
+          <h3>Join our Discord community</h3>
+          <p>Share what you build, ask questions mid-exercise, or drop feedback on the session.
+          Taste Tests happen every Friday. Slow Roasts run through the quarter.</p>
+          <p><a href="https://discord.gg/uVRj5nHrpZ" target="_blank" rel="noopener noreferrer">discord.gg/uVRj5nHrpZ</a></p>
+        </div>
+        <img src="slide-recipes/discord-qr.png" alt="QR code for AI Kitchen Discord server">
+      </div>
+
+      <p class="session-footer-note">
+        Session led by Kai Lukoff, Professor of Human-Computer Interaction at Santa Clara University.
+        <br>Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>.
+      </p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-wordmark">AI Kitchen</div>
+      <div class="footer-divider" aria-hidden="true"></div>
+      <p>
+        Faculty Lead: <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>
+        Faculty Advisors: <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> and <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a>
+      </p>
+      <p>Santa Clara University</p>
+      <img src="scu-logo.png" alt="Santa Clara University" class="footer-logo">
+      <p>Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
