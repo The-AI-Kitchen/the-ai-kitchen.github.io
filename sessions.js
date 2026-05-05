@@ -28,7 +28,7 @@ window.AI_KITCHEN_SESSIONS = [
     label: 'May 8',
     name: 'Cameron Behar',
     title: 'CTO & Co-founder, Sprinter Health',
-    topic: 'Ralph Loops for Travel Planning',
+    topic: 'Ralph Loops for Meal Planning',
     url: 'https://www.linkedin.com/in/cameron-behar/',
     photo: 'speakers/cameron-behar.jpeg',
     initials: 'CB'
