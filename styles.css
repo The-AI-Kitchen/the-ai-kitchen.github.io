@@ -800,6 +800,25 @@ img {
   gap: var(--space-sm);
 }
 
+/* --- Schedule Subscribe Row --- */
+.schedule-subscribe {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: calc(-1 * var(--space-md));
+  margin-bottom: var(--space-lg);
+}
+
+.schedule-subscribe a {
+  color: var(--coral);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(196, 136, 74, 0.4);
+}
+
+.schedule-subscribe a:hover {
+  text-decoration-color: var(--coral);
+}
+
 /* --- Latest News --- */
 .news-list {
   list-style: none;
