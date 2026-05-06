@@ -6,7 +6,7 @@ window.AI_KITCHEN_NEWS = [
   {
     date: '2026-04-22',
     headline: 'Launching Friday, April 24',
-    body: 'Our first Taste Test kicks off this Friday at 1 p.m. in Lucas 306. Come cook with us!',
+    body: 'Our first Taste Test kicks off this Friday at 1:30 p.m. in Lucas 306. Come cook with us!',
     expires: '2026-04-24'
   },
   {
