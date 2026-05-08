@@ -38,7 +38,7 @@ window.AI_KITCHEN_SESSIONS = [
     date: '2026-05-15',
     label: 'May 15',
     name: 'Neo Zhang',
-    title: 'Founder, Argn',
+    title: 'MSx Candidate, Stanford GSB',
     topic: 'AI Workflows for Real-World Conversations',
     url: 'https://www.linkedin.com/in/neozhang/',
     photo: 'speakers/neo-zhang.jpeg',
