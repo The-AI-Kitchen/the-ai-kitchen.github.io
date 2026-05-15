@@ -40,6 +40,7 @@ window.AI_KITCHEN_SESSIONS = [
     name: 'Neo Zhang',
     title: 'MSx Candidate, Stanford GSB',
     topic: 'AI Workflows for Real-World Conversations',
+    topicUrl: 'conversational-workflows.html',
     url: 'https://www.linkedin.com/in/neozhang/',
     photo: 'speakers/neo-zhang.jpeg',
     initials: 'NZ'

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Workflows for Real-World Conversations — AI Kitchen</title>
+  <meta name="description" content="Session preview for AI Workflows for Real-World Conversations with Neo Zhang at AI Kitchen, Santa Clara University, May 15, 2026.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Workflows for Real-World Conversations — AI Kitchen">
+  <meta property="og:description" content="Neo Zhang (MSx Candidate, Stanford GSB) leads a hands-on session on turning messy conversations into structured data with AI.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main site styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Session page styles -->
+  <style>
+    .session-container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 5vw, 32px);
+    }
+
+    .session-hero {
+      padding-top: clamp(40px, 6vh, 64px);
+      padding-bottom: clamp(20px, 3vh, 32px);
+    }
+
+    .session-hero .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--coral);
+      margin-bottom: 8px;
+    }
+
+    .session-hero h1 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--text-primary);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .session-hero h1 em {
+      font-style: italic;
+      color: var(--coral);
+    }
+
+    .session-hero .session-sub {
+      color: var(--text-secondary);
+      font-size: 1.0625rem;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    .session-hero .session-meta {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-top: 8px;
+    }
+
+    /* Section headings */
+    .session-heading {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+
+    .session-heading em { font-style: italic; color: var(--coral); }
+
+    .session-prose p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.65;
+      margin: 0 0 14px;
+    }
+
+    .session-prose p:last-child { margin-bottom: 0; }
+
+    /* Resource callout */
+    .resource-card {
+      background: white;
+      border: 1px solid var(--bg-alt);
+      border-left: 4px solid var(--coral);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-soft);
+      padding: 18px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .resource-card .resource-icon {
+      font-size: 1.75rem;
+      flex-shrink: 0;
+    }
+
+    .resource-card h3 {
+      margin: 0 0 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .resource-card p {
+      margin: 0 0 8px;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .resource-card a.resource-link {
+      font-size: 0.875rem;
+      color: var(--coral);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: rgba(154, 110, 53, 0.4);
+      font-weight: 600;
+    }
+
+    .resource-card a.resource-link:hover {
+      text-decoration-color: var(--coral);
+    }
+
+    /* Details list with emoji bullets */
+    .details-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background: white;
+      border: 1px solid var(--bg-alt);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .details-list li {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--bg-alt);
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+    }
+
+    .details-list li:last-child { border-bottom: none; }
+
+    .details-list .emoji {
+      font-size: 1.125rem;
+      flex-shrink: 0;
+      width: 1.5em;
+    }
+
+    .details-list a {
+      color: var(--coral);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: rgba(154, 110, 53, 0.35);
+    }
+
+    .details-list a:hover { text-decoration-color: var(--coral); }
+
+    .session-footer-note {
+      color: var(--text-muted);
+      font-size: 0.8125rem;
+      margin-top: 40px;
+      margin-bottom: clamp(48px, 6vh, 64px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" role="navigation" aria-label="Main">
+    <a href="index.html" class="nav-wordmark" style="text-decoration:none; color:var(--text-primary);">AI Kitchen</a>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="const links=this.nextElementSibling;const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open);">
+      <svg viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-links">
+      <a href="schedule.html" class="nav-link">Schedule</a>
+      <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" class="nav-link" target="_blank" rel="noopener noreferrer">Projects &#8599;</a>
+      <a href="tools.html" class="nav-link">Tools Guide</a>
+      <a href="roles.html" class="nav-link">Leadership Roles</a>
+      <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
+    </div>
+  </nav>
+
+  <main>
+
+  <!-- ===== HERO ===== -->
+  <section class="section session-hero">
+    <div class="session-container">
+      <div class="eyebrow">May 15, 2026 &middot; Taste Test</div>
+      <h1>AI Workflows for <em>Real-World Conversations</em></h1>
+      <p class="session-sub">Featuring Neo Zhang, MSx Candidate at Stanford GSB and former COO of Zhihu.</p>
+      <p class="session-meta">Lucas 306 &middot; 1:30 to 5:00 p.m. &middot; Live tutorial at 2:30</p>
+    </div>
+  </section>
+
+  <!-- ===== WHAT WE'LL DO ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">What we'll <em>cook</em></h2>
+      <div class="session-prose">
+        <p>Conversations are everywhere in real-world work: user interviews, support transcripts, sales calls, focus groups. They are also messy. This Friday Neo will walk us through a hands-on workflow for turning unstructured conversations into structured data you can analyze, search, and act on, using AI as the connective tissue.</p>
+        <p>Bring a laptop. Beginners are welcome. The exercise is designed to be approachable for any major.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STUDENT PACKET ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Student <em>packet</em></h2>
+      <div class="resource-card">
+        <div class="resource-icon" aria-hidden="true">&#x1F4DD;</div>
+        <div>
+          <h3>From Messy Conversations to Structured Data</h3>
+          <p>The exercise packet for the session. Open it before the tutorial so you can follow along.</p>
+          <a class="resource-link" href="https://docs.google.com/document/d/1hRqhXLJDUgMyMn-RsmddZfYyIZKDX1NmfeuJ_LirCko/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Open the packet &#8599;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT THE GUEST ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">About our <em>guest</em></h2>
+      <div class="session-prose">
+        <p><a href="https://www.linkedin.com/in/neozhang/" target="_blank" rel="noopener noreferrer">Neo Zhang</a> is an MSx Candidate at the Stanford Graduate School of Business and formerly served as COO of Zhihu, one of the largest knowledge-sharing platforms in China. He brings deep operational experience in scaling AI-powered consumer products and is currently exploring how AI workflows can change the way teams turn conversations into insight.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DETAILS ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Session <em>details</em></h2>
+      <ul class="details-list">
+        <li><span class="emoji" aria-hidden="true">&#x1F4C5;</span><span>Friday, May 15 &middot; 1:30 to 5:00 p.m. &middot; Lucas 306, SCU</span></li>
+        <li><span class="emoji" aria-hidden="true">&#x1F37D;</span><span>Live tutorial at 2:30 p.m.</span></li>
+        <li><span class="emoji" aria-hidden="true">&#x1F3AF;</span><span>Open to all majors and the public. <a href="https://docs.google.com/document/d/1qsWxNDirolQ1LuWghgS8LEmo8W7AvN865fsCNxk3_4Q/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Directions to Lucas 306</a>.</span></li>
+        <li><span class="emoji" aria-hidden="true">&#x1F4DD;</span><span><a href="https://docs.google.com/document/d/1hRqhXLJDUgMyMn-RsmddZfYyIZKDX1NmfeuJ_LirCko/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Student packet: From Messy Conversations to Structured Data</a></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== SESSION FOOTER ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <p class="session-footer-note">
+        Session hosted by AI Kitchen at Santa Clara University.
+        <br>Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>.
+      </p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-wordmark">AI Kitchen</div>
+      <div class="footer-divider" aria-hidden="true"></div>
+      <p>
+        Faculty Lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>
+        Faculty Advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> &amp; Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a>
+      </p>
+      <p>
+        Santa Clara University
+      </p>
+      <img src="scu-logo.png" alt="Santa Clara University" class="footer-logo">
+      <p>
+        Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===== Scroll Reveal Script ===== -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
