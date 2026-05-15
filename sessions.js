@@ -48,22 +48,22 @@ window.AI_KITCHEN_SESSIONS = [
   {
     date: '2026-05-22',
     label: 'May 22',
+    name: 'Zachary Schendel',
+    title: 'Sr. Director, Head of Research, DoorDash',
+    topic: 'Portfolio Review: Cooking Up a Mixed-Methods UXR Case Study',
+    url: 'https://www.linkedin.com/in/zacharyschendel/',
+    photo: 'speakers/zachary-schendel.jpeg',
+    initials: 'ZS'
+  },
+  {
+    date: '2026-05-29',
+    label: 'May 29',
     name: 'Sanjiv Das',
     title: 'Professor of Finance, Santa Clara University',
     topic: 'AI + Finance with Jupyter Notebooks',
     url: 'https://www.linkedin.com/in/sanjivd/',
     photo: 'speakers/sanjiv-das.jpeg',
     initials: 'SD'
-  },
-  {
-    date: '2026-05-29',
-    label: 'May 29',
-    name: 'Xiaohan Liu',
-    title: 'Autonomy Systems Engineer, DiDi Global',
-    topic: 'OpenClaw for Work',
-    url: 'https://www.linkedin.com/in/xiaohan-liu-5b3914110/',
-    photo: 'speakers/xiaohan-liu.jpeg',
-    initials: 'XL'
   },
   {
     date: '2026-06-05',
