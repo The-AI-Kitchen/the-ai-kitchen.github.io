@@ -50,7 +50,7 @@ window.AI_KITCHEN_SESSIONS = [
     label: 'May 22',
     name: 'Zachary Schendel',
     title: 'User Research, Gemini at Google',
-    topic: 'Portfolio Review: Cooking Up a Mixed-Methods UXR Case Study',
+    topic: 'From Reviews to Insights: AI-Assisted UX Research',
     topicUrl: 'reviews-to-insights.html',
     url: 'https://www.linkedin.com/in/zacharyschendel/',
     photo: 'speakers/zachary-schendel.jpeg',
