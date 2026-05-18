@@ -11,7 +11,8 @@ window.AI_KITCHEN_SESSIONS = [
     topicUrl: 'slide-recipes.html',
     url: 'https://kailukoff.com/',
     photo: 'speakers/kai-lukoff.jpeg',
-    initials: 'KL'
+    initials: 'KL',
+    tools: ['Claude Pro', 'Claude Design']
   },
   {
     date: '2026-05-01',
@@ -32,7 +33,8 @@ window.AI_KITCHEN_SESSIONS = [
     topicUrl: 'ralph-loops-movies.html',
     url: 'https://www.linkedin.com/in/cameron-behar/',
     photo: 'speakers/cameron-behar.jpeg',
-    initials: 'CB'
+    initials: 'CB',
+    tools: ['Cursor', 'Claude']
   },
   {
     date: '2026-05-15',
@@ -43,7 +45,8 @@ window.AI_KITCHEN_SESSIONS = [
     topicUrl: 'conversational-workflows.html',
     url: 'https://www.linkedin.com/in/neozhang/',
     photo: 'speakers/neo-zhang.jpeg',
-    initials: 'NZ'
+    initials: 'NZ',
+    tools: ['Gemini', 'AI Studio']
   },
   {
     date: '2026-05-22',
@@ -54,7 +57,8 @@ window.AI_KITCHEN_SESSIONS = [
     topicUrl: 'reviews-to-insights.html',
     url: 'https://www.linkedin.com/in/zacharyschendel/',
     photo: 'speakers/zachary-schendel.jpeg',
-    initials: 'ZS'
+    initials: 'ZS',
+    tools: ['Cursor Pro']
   },
   {
     date: '2026-05-29',

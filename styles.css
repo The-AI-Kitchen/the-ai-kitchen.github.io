@@ -658,6 +658,22 @@ img {
   margin-top: 2px;
 }
 
+.schedule-tools {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}
+
+.schedule-tools-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.6875rem;
+  color: var(--coral);
+  margin-right: 4px;
+}
+
 .schedule-note {
   font-size: 0.9375rem;
   color: var(--text-muted);
