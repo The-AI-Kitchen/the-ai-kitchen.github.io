@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Reviews to Insights — AI Kitchen</title>
+  <meta name="description" content="Session resources for From Reviews to Insights: AI-Assisted UX Research at AI Kitchen, Santa Clara University.">
+
+  <meta property="og:title" content="From Reviews to Insights — AI Kitchen">
+  <meta property="og:description" content="Materials, exercises, and links for the May 22, 2026 AI Kitchen session on AI-assisted UX research.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2615;</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Local fallback variables so the page is previewable without styles.css.
+       Kai's site styles.css will override these when this page is deployed
+       under theaikitchen.org/. */
+    :root {
+      --coral: #c4884a;
+      --mint: #4f9b8a;
+      --mint-light: #ecf5f2;
+      --lavender: #8a7fb8;
+      --text-primary: #2a2118;
+      --text-secondary: #58504a;
+      --text-muted: #8b837d;
+      --bg-alt: #efe9e0;
+      --bg-cta: #faf3e8;
+      --radius-sm: 8px;
+      --shadow-soft: 0 1px 2px rgba(40, 32, 24, 0.06);
+      --shadow-card: 0 4px 14px rgba(40, 32, 24, 0.10);
+      --ease-out: cubic-bezier(.2,.7,.2,1);
+    }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: #fbf7f0;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.5;
+    }
+    a { color: var(--coral); }
+    .section { padding: 24px 0; }
+
+    /* ----- Session-specific styles, copied from slide-recipes.html ----- */
+    .session-container { max-width: 960px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 32px); }
+    .session-hero { padding-top: clamp(40px, 6vh, 64px); padding-bottom: clamp(20px, 3vh, 32px); }
+    .session-hero .eyebrow {
+      font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1.5px; color: var(--coral); margin-bottom: 8px;
+    }
+    .session-hero h1 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem); color: var(--text-primary);
+      line-height: 1.1; margin-bottom: 12px;
+    }
+    .session-hero h1 em { font-style: italic; color: var(--coral); }
+    .session-hero .session-sub {
+      color: var(--text-secondary); font-size: 1.0625rem; line-height: 1.5;
+      max-width: 720px; margin-bottom: 6px;
+    }
+    .session-hero .session-meta { color: var(--text-muted); font-size: 0.875rem; margin-top: 8px; }
+
+    .session-heading {
+      font-family: 'Bodoni Moda', Georgia, serif; font-size: 1.5rem;
+      color: var(--text-primary); margin-top: 48px; margin-bottom: 16px;
+    }
+    .session-heading em { font-style: italic; color: var(--coral); }
+    .session-intro { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 20px; }
+
+    .downloads-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-bottom: 12px; }
+    .download-card {
+      background: white; border: 1px solid var(--bg-alt); border-radius: var(--radius-sm);
+      padding: 14px 16px; box-shadow: var(--shadow-soft);
+      transition: transform 0.18s var(--ease-out), box-shadow 0.18s var(--ease-out);
+      text-decoration: none; color: inherit; display: block;
+    }
+    .download-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-card); text-decoration: none; }
+    .download-card .dl-type {
+      font-family: 'DM Sans', sans-serif; font-size: 0.6875rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px; color: var(--coral); margin-bottom: 4px;
+    }
+    .download-card .dl-title {
+      font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.9375rem;
+      color: var(--text-primary); margin-bottom: 4px; line-height: 1.3;
+    }
+    .download-card .dl-desc { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.45; }
+    .download-card.pending { opacity: 0.6; cursor: default; }
+    .download-card.pending .dl-type { color: var(--text-muted); }
+
+    .outline {
+      background: white; border: 1px solid var(--bg-alt); border-radius: var(--radius-sm);
+      padding: 10px 6px; box-shadow: var(--shadow-soft);
+    }
+    .outline-item {
+      display: grid; grid-template-columns: 90px 1fr; gap: 14px;
+      padding: 10px 14px; border-bottom: 1px solid var(--bg-alt);
+    }
+    .outline-item:last-child { border-bottom: none; }
+    .outline-time { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.8125rem; color: var(--coral); padding-top: 2px; }
+    .outline-body .outline-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.9375rem; color: var(--text-primary); margin-bottom: 3px; }
+    .outline-body .outline-desc { color: var(--text-secondary); font-size: 0.875rem; line-height: 1.5; }
+
+    .exercise {
+      background: white; border: 1px solid var(--bg-alt); border-left: 4px solid var(--coral);
+      border-radius: var(--radius-sm); padding: 18px 22px; margin-bottom: 20px; box-shadow: var(--shadow-soft);
+    }
+    .exercise.codebook { border-left-color: var(--mint); }
+    .exercise.charts { border-left-color: var(--lavender); }
+    .exercise.memo { border-left-color: var(--coral); }
+    .exercise h3 { font-family: 'DM Sans', sans-serif; font-size: 1.1875rem; font-weight: 700; color: var(--text-primary); margin: 0 0 4px 0; }
+    .exercise .exercise-sub { font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 14px; font-style: italic; }
+    .exercise ol { margin: 0 0 10px 0; padding-left: 22px; }
+    .exercise ol li { margin-bottom: 8px; font-size: 0.9375rem; line-height: 1.55; color: var(--text-secondary); }
+    .exercise .exercise-note {
+      background: var(--bg-cta); border: 1px solid rgba(196, 136, 74, 0.25); border-radius: var(--radius-sm);
+      padding: 10px 14px; font-size: 0.8125rem; color: var(--text-secondary); margin-top: 12px;
+    }
+
+    .recipes-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .recipe-card { background: var(--mint-light); border-left: 4px solid var(--mint); border-radius: var(--radius-sm); padding: 12px 16px; }
+    .recipe-card .recipe-num { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.75rem; color: var(--mint); margin-bottom: 4px; }
+    .recipe-card .recipe-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.9375rem; color: var(--text-primary); margin-bottom: 6px; }
+    .recipe-card .recipe-desc { font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5; }
+
+    .further-list { list-style: none; padding: 0; margin: 0; }
+    .further-list li { padding: 10px 0; border-bottom: 1px solid var(--bg-alt); font-size: 0.9375rem; color: var(--text-secondary); }
+    .further-list li:last-child { border-bottom: none; }
+    .further-list a { color: var(--coral); text-decoration: underline; text-decoration-color: rgba(154, 110, 53, 0.35); text-underline-offset: 2px; }
+    .further-list a:hover { text-decoration-color: var(--coral); }
+
+    .session-footer-note {
+      margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--bg-alt);
+      color: var(--text-muted); font-size: 13px; margin-bottom: clamp(48px, 6vh, 64px);
+    }
+
+    .goals-list {
+      list-style: none; padding: 0; margin: 0;
+      background: white; border: 1px solid var(--bg-alt); border-radius: var(--radius-sm); box-shadow: var(--shadow-soft);
+    }
+    .goals-list li {
+      padding: 12px 18px; border-bottom: 1px solid var(--bg-alt);
+      font-size: 0.9375rem; line-height: 1.55; color: var(--text-secondary);
+      display: grid; grid-template-columns: 16px 1fr; gap: 12px; align-items: start;
+    }
+    .goals-list li:last-child { border-bottom: none; }
+    .goals-list li::before { content: "—"; color: var(--coral); font-weight: 700; line-height: 1.55; }
+
+    .media-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    @media (min-width: 820px) { .media-grid { grid-template-columns: 1fr 1fr; } }
+    .media-card { background: white; border: 1px solid var(--bg-alt); border-radius: var(--radius-sm); padding: 16px; box-shadow: var(--shadow-soft); display: flex; flex-direction: column; }
+    .media-card h3 { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-primary); margin: 0 0 10px 0; }
+    .media-embed { position: relative; width: 100%; padding-top: 56.25%; background: var(--bg-alt); border-radius: var(--radius-sm); overflow: hidden; }
+    .media-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .media-embed .pending-text { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; color: var(--text-muted); font-size: 0.9375rem; line-height: 1.5; }
+    .media-card .media-link { display: inline-block; margin-top: 10px; font-size: 0.8125rem; color: var(--coral); text-decoration: underline; text-decoration-color: rgba(154, 110, 53, 0.35); text-underline-offset: 2px; }
+  </style>
+</head>
+<body>
+
+  <main>
+
+  <!-- ===== HERO ===== -->
+  <section class="section session-hero">
+    <div class="session-container">
+      <div class="eyebrow">May 22, 2026 · Taste Test</div>
+      <h1>From <em>Reviews to Insights</em>: AI-Assisted UX Research</h1>
+      <p class="session-sub">
+        Take 2,000 real Starbucks reviews from the Yelp Open Dataset and produce
+        a portfolio-grade artifact: an interactive insight dashboard with
+        quote-grounded findings, plus a one-page memo. Then defend your work
+        live in an executive Q&amp;A.
+      </p>
+      <p class="session-meta">Presenter: Zach Schendel (User Research, Gemini at Google) · Lucas 306 · 1:30 to 5:00 p.m. · Tutorial at 2:30</p>
+    </div>
+  </section>
+
+  <!-- ===== LEARNING GOALS ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Learning <em>goals</em></h2>
+      <p class="session-intro">By the end of the session, you should be able to:</p>
+      <ul class="goals-list">
+        <li><span>Frame any consumer dataset around an executive's business question first, not the data you happen to have.</span></li>
+        <li><span>Build a thematic codebook with definitions, examples, and the business question each theme answers — and use AI to apply it without hallucinating.</span></li>
+        <li><span>Ground every insight in a verbatim customer quote so a skeptical exec can trace it back to source.</span></li>
+        <li><span>Vibe-code an interactive dashboard with Cursor that you can re-query live to answer questions you didn't anticipate.</span></li>
+        <li><span>Apply the four recipes (business question, codebook, citations, dashboard) to any qual+quant dataset you encounter next.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== DOWNLOADS ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Starter <em>kit</em></h2>
+      <p class="session-intro">
+        Grab these before the exercise. The starter template runs on localhost
+        out of the box; you'll extend it with Cursor Pro during the hands-on block.
+      </p>
+
+      <div class="downloads-grid">
+        <a class="download-card" href="reviews-to-insights/starter-template.zip" download>
+          <div class="dl-type">.zip · Starter template</div>
+          <div class="dl-title">Vite + React + recharts dashboard</div>
+          <div class="dl-desc">One working chart, the rest is TODOs. Runs on localhost with <code>npm install &amp;&amp; npm run dev</code>. You build the rest.</div>
+        </a>
+
+        <a class="download-card" href="reviews-to-insights/starbucks_reviews_coded.csv" download>
+          <div class="dl-type">.csv · Data</div>
+          <div class="dl-title">2,000 coded Starbucks reviews</div>
+          <div class="dl-desc">Stratified sample from the Yelp Open Dataset. Already thematically coded against the starter codebook with verbatim quotes.</div>
+        </a>
+
+        <a class="download-card" href="reviews-to-insights/starbucks_codebook.json" download>
+          <div class="dl-type">.json · Codebook</div>
+          <div class="dl-title">10-theme starter codebook</div>
+          <div class="dl-desc">Each theme has an id, definition, examples, and the business question it answers. Extend it during the exercise.</div>
+        </a>
+
+        <a class="download-card" href="reviews-to-insights/example-dashboard.zip" download>
+          <div class="dl-type">.zip · Reference</div>
+          <div class="dl-title">Example dashboard (finished)</div>
+          <div class="dl-desc">What "done" looks like: four charts, filter panel, quote list, Cursor agent hint. Use as a target, not a copy.</div>
+        </a>
+
+        <a class="download-card" href="reviews-to-insights/four-recipes.pdf" download>
+          <div class="dl-type">.pdf · Handout</div>
+          <div class="dl-title">Four recipes one-pager</div>
+          <div class="dl-desc">The transferable principles. Print it and stick it above your desk for your next project.</div>
+        </a>
+
+        <a class="download-card" href="reviews-to-insights/insight-memo-template.md" download>
+          <div class="dl-type">.md · Template</div>
+          <div class="dl-title">One-page insight memo</div>
+          <div class="dl-desc">Three findings, three quotes, three "so whats". The format every PM and VP actually reads.</div>
+        </a>
+
+        <a class="download-card" href="reviews-to-insights/starter-prompts.md" download>
+          <div class="dl-type">.md · Prompts</div>
+          <div class="dl-title">Copy-paste starter prompts</div>
+          <div class="dl-desc">Codebook extension, chart generation, insight grounding, and live exec Q&amp;A queries — pre-written for Cursor and Claude.</div>
+        </a>
+
+        <a class="download-card" href="reviews-to-insights/exec-questions-bank.md" download>
+          <div class="dl-type">.md · Q&amp;A bank</div>
+          <div class="dl-title">15 plausible exec questions</div>
+          <div class="dl-desc">The kind a Starbucks VP would actually ask. Practice with these before the live Q&amp;A rehearsal at 4:10.</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OUTLINE ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Tutorial <em>outline</em></h2>
+      <p class="session-intro">
+        Two hours, six blocks, one artifact. The session moves quickly: ~30 min of
+        tutorial, 50 min of hands-on, 15 min of live Q&amp;A rehearsal, and a
+        portfolio-takeaway wrap.
+      </p>
+
+      <div class="outline">
+        <div class="outline-item">
+          <div class="outline-time">2:30-2:35</div>
+          <div class="outline-body">
+            <div class="outline-title">Welcome + frame</div>
+            <div class="outline-desc">Why "AI fluency" in research means more than running a chatbot. The artifact you're walking out with.</div>
+          </div>
+        </div>
+        <div class="outline-item">
+          <div class="outline-time">2:35-2:50</div>
+          <div class="outline-body">
+            <div class="outline-title">Industry preview</div>
+            <div class="outline-desc">My team's real version — what the workflow looks like at scale on real product data — to set the ceiling.</div>
+          </div>
+        </div>
+        <div class="outline-item">
+          <div class="outline-time">2:50-3:20</div>
+          <div class="outline-body">
+            <div class="outline-title">Live tutorial: Starbucks end-to-end</div>
+            <div class="outline-desc">Business question → codebook → thematic coding with verbatim citations → dashboard → quote-grounded insight. The four recipes surface as we go.</div>
+          </div>
+        </div>
+        <div class="outline-item">
+          <div class="outline-time">3:20-4:10</div>
+          <div class="outline-body">
+            <div class="outline-title">Hands-on build (50 min)</div>
+            <div class="outline-desc">Four tasks in the starter template: write exec questions, extend the codebook, add two charts, build the quote panel and draft a memo.</div>
+          </div>
+        </div>
+        <div class="outline-item">
+          <div class="outline-time">4:10-4:25</div>
+          <div class="outline-body">
+            <div class="outline-title">Live exec Q&amp;A rehearsal</div>
+            <div class="outline-desc">Three volunteers defend their dashboards live. Audience plays VP of Customer Experience, Director of Stores, and a skeptical CFO.</div>
+          </div>
+        </div>
+        <div class="outline-item">
+          <div class="outline-time">4:25-4:30</div>
+          <div class="outline-body">
+            <div class="outline-title">Wrap + portfolio takeaway</div>
+            <div class="outline-desc">How to put this in a portfolio (and what hiring managers will look for). One thing to try this week.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RECIPES ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">The four <em>recipes</em></h2>
+      <p class="session-intro">
+        Transferable techniques, tool-agnostic. They work whether you're using
+        Cursor, Claude, ChatGPT, or whatever ships next quarter. Each one shows
+        up explicitly in the dashboard and the exercise.
+      </p>
+
+      <div class="recipes-row">
+        <div class="recipe-card">
+          <div class="recipe-num">Recipe 1</div>
+          <div class="recipe-title">Start from the business question</div>
+          <div class="recipe-desc">Not the data. "What's hurting drive-thru speed?" is a research project. A spreadsheet is a spreadsheet.</div>
+        </div>
+        <div class="recipe-card">
+          <div class="recipe-num">Recipe 2</div>
+          <div class="recipe-title">Codebook, not vibes</div>
+          <div class="recipe-desc">Themes get definitions, examples, and the question they answer — before you let AI touch the data. This is what makes qual countable.</div>
+        </div>
+        <div class="recipe-card">
+          <div class="recipe-num">Recipe 3</div>
+          <div class="recipe-title">Cite or it didn't happen</div>
+          <div class="recipe-desc">Every theme assignment carries a verbatim quote. A local verifier drops any AI output where the quote isn't in the source. No anecdotes, no hallucinations.</div>
+        </div>
+        <div class="recipe-card">
+          <div class="recipe-num">Recipe 4</div>
+          <div class="recipe-title">The dashboard is a question machine</div>
+          <div class="recipe-desc">Don't ship a static report. Ship a tool where an exec can ask a new question and you have an answer in 60 seconds — with the supporting quote.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXERCISE ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Hands-on <em>exercise</em></h2>
+      <p class="session-intro">
+        Four tasks in 50 minutes inside the starter template. You'll need Cursor
+        Pro and Claude Pro open. All prompts you'll need are pre-written in
+        <code>materials/starter-prompts.md</code>.
+      </p>
+
+      <div class="exercise">
+        <h3>Task 1 · Write three exec questions</h3>
+        <div class="exercise-sub">Target time: 5 min · Recipe 1 in the wild</div>
+        <ol>
+          <li>Pick a Starbucks exec persona: VP of Customer Experience, Director of Stores Operations, or CFO.</li>
+          <li>Write three questions that exec would actually ask before a quarterly review. Be specific. "How are we doing?" doesn't count.</li>
+          <li>Drop them into <code>App.tsx</code> &rarr; <code>QuestionStrip</code>. Every chart you add later has to answer one of these.</li>
+        </ol>
+      </div>
+
+      <div class="exercise codebook">
+        <h3>Task 2 · Extend the codebook</h3>
+        <div class="exercise-sub">Target time: 10 min · Recipe 2 in the wild</div>
+        <ol>
+          <li>Open the codebook (<code>public/starbucks_codebook.json</code>) and scan the 10 starter themes.</li>
+          <li>Open Claude or Cursor and paste the "extend the codebook" prompt from <code>starter-prompts.md</code>. Drop in ~20 reviews as raw context.</li>
+          <li>Add 2-3 new themes that are clearly present in the data but missing from the starter. Each new theme needs an id, name, definition, two examples, and the business question it answers.</li>
+          <li>(Stretch) Re-code a subset of reviews against your extended codebook using <code>scripts/02_run_thematic_coding.py</code>.</li>
+        </ol>
+        <div class="exercise-note">
+          Resist the urge to invent themes that "should" be there. Only add a theme if you can find at least three reviews that clearly support it. Conservative coding builds executive trust.
+        </div>
+      </div>
+
+      <div class="exercise charts">
+        <h3>Task 3 · Add two more charts</h3>
+        <div class="exercise-sub">Target time: 25 min · Recipe 4 in the wild</div>
+        <ol>
+          <li>The starter template has one working chart (theme frequency) and three TODO slots.</li>
+          <li>Pick two of: stars-by-theme stacked bar, theme-by-city grouped bar, top complaints in 1-2 star reviews, or invent your own.</li>
+          <li>Use Cursor agent mode. Paste the "add a chart" prompt from <code>starter-prompts.md</code> and let Cursor scaffold the component. Then iterate.</li>
+          <li>Each chart must answer one of the exec questions you wrote in Task 1. Label it explicitly on the chart card.</li>
+        </ol>
+      </div>
+
+      <div class="exercise memo">
+        <h3>Task 4 · Quote panel + memo</h3>
+        <div class="exercise-sub">Target time: 10 min · Recipe 3 in the wild</div>
+        <ol>
+          <li>Wire up the quote panel: clicking a theme bar (or a row in your stacked chart) should filter the quote list to verbatim spans for that theme.</li>
+          <li>Open <code>materials/insight-memo-template.md</code> and fill in the three findings. Each finding gets a "what we see" sentence, the supporting quote, and a "so what" recommendation.</li>
+          <li>Save the memo next to your dashboard URL. Together they are the portfolio artifact.</li>
+        </ol>
+        <div class="exercise-note">
+          Three volunteers will defend their dashboards live in the 4:10 exec Q&amp;A rehearsal. Zach plays three exec personas: VP of Customer Experience, VP of Operations, VP of Research. The questions are in <code>exec-questions-bank.md</code> — but the questions you'll actually get are the ones you didn't plan for. That's the test.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GOING FURTHER ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Going <em>further</em></h2>
+      <ul class="further-list">
+        <li><a href="https://www.yelp.com/dataset" target="_blank" rel="noopener noreferrer">Yelp Open Dataset</a> · 7M+ reviews across business categories. Swap in Chipotle, Trader Joe's, or your local chain — the workflow is identical.</li>
+        <li><a href="https://docs.cursor.com/welcome" target="_blank" rel="noopener noreferrer">Cursor documentation</a> · Especially agent mode, which is what made the live re-query in the dashboard demo possible.</li>
+        <li><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener noreferrer">Anthropic prompt engineering guide</a> · The system prompt patterns we used for thematic coding generalize to any classification task.</li>
+        <li><a href="https://github.com/The-AI-Kitchen/patterns-lite-demo" target="_blank" rel="noopener noreferrer">Patterns Lite (Kai's demo)</a> · A larger multi-agent version of the same idea: lens subagents, a verifier, and a synthesis pass. Worth running end-to-end after the session.</li>
+        <li><a href="https://www.nngroup.com/articles/thematic-analysis/" target="_blank" rel="noopener noreferrer">Thematic analysis primer (NN/g)</a> · If "codebook" was a new word, start here. The AI-assisted version layers on top of the same fundamentals.</li>
+        <li><a href="tools.html">AI Tools Guide for SCU Students</a> · Free and education-tier tools across ten categories.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== SESSION FOOTER ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <p class="session-footer-note">
+        Session led by Zach Schendel, User Research on the Gemini team at Google and adjunct faculty at Santa Clara University.
+        <br>Host: <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a> · <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>.
+      </p>
+    </div>
+  </section>
+
+  </main>
+
+</body>
+</html>

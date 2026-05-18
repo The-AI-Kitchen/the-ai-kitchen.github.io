@@ -1,0 +1,119 @@
+{
+  "name": "Starbucks Yelp Review Starter Codebook",
+  "version": "0.1",
+  "intent": "A starter taxonomy for thematic analysis of Starbucks customer reviews. Students extend it as part of the exercise; this is deliberately not the 'final' codebook.",
+  "instructions_for_coder": "Apply a theme only when the review contains a specific sentence or phrase that supports it. Be conservative: a review can map to zero, one, or several themes. For each applied theme, capture the verbatim quote span (max ~25 words). Do not invent themes outside this list.",
+  "themes": [
+    {
+      "id": "mobile_app_order",
+      "name": "Mobile App & Mobile Order",
+      "definition": "Experience using the Starbucks app to order ahead, pay, or earn rewards. Includes bugs, ordering flow, in-store pickup handoff, and app-driven loyalty interactions.",
+      "examples": [
+        "ordered on the app and it wasn't ready when I got there",
+        "the app crashed at checkout",
+        "love that I can order ahead and just walk in"
+      ],
+      "business_question": "Where does our digital ordering experience break down, and how does it affect store-level satisfaction?"
+    },
+    {
+      "id": "speed_wait_time",
+      "name": "Speed & Wait Time",
+      "definition": "Customer perception of how fast they were served, including line length, time-to-drink, and any delays. Does NOT include drive-thru-specific speed (see drive_thru).",
+      "examples": [
+        "took 20 minutes for a drip coffee",
+        "line was out the door but moved fast",
+        "way too slow during the morning rush"
+      ],
+      "business_question": "Where are throughput bottlenecks hurting the customer experience, and at what time of day?"
+    },
+    {
+      "id": "drink_quality",
+      "name": "Drink Quality & Customization",
+      "definition": "How the beverage was made: taste, temperature, consistency with what was ordered, handling of customizations, and recipe execution. Includes complaints like 'made wrong' and praise for getting it right.",
+      "examples": [
+        "my latte tasted burnt",
+        "they nailed my half-caf oat milk request",
+        "the cold brew was watered down"
+      ],
+      "business_question": "Are baristas executing the menu consistently, and which drinks have the most quality variance?"
+    },
+    {
+      "id": "food_quality",
+      "name": "Food Quality",
+      "definition": "Quality of pastries, sandwiches, and other food items. Includes freshness, temperature, portion size, and whether food matches what's pictured or described.",
+      "examples": [
+        "the breakfast sandwich was ice cold in the middle",
+        "the banana bread is always fresh",
+        "no croissants left at 9am"
+      ],
+      "business_question": "Is our food program holding up its end of the ticket, and which items underdeliver?"
+    },
+    {
+      "id": "barista_service",
+      "name": "Barista Service & Friendliness",
+      "definition": "Interpersonal experience with staff: warmth, attentiveness, rudeness, personal recognition (name on cup, regulars), recommendations, and recovery when something goes wrong.",
+      "examples": [
+        "the barista remembered my name and my usual",
+        "completely ignored when I walked in",
+        "they were so patient with my picky order"
+      ],
+      "business_question": "Where is the partner experience translating (or failing to translate) into the customer experience?"
+    },
+    {
+      "id": "cleanliness",
+      "name": "Cleanliness & Maintenance",
+      "definition": "State of the store: tables, floors, bathrooms, condiment bar, exterior, and visible upkeep. Includes maintenance issues like broken equipment or dirty signage.",
+      "examples": [
+        "tables were covered in old cups",
+        "bathroom was disgusting",
+        "always spotless when I come in"
+      ],
+      "business_question": "Which locations are slipping on operational hygiene standards, and is it correlated with rating drops?"
+    },
+    {
+      "id": "atmosphere_workspace",
+      "name": "Atmosphere & Workspace",
+      "definition": "The 'third place' experience: ambiance, music, seating, lighting, comfort for hanging out or working (wifi, outlets, noise level, table availability). Excludes cleanliness (see cleanliness).",
+      "examples": [
+        "great place to get work done, lots of outlets",
+        "music was way too loud",
+        "no seats anywhere at 2pm on a Saturday"
+      ],
+      "business_question": "Is the 'third place' promise still landing, and where are we losing café-as-workspace customers?"
+    },
+    {
+      "id": "pricing_value",
+      "name": "Pricing & Value",
+      "definition": "Customer perception of cost relative to what they got. Includes outright price complaints, comparisons to competitors, and 'worth it' / 'not worth it' framings.",
+      "examples": [
+        "$7 for a small latte is highway robbery",
+        "worth every penny",
+        "Dunkin gives you twice as much for half the price"
+      ],
+      "business_question": "Where are we crossing customer price-sensitivity thresholds, and is the value perception eroding?"
+    },
+    {
+      "id": "rewards_loyalty",
+      "name": "Rewards & Loyalty Program",
+      "definition": "Anything related to Starbucks Rewards, Stars, free drinks, BOGO promotions, or membership perks. Includes confusion or frustration with the program mechanics.",
+      "examples": [
+        "used my birthday reward and the barista didn't know how to ring it up",
+        "love saving up Stars for free drinks",
+        "they changed the rewards program and now it's worthless"
+      ],
+      "business_question": "Is the rewards program driving loyalty and what's friction in redemption?"
+    },
+    {
+      "id": "drive_thru",
+      "name": "Drive-Thru Experience",
+      "definition": "Drive-thru-specific experience: speaker clarity, line length, window handoff, order accuracy through the drive-thru channel. Mark only when the customer is clearly using the drive-thru.",
+      "examples": [
+        "drive thru line wrapped around the building",
+        "they handed me the wrong drink at the window",
+        "fastest drive thru in town"
+      ],
+      "business_question": "Is the drive-thru channel meeting its speed-of-service targets, and where is order accuracy slipping?"
+    }
+  ],
+  "extension_prompt": "Students: this codebook is intentionally incomplete. Read 20-30 reviews from your assigned city, find at least one theme that's present in the data but missing from this list, and propose it. Good candidates often emerge around: parking & accessibility, hours of operation, specific menu launches, holiday cups & seasonal items, kid-friendliness, or competitor comparisons."
+}

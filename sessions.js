@@ -51,6 +51,7 @@ window.AI_KITCHEN_SESSIONS = [
     name: 'Zachary Schendel',
     title: 'Sr. Director, Head of Research, DoorDash',
     topic: 'Portfolio Review: Cooking Up a Mixed-Methods UXR Case Study',
+    topicUrl: 'reviews-to-insights.html',
     url: 'https://www.linkedin.com/in/zacharyschendel/',
     photo: 'speakers/zachary-schendel.jpeg',
     initials: 'ZS'
