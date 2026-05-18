@@ -49,7 +49,7 @@ window.AI_KITCHEN_SESSIONS = [
     date: '2026-05-22',
     label: 'May 22',
     name: 'Zachary Schendel',
-    title: 'Sr. Director, Head of Research, DoorDash',
+    title: 'User Research, Gemini at Google',
     topic: 'Portfolio Review: Cooking Up a Mixed-Methods UXR Case Study',
     topicUrl: 'reviews-to-insights.html',
     url: 'https://www.linkedin.com/in/zacharyschendel/',
