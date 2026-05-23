@@ -89,3 +89,33 @@ window.AI_KITCHEN_SESSIONS = [
     emoji: '\uD83C\uDF73'
   }
 ];
+
+// Summer Test Kitchen sessions — smaller, workshop-style format.
+window.AI_KITCHEN_SUMMER_SESSIONS = [
+  {
+    date: '2026-06-18',
+    label: 'Jun 18',
+    name: 'Xiaohan Liu',
+    title: 'Autonomy Systems Engineer, DiDi Global',
+    topic: 'OpenClaw for Work',
+    url: 'https://www.linkedin.com/in/xiaohan-liu-5b3914110/',
+    photo: 'speakers/xiaohan-liu.jpeg',
+    initials: 'XL'
+  },
+  {
+    date: '2026-06-25',
+    label: 'Jun 25',
+    name: 'Speaker TBD',
+    title: '',
+    topic: '',
+    tbd: true
+  },
+  {
+    date: '2026-07-02',
+    label: 'Jul 2',
+    name: 'Speaker TBD',
+    title: '',
+    topic: '',
+    tbd: true
+  }
+];
