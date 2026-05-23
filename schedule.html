@@ -122,12 +122,16 @@
         return '<div class="schedule-card reveal ' + delay + '">' +
           '<div class="schedule-date">' + esc(s.label) + '</div>' +
           '<div class="schedule-info">' +
-            '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>' +
-            '<span class="schedule-title">' + esc(s.title) + '</span>' +
+            '<span class="schedule-name">' +
+              '<a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>' +
+              (s.copresenter ? ' &amp; <a href="' + esc(s.copresenter.url) + '" target="_blank" rel="noopener noreferrer">' + esc(s.copresenter.name) + '</a>' : '') +
+            '</span>' +
+            '<span class="schedule-title">' + esc(s.title) + (s.copresenter ? ' · ' + esc(s.copresenter.title) : '') + '</span>' +
             topicHtml +
             toolsHtml +
           '</div>' +
           '<div class="speaker-avatar" style="background-image: url(\'' + esc(s.photo) + '\');" aria-hidden="true">' + esc(s.initials || '') + '</div>' +
+          (s.copresenter ? '<div class="speaker-avatar" style="background-image: url(\'' + esc(s.copresenter.photo) + '\'); margin-left: -12px;" aria-hidden="true">' + esc(s.copresenter.initials || '') + '</div>' : '') +
         '</div>';
       }).join('');
       grid.innerHTML = html;

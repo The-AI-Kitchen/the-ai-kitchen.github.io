@@ -4,6 +4,60 @@ Copy-paste prompts for the hands-on exercise. Use them as written, or steal from
 
 ---
 
+## Prompt 0. Critique my three exec questions
+
+**Use in**: Claude.ai or Cursor (Ask mode)
+**When**: you drafted your three questions in `src/App.tsx` and want pressure-testing before you build charts against them
+
+```
+I'm playing the role of a User Researcher at Starbucks corporate. I have to
+write three questions that a Starbucks VP would actually pay me to answer
+using 2,000 Yelp reviews. Here are my drafts:
+
+1. <paste your first question>
+2. <paste your second question>
+3. <paste your third question>
+
+Critique each one as if you were the VP. For each:
+
+- Is the question specific enough that a chart could answer it? Or is it too
+  vague to know when I've answered it?
+- Is it about a real Starbucks decision someone could act on this quarter, or
+  is it a curiosity?
+- If the question is weak, rewrite it to be stronger. Keep the same topic.
+
+End with: which of the three questions is the strongest, and why.
+```
+
+---
+
+## Prompt 1a. Find candidate themes the starter codebook misses
+
+**Use in**: Cursor agent mode in the project (it needs file access)
+**When**: Task 2, step 1 — before you draft a new theme, identify a real gap in the existing codebook
+
+```
+Open `public/starbucks_reviews_coded.csv`. Filter to 1-star and 2-star
+reviews. Read the `text` column for 30 of them, picked at random across
+cities. The existing codebook has these 10 themes:
+
+mobile_app_order, speed_wait_time, drink_quality, barista_service,
+atmosphere_workspace, drive_thru, cleanliness, food_quality, pricing_value,
+rewards_loyalty.
+
+Tell me the top 3 recurring complaints from these 30 reviews that are NOT
+already covered by those 10 themes. For each candidate:
+
+- A short name for the theme (5 words or fewer).
+- A one-sentence description of what it captures.
+- 3 verbatim example phrases pulled from the reviews you read.
+
+Be conservative. If a complaint is already covered by an existing theme, do
+not list it as a candidate — say so and move on.
+```
+
+---
+
 ## Prompt 1. Extend the starter codebook
 
 **Use in**: Claude.ai or Cursor (Ask mode)

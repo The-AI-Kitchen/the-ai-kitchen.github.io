@@ -55,7 +55,7 @@ window.AI_KITCHEN_SESSIONS = [
     title: 'User Research, Gemini at Google',
     topic: 'From Reviews to Insights: AI-Assisted UX Research',
     topicUrl: 'reviews-to-insights.html',
-    url: 'https://www.linkedin.com/in/zacharyschendel/',
+    url: 'https://www.linkedin.com/in/zachary-schendel-38353157/',
     photo: 'speakers/zachary-schendel.jpeg',
     initials: 'ZS',
     tools: ['Cursor Pro']
@@ -65,10 +65,19 @@ window.AI_KITCHEN_SESSIONS = [
     label: 'May 29',
     name: 'Sanjiv Das',
     title: 'Professor of Finance, Santa Clara University',
-    topic: 'AI + Finance with Jupyter Notebooks',
+    topic: 'Jupyter AI for Research',
+    topicUrl: 'jupyter-ai-research.html',
     url: 'https://www.linkedin.com/in/sanjivd/',
     photo: 'speakers/sanjiv-das.jpeg',
-    initials: 'SD'
+    initials: 'SD',
+    copresenter: {
+      name: 'David Qiu',
+      title: 'Lead Maintainer, Jupyter AI',
+      url: 'https://www.linkedin.com/in/dlq/',
+      photo: 'speakers/david-qiu.jpeg',
+      initials: 'DQ'
+    },
+    tools: ['Jupyter AI']
   },
   {
     date: '2026-06-05',

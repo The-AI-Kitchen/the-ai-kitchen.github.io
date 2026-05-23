@@ -244,7 +244,7 @@
         <a class="download-card" href="reviews-to-insights/starter-prompts.md" download>
           <div class="dl-type">.md · Prompts</div>
           <div class="dl-title">Copy-paste starter prompts</div>
-          <div class="dl-desc">Codebook extension, chart generation, insight grounding, and live exec Q&amp;A queries — pre-written for Cursor and Claude.</div>
+          <div class="dl-desc">Eight prompts: exec-question critique, codebook gap finder, codebook extension, chart generation, insight grounding, stress-test, and live exec Q&amp;A queries — pre-written for Cursor and Claude.</div>
         </a>
 
         <a class="download-card" href="reviews-to-insights/exec-questions-bank.md" download>
@@ -365,6 +365,7 @@
           <li>Pick a Starbucks exec persona: VP of Customer Experience, Director of Stores Operations, or CFO.</li>
           <li>Write three questions that exec would actually ask before a quarterly review. Be specific. "How are we doing?" doesn't count.</li>
           <li>Drop them into <code>App.tsx</code> &rarr; <code>QuestionStrip</code>. Every chart you add later has to answer one of these.</li>
+          <li>Use the "Critique my three exec questions" prompt (Prompt 0 in <code>starter-prompts.md</code>) to pressure-test your questions before you build charts against them.</li>
         </ol>
       </div>
 
@@ -373,7 +374,8 @@
         <div class="exercise-sub">Target time: 10 min · Recipe 2 in the wild</div>
         <ol>
           <li>Open the codebook (<code>public/starbucks_codebook.json</code>) and scan the 10 starter themes.</li>
-          <li>Open Claude or Cursor and paste the "extend the codebook" prompt from <code>starter-prompts.md</code>. Drop in ~20 reviews as raw context.</li>
+          <li>Use the "Find candidate themes" prompt (Prompt 1a in <code>starter-prompts.md</code>) to have Cursor scan the coded CSV and surface gaps in the starter codebook.</li>
+          <li>Open Claude or Cursor and paste the "Extend the starter codebook" prompt (Prompt 1) from <code>starter-prompts.md</code>. Drop in ~20 reviews as raw context.</li>
           <li>Add 2-3 new themes that are clearly present in the data but missing from the starter. Each new theme needs an id, name, definition, two examples, and the business question it answers.</li>
           <li>(Stretch) Re-code a subset of reviews against your extended codebook using <code>scripts/02_run_thematic_coding.py</code>.</li>
         </ol>
