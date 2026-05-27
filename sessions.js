@@ -72,7 +72,7 @@ window.AI_KITCHEN_SESSIONS = [
     initials: 'SD',
     copresenter: {
       name: 'David Qiu',
-      title: 'Lead Maintainer, Jupyter AI',
+      title: 'Creator & Lead Maintainer, Jupyter AI',
       url: 'https://www.linkedin.com/in/dlq/',
       photo: 'speakers/david-qiu.jpeg',
       initials: 'DQ'
