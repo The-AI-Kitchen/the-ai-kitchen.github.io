@@ -645,6 +645,15 @@ img {
   color: var(--coral);
 }
 
+/* Wrapper for two co-presenters: keeps both name links on one line with an
+   unlinked "&" between them. */
+.schedule-names {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 .schedule-title {
   font-size: clamp(0.8125rem, 1.2vw, 0.9375rem);
   color: var(--text-muted);

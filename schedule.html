@@ -128,8 +128,13 @@
         return '<div class="schedule-card reveal ' + delay + '">' +
           '<div class="schedule-date">' + esc(s.label) + '</div>' +
           '<div class="schedule-info">' +
-            '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>' +
-            (s.copresenter ? '<a href="' + esc(s.copresenter.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">&amp; ' + esc(s.copresenter.name) + '</a>' : '') +
+            (s.copresenter
+              ? '<span class="schedule-names">' +
+                  '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>' +
+                  ' &amp; ' +
+                  '<a href="' + esc(s.copresenter.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.copresenter.name) + '</a>' +
+                '</span>'
+              : '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>') +
             '<span class="schedule-title">' + esc(s.title) + (s.copresenter ? ' · ' + esc(s.copresenter.title) : '') + '</span>' +
             topicHtml +
             toolsHtml +
@@ -167,8 +172,13 @@
         return '<div class="schedule-card reveal ' + delay + '">' +
           '<div class="schedule-date">' + esc(s.label) + '</div>' +
           '<div class="schedule-info">' +
-            '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>' +
-            (s.copresenter ? '<a href="' + esc(s.copresenter.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">&amp; ' + esc(s.copresenter.name) + '</a>' : '') +
+            (s.copresenter
+              ? '<span class="schedule-names">' +
+                  '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>' +
+                  ' &amp; ' +
+                  '<a href="' + esc(s.copresenter.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.copresenter.name) + '</a>' +
+                '</span>'
+              : '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>') +
             '<span class="schedule-title">' + esc(s.title) + (s.copresenter ? ' · ' + esc(s.copresenter.title) : '') + '</span>' +
             topicHtml +
             toolsHtml +

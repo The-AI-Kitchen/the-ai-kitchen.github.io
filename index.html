@@ -572,24 +572,28 @@
       card.style.display = '';
       document.getElementById('spotlight-date').textContent = next.label;
       var nameEl = document.getElementById('spotlight-name');
-      nameEl.href = next.url;
       if (next.copresenter) {
-        nameEl.textContent = '';
+        var wrap = document.createElement('span');
+        wrap.className = 'schedule-names';
         var a1 = document.createElement('a');
+        a1.className = 'schedule-name';
         a1.href = next.url;
         a1.target = '_blank';
         a1.rel = 'noopener noreferrer';
         a1.textContent = next.name;
         var a2 = document.createElement('a');
+        a2.className = 'schedule-name';
         a2.href = next.copresenter.url;
         a2.target = '_blank';
         a2.rel = 'noopener noreferrer';
         a2.textContent = next.copresenter.name;
-        nameEl.appendChild(a1);
-        nameEl.appendChild(document.createTextNode(' & '));
-        nameEl.appendChild(a2);
+        wrap.appendChild(a1);
+        wrap.appendChild(document.createTextNode(' & '));
+        wrap.appendChild(a2);
+        nameEl.replaceWith(wrap);
         document.getElementById('spotlight-title').textContent = next.title + ' · ' + next.copresenter.title;
       } else {
+        nameEl.href = next.url;
         nameEl.textContent = next.name;
         document.getElementById('spotlight-title').textContent = next.title;
       }
