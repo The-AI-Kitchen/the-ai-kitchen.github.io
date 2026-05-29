@@ -121,6 +121,29 @@
       margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--bg-alt);
       color: var(--text-muted); font-size: 13px; margin-bottom: clamp(48px, 6vh, 64px);
     }
+
+    /* Claude Code setup steps */
+    .cc-step { margin-bottom: 18px; }
+    .cc-step h3 {
+      font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700;
+      color: var(--text-primary); margin: 0 0 6px 0;
+    }
+    .cc-step p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.55; margin: 0 0 8px 0; }
+    pre.cmd {
+      background: var(--text-primary); color: #f3ece1; border-radius: var(--radius-sm);
+      padding: 12px 14px; margin: 0; overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.8125rem; line-height: 1.6;
+    }
+    pre.cmd .cmt { color: #b9a78f; }
+    .cc-step code, .cc-note code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.8125rem; background: var(--bg-alt); padding: 1px 5px; border-radius: 4px;
+    }
+    .cc-note {
+      background: var(--bg-cta); border: 1px solid rgba(196, 136, 74, 0.25); border-radius: var(--radius-sm);
+      padding: 10px 14px; font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.55; margin-top: 14px;
+    }
   </style>
 </head>
 <body>
@@ -223,6 +246,51 @@
         <li><a href="https://www.linkedin.com/in/dlq/" target="_blank" rel="noopener noreferrer">David Qiu on LinkedIn</a> &middot; Senior Engineer at AWS and creator and lead maintainer of Jupyter AI.</li>
         <li><a href="https://jupyter-ai.readthedocs.io/en/v3/" target="_blank" rel="noopener noreferrer">Jupyter AI docs</a> &middot; Getting started guide, model provider setup, and the chat and magic commands reference.</li>
       </ul>
+    </div>
+  </section>
+
+  <!-- ===== CLAUDE CODE ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Run it with <em>Claude Code</em></h2>
+      <p class="session-intro">
+        A minimal local setup: Jupyter AI v3 in an isolated Python environment, with Claude Code as the
+        chat backend over the Agent Client Protocol (ACP). No API key needed, it uses your Claude Code
+        sign-in. Prerequisites: macOS with Homebrew, Node.js, and Claude Code installed and signed in.
+      </p>
+
+      <div class="cc-step">
+        <h3>1. Create an isolated Python environment</h3>
+        <p>Keeps everything off your system Python. Uses <code>uv</code> to make a dedicated Python 3.12 virtualenv (3.11+ works).</p>
+        <pre class="cmd">brew install uv
+mkdir jupyter-ai &amp;&amp; cd jupyter-ai
+uv venv --python 3.12
+source .venv/bin/activate</pre>
+      </div>
+
+      <div class="cc-step">
+        <h3>2. Install Jupyter AI</h3>
+        <pre class="cmd">uv pip install jupyter-ai jupyterlab</pre>
+      </div>
+
+      <div class="cc-step">
+        <h3>3. Connect Claude Code (no API key)</h3>
+        <p>Installs the ACP adapter that bridges Jupyter AI to your local Claude Code.</p>
+        <pre class="cmd">npm install -g @agentclientprotocol/claude-agent-acp</pre>
+      </div>
+
+      <div class="cc-step">
+        <h3>4. Launch and chat</h3>
+        <pre class="cmd">jupyter lab</pre>
+        <p>Open the Chat panel (left sidebar), type <code>@</code>, pick <strong>Claude</strong>, and ask away, for example <code>@Claude what files are in this directory?</code></p>
+      </div>
+
+      <div class="cc-note">
+        Coming back later? Re-activate the environment before launching:
+        <code>cd jupyter-ai &amp;&amp; source .venv/bin/activate &amp;&amp; jupyter lab</code>.
+        The <code>@Claude</code> persona shows up after a server restart. Claude Code runs from the folder
+        you launch <code>jupyter lab</code> in, so it can read and edit files there.
+      </div>
     </div>
   </section>
 
