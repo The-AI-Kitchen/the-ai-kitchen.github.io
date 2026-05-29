@@ -127,6 +127,7 @@
     .cc-step h3 {
       font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700;
       color: var(--text-primary); margin: 0 0 6px 0;
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
     }
     .cc-step p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.55; margin: 0 0 8px 0; }
     pre.cmd {
@@ -143,6 +144,20 @@
     .cc-note {
       background: var(--bg-cta); border: 1px solid rgba(196, 136, 74, 0.25); border-radius: var(--radius-sm);
       padding: 10px 14px; font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.55; margin-top: 14px;
+    }
+
+    /* "where to run it" tags + legend */
+    .cc-legend { display: flex; flex-direction: column; gap: 8px; margin: 0 0 24px 0; font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5; }
+    .cc-legend > span { display: flex; align-items: center; gap: 8px; }
+    .cc-where {
+      font-family: 'DM Sans', sans-serif; font-size: 0.625rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 9px; border-radius: 999px; white-space: nowrap; flex-shrink: 0;
+    }
+    .cc-where--ai { background: var(--mint-light); color: var(--mint); }
+    .cc-where--term { background: var(--text-primary); color: #f3ece1; }
+    .cc-subhead {
+      font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 1.0625rem; color: var(--text-primary);
+      margin: 30px 0 6px; padding-top: 20px; border-top: 1px solid var(--bg-alt);
     }
   </style>
 </head>
@@ -259,37 +274,70 @@
         sign-in. Prerequisites: macOS with Homebrew, Node.js, and Claude Code installed and signed in.
       </p>
 
-      <div class="cc-step">
-        <h3>1. Create an isolated Python environment</h3>
-        <p>Keeps everything off your system Python. Uses <code>uv</code> to make a dedicated Python 3.12 virtualenv (3.11+ works).</p>
-        <pre class="cmd">brew install uv
-mkdir jupyter-ai &amp;&amp; cd jupyter-ai
-uv venv --python 3.12
-source .venv/bin/activate</pre>
+      <div class="cc-legend">
+        <span><span class="cc-where cc-where--ai">Claude Code</span> safe to let the Claude Code agent run for you (one-shot installs)</span>
+        <span><span class="cc-where cc-where--term">Terminal</span> run yourself in a terminal like Ghostty (servers, global installs, interactive tools)</span>
       </div>
 
       <div class="cc-step">
-        <h3>2. Install Jupyter AI</h3>
+        <h3>1. Create an isolated Python environment <span class="cc-where cc-where--ai">Claude Code</span></h3>
+        <p>Keeps everything off your system Python. <code>uv</code> makes a dedicated Python 3.12 virtualenv (3.11+ works).</p>
+        <pre class="cmd">brew install uv
+mkdir jupyter-ai &amp;&amp; cd jupyter-ai
+uv venv --python 3.12</pre>
+      </div>
+
+      <div class="cc-step">
+        <h3>2. Install Jupyter AI <span class="cc-where cc-where--ai">Claude Code</span></h3>
         <pre class="cmd">uv pip install jupyter-ai jupyterlab</pre>
       </div>
 
       <div class="cc-step">
-        <h3>3. Connect Claude Code (no API key)</h3>
-        <p>Installs the ACP adapter that bridges Jupyter AI to your local Claude Code.</p>
+        <h3>3. Add the Claude Code chat backend <span class="cc-where cc-where--term">Terminal</span></h3>
+        <p>The ACP adapter that bridges Jupyter AI to your local Claude Code. It is a global install, so run it yourself.</p>
         <pre class="cmd">npm install -g @agentclientprotocol/claude-agent-acp</pre>
       </div>
 
       <div class="cc-step">
-        <h3>4. Launch and chat</h3>
-        <pre class="cmd">jupyter lab</pre>
-        <p>Open the Chat panel (left sidebar), type <code>@</code>, pick <strong>Claude</strong>, and ask away, for example <code>@Claude what files are in this directory?</code></p>
+        <h3>4. Launch and chat <span class="cc-where cc-where--term">Terminal</span></h3>
+        <p>A long-running server with a browser UI, so it lives in your own terminal (and the venv stays activated there).</p>
+        <pre class="cmd">source .venv/bin/activate
+jupyter lab</pre>
+        <p>Then in the Chat panel (left sidebar), type <code>@</code>, pick <strong>Claude</strong>, and ask away, for example <code>@Claude what files are in this directory?</code></p>
+      </div>
+
+      <div class="cc-subhead">Optional: add QuickAgents</div>
+      <p class="session-intro" style="margin-bottom: 18px;">
+        QuickAgents lets you build named agents like <code>@QuickAgent</code> on top of Jupyter AI. It installs into
+        its <strong>own</strong> separate virtualenv (Python 3.11+), distinct from the one above.
+      </p>
+
+      <div class="cc-step">
+        <h3>5. Clone the repo <span class="cc-where cc-where--ai">Claude Code</span></h3>
+        <pre class="cmd">git clone https://github.com/srdas/jupyter-ai-quickagent.git</pre>
+      </div>
+
+      <div class="cc-step">
+        <h3>6. Run the installer <span class="cc-where cc-where--term">Terminal</span></h3>
+        <p>A third-party script that builds its own venv, so run it yourself. <code>chmod a+x</code> makes the script executable first.</p>
+        <pre class="cmd">cd jupyter-ai-quickagent
+chmod a+x install_nondev.sh
+./install_nondev.sh</pre>
+      </div>
+
+      <div class="cc-step">
+        <h3>7. Launch and create an agent <span class="cc-where cc-where--term">Terminal</span></h3>
+        <p>Use the QuickAgents venv this time (separate from step 1).</p>
+        <pre class="cmd">source .venv/bin/activate
+jupyter lab</pre>
+        <p>Then in the Chat panel, send <code>@QuickAgent create</code> and follow the five prompts. Needs a chat model configured (your <code>@Claude</code> works).</p>
       </div>
 
       <div class="cc-note">
-        Coming back later? Re-activate the environment before launching:
-        <code>cd jupyter-ai &amp;&amp; source .venv/bin/activate &amp;&amp; jupyter lab</code>.
-        The <code>@Claude</code> persona shows up after a server restart. Claude Code runs from the folder
-        you launch <code>jupyter lab</code> in, so it can read and edit files there.
+        Two separate environments: <code>jupyter-ai</code> (base) and <code>jupyter-ai-quickagent</code> (its own venv).
+        Launch <code>jupyter lab</code> from whichever you want; one will not see the other. And do not paste setup
+        commands into the terminal tab that is already running <code>jupyter lab</code> (that tab is busy with the
+        server), open a new tab instead.
       </div>
     </div>
   </section>
