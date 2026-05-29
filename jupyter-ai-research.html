@@ -267,16 +267,30 @@
   <!-- ===== CLAUDE CODE ===== -->
   <section class="section" style="padding-top:0;">
     <div class="session-container">
-      <h2 class="session-heading">Run it with <em>Claude Code</em></h2>
+      <h2 class="session-heading">Kai's unofficial tips for lazy installing via <em>Claude Code</em></h2>
       <p class="session-intro">
-        A minimal local setup: Jupyter AI v3 in an isolated Python environment, with Claude Code as the
-        chat backend over the Agent Client Protocol (ACP). No API key needed, it uses your Claude Code
-        sign-in. Prerequisites: macOS with Homebrew, Node.js, and Claude Code installed and signed in.
+        AI Kitchen attendees have Claude Pro, which means you can use Claude Code as a free, no-API-key
+        backend for Jupyter AI, and hand the tedious install steps to Claude Code itself. The setup below
+        puts Jupyter AI v3 in an isolated Python environment, with Claude Code wired in as the chat backend
+        over the Agent Client Protocol (ACP). Prerequisites: macOS with Homebrew and Node.js.
       </p>
 
       <div class="cc-legend">
         <span><span class="cc-where cc-where--ai">Claude Code</span> safe to let the Claude Code agent run for you (one-shot installs)</span>
         <span><span class="cc-where cc-where--term">Terminal</span> run yourself in a terminal like Ghostty (servers, global installs, interactive tools)</span>
+      </div>
+
+      <div class="cc-step">
+        <h3>First: install Claude Code itself <span class="cc-where cc-where--term">Terminal</span></h3>
+        <p>
+          This whole approach runs on <strong>Claude Code, the command-line tool</strong> (the <code>claude</code>
+          command), which is separate from the Claude desktop app or claude.ai in the browser. If you do not have
+          it yet, install it and sign in. Your <strong>Claude Pro</strong> account works (Claude Code needs Pro,
+          Max, Team, or Enterprise; the free plan does not include it).
+        </p>
+        <pre class="cmd">curl -fsSL https://claude.ai/install.sh | bash
+claude          <span class="cmt"># opens a browser to sign in with Claude Pro</span></pre>
+        <p>Already using Claude Code (like in this session)? Skip this. Homebrew users can instead run <code>brew install --cask claude-code</code>.</p>
       </div>
 
       <div class="cc-step">
