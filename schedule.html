@@ -128,6 +128,7 @@
         return '<div class="schedule-card reveal ' + delay + '">' +
           '<div class="schedule-date">' + esc(s.label) + '</div>' +
           '<div class="schedule-info">' +
+            topicHtml +
             (s.copresenter
               ? '<span class="schedule-names">' +
                   '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>' +
@@ -136,7 +137,6 @@
                 '</span>'
               : '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>') +
             '<span class="schedule-title">' + esc(s.title) + (s.copresenter ? ' · ' + esc(s.copresenter.title) : '') + '</span>' +
-            topicHtml +
             toolsHtml +
           '</div>' +
           '<div class="speaker-avatar" style="background-image: url(\'' + esc(s.photo) + '\');" aria-hidden="true">' + esc(s.initials || '') + '</div>' +
@@ -160,9 +160,9 @@
             '<div class="schedule-date">' + esc(s.label) + '</div>' +
             '<div class="schedule-info">' +
               (s.topic
-                ? '<span class="schedule-name" style="text-decoration: none; pointer-events: none;">' + esc(s.topic) + '</span>' +
+                ? '<span class="schedule-topic">' + esc(s.topic) + '</span>' +
                   '<span class="schedule-title">' + esc(s.name) + '</span>'
-                : '<span class="schedule-name" style="text-decoration: none; pointer-events: none; color: var(--text-muted);">' + esc(s.name) + '</span>') +
+                : '<span class="schedule-topic" style="color: var(--text-muted);">' + esc(s.name) + '</span>') +
             '</div>' +
           '</div>';
         }
@@ -175,6 +175,7 @@
         return '<div class="schedule-card reveal ' + delay + '">' +
           '<div class="schedule-date">' + esc(s.label) + '</div>' +
           '<div class="schedule-info">' +
+            topicHtml +
             (s.copresenter
               ? '<span class="schedule-names">' +
                   '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>' +
@@ -183,7 +184,6 @@
                 '</span>'
               : '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>') +
             '<span class="schedule-title">' + esc(s.title) + (s.copresenter ? ' · ' + esc(s.copresenter.title) : '') + '</span>' +
-            topicHtml +
             toolsHtml +
           '</div>' +
           '<div class="speaker-avatar" style="background-image: url(\'' + esc(s.photo) + '\');" aria-hidden="true">' + esc(s.initials || '') + '</div>' +

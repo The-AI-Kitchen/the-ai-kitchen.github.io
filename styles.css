@@ -632,7 +632,7 @@ img {
 
 .schedule-name {
   font-family: 'DM Sans', sans-serif;
-  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
   font-weight: 600;
   color: var(--text-primary);
   text-decoration: underline;
@@ -649,7 +649,7 @@ img {
    unlinked "&" between them. */
 .schedule-names {
   font-family: 'DM Sans', sans-serif;
-  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
   font-weight: 600;
   color: var(--text-primary);
 }
@@ -660,11 +660,25 @@ img {
   font-weight: 500;
 }
 
+/* The talk title is the headline of each card: largest line, sits on top. */
 .schedule-topic {
-  font-size: clamp(0.875rem, 1.2vw, 1rem);
-  color: var(--text-secondary);
-  font-style: italic;
-  margin-top: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.25rem, 2.2vw, 1.625rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+a.schedule-topic {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(154, 110, 53, 0.4);
+}
+
+a.schedule-topic:hover {
+  color: var(--coral);
+  text-decoration-color: var(--coral);
 }
 
 .schedule-tools {
@@ -744,6 +758,16 @@ img {
 .schedule-card--featured .schedule-name {
   color: var(--coral);
   font-weight: 700;
+  font-size: clamp(1.25rem, 2.2vw, 1.625rem);
+}
+
+/* Demo Night's "topic" is a description sentence, not a talk title, so keep
+   it at body size rather than the headline treatment. */
+.schedule-card--featured .schedule-topic {
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: 0;
 }
 
 .schedule-card--featured .speaker-avatar {
