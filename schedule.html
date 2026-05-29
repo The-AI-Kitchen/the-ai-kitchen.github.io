@@ -156,10 +156,13 @@
       var html = sessions.map(function(s, i) {
         var delay = 'delay-' + Math.min(3, Math.floor(i / 2) + 1);
         if (s.tbd) {
-          return '<div class="schedule-card reveal ' + delay + '" style="opacity: 0.55;">' +
+          return '<div class="schedule-card reveal ' + delay + '" style="opacity: ' + (s.topic ? '0.85' : '0.55') + ';">' +
             '<div class="schedule-date">' + esc(s.label) + '</div>' +
             '<div class="schedule-info">' +
-              '<span class="schedule-name" style="text-decoration: none; pointer-events: none; color: var(--text-muted);">' + esc(s.name) + '</span>' +
+              (s.topic
+                ? '<span class="schedule-name" style="text-decoration: none; pointer-events: none;">' + esc(s.topic) + '</span>' +
+                  '<span class="schedule-title">' + esc(s.name) + '</span>'
+                : '<span class="schedule-name" style="text-decoration: none; pointer-events: none; color: var(--text-muted);">' + esc(s.name) + '</span>') +
             '</div>' +
           '</div>';
         }
