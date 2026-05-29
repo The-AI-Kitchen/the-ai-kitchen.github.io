@@ -281,16 +281,17 @@
       </div>
 
       <div class="cc-step">
-        <h3>First: install Claude Code itself <span class="cc-where cc-where--term">Terminal</span></h3>
+        <h3>First: install the Claude Code CLI <span class="cc-where cc-where--term">Terminal</span></h3>
         <p>
-          This whole approach runs on <strong>Claude Code, the command-line tool</strong> (the <code>claude</code>
-          command), which is separate from the Claude desktop app or claude.ai in the browser. If you do not have
-          it yet, install it and sign in. Your <strong>Claude Pro</strong> account works (Claude Code needs Pro,
-          Max, Team, or Enterprise; the free plan does not include it).
+          Most of you already installed the <strong>Claude Code desktop app</strong>, which covers the graphical
+          Code tab. But this Jupyter AI setup talks to the <code>claude</code> <strong>terminal command</strong>,
+          and the desktop app does not add that to your PATH, so you install the CLI separately (one command).
+          Your <strong>Claude Pro</strong> sign-in covers it (Claude Code needs Pro, Max, Team, or Enterprise;
+          the free plan does not).
         </p>
         <pre class="cmd">curl -fsSL https://claude.ai/install.sh | bash
 claude          <span class="cmt"># opens a browser to sign in with Claude Pro</span></pre>
-        <p>Already using Claude Code (like in this session)? Skip this. Homebrew users can instead run <code>brew install --cask claude-code</code>.</p>
+        <p>Confirm it worked with <code>claude --version</code>. Homebrew users can instead run <code>brew install --cask claude-code</code>.</p>
       </div>
 
       <div class="cc-step">
