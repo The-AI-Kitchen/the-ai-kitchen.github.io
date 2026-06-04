@@ -85,6 +85,7 @@ window.AI_KITCHEN_SESSIONS = [
     name: 'AI Kitchen Demo Night',
     title: '5:30\u20137:30 p.m. \u00b7 SCDI North Lobby \u00b7 Open to the public',
     topic: 'Students from across SCU showcase their AI projects. Gallery-style demos, lightning pitches, and food.',
+    topicUrl: 'demo-night.html',
     featured: true,
     emoji: '\uD83C\uDF73'
   }

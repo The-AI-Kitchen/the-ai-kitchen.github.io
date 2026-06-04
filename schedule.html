@@ -109,12 +109,18 @@
       var html = sessions.map(function(s, i) {
         var delay = 'delay-' + Math.min(3, Math.floor(i / 2) + 1);
         if (s.featured) {
+          var fName = s.topicUrl
+            ? '<a href="' + esc(s.topicUrl) + '" class="schedule-name">' + esc(s.name) + '</a>'
+            : '<span class="schedule-name" style="text-decoration: none; pointer-events: none;">' + esc(s.name) + '</span>';
+          var fTopic = s.topicUrl
+            ? '<a href="' + esc(s.topicUrl) + '" class="schedule-topic">' + esc(s.topic) + ' &rarr;</a>'
+            : '<span class="schedule-topic">' + esc(s.topic) + '</span>';
           return '<div class="schedule-card schedule-card--featured reveal ' + delay + '">' +
             '<div class="schedule-date">' + esc(s.label) + '</div>' +
             '<div class="schedule-info">' +
-              '<span class="schedule-name" style="text-decoration: none; pointer-events: none;">' + esc(s.name) + '</span>' +
+              fName +
               '<span class="schedule-title">' + esc(s.title) + '</span>' +
-              '<span class="schedule-topic">' + esc(s.topic) + '</span>' +
+              fTopic +
             '</div>' +
             '<div class="speaker-avatar" style="text-indent: 0; font-size: 2rem; background-color: var(--coral-light);" aria-hidden="true">' + (s.emoji || '') + '</div>' +
           '</div>';

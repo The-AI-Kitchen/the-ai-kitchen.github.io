@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Kitchen Demo Night — AI Kitchen</title>
+  <meta name="description" content="AI Kitchen Demo Night: students from across SCU showcase the AI projects they built this quarter. June 5, 2026, SCDI North Lobby. Open to the public.">
+
+  <meta property="og:title" content="AI Kitchen Demo Night — AI Kitchen">
+  <meta property="og:description" content="Lightning pitches, gallery-style demos you can try yourself, and best-of awards. June 5, 2026, SCDI North Lobby. Open to the public.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Local fallback variables so the page is previewable without styles.css. */
+    :root {
+      --coral: #c4884a;
+      --mint: #4f9b8a;
+      --mint-light: #ecf5f2;
+      --lavender: #8a7fb8;
+      --text-primary: #2a2118;
+      --text-secondary: #58504a;
+      --text-muted: #8b837d;
+      --bg-alt: #efe9e0;
+      --bg-cta: #faf3e8;
+      --coral-light: #f6e7d4;
+      --radius-sm: 8px;
+      --shadow-soft: 0 1px 2px rgba(40, 32, 24, 0.06);
+      --shadow-card: 0 4px 14px rgba(40, 32, 24, 0.10);
+      --ease-out: cubic-bezier(.2,.7,.2,1);
+    }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: #fbf7f0;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.5;
+    }
+    a { color: var(--coral); }
+    .section { padding: 24px 0; }
+
+    .session-container { max-width: 960px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 32px); }
+    .session-hero { padding-top: clamp(40px, 6vh, 64px); padding-bottom: clamp(20px, 3vh, 32px); }
+    .session-hero .eyebrow {
+      font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1.5px; color: var(--coral); margin-bottom: 8px;
+    }
+    .session-hero h1 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem); color: var(--text-primary);
+      line-height: 1.1; margin-bottom: 12px;
+    }
+    .session-hero h1 em { font-style: italic; color: var(--coral); }
+    .session-hero .session-sub {
+      color: var(--text-secondary); font-size: 1.0625rem; line-height: 1.5;
+      max-width: 720px; margin-bottom: 6px;
+    }
+    .session-hero .session-meta { color: var(--text-muted); font-size: 0.875rem; margin-top: 8px; }
+
+    .session-heading {
+      font-family: 'Bodoni Moda', Georgia, serif; font-size: 1.5rem;
+      color: var(--text-primary); margin-top: 48px; margin-bottom: 16px;
+    }
+    .session-heading em { font-style: italic; color: var(--coral); }
+    .session-intro { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 20px; }
+
+    /* Run of show timeline */
+    .outline {
+      background: white; border: 1px solid var(--bg-alt); border-radius: var(--radius-sm);
+      padding: 10px 6px; box-shadow: var(--shadow-soft);
+    }
+    .outline-item {
+      display: grid; grid-template-columns: 96px 1fr; gap: 14px;
+      padding: 12px 14px; border-bottom: 1px solid var(--bg-alt);
+    }
+    .outline-item:last-child { border-bottom: none; }
+    .outline-time { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.8125rem; color: var(--coral); padding-top: 2px; }
+    .outline-body .outline-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.9375rem; color: var(--text-primary); margin-bottom: 3px; }
+    .outline-body .outline-where {
+      display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 0.625rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.05em; padding: 2px 8px; border-radius: 999px;
+      background: var(--mint-light); color: var(--mint); margin-left: 8px; vertical-align: middle;
+    }
+    .outline-body .outline-where--lobby { background: var(--coral-light); color: var(--coral); }
+    .outline-body .outline-desc { color: var(--text-secondary); font-size: 0.875rem; line-height: 1.5; }
+
+    /* Callout box for demoing teams */
+    .callout {
+      background: white; border: 1px solid var(--bg-alt); border-left: 4px solid var(--coral);
+      border-radius: var(--radius-sm); padding: 18px 22px; margin-bottom: 20px; box-shadow: var(--shadow-soft);
+    }
+    .callout h3 { font-family: 'DM Sans', sans-serif; font-size: 1.1875rem; font-weight: 700; color: var(--text-primary); margin: 0 0 10px 0; }
+    .callout ol { margin: 0 0 10px 0; padding-left: 22px; }
+    .callout ol li { margin-bottom: 8px; font-size: 0.9375rem; line-height: 1.55; color: var(--text-secondary); }
+    .callout ol li strong { color: var(--text-primary); }
+    .callout .callout-note {
+      background: var(--bg-cta); border: 1px solid rgba(196, 136, 74, 0.25); border-radius: var(--radius-sm);
+      padding: 10px 14px; font-size: 0.8125rem; color: var(--text-secondary); margin-top: 12px; line-height: 1.55;
+    }
+
+    .goals-list {
+      list-style: none; padding: 0; margin: 0;
+      background: white; border: 1px solid var(--bg-alt); border-radius: var(--radius-sm); box-shadow: var(--shadow-soft);
+    }
+    .goals-list li {
+      padding: 12px 18px; border-bottom: 1px solid var(--bg-alt);
+      font-size: 0.9375rem; line-height: 1.55; color: var(--text-secondary);
+      display: grid; grid-template-columns: 16px 1fr; gap: 12px; align-items: start;
+    }
+    .goals-list li:last-child { border-bottom: none; }
+    .goals-list li::before { content: "\2014"; color: var(--coral); font-weight: 700; line-height: 1.55; }
+
+    .session-footer-note {
+      margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--bg-alt);
+      color: var(--text-muted); font-size: 13px; margin-bottom: clamp(48px, 6vh, 64px);
+    }
+    .session-footer-note a { color: var(--coral); }
+  </style>
+</head>
+<body>
+
+  <main>
+
+  <!-- ===== HERO ===== -->
+  <section class="section session-hero">
+    <div class="session-container">
+      <div class="eyebrow">June 5, 2026 &middot; Demo Night</div>
+      <h1>AI Kitchen <em>Demo Night</em></h1>
+      <p class="session-sub">
+        Students from across SCU showcase the AI projects they built this quarter. Lightning pitches,
+        gallery-style demos you can try for yourself, and a round of "best of" awards. Come see what
+        students are cooking up.
+      </p>
+      <p class="session-meta">5:30 to 7:30 p.m. &middot; SCDI North Lobby &middot; Free and open to the public</p>
+    </div>
+  </section>
+
+  <!-- ===== RUN OF SHOW ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Run of <em>show</em></h2>
+      <p class="session-intro">
+        Everything happens in SCDI, a few steps apart: the <strong>North Lobby</strong> (doors, demos, and
+        awards) and <strong>room 1302</strong> (opening remarks and the lightning pitches).
+      </p>
+
+      <div class="outline">
+        <div class="outline-item">
+          <div class="outline-time">5:30</div>
+          <div class="outline-body">
+            <div class="outline-title">Doors open <span class="outline-where outline-where--lobby">North Lobby</span></div>
+            <div class="outline-desc">Check in, grab a bite, and settle in.</div>
+          </div>
+        </div>
+        <div class="outline-item">
+          <div class="outline-time">5:45</div>
+          <div class="outline-body">
+            <div class="outline-title">Welcome and lightning pitches <span class="outline-where">SCDI 1302</span></div>
+            <div class="outline-desc">We walk over to room 1302 for opening remarks (about 15 minutes), then each team gives a 90-second pitch. Pitches are timed to keep the lineup moving.</div>
+          </div>
+        </div>
+        <div class="outline-item">
+          <div class="outline-time">6:15</div>
+          <div class="outline-body">
+            <div class="outline-title">Demo showcase <span class="outline-where outline-where--lobby">North Lobby</span></div>
+            <div class="outline-desc">Back in the North Lobby, teams demo their projects at tables across the space. Circulate, try the products, and ask the builders anything.</div>
+          </div>
+        </div>
+        <div class="outline-item">
+          <div class="outline-time">7:00</div>
+          <div class="outline-body">
+            <div class="outline-title">Judging</div>
+            <div class="outline-desc">Judges confer and pick the standouts while the demos keep running.</div>
+          </div>
+        </div>
+        <div class="outline-item">
+          <div class="outline-time">7:15</div>
+          <div class="outline-body">
+            <div class="outline-title">"Best of" awards <span class="outline-where outline-where--lobby">North Lobby</span></div>
+            <div class="outline-desc">Winners announced from the North Lobby stairwell.</div>
+          </div>
+        </div>
+        <div class="outline-item">
+          <div class="outline-time">7:30</div>
+          <div class="outline-body">
+            <div class="outline-title">Wrap</div>
+            <div class="outline-desc">Keep mingling or head out, your call.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOR TEAMS ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Demoing? <em>Prepare two things</em></h2>
+      <p class="session-intro">
+        Every team does the same two things, so plan for both. The pitch earns attention; the table is where
+        people actually try what you built.
+      </p>
+
+      <div class="callout">
+        <h3>Your two deliverables</h3>
+        <ol>
+          <li><strong>A 90-second pitch</strong>, live and timed, on stage in SCDI 1302 at 5:45. Rehearse to time. A clock runs and we keep the lineup moving, so practice landing it in 90 seconds.</li>
+          <li><strong>A table demo</strong> in the North Lobby from 6:15 to 7:00. Be ready to show your product to a circulating audience at your assigned table, back to back, for the full block.</li>
+        </ol>
+        <div class="callout-note">
+          Bring whatever you need to run your demo end to end: laptop and charger, any accounts pre-logged-in,
+          and a backup plan (a short recording or screenshots) in case the wifi is slow. A one-line "what it is"
+          and a "try this" prompt at your table go a long way.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOR ATTENDEES ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Coming to <em>watch</em></h2>
+      <ul class="goals-list">
+        <li><span>Free and open to the public. No RSVP needed, just show up.</span></li>
+        <li><span>Food and drinks in the North Lobby.</span></li>
+        <li><span>Come for the pitches at 5:45, or drop in for the hands-on demos at 6:15.</span></li>
+        <li><span>Bring a friend. The more people circulating the tables, the better the night is for the teams.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <p class="session-footer-note">
+        AI Kitchen Demo Night &middot; Hosted by the AI Kitchen at Santa Clara University.
+        <br>Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a> &middot; <a href="schedule.html">Full schedule</a>.
+      </p>
+    </div>
+  </section>
+
+  </main>
+
+</body>
+</html>
