@@ -80,7 +80,7 @@
       <div id="spotlight-card" class="schedule-card reveal delay-1" style="display: none;">
         <div class="schedule-date" id="spotlight-date"></div>
         <div class="schedule-info">
-          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 600;">Next Taste Test</span>
+          <span id="spotlight-eyebrow" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 600;">Next Taste Test</span>
           <span class="schedule-topic" id="spotlight-topic"></span>
           <a id="spotlight-name" class="schedule-name" target="_blank" rel="noopener noreferrer"></a>
           <span class="schedule-title" id="spotlight-title"></span>
@@ -555,21 +555,33 @@
   <!-- ===== Next Taste Test Spotlight ===== -->
   <script>
     (function() {
-      var sessions = window.AI_KITCHEN_SESSIONS || [];
+      var spring = window.AI_KITCHEN_SESSIONS || [];
+      var summer = window.AI_KITCHEN_SUMMER_SESSIONS || [];
 
       var today = new Date();
       today.setHours(0, 0, 0, 0);
+
+      // Show the next upcoming event of any kind (talks and featured events like
+      // Demo Night). Skip placeholder "Speaker TBD" entries.
+      var candidates = spring.concat(summer).filter(function(s) { return !s.tbd; });
       var next = null;
-      for (var i = 0; i < sessions.length; i++) {
-        if (sessions[i].featured) continue; // skip Demo Night in the spotlight
-        var sessionDate = new Date(sessions[i].date + 'T23:59:59');
-        if (sessionDate >= today) { next = sessions[i]; break; }
+      for (var i = 0; i < candidates.length; i++) {
+        var sessionDate = new Date(candidates[i].date + 'T23:59:59');
+        if (sessionDate >= today) { next = candidates[i]; break; }
       }
 
       if (!next) return;
 
       var card = document.getElementById('spotlight-card');
       card.style.display = '';
+      if (next.featured) card.classList.add('schedule-card--featured');
+
+      var eyebrow = document.getElementById('spotlight-eyebrow');
+      if (eyebrow) {
+        eyebrow.textContent = next.featured ? 'Up Next'
+          : (summer.indexOf(next) !== -1 ? 'Summer Test Kitchen' : 'Next Taste Test');
+      }
+
       document.getElementById('spotlight-date').textContent = next.label;
       var nameEl = document.getElementById('spotlight-name');
       if (next.copresenter) {
@@ -592,24 +604,48 @@
         wrap.appendChild(a2);
         nameEl.replaceWith(wrap);
         document.getElementById('spotlight-title').textContent = next.title + ' · ' + next.copresenter.title;
+      } else if (next.featured) {
+        // Featured events link to their detail page and have no LinkedIn profile.
+        nameEl.href = next.topicUrl || '#';
+        nameEl.removeAttribute('target');
+        nameEl.removeAttribute('rel');
+        nameEl.textContent = next.name;
+        document.getElementById('spotlight-title').textContent = next.title;
       } else {
         nameEl.href = next.url;
         nameEl.textContent = next.name;
         document.getElementById('spotlight-title').textContent = next.title;
       }
+
       var topicEl = document.getElementById('spotlight-topic');
+      var topicNode;
       if (next.topicUrl) {
-        topicEl.innerHTML = '';
         var a = document.createElement('a');
         a.href = next.topicUrl;
         a.className = 'schedule-topic';
         a.textContent = next.topic + ' \u2192';
         topicEl.replaceWith(a);
+        topicNode = a;
       } else {
         topicEl.textContent = next.topic;
+        topicNode = topicEl;
       }
+      // For featured events the topic is a description, not a talk title, so move it
+      // below the name and details to keep the event name as the headline.
+      if (next.featured) {
+        var info = document.querySelector('#spotlight-card .schedule-info');
+        if (info) info.appendChild(topicNode);
+      }
+
       var avatar = document.getElementById('spotlight-avatar');
-      avatar.style.backgroundImage = "url('" + next.photo + "')";
+      if (next.photo) {
+        avatar.style.backgroundImage = "url('" + next.photo + "')";
+      } else if (next.emoji) {
+        avatar.style.textIndent = '0';
+        avatar.style.fontSize = '2rem';
+        avatar.style.backgroundColor = 'var(--coral-light)';
+        avatar.textContent = next.emoji;
+      }
       if (next.copresenter && next.copresenter.photo) {
         var coAvatar = document.createElement('div');
         coAvatar.className = 'speaker-avatar';
