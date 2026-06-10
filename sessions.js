@@ -20,9 +20,11 @@ window.AI_KITCHEN_SESSIONS = [
     name: 'Luis Sarmenta',
     title: 'Software Engineer \u00b7 MIT PhD EECS',
     topic: 'How to Think Like an Engineer (Building a Game with AI)',
+    topicUrl: 'think-like-an-engineer.html',
     url: 'https://www.linkedin.com/in/ACoAAAKXFzwByxtFT4agESe5Vbpyk1T6nGMkkbw',
     photo: 'speakers/luis-sarmenta.jpeg',
-    initials: 'LS'
+    initials: 'LS',
+    tools: ['Claude']
   },
   {
     date: '2026-05-08',
