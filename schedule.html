@@ -18,23 +18,8 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* Collapsed "past quarter" accordion for completed sessions */
-    .past-quarter {
-      border: 1px solid var(--bg-alt); border-radius: var(--radius-sm);
-      background: #fff; box-shadow: var(--shadow-soft);
-    }
-    .past-quarter > summary {
-      list-style: none; cursor: pointer; user-select: none;
-      padding: 16px 20px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-    }
-    .past-quarter > summary::-webkit-details-marker { display: none; }
-    .past-quarter > summary::before { content: "\25B8"; color: var(--coral); font-size: 0.85em; }
-    .past-quarter[open] > summary::before { content: "\25BE"; }
-    .past-quarter-title {
-      font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.0625rem; color: var(--text-secondary);
-    }
-    .past-quarter-hint { font-size: 0.8125rem; color: var(--text-muted); }
-    .past-quarter-body { padding: 0 20px 16px; }
+    /* Muted "Completed" tag on the past quarter heading */
+    .schedule-quarter-tag { color: var(--text-muted); font-weight: 500; }
   </style>
 </head>
 <body>
@@ -84,21 +69,14 @@
     </div>
   </section>
 
-  <!-- ===== SPRING 2026 (completed, collapsed for reference) ===== -->
+  <!-- ===== SPRING 2026 (completed, shown below summer) ===== -->
   <section class="section" id="spring">
     <div class="container">
-      <details class="past-quarter reveal">
-        <summary>
-          <span class="past-quarter-title">Spring Quarter 2026</span>
-          <span class="past-quarter-hint">Completed &middot; view past sessions and recaps</span>
-        </summary>
-        <div class="past-quarter-body">
-          <p class="section-intro" style="margin: 14px 0 18px;">
-            Fridays, 1:30&ndash;5:00 p.m. &middot; Lucas 306, Santa Clara University. Most sessions have a recap page with the recording, slides, and exercises.
-          </p>
-          <div class="schedule-grid" id="schedule-grid"></div>
-        </div>
-      </details>
+      <h2 class="schedule-quarter reveal">Spring Quarter 2026 <span class="schedule-quarter-tag">&middot; Completed</span></h2>
+      <p class="section-intro reveal delay-1">
+        Fridays, 1:30&ndash;5:00 p.m. &middot; Lucas 306, Santa Clara University. Most sessions have a recap page with the recording, slides, and exercises.
+      </p>
+      <div class="schedule-grid" id="schedule-grid"></div>
     </div>
   </section>
 
@@ -176,10 +154,6 @@
         '</div>';
       }).join('');
       grid.innerHTML = html;
-      // Past sessions live inside a collapsed accordion; mark them revealed up
-      // front so they are visible the moment it is expanded (the scroll observer
-      // won't fire for content inside a closed <details>).
-      Array.prototype.forEach.call(grid.querySelectorAll('.reveal'), function(el){ el.classList.add('visible'); });
     })();
   </script>
 
