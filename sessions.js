@@ -101,6 +101,7 @@ window.AI_KITCHEN_SUMMER_SESSIONS = [
     name: 'Xiaohan Liu',
     title: 'Autonomy Systems Engineer, DiDi Global',
     topic: 'OpenClaw for Work',
+    topicUrl: 'openclaw-for-work.html',
     url: 'https://www.linkedin.com/in/xiaohan-liu-5b3914110/',
     photo: 'speakers/xiaohan-liu.jpeg',
     initials: 'XL'
