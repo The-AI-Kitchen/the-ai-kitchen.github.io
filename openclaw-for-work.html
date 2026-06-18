@@ -101,6 +101,14 @@
     .callout ol { margin: 0 0 10px 0; padding-left: 22px; }
     .callout ol li { margin-bottom: 8px; font-size: 0.9375rem; line-height: 1.55; color: var(--text-secondary); }
     .callout ol li strong { color: var(--text-primary); }
+    .dataset-dl {
+      display: inline-flex; align-items: center; gap: 9px; margin-top: 14px;
+      background: var(--coral); color: #fff; text-decoration: none;
+      font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.9375rem;
+      padding: 10px 18px; border-radius: var(--radius-sm); transition: background 0.15s ease;
+    }
+    .dataset-dl:hover { background: #a86f38; }
+    .dataset-dl .dl-meta { font-weight: 500; opacity: 0.85; font-size: 0.8125rem; }
     .callout .callout-note {
       background: var(--bg-cta); border: 1px solid rgba(196, 136, 74, 0.25); border-radius: var(--radius-sm);
       padding: 10px 14px; font-size: 0.8125rem; color: var(--text-secondary); margin-top: 12px; line-height: 1.55;
@@ -145,12 +153,18 @@
       <h2 class="session-heading">What is <em>OpenClaw</em></h2>
       <p class="session-intro">
         Xiaohan opens with a short, non-technical definition of OpenClaw, then makes the case for
-        when this approach beats a regular chatbot like ChatGPT, Claude, or Codex. Two reasons stand out.
+        when this approach beats a regular chatbot like ChatGPT, Claude, or Codex. A few things set it apart.
       </p>
       <ul class="goals-list">
         <li><span><strong>Private, local data.</strong> Your files stay on your own machine, so you can work with sensitive data without uploading it to a third-party service.</span></li>
         <li><span><strong>Multi-model cross-checking.</strong> Connect different model APIs and have them check each other, which catches hallucinations and gets a better result than any single model alone.</span></li>
+        <li><span><strong>Lives in your chat apps.</strong> It runs as a bot inside tools like Discord or Telegram, can stay always-on, and a group can share one deployment, which is how today's exercise works.</span></li>
       </ul>
+      <p class="session-intro" style="margin-top: 16px; margin-bottom: 0;">
+        Reach for it when the data has to stay on your hardware, you want to mix or run local models,
+        or you want an always-on agent inside a chat app your team already uses. For a quick one-off or
+        a scheduled job, a managed tool like Claude or Codex is usually simpler.
+      </p>
     </div>
   </section>
 
@@ -209,8 +223,9 @@
         <ol>
           <li><strong>Open the AI Kitchen Discord.</strong> Go to the Workshop area, where the <code>openclaw.didi</code> bot is running for the session.</li>
           <li><strong>React to open your private channel.</strong> In the Workshop area, react with an emoji to Linus's message. That opens your own private OpenClaw channel, an independent session, so your work never gets crossed with anyone else's. We'll walk through this live, so nothing to set up beforehand.</li>
-          <li><strong>Work with the sample data.</strong> Xiaohan provides a sample autonomous-driving dataset. Discuss it with the bot and have it produce a markdown report on the data distribution, building on the Issue Analysis demo.</li>
+          <li><strong>Work with the sample data.</strong> Xiaohan provides a sample autonomous-driving dataset (download it below). Discuss it with the bot and have it produce a markdown report on the data distribution, building on the Issue Analysis demo.</li>
         </ol>
+        <a class="dataset-dl" href="openclaw-for-work/fake_issues_2026-06-01_2026-06-18.csv" download>&#x2B07; Download the sample dataset <span class="dl-meta">CSV &middot; 1,000 rows of synthetic data</span></a>
         <div class="callout-note">
           No setup required. Running your own OpenClaw instance takes real work (a server, external
           services, and API costs), so for the session you just use the shared Discord bot. If you want
@@ -226,7 +241,7 @@
       <h2 class="session-heading">Going <em>further</em></h2>
       <ul class="further-list">
         <li><strong>AI Companion Challenge.</strong> A DiDi Labs online hackathon to build a Telegram-bot AI companion around one real human need, then test it with real users. Solo or teams of two to three, with a $5,000 award. Applications close July 13. <a href="https://luma.com/y5ntbhce" target="_blank" rel="noopener noreferrer">Register and see details on Luma &rarr;</a></li>
-        <li><strong>Materials.</strong> The sample dataset, slides, and the recording will be posted here after the session.</li>
+        <li><strong>Sample dataset.</strong> Download the <a href="openclaw-for-work/fake_issues_2026-06-01_2026-06-18.csv" download>autonomous-driving issues CSV (1,000 rows of synthetic data)</a>, the same data loaded in the OpenClaw sandbox. Slides and the recording will be posted here after the session.</li>
         <li><a href="tools.html">AI Tools Guide for SCU Students</a> &middot; Free and education-tier tools across ten categories.</li>
       </ul>
     </div>
