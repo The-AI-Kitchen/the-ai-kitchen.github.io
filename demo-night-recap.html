@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Demo Night 2026: Recap and Winners — AI Kitchen</title>
+  <meta name="description" content="Fifteen student teams showed a full quarter of work at AI Demo Night, and six took home awards. Recap, winners, and photos from June 5, 2026.">
+
+  <meta property="og:title" content="AI Demo Night 2026: Recap and Winners — AI Kitchen">
+  <meta property="og:description" content="Fifteen teams, one gallery, six awards. A recap of AI Demo Night at Santa Clara University.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="demo-night/award-winners.jpg">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Local fallback variables so the page is previewable without styles.css. */
+    :root {
+      --coral: #c4884a;
+      --mint: #4f9b8a;
+      --mint-light: #ecf5f2;
+      --lavender: #8a7fb8;
+      --text-primary: #2a2118;
+      --text-secondary: #58504a;
+      --text-muted: #8b837d;
+      --bg-alt: #efe9e0;
+      --bg-cta: #faf3e8;
+      --coral-light: #f6e7d4;
+      --radius-sm: 8px;
+      --shadow-soft: 0 1px 2px rgba(40, 32, 24, 0.06);
+      --shadow-card: 0 4px 14px rgba(40, 32, 24, 0.10);
+      --ease-out: cubic-bezier(.2,.7,.2,1);
+    }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: #fbf7f0;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.5;
+    }
+    a { color: var(--coral); }
+    .section { padding: 24px 0; }
+
+    .session-container { max-width: 760px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 32px); }
+    .session-hero { padding-top: clamp(40px, 6vh, 64px); padding-bottom: clamp(12px, 2vh, 20px); }
+    .session-hero .eyebrow {
+      font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1.5px; color: var(--coral); margin-bottom: 8px;
+    }
+    .session-hero h1 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem); color: var(--text-primary);
+      line-height: 1.1; margin-bottom: 12px;
+    }
+    .session-hero h1 em { font-style: italic; color: var(--coral); }
+    .session-hero .session-sub {
+      color: var(--text-secondary); font-size: 1.0625rem; line-height: 1.5;
+      max-width: 720px; margin-bottom: 6px;
+    }
+    .session-hero .session-meta { color: var(--text-muted); font-size: 0.875rem; margin-top: 8px; }
+
+    .session-heading {
+      font-family: 'Bodoni Moda', Georgia, serif; font-size: 1.5rem;
+      color: var(--text-primary); margin-top: 44px; margin-bottom: 14px;
+    }
+    .session-heading em { font-style: italic; color: var(--coral); }
+    .prose p { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.65; margin: 0 0 18px; }
+    .prose p strong { color: var(--text-primary); }
+
+    /* Figures */
+    .fig { margin: 24px 0; }
+    .fig img { width: 100%; height: auto; border-radius: var(--radius-sm); display: block; box-shadow: var(--shadow-card); }
+    .fig figcaption { font-size: 0.8125rem; color: var(--text-muted); margin-top: 8px; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+    .grid2 .fig { margin: 0; }
+    @media (max-width: 560px) { .grid2 { grid-template-columns: 1fr; } }
+
+    /* Award cards */
+    .awards { display: grid; gap: 12px; margin: 14px 0 6px; }
+    .award {
+      background: white; border: 1px solid var(--bg-alt); border-left: 4px solid var(--coral);
+      border-radius: var(--radius-sm); padding: 14px 18px; box-shadow: var(--shadow-soft);
+    }
+    .award-name {
+      font-family: 'DM Sans', sans-serif; font-size: 0.6875rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em; color: var(--coral); margin-bottom: 4px;
+    }
+    .award-team { font-family: 'Bodoni Moda', Georgia, serif; font-size: 1.25rem; color: var(--text-primary); }
+    .award-desc { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; margin: 4px 0 0; }
+
+    /* Team list */
+    .teams {
+      list-style: none; padding: 0; margin: 14px 0;
+      background: white; border: 1px solid var(--bg-alt); border-radius: var(--radius-sm); box-shadow: var(--shadow-soft);
+    }
+    .teams li { padding: 11px 18px; border-bottom: 1px solid var(--bg-alt); font-size: 0.9375rem; line-height: 1.5; color: var(--text-secondary); }
+    .teams li:last-child { border-bottom: none; }
+    .teams .tag { font-weight: 700; color: var(--text-primary); }
+
+    /* CTA */
+    .cta {
+      background: var(--bg-cta); border: 1px solid rgba(196, 136, 74, 0.25);
+      border-radius: var(--radius-sm); padding: 22px 24px; margin: 32px 0;
+    }
+    .cta h3 { font-family: 'Bodoni Moda', Georgia, serif; font-size: 1.25rem; color: var(--text-primary); margin: 0 0 8px; }
+    .cta p { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; margin: 0 0 14px; }
+    .btn {
+      display: inline-block; background: var(--coral); color: white;
+      font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.875rem;
+      text-decoration: none; padding: 10px 20px; border-radius: 999px;
+    }
+
+    .session-footer-note {
+      margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--bg-alt);
+      color: var(--text-muted); font-size: 13px; margin-bottom: clamp(48px, 6vh, 64px);
+    }
+    .session-footer-note a { color: var(--coral); }
+  </style>
+</head>
+<body>
+
+  <main>
+
+  <!-- ===== HERO ===== -->
+  <section class="section session-hero">
+    <div class="session-container">
+      <div class="eyebrow">June 5, 2026 &middot; Demo Night</div>
+      <h1>Demo Night <em>Recap</em></h1>
+      <p class="session-sub">
+        Fifteen student teams showed a full quarter of work in one evening, and six took home awards.
+      </p>
+      <p class="session-meta">SCDI North Lobby, Santa Clara University</p>
+    </div>
+  </section>
+
+  <!-- ===== BODY ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+
+      <figure class="fig">
+        <img src="demo-night/award-winners.jpg" alt="The night's award winners stand in a row holding their certificates in the North Lobby.">
+        <figcaption>The night's award winners with their certificates in the North Lobby.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <p>On Friday, June 5, the SCDI North Lobby turned into a gallery. Fifteen student teams set up laptops on yellow-clothed tables, opened their demos, and spent two hours answering the one request every visitor brought: show me. AI Demo Night brought together the CSEN 174 senior design course and the AI Kitchen for a joint showcase, capped by six awards at the end of the night.</p>
+        <p>The night opened with 90-second pitches from every team in SCDI 1302, then moved to the open gallery. Guest speaker Jay Prakash Thakur, a Senior AI/ML Engineer at Microsoft and a member of SCU's CSE Industry Advisory Board, joined for a talk on building and scaling AI agents.</p>
+      </div>
+
+      <div class="grid2">
+        <figure class="fig">
+          <img src="demo-night/registration.jpg" alt="Guests check in at a table by the glass entrance of the North Lobby.">
+          <figcaption>Check-in opened at 5:30 as guests arrived.</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="demo-night/welcome-materials.jpg" alt="Welcome to AI Kitchen program cards and stickers on a gingham tablecloth.">
+          <figcaption>Welcome cards and stickers at the door.</figcaption>
+        </figure>
+      </div>
+
+      <div class="grid2">
+        <figure class="fig">
+          <img src="demo-night/demo-pitches.jpg" alt="A team pitches on the dual screens to a seated audience in lecture hall SCDI 1302.">
+          <figcaption>Every team gave a 90-second pitch in SCDI 1302.</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="demo-night/judges.jpg" alt="Judges and guests stand along the side of the lecture hall watching the pitches.">
+          <figcaption>Judges and guests took in the lineup.</figcaption>
+        </figure>
+      </div>
+
+      <h2 class="session-heading">The <em>winners</em></h2>
+      <div class="prose">
+        <p>Eight industry and faculty judges scored every project across six categories, with one prize per team. The board:</p>
+      </div>
+
+      <div class="awards">
+        <div class="award">
+          <div class="award-name">Best Engineering</div>
+          <div class="award-team">Email Triage Agent</div>
+          <p class="award-desc">Code organization, architecture clarity, and engineering rigor.</p>
+        </div>
+        <div class="award">
+          <div class="award-name">Best Demo Pitch</div>
+          <div class="award-team">SCU Course Planner</div>
+          <p class="award-desc">A clear one-sentence story and a 60-second elevator: who it is for, what it solves, what makes it different.</p>
+        </div>
+        <div class="award">
+          <div class="award-name">Best Live Demo</div>
+          <div class="award-team">GitMap</div>
+          <p class="award-desc">A working walkthrough that holds up when a visitor says "show me."</p>
+        </div>
+        <div class="award">
+          <div class="award-name">Best User Experience</div>
+          <div class="award-team">Write Up</div>
+          <p class="award-desc">Easy to understand and use without instructions: clear hierarchy, intuitive flow, considered accessibility.</p>
+        </div>
+        <div class="award">
+          <div class="award-name">Most Effective Use of AI Tools</div>
+          <div class="award-team">Roots</div>
+          <p class="award-desc">AI tools visibly raised the ceiling on what the team shipped and how they built it.</p>
+        </div>
+        <div class="award">
+          <div class="award-name">Best Research Potential</div>
+          <div class="award-team">Lora</div>
+          <p class="award-desc">A novel problem, approach, or population that could become a research contribution.</p>
+        </div>
+      </div>
+
+      <h2 class="session-heading">The <em>lineup</em></h2>
+      <div class="prose">
+        <p>All fifteen teams, in the order they pitched:</p>
+      </div>
+      <ul class="teams">
+        <li><span class="tag">Lora:</span> fine-tuning open-source models.</li>
+        <li><span class="tag">Email Triage Agent:</span> AI inbox triage for entrepreneurs, prioritizing leads and drafting replies.</li>
+        <li><span class="tag">SocialCRUX:</span> an agent that audits sites for accessibility, catching WCAG issues other tools miss.</li>
+        <li><span class="tag">Orbit:</span> a hands-free AI audio tour guide for exploring new places.</li>
+        <li><span class="tag">Roots:</span> turns saved Reels and TikToks into plans and calendar events.</li>
+        <li><span class="tag">Focus Mode:</span> a Chrome extension that blocks distracting sites and shows you where your focus goes.</li>
+        <li><span class="tag">GitMap:</span> interactive architecture maps of any GitHub repo.</li>
+        <li><span class="tag">SCU Course Planner:</span> suggests your optimal SCU courses from transcript and ratings.</li>
+        <li><span class="tag">eBook: AI Projects:</span> ten exercises that build AI skills through parables on being human.</li>
+        <li><span class="tag">up-to:</span> broadcast a hangout invite, and whoever is free jumps into the plan.</li>
+        <li><span class="tag">Smart Shop:</span> finds the cheapest nearby store for your grocery list.</li>
+        <li><span class="tag">Playgent:</span> an agent that learns from games and puzzles, then out-negotiates other models.</li>
+        <li><span class="tag">TTSTT:</span> a Discord bot that reads chat aloud in custom voices.</li>
+        <li><span class="tag">marblebuild:</span> a sandbox game built with the help of agentic AI.</li>
+        <li><span class="tag">Write Up:</span> a writing mentor that profiles your habits and explains your errors.</li>
+      </ul>
+
+      <figure class="fig">
+        <img src="demo-night/focus-mode-team.jpg" alt="Three students smile at their demo table with Focus Mode open on two laptops.">
+        <figcaption>A team showing Focus Mode at their station.</figcaption>
+      </figure>
+
+      <h2 class="session-heading">One floor, <em>fifteen demos</em></h2>
+      <div class="prose">
+        <p>Gallery format put every project on the same floor. Visitors roamed table to table, tried demos, and asked the makers their questions, and the teams traded notes with each other through the evening.</p>
+        <p>Thanks to our judges for the careful scoring: Jay Prakash Thakur, Boli Fang, Luis Sarmenta, Kiki Zhang, Alan Louie, Lawrence Liu, Javier Suh, and Dr. Carmina Mendoza.</p>
+      </div>
+
+      <figure class="fig">
+        <img src="demo-night/demo-engagement2.jpg" alt="A presenter in an SCU polo explains his project to a visitor at a demo table.">
+        <figcaption>Gallery format meant every team fielded questions one visitor at a time.</figcaption>
+      </figure>
+
+      <figure class="fig">
+        <img src="demo-night/organizers.jpg" alt="The AI Kitchen organizing team poses in front of the lobby's lit donor wall.">
+        <figcaption>The AI Kitchen team behind the night.</figcaption>
+      </figure>
+
+      <div class="cta">
+        <h3>Want to cook next quarter?</h3>
+        <p>Many of these projects started as a Friday afternoon at an AI Kitchen Taste Test. Drop in, find a problem you care about, and pitch a Slow Roast. No application, no code required.</p>
+        <a class="btn" href="https://forms.gle/qyQmKthPgfaQUMkn7">Get Involved &rarr;</a>
+      </div>
+
+      <p class="session-footer-note">
+        AI Demo Night &middot; Hosted by the AI Kitchen at Santa Clara University.
+        <br>Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a> &middot; <a href="schedule.html">Full schedule</a>.
+      </p>
+
+    </div>
+  </section>
+
+  </main>
+
+</body>
+</html>
