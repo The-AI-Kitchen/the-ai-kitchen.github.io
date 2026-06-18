@@ -5,7 +5,7 @@
 window.AI_KITCHEN_NEWS = [
   {
     date: '2026-06-05',
-    headline: 'Demo Night: see the winners',
+    headline: 'AI Demo Night: see the winners',
     body: 'Fifteen student teams showed a full quarter of work at AI Demo Night. <a href="demo-night-recap.html">See the recap and the award winners</a>.'
   },
   {
