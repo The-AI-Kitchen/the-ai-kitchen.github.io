@@ -109,10 +109,14 @@ window.AI_KITCHEN_SUMMER_SESSIONS = [
   {
     date: '2026-06-25',
     label: 'Jun 25',
-    name: 'Speaker TBD',
-    title: '',
-    topic: '',
-    tbd: true
+    name: 'Sherrie Cao',
+    title: 'Senior Product Manager, Electronic Arts (EA)',
+    topic: 'Playable in an Afternoon',
+    topicUrl: 'playable-in-an-afternoon.html',
+    url: 'https://www.linkedin.com/in/sherriecao/',
+    photo: 'speakers/sherrie-cao.jpeg',
+    initials: 'SC',
+    tools: ['Cursor Pro', 'Claude Code', 'Gemini']
   },
   {
     date: '2026-07-02',

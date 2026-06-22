@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playable in an Afternoon — AI Kitchen</title>
+  <meta name="description" content="Sherrie Cao (Senior Product Manager, Electronic Arts) on building playful, interactive software with AI coding agents, fast. She demos a Chrome extension she built this way, then everyone builds their own themed take on Wordle. June 25, 2026 Summer Test Kitchen session at Santa Clara University.">
+
+  <meta property="og:title" content="Playable in an Afternoon — AI Kitchen">
+  <meta property="og:description" content="Go from idea to a working interactive prototype in an afternoon with AI coding agents. Live demo plus a hands-on build: your own themed Wordle. June 25, 2026 AI Kitchen session.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Local fallback variables so the page is previewable without styles.css. */
+    :root {
+      --coral: #c4884a;
+      --mint: #4f9b8a;
+      --mint-light: #ecf5f2;
+      --lavender: #8a7fb8;
+      --text-primary: #2a2118;
+      --text-secondary: #58504a;
+      --text-muted: #8b837d;
+      --bg-alt: #efe9e0;
+      --bg-cta: #faf3e8;
+      --coral-light: #f6e7d4;
+      --radius-sm: 8px;
+      --shadow-soft: 0 1px 2px rgba(40, 32, 24, 0.06);
+      --shadow-card: 0 4px 14px rgba(40, 32, 24, 0.10);
+      --ease-out: cubic-bezier(.2,.7,.2,1);
+    }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: #fbf7f0;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.5;
+    }
+    a { color: var(--coral); }
+    .section { padding: 24px 0; }
+
+    .session-container { max-width: 960px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 32px); }
+    .session-hero { padding-top: clamp(40px, 6vh, 64px); padding-bottom: clamp(20px, 3vh, 32px); }
+    .session-hero .eyebrow {
+      font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1.5px; color: var(--coral); margin-bottom: 8px;
+    }
+    .session-hero h1 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem); color: var(--text-primary);
+      line-height: 1.1; margin-bottom: 12px;
+    }
+    .session-hero h1 em { font-style: italic; color: var(--coral); }
+    .session-hero .session-sub {
+      color: var(--text-secondary); font-size: 1.0625rem; line-height: 1.5;
+      max-width: 720px; margin-bottom: 6px;
+    }
+    .session-hero .session-meta { color: var(--text-muted); font-size: 0.875rem; margin-top: 8px; }
+
+    .session-heading {
+      font-family: 'Bodoni Moda', Georgia, serif; font-size: 1.5rem;
+      color: var(--text-primary); margin-top: 48px; margin-bottom: 16px;
+    }
+    .session-heading em { font-style: italic; color: var(--coral); }
+    .session-intro { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 20px; }
+
+    /* Takeaway / "when to use" list */
+    .goals-list {
+      list-style: none; padding: 0; margin: 0;
+      background: white; border: 1px solid var(--bg-alt); border-radius: var(--radius-sm); box-shadow: var(--shadow-soft);
+    }
+    .goals-list li {
+      padding: 12px 18px; border-bottom: 1px solid var(--bg-alt);
+      font-size: 0.9375rem; line-height: 1.55; color: var(--text-secondary);
+      display: grid; grid-template-columns: 16px 1fr; gap: 12px; align-items: start;
+    }
+    .goals-list li:last-child { border-bottom: none; }
+    .goals-list li::before { content: "\2014"; color: var(--coral); font-weight: 700; line-height: 1.55; }
+    .goals-list li strong { color: var(--text-primary); }
+
+    /* Demo cards */
+    .recipes-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .recipe-card { background: var(--mint-light); border-left: 4px solid var(--mint); border-radius: var(--radius-sm); padding: 12px 16px; }
+    .recipe-card .recipe-num { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.75rem; color: var(--mint); margin-bottom: 4px; }
+    .recipe-card .recipe-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.9375rem; color: var(--text-primary); margin-bottom: 6px; }
+    .recipe-card .recipe-desc { font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5; }
+
+    /* Callout box */
+    .callout {
+      background: white; border: 1px solid var(--bg-alt); border-left: 4px solid var(--coral);
+      border-radius: var(--radius-sm); padding: 18px 22px; margin-bottom: 20px; box-shadow: var(--shadow-soft);
+    }
+    .callout h3 { font-family: 'DM Sans', sans-serif; font-size: 1.1875rem; font-weight: 700; color: var(--text-primary); margin: 0 0 10px 0; }
+    .callout ol { margin: 0 0 10px 0; padding-left: 22px; }
+    .callout ol li { margin-bottom: 8px; font-size: 0.9375rem; line-height: 1.55; color: var(--text-secondary); }
+    .callout ol li strong { color: var(--text-primary); }
+    .callout .callout-note {
+      background: var(--bg-cta); border: 1px solid rgba(196, 136, 74, 0.25); border-radius: var(--radius-sm);
+      padding: 10px 14px; font-size: 0.8125rem; color: var(--text-secondary); margin-top: 12px; line-height: 1.55;
+    }
+
+    .further-list { list-style: none; padding: 0; margin: 0; }
+    .further-list li { padding: 10px 0; border-bottom: 1px solid var(--bg-alt); font-size: 0.9375rem; color: var(--text-secondary); }
+    .further-list li:last-child { border-bottom: none; }
+    .further-list a { color: var(--coral); text-decoration: underline; text-decoration-color: rgba(154, 110, 53, 0.35); text-underline-offset: 2px; }
+    .further-list a:hover { text-decoration-color: var(--coral); }
+
+    .session-footer-note {
+      margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--bg-alt);
+      color: var(--text-muted); font-size: 13px; margin-bottom: clamp(48px, 6vh, 64px);
+    }
+    .session-footer-note a { color: var(--coral); }
+  </style>
+</head>
+<body>
+
+  <main>
+
+  <!-- ===== HERO ===== -->
+  <section class="section session-hero">
+    <div class="session-container">
+      <div class="eyebrow">June 25, 2026 &middot; Summer Test Kitchen</div>
+      <h1>Playable <em>in an Afternoon</em></h1>
+      <p class="session-sub">
+        Sherrie Cao builds AI for games at EA. In this session she shows how to go from idea to a
+        working, interactive prototype in an afternoon using AI coding agents. She demos a real
+        project she made this way, a Chrome extension that adds live commentary over Netflix and HBO
+        shows, then everyone builds their own small game: a themed take on Wordle.
+      </p>
+      <p class="session-meta">Presenter: Sherrie Cao (Senior Product Manager, Electronic Arts) &middot; 2:30&ndash;4:30 p.m. &middot; SCDI 3115, Santa Clara University</p>
+    </div>
+  </section>
+
+  <!-- ===== THE BIG IDEA ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Tech lead, <em>not coder</em></h2>
+      <p class="session-intro">
+        With coding agents, the job shifts from writing code to directing it. You describe what you
+        want, review what comes back, and push back when it is wrong. That is the mindset for the
+        afternoon: aim for a working thing you can play with by the end, not perfect code.
+      </p>
+      <ul class="goals-list">
+        <li><span><strong>Direct and review.</strong> You set the goal, read the output, and course-correct. The agent does the typing.</span></li>
+        <li><span><strong>Rough is fine.</strong> This is a prototype, not production, so messy code is fine. The point is something that runs and is fun to use.</span></li>
+        <li><span><strong>Judgment matters.</strong> The workflow works best when you can catch where the agent goes wrong, so you will practice spotting and fixing it.</span></li>
+        <li><span><strong>No CS background needed.</strong> The exercise is built for students from any major, on free tools you already have.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== WHAT SHE WILL DEMO ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">What Sherrie will <em>demo</em></h2>
+      <p class="session-intro">
+        A roughly 45-minute walkthrough of how she builds with coding agents, anchored by a real
+        project. Rougher is better here: you learn the most from seeing the actual process,
+        debugging included.
+      </p>
+      <div class="recipes-row">
+        <div class="recipe-card">
+          <div class="recipe-num">Demo</div>
+          <div class="recipe-title">Live commentary for streaming</div>
+          <div class="recipe-desc">A Chrome extension that overlays live commentary on Netflix and HBO shows. Sherrie walks through how she built it with an agent, including the parts that broke and how she worked through them.</div>
+        </div>
+        <div class="recipe-card">
+          <div class="recipe-num">Method</div>
+          <div class="recipe-title">How she works with the agent</div>
+          <div class="recipe-desc">Her best practices for prompting and steering coding agents: framing the task, reviewing output, and knowing when to push back. Workflow-focused, so it carries over to any tool.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRY IT YOURSELF ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Build it <em>yourself</em></h2>
+      <p class="session-intro">
+        After the demo, everyone uses the same workflow to make a small game of their own. Sherrie
+        and the team stay to help and give feedback.
+      </p>
+
+      <div class="callout">
+        <h3>The hands-on build</h3>
+        <ol>
+          <li><strong>Recreate Wordle with a themed twist.</strong> Pick a word list that fits you, lines from The Office, GRE or MCAT vocab, anything, then have the agent build the game around it.</li>
+          <li><strong>Build it as a React web app.</strong> No backend needed; it runs entirely in the browser.</li>
+          <li><strong>Stay in the tech-lead seat.</strong> Direct the agent, review each step, and fix what is off. Have your own idea instead? Build that.</li>
+        </ol>
+        <div class="callout-note">
+          New to coding agents? That is the point. The exercise is designed for students from any
+          major, and there will be plenty of help in the room.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOOLS ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Tools you'll <em>use</em></h2>
+      <p class="session-intro" style="margin-bottom: 0;">
+        Everything runs on free tools SCU students already have: Cursor Pro, Claude Code, and Gemini
+        for Education. See the <a href="tools.html">AI Tools Guide for SCU Students</a> for setup and
+        free or education-tier options across ten categories.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== GOING FURTHER ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Going <em>further</em></h2>
+      <ul class="further-list">
+        <li><strong>Slides and recording.</strong> Posted here after the session.</li>
+        <li><strong>Connect with Sherrie.</strong> <a href="https://www.linkedin.com/in/sherriecao/" target="_blank" rel="noopener noreferrer">Sherrie Cao on LinkedIn &rarr;</a></li>
+        <li><a href="tools.html">AI Tools Guide for SCU Students</a> &middot; Free and education-tier tools across ten categories.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <p class="session-footer-note">
+        Part of the AI Kitchen Summer Test Kitchen series at Santa Clara University.
+        <br>Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a> &middot; <a href="schedule.html">Full schedule</a>.
+      </p>
+    </div>
+  </section>
+
+  </main>
+
+</body>
+</html>
