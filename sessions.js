@@ -117,9 +117,9 @@ window.AI_KITCHEN_SUMMER_SESSIONS = [
   {
     date: '2026-07-02',
     label: 'Jul 2',
-    name: 'Speaker info coming soon',
+    name: 'Speaker TBD',
     title: '',
-    topic: 'AI + Marketing',
+    topic: '',
     tbd: true
   }
 ];
