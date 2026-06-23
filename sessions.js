@@ -116,7 +116,7 @@ window.AI_KITCHEN_SUMMER_SESSIONS = [
     url: 'https://www.linkedin.com/in/sherriecao/',
     photo: 'speakers/sherrie-cao.jpeg',
     initials: 'SC',
-    tools: ['Cursor Pro', 'Claude Code', 'Gemini']
+    tools: ['Claude Code']
   },
   {
     date: '2026-07-02',
