@@ -66,6 +66,9 @@
       </p>
 
       <div class="schedule-grid" id="summer-grid"></div>
+      <p class="section-intro reveal delay-2" style="margin-top: 1.75rem;">
+        The Summer Test Kitchen has wrapped for the season. <strong>AI Kitchen returns in Fall 2026.</strong>
+      </p>
     </div>
   </section>
 
@@ -165,6 +168,14 @@
       function esc(s) { return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
       var html = sessions.map(function(s, i) {
         var delay = 'delay-' + Math.min(3, Math.floor(i / 2) + 1);
+        if (s.cancelled) {
+          return '<div class="schedule-card reveal ' + delay + '" style="opacity: 0.7;">' +
+            '<div class="schedule-date" style="text-decoration: line-through; text-decoration-color: var(--text-muted);">' + esc(s.label) + '</div>' +
+            '<div class="schedule-info">' +
+              '<span class="schedule-topic" style="color: var(--text-muted);">' + esc(s.topic || 'Session cancelled') + '</span>' +
+            '</div>' +
+          '</div>';
+        }
         if (s.tbd) {
           return '<div class="schedule-card reveal ' + delay + '" style="opacity: ' + (s.topic ? '0.85' : '0.55') + ';">' +
             '<div class="schedule-date">' + esc(s.label) + '</div>' +

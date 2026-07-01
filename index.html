@@ -87,6 +87,10 @@
         </div>
         <div class="speaker-avatar" id="spotlight-avatar" aria-hidden="true"></div>
       </div>
+      <div id="spotlight-fallback" style="display: none; text-align: center;">
+        <span style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 600; margin-bottom: 6px;">See you in the fall</span>
+        <h2 class="section-heading" style="margin: 0;">AI Kitchen returns <em>Fall 2026</em></h2>
+      </div>
       <p class="schedule-note reveal delay-1" style="margin-top: var(--space-md);">
         <a href="schedule.html">See full schedule &rarr;</a>
       </p>
@@ -553,15 +557,19 @@
       today.setHours(0, 0, 0, 0);
 
       // Show the next upcoming event of any kind (talks and featured events like
-      // Demo Night). Skip placeholder "Speaker TBD" entries.
-      var candidates = spring.concat(summer).filter(function(s) { return !s.tbd; });
+      // Demo Night). Skip placeholder TBD and cancelled entries.
+      var candidates = spring.concat(summer).filter(function(s) { return !s.tbd && !s.cancelled; });
       var next = null;
       for (var i = 0; i < candidates.length; i++) {
         var sessionDate = new Date(candidates[i].date + 'T23:59:59');
         if (sessionDate >= today) { next = candidates[i]; break; }
       }
 
-      if (!next) return;
+      if (!next) {
+        var fb = document.getElementById('spotlight-fallback');
+        if (fb) fb.style.display = '';
+        return;
+      }
 
       var card = document.getElementById('spotlight-card');
       card.style.display = '';
