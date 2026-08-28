@@ -36,6 +36,7 @@
       <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" class="nav-link" target="_blank" rel="noopener noreferrer">Projects &#8599;</a>
       <a href="tools.html" class="nav-link">Tools Guide</a>
       <a href="roles.html" class="nav-link">Leadership Roles</a>
+      <a href="index.html#press" class="nav-link">Press</a>
       <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
     </div>
   </nav>
@@ -103,6 +104,16 @@
       <h2 class="section-heading reveal">Latest <em>News</em></h2>
       <span class="section-accent reveal delay-1" aria-hidden="true"></span>
       <ul class="news-list" id="news-list"></ul>
+    </div>
+  </section>
+
+  <!-- ===== IN THE PRESS ===== -->
+  <section class="section section--alt" id="press" style="padding-top: clamp(32px, 5vh, 56px); padding-bottom: clamp(32px, 5vh, 56px); display: none;">
+    <div class="container">
+      <h2 class="section-heading reveal">In the <em>Press</em></h2>
+      <span class="section-accent reveal delay-1" aria-hidden="true"></span>
+      <p class="press-intro reveal">What reporters found when they dropped in on a Friday session.</p>
+      <ul class="press-grid" id="press-grid"></ul>
     </div>
   </section>
 
@@ -692,6 +703,48 @@
           '<div class="news-date">' + esc(fmtDate(n.date)) + '</div>' +
           '<div class="news-headline">' + esc(n.headline) + '</div>' +
           '<div class="news-body">' + (n.body || '') + '</div>' +
+        '</li>';
+      }).join('');
+      section.style.display = '';
+    })();
+  </script>
+
+  <!-- ===== In the Press ===== -->
+  <script src="press.js"></script>
+  <script>
+    (function() {
+      var grid = document.getElementById('press-grid');
+      var section = document.getElementById('press');
+      if (!grid || !section) return;
+      var items = (window.AI_KITCHEN_PRESS || []).slice().sort(function(a, b) {
+        // Featured story leads, then newest first.
+        if (!!a.featured !== !!b.featured) return a.featured ? -1 : 1;
+        return new Date(b.date) - new Date(a.date);
+      });
+      if (items.length === 0) return; // section stays hidden
+
+      function esc(s) { return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+      function fmtDate(s) {
+        var d = new Date(s + 'T12:00:00');
+        return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      }
+
+      grid.innerHTML = items.map(function(p) {
+        var quote = p.excerpt
+          ? '<blockquote class="press-quote">&ldquo;' + esc(p.excerpt) + '&rdquo;' +
+            (p.speaker ? '<cite class="press-cite">&mdash; ' + esc(p.speaker) + '</cite>' : '') +
+            '</blockquote>'
+          : '';
+        return '<li class="press-card reveal' + (p.featured ? ' press-card--featured' : '') + '">' +
+          '<div class="press-meta">' +
+            '<span class="press-outlet">' + esc(p.outlet) + '</span>' +
+            '<span class="press-date">' + esc(fmtDate(p.date)) + '</span>' +
+          '</div>' +
+          '<h3 class="press-title">' +
+            '<a href="' + esc(p.url) + '" target="_blank" rel="noopener noreferrer">' + esc(p.title) +
+            '<span class="press-arrow" aria-hidden="true">&#8599;</span></a>' +
+          '</h3>' +
+          quote +
         '</li>';
       }).join('');
       section.style.display = '';

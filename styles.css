@@ -919,6 +919,133 @@ a.schedule-topic:hover {
   text-decoration-color: var(--coral);
 }
 
+/* --- In the Press --- */
+.press-intro {
+  font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
+  color: var(--text-secondary);
+  max-width: 52ch;
+  margin: var(--space-md) 0 0;
+  line-height: 1.6;
+}
+
+.press-grid {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-lg) 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: var(--space-md);
+}
+
+.press-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  background: var(--bg-page);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--coral);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-soft);
+  transition: transform 250ms var(--ease-out), box-shadow 250ms var(--ease-out);
+}
+
+.press-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lifted);
+}
+
+.press-card--featured {
+  grid-column: 1 / -1;
+  border-left-color: var(--mint);
+}
+
+.press-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.press-outlet {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--cta-bg);
+  background: var(--coral-light);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+}
+
+.press-card--featured .press-outlet {
+  color: #4a7a5a;
+  background: var(--mint-light);
+}
+
+.press-date {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--text-muted);
+}
+
+.press-title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.press-card--featured .press-title {
+  font-size: clamp(1.25rem, 2.2vw, 1.625rem);
+}
+
+.press-title a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.press-title a:hover {
+  color: var(--cta-bg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(154, 110, 53, 0.4);
+}
+
+.press-arrow {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 0.8em;
+  color: var(--coral);
+}
+
+.press-quote {
+  margin: 0;
+  font-size: clamp(0.875rem, 1.2vw, 0.9375rem);
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.press-card--featured .press-quote {
+  font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
+}
+
+.press-cite {
+  display: block;
+  margin-top: var(--space-sm);
+  font-style: normal;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: var(--text-muted);
+}
+
 .faq-item {
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-sm);
