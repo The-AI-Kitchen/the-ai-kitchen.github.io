@@ -20,6 +20,23 @@
   <style>
     /* Muted "Completed" tag on the past quarter heading */
     .schedule-quarter-tag { color: var(--text-muted); font-weight: 500; }
+
+    /* One-off room changes are flagged on the affected card, not in the quarter
+       intro, so the standard room stays the thing people remember. */
+    .schedule-card--room-change { border-left-color: var(--pink); }
+    .schedule-card--room-change .schedule-date { color: #9c4a33; }
+
+    .schedule-room-alert {
+      align-self: flex-start;
+      margin-top: 8px;
+      padding: 5px 10px;
+      border-radius: var(--radius-sm);
+      background: rgba(196, 122, 106, 0.16);
+      color: #9c4a33;          /* 5.7:1 on the page background — AA pass */
+      font-size: 0.8125rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
   </style>
 </head>
 <body>
@@ -50,7 +67,7 @@
 
       <h2 class="schedule-quarter reveal delay-1">Fall Quarter 2026</h2>
       <p class="section-intro reveal delay-1">
-        Fridays at 1:00 p.m. &middot; Benson Memorial Center 036 (California Mission Room), Santa Clara University &middot; Oct 23 in Sobrato Hall 024BC
+        Fridays at 1:00 p.m. &middot; Benson Memorial Center 036 (California Mission Room), Santa Clara University
       </p>
       <p class="section-intro reveal delay-1" style="margin-top: 0;">
         Every session follows the same shape: a live tutorial from our guest at 1:00, a hands-on build for
@@ -126,8 +143,17 @@
         return '<div class="speaker-avatar" style="background-image: url(\'' + esc(photo) + '\');' + (extraStyle || '') + '" aria-hidden="true">' + esc(initials || '') + '</div>';
       }
 
+      // A one-off room change is called out on the card itself, so the quarter
+      // intro can keep naming just the room we are in every other week.
+      function roomAlert(s) {
+        return s.roomChange
+          ? '<span class="schedule-room-alert">Room change: ' + esc(s.roomChange) + '</span>'
+          : '';
+      }
+
       function card(s, i) {
         var delay = 'delay-' + Math.min(3, Math.floor(i / 2) + 1);
+        var roomClass = s.roomChange ? ' schedule-card--room-change' : '';
 
         if (s.cancelled) {
           return '<div class="schedule-card reveal ' + delay + '" style="opacity: 0.7;">' +
@@ -139,7 +165,10 @@
         }
 
         if (s.tbd) {
-          return '<div class="schedule-card reveal ' + delay + '" style="opacity: ' + (s.topic ? '0.85' : '0.55') + ';">' +
+          // A card carrying a room change stays at full strength even while the
+          // speaker is still TBA, so the alert does not fade out with the rest.
+          var tbdOpacity = s.roomChange ? '1' : (s.topic ? '0.85' : '0.55');
+          return '<div class="schedule-card reveal ' + delay + roomClass + '" style="opacity: ' + tbdOpacity + ';">' +
             '<div class="schedule-date">' + esc(s.label) + '</div>' +
             '<div class="schedule-info">' +
               (s.topic
@@ -147,6 +176,7 @@
                   '<span class="schedule-title">' + esc(s.name) + '</span>'
                 : '<span class="schedule-topic" style="color: var(--text-muted);">' + esc(s.name) + '</span>') +
               (s.note ? '<span class="schedule-title">' + esc(s.note) + '</span>' : '') +
+              roomAlert(s) +
             '</div>' +
           '</div>';
         }
@@ -176,7 +206,7 @@
           ? '<span class="schedule-tools"><span class="schedule-tools-label">Tools:</span> ' + s.tools.map(esc).join(', ') + '</span>'
           : '';
 
-        return '<div class="schedule-card reveal ' + delay + '">' +
+        return '<div class="schedule-card reveal ' + delay + roomClass + '">' +
           '<div class="schedule-date">' + esc(s.label) + '</div>' +
           '<div class="schedule-info">' +
             topicHtml +
@@ -190,6 +220,7 @@
             '<span class="schedule-title">' + esc(s.title) + (s.copresenter ? ' \u00b7 ' + esc(s.copresenter.title) : '') + '</span>' +
             toolsHtml +
             (s.note ? '<span class="schedule-title">' + esc(s.note) + '</span>' : '') +
+            roomAlert(s) +
           '</div>' +
           avatar(s.photo, s.initials) +
           (s.copresenter ? avatar(s.copresenter.photo, s.copresenter.initials, ' margin-left: -12px;') : '') +
