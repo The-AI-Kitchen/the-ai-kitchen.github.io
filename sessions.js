@@ -125,3 +125,31 @@ window.AI_KITCHEN_SUMMER_SESSIONS = [
     cancelled: true
   }
 ];
+
+// Fall Quarter 2026 sessions. Fridays at 1:00 p.m., Benson Memorial Center 036
+// (California Mission Room), except Oct 23 in Sobrato Hall 024BC.
+// "Soft finish" dates wrap around 4:00 p.m. with open project time after;
+// the others end at 3:00 p.m. sharp so the room can turn over.
+window.AI_KITCHEN_FALL_SESSIONS = [
+  {
+    date: '2026-09-25',
+    label: 'Sep 25',
+    name: 'Ulrik Lyngs',
+    title: 'Director, Centre for Digital Habits \u00b7 Research Fellow, University of Oxford',
+    topic: 'Vibe-Code Your Own Distraction-Free Internet',
+    url: 'https://www.linkedin.com/in/ulrik-lyngs/',
+    photo: 'speakers/ulrik-lyngs.jpeg',
+    initials: 'UL',
+    note: '1:00\u20133:00 p.m.'
+  },
+  { date: '2026-10-02', label: 'Oct 2', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish' },
+  { date: '2026-10-09', label: 'Oct 9', tbd: true, name: 'Speaker to be announced', note: '1:00\u20133:00 p.m.' },
+  { date: '2026-10-16', label: 'Oct 16', tbd: true, name: 'Speaker to be announced', note: '1:00\u20133:00 p.m.' },
+  { date: '2026-10-23', label: 'Oct 23', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish \u00b7 Sobrato Hall 024BC' },
+  { date: '2026-10-30', label: 'Oct 30', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish' },
+  { date: '2026-11-06', label: 'Nov 6', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish' },
+  { date: '2026-11-13', label: 'Nov 13', tbd: true, name: 'Speaker to be announced', note: '1:00\u20133:00 p.m.' },
+  { date: '2026-11-20', label: 'Nov 20', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish' },
+  { date: '2026-11-27', label: 'Nov 27', cancelled: true, topic: 'No session \u00b7 Thanksgiving break' },
+  { date: '2026-12-04', label: 'Dec 4', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish' }
+];

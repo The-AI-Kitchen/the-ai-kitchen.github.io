@@ -42,39 +42,48 @@
 
   <main>
 
-  <!-- ===== CURRENT QUARTER: SUMMER ===== -->
+  <!-- ===== CURRENT QUARTER: FALL ===== -->
   <section class="section section--alt" id="current">
     <div class="container">
       <h1 class="section-heading reveal"><em>Taste Test</em> Schedule</h1>
       <span class="section-accent reveal delay-1" aria-hidden="true"></span>
 
-      <h2 class="schedule-quarter reveal delay-1">Summer Test Kitchen 2026</h2>
+      <h2 class="schedule-quarter reveal delay-1">Fall Quarter 2026</h2>
       <p class="section-intro reveal delay-1">
-        Thursdays, 2:30&ndash;4:30 p.m. &middot; SCDI 3115, Santa Clara University
+        Fridays at 1:00 p.m. &middot; Benson Memorial Center 036 (California Mission Room), Santa Clara University &middot; Oct 23 in Sobrato Hall 024BC
       </p>
       <p class="section-intro reveal delay-1" style="margin-top: 0;">
-        Summer Test Kitchen sessions are smaller and more workshop-style than the standard AI Kitchen.
-        Summer means a lighter campus crowd but a more intimate space with more hands-on mentorship
-        from industry guests and faculty.
+        Every session follows the same shape: a live tutorial from our guest at 1:00, a hands-on build for
+        everyone in the room, then open pitches where faculty, students, and staff share the AI projects
+        they&rsquo;re working on and recruit collaborators. Most Fridays have a soft finish around 4:00, and
+        you&rsquo;re welcome to stay and keep working with your project team. Sessions marked 1:00&ndash;3:00
+        wrap at 3:00 sharp so the room can turn over to the next event.
       </p>
       <p class="schedule-subscribe reveal delay-1">
-        <a href="https://docs.google.com/document/d/1Eo0peVN23H1kjImvcr8nz7JamMEIG4gALqqNWgbWcgM/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Directions to SCDI 3115</a>
-        &middot;
         Subscribe:
         <a href="https://calendar.google.com/calendar/u/0/r?cid=c_65897020b77ac3e46324b38ad1ca4588a7f92815f3926a76bd855684906732d5%40group.calendar.google.com" target="_blank" rel="noopener noreferrer">Google Calendar</a>
         &middot;
         <a href="webcal://calendar.google.com/calendar/ical/c_65897020b77ac3e46324b38ad1ca4588a7f92815f3926a76bd855684906732d5%40group.calendar.google.com/public/basic.ics">Apple / Outlook</a>
       </p>
 
-      <div class="schedule-grid" id="summer-grid"></div>
-      <p class="section-intro reveal delay-2" style="margin-top: 1.75rem;">
-        The Summer Test Kitchen has wrapped for the season. <strong>AI Kitchen returns in Fall 2026.</strong>
+      <div class="schedule-grid" id="fall-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== SUMMER 2026 (completed) ===== -->
+  <section class="section" id="summer">
+    <div class="container">
+      <h2 class="schedule-quarter reveal">Summer Test Kitchen 2026 <span class="schedule-quarter-tag">&middot; Completed</span></h2>
+      <p class="section-intro reveal delay-1">
+        Thursdays, 2:30&ndash;4:30 p.m. &middot; SCDI 3115, Santa Clara University. Summer sessions were smaller and
+        more workshop-style than the standard AI Kitchen, with more hands-on mentorship from industry guests and faculty.
       </p>
+      <div class="schedule-grid" id="summer-grid"></div>
     </div>
   </section>
 
   <!-- ===== SPRING 2026 (completed, shown below summer) ===== -->
-  <section class="section" id="spring">
+  <section class="section section--alt" id="spring">
     <div class="container">
       <h2 class="schedule-quarter reveal">Spring Quarter 2026 <span class="schedule-quarter-tag">&middot; Completed</span></h2>
       <p class="section-intro reveal delay-1">
@@ -108,14 +117,40 @@
   <!-- ===== Schedule data (single source of truth, shared with index.html) ===== -->
   <script src="sessions.js"></script>
 
-  <!-- ===== Render schedule cards from sessions.js ===== -->
+  <!-- ===== Render schedule cards from sessions.js (shared by all quarters) ===== -->
   <script>
     (function() {
-      var grid = document.getElementById('schedule-grid');
-      var sessions = window.AI_KITCHEN_SESSIONS || [];
       function esc(s) { return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
-      var html = sessions.map(function(s, i) {
+
+      function avatar(photo, initials, extraStyle) {
+        return '<div class="speaker-avatar" style="background-image: url(\'' + esc(photo) + '\');' + (extraStyle || '') + '" aria-hidden="true">' + esc(initials || '') + '</div>';
+      }
+
+      function card(s, i) {
         var delay = 'delay-' + Math.min(3, Math.floor(i / 2) + 1);
+
+        if (s.cancelled) {
+          return '<div class="schedule-card reveal ' + delay + '" style="opacity: 0.7;">' +
+            '<div class="schedule-date" style="text-decoration: line-through; text-decoration-color: var(--text-muted);">' + esc(s.label) + '</div>' +
+            '<div class="schedule-info">' +
+              '<span class="schedule-topic" style="color: var(--text-muted);">' + esc(s.topic || 'Session cancelled') + '</span>' +
+            '</div>' +
+          '</div>';
+        }
+
+        if (s.tbd) {
+          return '<div class="schedule-card reveal ' + delay + '" style="opacity: ' + (s.topic ? '0.85' : '0.55') + ';">' +
+            '<div class="schedule-date">' + esc(s.label) + '</div>' +
+            '<div class="schedule-info">' +
+              (s.topic
+                ? '<span class="schedule-topic">' + esc(s.topic) + '</span>' +
+                  '<span class="schedule-title">' + esc(s.name) + '</span>'
+                : '<span class="schedule-topic" style="color: var(--text-muted);">' + esc(s.name) + '</span>') +
+              (s.note ? '<span class="schedule-title">' + esc(s.note) + '</span>' : '') +
+            '</div>' +
+          '</div>';
+        }
+
         if (s.featured) {
           var fName = s.topicUrl
             ? '<a href="' + esc(s.topicUrl) + '" class="schedule-name">' + esc(s.name) + '</a>'
@@ -133,67 +168,14 @@
             '<div class="speaker-avatar" style="text-indent: 0; font-size: 2rem; background-color: var(--coral-light);" aria-hidden="true">' + (s.emoji || '') + '</div>' +
           '</div>';
         }
-        var topicHtml = s.topicUrl
-          ? '<a href="' + esc(s.topicUrl) + '" class="schedule-topic">' + esc(s.topic) + ' &rarr;</a>'
-          : '<span class="schedule-topic">' + esc(s.topic) + '</span>';
-        var toolsHtml = (s.tools && s.tools.length)
-          ? '<span class="schedule-tools"><span class="schedule-tools-label">Tools:</span> ' + s.tools.map(esc).join(', ') + '</span>'
-          : '';
-        return '<div class="schedule-card reveal ' + delay + '">' +
-          '<div class="schedule-date">' + esc(s.label) + '</div>' +
-          '<div class="schedule-info">' +
-            topicHtml +
-            (s.copresenter
-              ? '<span class="schedule-names">' +
-                  '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>' +
-                  ' &amp; ' +
-                  '<a href="' + esc(s.copresenter.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.copresenter.name) + '</a>' +
-                '</span>'
-              : '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>') +
-            '<span class="schedule-title">' + esc(s.title) + (s.copresenter ? ' · ' + esc(s.copresenter.title) : '') + '</span>' +
-            toolsHtml +
-          '</div>' +
-          '<div class="speaker-avatar" style="background-image: url(\'' + esc(s.photo) + '\');" aria-hidden="true">' + esc(s.initials || '') + '</div>' +
-          (s.copresenter ? '<div class="speaker-avatar" style="background-image: url(\'' + esc(s.copresenter.photo) + '\'); margin-left: -12px;" aria-hidden="true">' + esc(s.copresenter.initials || '') + '</div>' : '') +
-        '</div>';
-      }).join('');
-      grid.innerHTML = html;
-    })();
-  </script>
 
-  <!-- ===== Render summer cards from sessions.js ===== -->
-  <script>
-    (function() {
-      var grid = document.getElementById('summer-grid');
-      var sessions = window.AI_KITCHEN_SUMMER_SESSIONS || [];
-      function esc(s) { return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
-      var html = sessions.map(function(s, i) {
-        var delay = 'delay-' + Math.min(3, Math.floor(i / 2) + 1);
-        if (s.cancelled) {
-          return '<div class="schedule-card reveal ' + delay + '" style="opacity: 0.7;">' +
-            '<div class="schedule-date" style="text-decoration: line-through; text-decoration-color: var(--text-muted);">' + esc(s.label) + '</div>' +
-            '<div class="schedule-info">' +
-              '<span class="schedule-topic" style="color: var(--text-muted);">' + esc(s.topic || 'Session cancelled') + '</span>' +
-            '</div>' +
-          '</div>';
-        }
-        if (s.tbd) {
-          return '<div class="schedule-card reveal ' + delay + '" style="opacity: ' + (s.topic ? '0.85' : '0.55') + ';">' +
-            '<div class="schedule-date">' + esc(s.label) + '</div>' +
-            '<div class="schedule-info">' +
-              (s.topic
-                ? '<span class="schedule-topic">' + esc(s.topic) + '</span>' +
-                  '<span class="schedule-title">' + esc(s.name) + '</span>'
-                : '<span class="schedule-topic" style="color: var(--text-muted);">' + esc(s.name) + '</span>') +
-            '</div>' +
-          '</div>';
-        }
         var topicHtml = s.topicUrl
           ? '<a href="' + esc(s.topicUrl) + '" class="schedule-topic">' + esc(s.topic) + ' &rarr;</a>'
           : '<span class="schedule-topic">' + esc(s.topic) + '</span>';
         var toolsHtml = (s.tools && s.tools.length)
           ? '<span class="schedule-tools"><span class="schedule-tools-label">Tools:</span> ' + s.tools.map(esc).join(', ') + '</span>'
           : '';
+
         return '<div class="schedule-card reveal ' + delay + '">' +
           '<div class="schedule-date">' + esc(s.label) + '</div>' +
           '<div class="schedule-info">' +
@@ -205,14 +187,24 @@
                   '<a href="' + esc(s.copresenter.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.copresenter.name) + '</a>' +
                 '</span>'
               : '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>') +
-            '<span class="schedule-title">' + esc(s.title) + (s.copresenter ? ' · ' + esc(s.copresenter.title) : '') + '</span>' +
+            '<span class="schedule-title">' + esc(s.title) + (s.copresenter ? ' \u00b7 ' + esc(s.copresenter.title) : '') + '</span>' +
             toolsHtml +
+            (s.note ? '<span class="schedule-title">' + esc(s.note) + '</span>' : '') +
           '</div>' +
-          '<div class="speaker-avatar" style="background-image: url(\'' + esc(s.photo) + '\');" aria-hidden="true">' + esc(s.initials || '') + '</div>' +
-          (s.copresenter ? '<div class="speaker-avatar" style="background-image: url(\'' + esc(s.copresenter.photo) + '\'); margin-left: -12px;" aria-hidden="true">' + esc(s.copresenter.initials || '') + '</div>' : '') +
+          avatar(s.photo, s.initials) +
+          (s.copresenter ? avatar(s.copresenter.photo, s.copresenter.initials, ' margin-left: -12px;') : '') +
         '</div>';
-      }).join('');
-      grid.innerHTML = html;
+      }
+
+      function render(gridId, sessions) {
+        var grid = document.getElementById(gridId);
+        if (!grid) return;
+        grid.innerHTML = (sessions || []).map(card).join('');
+      }
+
+      render('fall-grid', window.AI_KITCHEN_FALL_SESSIONS);
+      render('summer-grid', window.AI_KITCHEN_SUMMER_SESSIONS);
+      render('schedule-grid', window.AI_KITCHEN_SESSIONS);
     })();
   </script>
 
