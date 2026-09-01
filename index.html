@@ -563,13 +563,14 @@
     (function() {
       var spring = window.AI_KITCHEN_SESSIONS || [];
       var summer = window.AI_KITCHEN_SUMMER_SESSIONS || [];
+      var fall = window.AI_KITCHEN_FALL_SESSIONS || [];
 
       var today = new Date();
       today.setHours(0, 0, 0, 0);
 
       // Show the next upcoming event of any kind (talks and featured events like
       // Demo Night). Skip placeholder TBD and cancelled entries.
-      var candidates = spring.concat(summer).filter(function(s) { return !s.tbd && !s.cancelled; });
+      var candidates = spring.concat(summer).concat(fall).filter(function(s) { return !s.tbd && !s.cancelled; });
       var next = null;
       for (var i = 0; i < candidates.length; i++) {
         var sessionDate = new Date(candidates[i].date + 'T23:59:59');

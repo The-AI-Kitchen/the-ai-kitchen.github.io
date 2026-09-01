@@ -4,6 +4,11 @@
 // set "expires" to YYYY-MM-DD (the item stays visible through that whole day).
 window.AI_KITCHEN_NEWS = [
   {
+    date: '2026-09-01',
+    headline: 'AI Kitchen returns Friday, September 25',
+    body: 'Fall quarter opens with <a href="https://www.linkedin.com/in/ulrik-lyngs/" target="_blank" rel="noopener noreferrer">Ulrik Lyngs</a> (University of Oxford) on <i>Vibe-Code Your Own Distraction-Free Internet</i>. Fridays at 1:00 p.m. in Benson 036. <a href="schedule.html">See the fall schedule</a>.'
+  },
+  {
     date: '2026-06-30',
     headline: 'Featured in Inside Higher Ed',
     body: 'Inside Higher Ed published a feature on AI Kitchen: <a href="https://www.insidehighered.com/news/student-success/college-experience/2026/06/30/inside-universitys-ai-kitchen" target="_blank" rel="noopener noreferrer"><i>Inside a University\'s &lsquo;AI Kitchen&rsquo;</i></a>.'
