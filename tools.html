@@ -197,6 +197,29 @@
     table.summary td a:not(.tool-link):hover { color: var(--cta-bg); }
     table.summary tr:nth-child(even) { background: var(--bg-page); }
 
+    /* The one paid recommendation, called out in the table */
+    table.summary tr.row-pick,
+    table.summary tr.row-pick:nth-child(even) { background: var(--bg-cta); }
+    table.summary tr.row-pick td { border-bottom-color: rgba(139, 93, 49, 0.25); }
+    table.summary tr.row-pick td:first-child { box-shadow: inset 3px 0 0 var(--cta-bg); }
+    /* --coral drops to 3.9:1 on this warmer background; use the darker amber for AA */
+    table.summary tr.row-pick a.tool-link { color: var(--cta-bg); text-decoration-color: rgba(139, 93, 49, 0.5); }
+    table.summary tr.row-pick a.tool-link:hover { text-decoration-color: var(--cta-bg); }
+
+    .pay-badge {
+      display: inline-block;
+      background: var(--cta-bg);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      padding: 2px 7px;
+      border-radius: 3px;
+      margin-top: 4px;
+      white-space: nowrap;
+    }
+
     /* Pending categories */
     .pending-banner {
       background: #fff3cd;
@@ -411,7 +434,7 @@
 
 <h2 class="standalone-heading" id="top-picks">Top Picks by Category</h2>
 <div class="standalone-block table-wrap" style="border-top:none; border-radius: 0 0 var(--radius-sm) var(--radius-sm);">
-<p style="font-size:14px; color:#6b5d4d; margin: 0 0 12px 0;">We prioritize free tools that offer premium capabilities for SCU students. <strong>H</strong> marks a harness rather than a chatbot. One pick here is paid, and deliberately so: if you spend money on AI this year, spend it in <a href="#agentic">section 2</a>.</p>
+<p style="font-size:14px; color:#6b5d4d; margin: 0 0 12px 0;">We prioritize free tools that offer premium capabilities for SCU students. Everything below is free except the highlighted row, which is the one thing we think is worth paying for.</p>
 <table class="summary">
 <tr>
   <th>Category</th>
@@ -423,10 +446,10 @@
   <td><a class="tool-link" href="https://gemini.google.com" target="_blank">Google Gemini</a></td>
   <td>Free through SCU, private under the campus agreement, good enough for chat</td>
 </tr>
-<tr>
-  <td><a href="#agentic">Agentic AI &amp; Code</a> <strong>(H)</strong></td>
+<tr class="row-pick">
+  <td><a href="#agentic">Agentic AI &amp; Code</a><br><span class="pay-badge">Worth paying for</span></td>
   <td><a class="tool-link" href="https://claude.ai" target="_blank">Claude</a> <span style="color:var(--text-muted);">($20/mo)</span></td>
-  <td>Claude Cowork and Claude Code; free pick is Google Antigravity</td>
+  <td>Claude Cowork and Claude Code do work a chatbot cannot. Free alternative: Google Antigravity</td>
 </tr>
 <tr>
   <td><a href="#design">Visual Design / UI</a></td>
@@ -476,7 +499,7 @@
 <h2 class="standalone-heading" id="modes">Two Modes: Chatbot vs. Harness</h2>
 <div class="standalone-block" style="border-top:none; border-radius: 0 0 var(--radius-sm) var(--radius-sm);">
 
-<p>One distinction cuts across every category above, and it explains the <strong>(H)</strong> markers in the table. The same vendors ship their models in two very different wrappers, and the wrapper matters more than the model.</p>
+<p>One distinction cuts across every category above, and it explains why the agentic row is the only one we suggest paying for. The same vendors ship their models in two very different wrappers, and the wrapper matters more than the model.</p>
 
 <div class="mode-grid">
   <div class="mode-card">
