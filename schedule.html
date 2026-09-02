@@ -22,9 +22,21 @@
     .schedule-quarter-tag { color: var(--text-muted); font-weight: 500; }
 
     /* One-off room changes are flagged on the affected card, not in the quarter
-       intro, so the standard room stays the thing people remember. */
-    .schedule-card--room-change { border-left-color: var(--pink); }
-    .schedule-card--room-change .schedule-date { color: #9c4a33; }
+       intro, so the standard room stays the thing people remember. The card sits
+       at the same weight as every other unannounced date: only the alert is
+       emphasised. The dimming therefore moves from the card onto its children,
+       because a card-level opacity would fade the alert along with them. */
+    .schedule-card--room-change {
+      /* --bg-page and --coral carried as rgba so the card fades into the section
+         exactly as far as a dimmed neighbour does, without an opacity of its own. */
+      background: rgba(250, 247, 242, var(--tbd-dim, 1));
+      border-left-color: rgba(154, 110, 53, var(--tbd-dim, 1));
+    }
+
+    .schedule-card--room-change .schedule-date,
+    .schedule-card--room-change .schedule-info > *:not(.schedule-room-alert) {
+      opacity: var(--tbd-dim, 1);
+    }
 
     .schedule-room-alert {
       align-self: flex-start;
@@ -165,10 +177,13 @@
         }
 
         if (s.tbd) {
-          // A card carrying a room change stays at full strength even while the
-          // speaker is still TBA, so the alert does not fade out with the rest.
-          var tbdOpacity = s.roomChange ? '1' : (s.topic ? '0.85' : '0.55');
-          return '<div class="schedule-card reveal ' + delay + roomClass + '" style="opacity: ' + tbdOpacity + ';">' +
+          // Room-change cards hand their dimming to the stylesheet as --tbd-dim
+          // so the alert can opt out of it; everything else dims as a whole.
+          var tbdDim = s.topic ? '0.85' : '0.55';
+          var tbdStyle = s.roomChange
+            ? 'opacity: 1; --tbd-dim: ' + tbdDim + ';'
+            : 'opacity: ' + tbdDim + ';';
+          return '<div class="schedule-card reveal ' + delay + roomClass + '" style="' + tbdStyle + '">' +
             '<div class="schedule-date">' + esc(s.label) + '</div>' +
             '<div class="schedule-info">' +
               (s.topic
