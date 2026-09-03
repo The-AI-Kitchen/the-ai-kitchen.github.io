@@ -1301,6 +1301,47 @@ a.schedule-topic:hover {
   gap: 20px;
 }
 
+/* Session recording embeds */
+.session-recording {
+  max-width: 760px;
+  background: white;
+  border: 1px solid var(--bg-alt);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.session-recording__embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: var(--bg-alt);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.session-recording__embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.session-recording__link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.8125rem;
+  color: var(--coral);
+  text-decoration: underline;
+  text-decoration-color: rgba(154, 110, 53, 0.35);
+  text-underline-offset: 2px;
+}
+
+.session-recording__link:hover {
+  text-decoration-color: var(--coral);
+}
+
 /* --- Mobile nav --- */
 @media (max-width: 639px) {
   .nav-hamburger {
