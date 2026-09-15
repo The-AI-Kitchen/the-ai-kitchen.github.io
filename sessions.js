@@ -132,17 +132,8 @@ window.AI_KITCHEN_SUMMER_SESSIONS = [
 // "Soft finish" dates wrap around 4:00 p.m. with open project time after;
 // the others end at 3:00 p.m. sharp so the room can turn over.
 window.AI_KITCHEN_FALL_SESSIONS = [
-  {
-    date: '2026-09-25',
-    label: 'Sep 25',
-    name: 'Ulrik Lyngs',
-    title: 'Director, Centre for Digital Habits \u00b7 Research Fellow, University of Oxford',
-    topic: 'Vibe-Code Your Own Distraction-Free Internet',
-    url: 'https://www.linkedin.com/in/ulrik-lyngs/',
-    photo: 'speakers/ulrik-lyngs.jpeg',
-    initials: 'UL',
-    note: '1:00\u20133:00 p.m.'
-  },
+  // Ulrik Lyngs had to cancel (Sep 14); replacement pending.
+  { date: '2026-09-25', label: 'Sep 25', tbd: true, name: 'Speaker to be announced', note: '1:00\u20133:00 p.m.' },
   { date: '2026-10-02', label: 'Oct 2', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish' },
   { date: '2026-10-09', label: 'Oct 9', tbd: true, name: 'Speaker to be announced', note: '1:00\u20133:00 p.m.' },
   { date: '2026-10-16', label: 'Oct 16', tbd: true, name: 'Speaker to be announced', note: '1:00\u20133:00 p.m.' },
