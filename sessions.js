@@ -132,16 +132,43 @@ window.AI_KITCHEN_SUMMER_SESSIONS = [
 // "Soft finish" dates wrap around 4:00 p.m. with open project time after;
 // the others end at 3:00 p.m. sharp so the room can turn over.
 window.AI_KITCHEN_FALL_SESSIONS = [
-  // Ulrik Lyngs had to cancel (Sep 14); replacement pending.
-  { date: '2026-09-25', label: 'Sep 25', tbd: true, name: 'Speaker to be announced', note: '1:00\u20133:00 p.m.' },
+  {
+    date: '2026-09-25',
+    label: 'Sep 25',
+    name: 'Kai Lukoff',
+    title: 'Professor of Human-Computer Interaction, Santa Clara University',
+    topic: 'Build Your Personal Website with AI',
+    url: 'https://kailukoff.com/',
+    photo: 'speakers/kai-lukoff.jpeg',
+    initials: 'KL',
+    note: '1:00\u20133:00 p.m.'
+  },
   { date: '2026-10-02', label: 'Oct 2', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish' },
   { date: '2026-10-09', label: 'Oct 9', tbd: true, name: 'Speaker to be announced', note: '1:00\u20133:00 p.m.' },
-  { date: '2026-10-16', label: 'Oct 16', tbd: true, name: 'Speaker to be announced', note: '1:00\u20133:00 p.m.' },
+  {
+    date: '2026-10-16',
+    label: 'Oct 16',
+    name: 'David Coad',
+    title: 'Assistant Teaching Professor of English, Santa Clara University',
+    topic: 'How I Prepared a Keynote with AI',
+    url: 'https://www.scu.edu/cas/english/faculty--staff/david-coad/',
+    initials: 'DC',
+    note: '1:00\u20133:00 p.m.'
+  },
   { date: '2026-10-23', label: 'Oct 23', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish', roomChange: 'Sobrato Hall 024BC' },
   { date: '2026-10-30', label: 'Oct 30', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish' },
   { date: '2026-11-06', label: 'Nov 6', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish' },
   { date: '2026-11-13', label: 'Nov 13', tbd: true, name: 'Speaker to be announced', note: '1:00\u20133:00 p.m.' },
-  { date: '2026-11-20', label: 'Nov 20', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish' },
+  {
+    date: '2026-11-20',
+    label: 'Nov 20',
+    name: 'Danielle Heitmuller',
+    title: 'Assistant Professor of Art and Art History, Santa Clara University',
+    topic: 'AI in the Art Studio: Where It Helps and Where It Doesn\u2019t',
+    url: 'https://www.scu.edu/cas/art/faculty-and-staff/danielle-heitmuller/',
+    initials: 'DH',
+    note: '1:00\u20134:00 p.m. \u00b7 soft finish'
+  },
   { date: '2026-11-27', label: 'Nov 27', cancelled: true, topic: 'No session \u00b7 Thanksgiving break' },
   { date: '2026-12-04', label: 'Dec 4', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish' }
 ];
