@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guest Chef Guide — AI Kitchen</title>
+  <meta name="description" content="A five-minute briefing for AI Kitchen guest chefs: what the program is, how a Friday session runs, what makes a good one, recordings of past sessions, and what we need from you.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Guest Chef Guide — AI Kitchen">
+  <meta property="og:description" content="Show, not tell: how to run a Friday session at AI Kitchen, Santa Clara University.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main site styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Guide page styles (mirrors tools.html) -->
+  <style>
+    .guide-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 5vw, 32px);
+    }
+
+    .guide-hero {
+      padding-top: clamp(40px, 6vh, 64px);
+      padding-bottom: clamp(24px, 4vh, 40px);
+    }
+
+    .guide-hero h1 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--text-primary);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .guide-hero h1 em {
+      font-style: italic;
+      color: var(--coral);
+    }
+
+    .guide-subtitle {
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+      margin-bottom: 0;
+    }
+
+    .guide-heading {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 1.3125rem;
+      line-height: 1.2;
+      margin-top: 36px;
+      margin-bottom: 0;
+      padding: 10px 14px;
+      background: var(--cta-bg);
+      color: white;
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    }
+
+    .guide-heading[id] { scroll-margin-top: 60px; }
+
+    .guide-block {
+      background: white;
+      border: 1px solid var(--bg-alt);
+      border-top: none;
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .guide-block p,
+    .guide-block li {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .guide-block p { margin-bottom: 10px; }
+    .guide-block p:last-child { margin-bottom: 0; }
+    .guide-block ul { margin: 6px 0 12px 0; padding-left: 20px; }
+    .guide-block li { margin-bottom: 6px; }
+    .guide-block strong { color: var(--text-primary); }
+
+    .guide-block a {
+      color: var(--coral);
+      text-decoration: underline;
+      text-decoration-color: rgba(154, 110, 53, 0.4);
+      text-underline-offset: 2px;
+    }
+
+    .guide-block a:hover { text-decoration-color: var(--coral); }
+
+    /* Kai's format paragraph, set apart */
+    .guide-quote {
+      background: var(--mint-light);
+      border-left: 4px solid var(--mint);
+      padding: 12px 16px;
+      margin: 4px 0 16px 0;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .guide-quote p { margin: 0; color: var(--text-primary); }
+
+    /* Run of show */
+    .run-of-show {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 4px 0;
+    }
+
+    .run-of-show li {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 12px;
+      padding: 8px 0;
+      border-top: 1px solid var(--bg-alt);
+      margin: 0;
+    }
+
+    .run-of-show li:first-child { border-top: none; }
+
+    .run-of-show .t {
+      font-weight: 700;
+      color: var(--coral);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Past-session cards */
+    .example-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 12px 0 4px 0;
+    }
+
+    .example-card {
+      display: block;
+      border: 1px solid var(--bg-alt);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--bg-page);
+      text-decoration: none !important;
+      color: inherit;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .example-card:hover { box-shadow: var(--shadow-soft); }
+
+    .example-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .example-card .body { padding: 10px 12px 12px; }
+
+    .example-card .title {
+      display: block;
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 0.9375rem;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .example-card .meta {
+      display: block;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .guide-cta {
+      margin-top: 8px;
+      font-size: 0.9375rem;
+    }
+
+    @media (max-width: 480px) {
+      .run-of-show li { grid-template-columns: 52px 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" role="navigation" aria-label="Main">
+    <a href="index.html" class="nav-wordmark" style="text-decoration:none; color:var(--text-primary);">AI Kitchen</a>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="const links=this.nextElementSibling;const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open);">
+      <svg viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-links">
+      <a href="schedule.html" class="nav-link">Schedule</a>
+      <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" class="nav-link" target="_blank" rel="noopener noreferrer">Projects &#8599;</a>
+      <a href="tools.html" class="nav-link">Tools Guide</a>
+      <a href="roles.html" class="nav-link">Leadership Roles</a>
+      <a href="index.html#press" class="nav-link">Press</a>
+      <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
+    </div>
+  </nav>
+
+  <main>
+
+  <!-- ===== HERO ===== -->
+  <section class="section guide-hero">
+    <div class="guide-container">
+      <h1><em>Guest Chef</em> Guide</h1>
+      <p class="guide-subtitle">Everything you need before you cook with us. Five minutes to read.<br>
+      Questions or a Friday that works for you: <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a></p>
+    </div>
+  </section>
+
+  <!-- ===== CONTENT ===== -->
+  <section class="section" style="padding-top:0; overflow:visible;">
+    <div class="guide-container">
+
+<h2 class="guide-heading" id="what">What AI Kitchen is</h2>
+<div class="guide-block">
+  <p>
+    AI Kitchen is Santa Clara University's open-access program for building AI fluency. Students from
+    across the university (computer science, English, psychology, business, art, and more) meet on Friday
+    afternoons to watch someone use AI for real work, then try it themselves. Sessions are free, need no
+    application, and are open to the public.
+  </p>
+  <p>
+    Expect 40 to 50 people in the room. Most are at the chatbot level: they have used ChatGPT, Claude, or
+    Gemini, and a handful have tried a desktop app or a coding agent. They are curious, and they ask good
+    questions about privacy ("do I want to give this thing my inbox?"). A student leadership team runs the
+    room with Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a>.
+  </p>
+  <p>
+    Our guests so far have skewed toward engineers and product leaders. We would love more range: marketing,
+    content and video, sales, recruiting, finance and ops, legal, user research, teaching, art, and AI in
+    personal life, for learning, hobbies, planning, or parenting. If you use AI to do something beyond
+    building software, you are who we are looking for.
+  </p>
+</div>
+
+<h2 class="guide-heading" id="format">The format: show, not tell</h2>
+<div class="guide-block">
+  <div class="guide-quote">
+    <p>
+      The format is a live workflow, not a talk. About 45 minutes with your screen up, showing how you use
+      AI in your own work, then everyone tries the same thing themselves while you circulate, then open
+      project time if you can stay. Nothing needs to be polished. We want to see the messy version of
+      working with AI in a useful way, while avoiding the slop.
+    </p>
+  </div>
+  <p>A typical Friday:</p>
+  <ul class="run-of-show">
+    <li><span class="t">1:00</span><span>The student team runs an icebreaker and gets everyone's laptop set up (15 to 20 minutes). Good time to plug in and test your screen.</span></li>
+    <li><span class="t">1:20</span><span><strong>Your live demo, screen up</strong> (45 to 60 minutes). Work through a real problem the way you would at your desk, and narrate the choices as you go.</span></li>
+    <li><span class="t">2:10</span><span><strong>Hands-on</strong> (30 minutes). Everyone repeats one step from your demo on their own laptop. You and the student team circulate.</span></li>
+    <li><span class="t">2:40</span><span><strong>Discussion</strong> (20 minutes). What worked, what broke, what they would try on Monday.</span></li>
+    <li><span class="t">3:00</span><span>Your part ends. Most Fridays the room stays open until 4:00 for project work and pitches; stay if you can.</span></li>
+  </ul>
+</div>
+
+<h2 class="guide-heading" id="good">What makes a good session</h2>
+<div class="guide-block">
+  <ul>
+    <li><strong>A real problem from your own work or life.</strong> Specific enough to be relatable, general enough to teach one reusable pattern. One guest built a movie recommender for himself and his wife; the pattern everyone took home was asking the model what it needs to know and which data to hand it.</li>
+    <li><strong>The wrong turns included.</strong> Where the AI got it wrong, how you noticed, and what you did next. That is the part nobody gets from a tutorial.</li>
+    <li><strong>One pattern, named once.</strong> Say it out loud or put it on a single slide so people can repeat it without you.</li>
+    <li><strong>Two layers.</strong> Show the ambitious version with whatever tools you use. Then make the hands-on step doable on a chatbot (claude.ai, ChatGPT, Gemini) or a tool we can provision. Advanced tools are welcome in the demo; they should not be required for the exercise.</li>
+    <li><strong>No product pitches.</strong> Guests show their own work. If you work at an AI company, show how you use tools in your own job, not the product you sell.</li>
+    <li><strong>Plan for the privacy question.</strong> Someone will ask about giving an AI access to email, files, or data. A few minutes on what you connect, what you do not, and why goes a long way.</li>
+  </ul>
+</div>
+
+<h2 class="guide-heading" id="examples">Watch a past session</h2>
+<div class="guide-block">
+  <p>Three recordings that show the range, each with a recap page (slides, exercises, and the recording).</p>
+  <div class="example-grid">
+    <a class="example-card" href="ralph-loops-movies.html">
+      <img src="https://img.youtube.com/vi/25oosZptkOc/hqdefault.jpg" alt="" loading="lazy">
+      <span class="body">
+        <span class="title">Ralph Loops for Movie Recommendations</span>
+        <span class="meta">Cameron Behar, Sprinter Health. A personal problem (what to watch tonight) solved with Claude as an agent that gathers and synthesizes data.</span>
+      </span>
+    </a>
+    <a class="example-card" href="reviews-to-insights.html">
+      <img src="https://img.youtube.com/vi/G06usEhVS5w/hqdefault.jpg" alt="" loading="lazy">
+      <span class="body">
+        <span class="title">From Reviews to Insights</span>
+        <span class="meta">Zach Schendel, Google. 2,000 real Starbucks reviews turned into a quote-grounded insight dashboard and a one-page memo. UX research, no engineering required.</span>
+      </span>
+    </a>
+    <a class="example-card" href="build-a-game-in-an-afternoon.html">
+      <img src="https://img.youtube.com/vi/i55sVcSs23w/hqdefault.jpg" alt="" loading="lazy">
+      <span class="body">
+        <span class="title">Build a Game in an Afternoon</span>
+        <span class="meta">Sherrie Cao, Electronic Arts. A product manager demos a Chrome extension she built with a coding agent, then everyone builds their own take on Wordle.</span>
+      </span>
+    </a>
+  </div>
+  <p class="guide-cta">
+    More on the <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer">AI Kitchen YouTube channel</a>
+    and the <a href="schedule.html">schedule page</a>. Note that these spring sessions ran 1:30 to 5:00 with the tutorial at 2:30; the fall format above is shorter.
+  </p>
+</div>
+
+<h2 class="guide-heading" id="need">What we need from you, and when</h2>
+<div class="guide-block">
+  <ul>
+    <li><strong>Two weeks before:</strong> a session title, a two or three sentence description, a photo, and one link (LinkedIn or your site) for the schedule page and the announcement to our list.</li>
+    <li><strong>Two weeks before:</strong> which tool attendees should install or sign up for. SCU provides Gemini; we can provision most other tools for the room. The student team uses the first 15 minutes to get everyone set up.</li>
+    <li><strong>One week before:</strong> a 30-minute prep call with Kai. Optional, and most guests find it useful: we go over the audience, pick the hands-on step, and agree on a backup if the live demo misbehaves.</li>
+    <li><strong>On the day:</strong> arrive by 12:45 with your laptop and any adapter you need (the room has HDMI). Guest Wi-Fi is available. We send directions and parking details the week before.</li>
+    <li><strong>Afterward:</strong> with your OK, we post the recording and your slides or links on a recap page like the ones above.</li>
+  </ul>
+</div>
+
+<h2 class="guide-heading" id="logistics">Where and when</h2>
+<div class="guide-block">
+  <p>
+    Fridays at 1:00 p.m. during the academic year, in the California Mission Room, basement of the Benson
+    Memorial Center, Santa Clara University. Open dates are marked "Speaker to be announced" on the
+    <a href="schedule.html">schedule</a>.
+  </p>
+  <p class="guide-cta">
+    Is there a Friday that works for you? Email <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a> or
+    <a href="https://tinyurl.com/meet-kai30" target="_blank" rel="noopener noreferrer">book a 30-minute call</a>.
+    And if you would rather see one first, drop in on any Friday.
+  </p>
+</div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-wordmark">AI Kitchen</div>
+      <div class="footer-divider" aria-hidden="true"></div>
+      <p>
+        Faculty Lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>
+        Faculty Advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> &amp; Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a>
+      </p>
+      <p>
+        Santa Clara University
+      </p>
+      <img src="scu-logo.png" alt="Santa Clara University" class="footer-logo">
+      <div class="footer-social" aria-label="Follow AI Kitchen">
+        <span class="footer-social-label">Follow AI Kitchen</span>
+        <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on LinkedIn"><img src="linkedin-icon.svg" alt="">LinkedIn</a>
+        <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on YouTube"><img src="youtube-icon.svg" alt="">YouTube</a>
+      </div>
+      <p>
+        Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>
+      </p>
+    </div>
+  </footer>
+
+  </main>
+
+  <!-- ===== Scroll Reveal Script ===== -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
