@@ -366,6 +366,16 @@ img {
   line-height: 1.6;
 }
 
+.section-intro a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(196, 136, 74, 0.4);
+}
+
+.section-intro a:hover {
+  text-decoration-color: var(--coral);
+}
+
 /* --- Feature Cards (What Is) --- */
 .feature-grid {
   display: grid;
