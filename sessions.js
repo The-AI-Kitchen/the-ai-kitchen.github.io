@@ -142,7 +142,8 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     url: 'https://kailukoff.com/',
     photo: 'speakers/kai-lukoff.jpeg',
     initials: 'KL',
-    note: '1:00\u20133:00 p.m.'
+    note: '1:00\u20133:00 p.m.',
+    flex: 'Date open to a guest chef: Kai will move to a later Friday'
   },
   {
     date: '2026-10-02',

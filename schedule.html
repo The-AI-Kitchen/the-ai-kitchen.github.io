@@ -49,6 +49,20 @@
       font-weight: 600;
       line-height: 1.35;
     }
+
+    /* A date the host holds only until a guest chef claims it. Same chip as the
+       room alert, in a calmer green so it reads as an invitation, not a warning. */
+    .schedule-flex-alert {
+      align-self: flex-start;
+      margin-top: 8px;
+      padding: 5px 10px;
+      border-radius: var(--radius-sm);
+      background: rgba(93, 128, 88, 0.14);
+      color: #3f6a45;          /* 6.1:1 on the page background — AA pass */
+      font-size: 0.8125rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
   </style>
 </head>
 <body>
@@ -87,6 +101,10 @@
         they&rsquo;re working on and recruit collaborators. Most Fridays have a soft finish around 4:00, and
         you&rsquo;re welcome to stay and keep working with your project team. Sessions marked 1:00&ndash;3:00
         wrap at 3:00 sharp so the room can turn over to the next event.
+      </p>
+      <p class="section-intro reveal delay-1" style="margin-top: 0;">
+        Want to be a guest chef? Dates marked &ldquo;Speaker to be announced&rdquo; are open, and Kai will
+        trade his own date for the right guest. Email <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>.
       </p>
       <p class="schedule-subscribe reveal delay-1">
         Subscribe:
@@ -168,6 +186,14 @@
           : '';
       }
 
+      // A host-held date: the card stays a normal confirmed card, and the chip says
+      // a guest chef can still claim the date.
+      function flexAlert(s) {
+        return s.flex
+          ? '<span class="schedule-flex-alert">' + esc(s.flex) + '</span>'
+          : '';
+      }
+
       function card(s, i) {
         var delay = 'delay-' + Math.min(3, Math.floor(i / 2) + 1);
         var roomClass = s.roomChange ? ' schedule-card--room-change' : '';
@@ -241,6 +267,7 @@
             toolsHtml +
             (s.note ? '<span class="schedule-title">' + esc(s.note) + '</span>' : '') +
             roomAlert(s) +
+            flexAlert(s) +
           '</div>' +
           avatar(s.photo, s.initials) +
           (s.copresenter ? avatar(s.copresenter.photo, s.copresenter.initials, ' margin-left: -12px;') : '') +
