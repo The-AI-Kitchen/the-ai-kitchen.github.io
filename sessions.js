@@ -188,6 +188,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     title: 'Founding Head of Product, Peggy',
     topic: 'Build a Family Travel Agent, No Terminal Required',
     url: 'https://www.linkedin.com/in/bani-malhotra-07615615/',
+    photo: 'speakers/bani-malhotra.jpeg',
     initials: 'BM',
     tools: ['Claude'],
     note: '1:00\u20134:00 p.m. \u00b7 soft finish'
