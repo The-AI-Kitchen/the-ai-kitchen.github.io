@@ -151,6 +151,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     title: 'Online and Hybrid Learning Specialist, Academic Technology, Santa Clara University',
     topic: 'Vibe Coding Camino: Claude Cowork as a Recipe for Students and Teachers',
     url: 'https://www.scu.edu/is/academic-technology/about-us/staff-profiles/kemp.html',
+    photo: 'speakers/jeremy-kemp.jpeg',
     initials: 'JK',
     tools: ['Claude Cowork'],
     note: '1:00\u20134:00 p.m. \u00b7 soft finish'
@@ -162,6 +163,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     title: 'Founder, HiringCoach.ai',
     topic: 'Building an AI Chief of Staff',
     url: 'https://www.linkedin.com/in/rishanmohamed/',
+    photo: 'speakers/rishan-mohamed.jpeg',
     initials: 'RM',
     note: '1:00\u20133:00 p.m.'
   },
@@ -198,6 +200,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     title: 'Assistant Professor of Art and Art History, Santa Clara University',
     topic: 'AI in the Art Studio: Where It Helps and Where It Doesn\u2019t',
     url: 'https://www.scu.edu/cas/art/faculty-and-staff/danielle-heitmuller/',
+    photo: 'speakers/danielle-heitmuller.jpeg',
     initials: 'DH',
     note: '1:00\u20134:00 p.m. \u00b7 soft finish'
   },
