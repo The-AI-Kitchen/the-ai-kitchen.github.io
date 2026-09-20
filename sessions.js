@@ -54,7 +54,7 @@ window.AI_KITCHEN_SESSIONS = [
     date: '2026-05-22',
     label: 'May 22',
     name: 'Zachary Schendel',
-    title: 'User Research, Gemini at Google',
+    title: 'Head of Research, Google DeepMind',
     topic: 'From Reviews to Insights: AI-Assisted UX Research',
     topicUrl: 'reviews-to-insights.html',
     url: 'https://www.linkedin.com/in/zachary-schendel-38353157/',
