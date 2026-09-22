@@ -179,7 +179,19 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     tools: ['Perplexity', 'Claude'],
     note: '1:00\u20133:00 p.m.'
   },
-  { date: '2026-10-23', label: 'Oct 23', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish', roomChange: 'Sobrato Hall 024BC' },
+  {
+    date: '2026-10-23',
+    label: 'Oct 23',
+    name: 'Toby O\u2019Brien',
+    title: 'Co-Founder & CRO, Oliver AI \u00b7 SCU Regent',
+    topic: 'Research the Prospect, Tailor the Pitch: AI for Sales Outreach',
+    url: 'https://www.linkedin.com/in/thomasjobrieniii/',
+    photo: 'speakers/toby-obrien.jpeg',
+    initials: 'TO',
+    tools: ['Claude'],
+    note: '1:00\u20134:00 p.m. \u00b7 soft finish \u00b7 plus a second speaker, to be announced',
+    roomChange: 'Sobrato Hall 024BC'
+  },
   { date: '2026-10-30', label: 'Oct 30', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish' },
   {
     date: '2026-11-06',
