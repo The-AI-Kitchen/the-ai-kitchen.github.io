@@ -16,7 +16,9 @@
   }
 
   function render() {
-    var all = (window.AI_KITCHEN_SESSIONS || []).concat(window.AI_KITCHEN_SUMMER_SESSIONS || []);
+    var all = (window.AI_KITCHEN_SESSIONS || [])
+      .concat(window.AI_KITCHEN_SUMMER_SESSIONS || [])
+      .concat(window.AI_KITCHEN_FALL_SESSIONS || []);
     var file = (location.pathname.split('/').pop() || '').toLowerCase();
     var s = null;
     for (var i = 0; i < all.length; i++) {

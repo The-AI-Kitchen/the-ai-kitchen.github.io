@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Judgment Calls While Building a Keynote with AI — AI Kitchen</title>
+  <meta name="description" content="David Coad shares how he combines AI brainstorming, slide design, image generation, and human judgment to develop an oral presentation. October 16, 2026, 1–3 p.m. at Santa Clara University.">
+
+  <meta property="og:title" content="Judgment Calls While Building a Keynote with AI — AI Kitchen">
+  <meta property="og:description" content="A live walkthrough and hands-on workshop on developing a presentation with AI and human judgment. October 16, 2026, 1–3 p.m., Benson Memorial Center 036, Santa Clara University.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .section { padding: 24px 0; }
+
+    .session-container { max-width: 960px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 32px); }
+    .session-hero { padding-top: clamp(40px, 6vh, 64px); padding-bottom: clamp(20px, 3vh, 32px); }
+    .session-hero .eyebrow {
+      font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1.5px; color: var(--coral); margin-bottom: 8px;
+    }
+    .session-hero h1 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem); color: var(--text-primary);
+      line-height: 1.1; margin-bottom: 12px;
+    }
+    .session-hero h1 em { font-style: italic; color: var(--coral); }
+    .session-hero .session-sub {
+      color: var(--text-secondary); font-size: 1.0625rem; line-height: 1.5;
+      max-width: 720px; margin-bottom: 6px;
+    }
+    .session-hero .session-meta { color: var(--text-muted); font-size: 0.875rem; margin-top: 8px; }
+
+    .session-heading {
+      font-family: 'Bodoni Moda', Georgia, serif; font-size: 1.5rem;
+      color: var(--text-primary); margin-top: 48px; margin-bottom: 16px;
+    }
+    .session-heading em { font-style: italic; color: var(--coral); }
+    .session-intro { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 20px; }
+
+    /* Takeaway / "when to use" list */
+    .goals-list {
+      list-style: none; padding: 0; margin: 0;
+      background: white; border: 1px solid var(--bg-alt); border-radius: var(--radius-sm); box-shadow: var(--shadow-soft);
+    }
+    .goals-list li {
+      padding: 12px 18px; border-bottom: 1px solid var(--bg-alt);
+      font-size: 0.9375rem; line-height: 1.55; color: var(--text-secondary);
+      display: grid; grid-template-columns: 16px 1fr; gap: 12px; align-items: start;
+    }
+    .goals-list li:last-child { border-bottom: none; }
+    .goals-list li::before { content: "\2014"; color: var(--coral); font-weight: 700; line-height: 1.55; }
+    .goals-list li strong { color: var(--text-primary); }
+
+    /* Demo cards */
+    .recipes-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .recipe-card { background: var(--mint-light); border-left: 4px solid var(--mint); border-radius: var(--radius-sm); padding: 12px 16px; }
+    .recipe-card .recipe-num { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 4px; }
+    .recipe-card .recipe-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.9375rem; color: var(--text-primary); margin-bottom: 6px; }
+    .recipe-card .recipe-desc { font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5; }
+
+    /* Callout box */
+    .callout {
+      background: white; border: 1px solid var(--bg-alt); border-left: 4px solid var(--coral);
+      border-radius: var(--radius-sm); padding: 18px 22px; margin-bottom: 20px; box-shadow: var(--shadow-soft);
+    }
+    .callout h3 { font-family: 'DM Sans', sans-serif; font-size: 1.1875rem; font-weight: 700; color: var(--text-primary); margin: 0 0 10px 0; }
+    .callout ol { margin: 0 0 10px 0; padding-left: 22px; }
+    .callout ol li { margin-bottom: 8px; font-size: 0.9375rem; line-height: 1.55; color: var(--text-secondary); }
+    .callout ol li strong { color: var(--text-primary); }
+    .callout .callout-note {
+      background: var(--bg-cta); border: 1px solid rgba(196, 136, 74, 0.25); border-radius: var(--radius-sm);
+      padding: 10px 14px; font-size: 0.8125rem; color: var(--text-secondary); margin-top: 12px; line-height: 1.55;
+    }
+
+    .session-footer-note {
+      margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--bg-alt);
+      color: var(--text-muted); font-size: 13px; margin-bottom: clamp(48px, 6vh, 64px);
+    }
+    .session-footer-note a { color: var(--coral); }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" role="navigation" aria-label="Main">
+    <a href="index.html" class="nav-wordmark" style="text-decoration:none; color:var(--text-primary);">AI Kitchen</a>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="const links=this.nextElementSibling;const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open);">
+      <svg viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-links">
+      <a href="schedule.html" class="nav-link">Schedule</a>
+      <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" class="nav-link" target="_blank" rel="noopener noreferrer">Projects &#8599;</a>
+      <a href="tools.html" class="nav-link">Tools Guide</a>
+      <a href="roles.html" class="nav-link">Leadership Roles</a>
+      <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
+    </div>
+  </nav>
+
+  <main>
+
+  <!-- ===== HERO ===== -->
+  <section class="section session-hero">
+    <div class="session-container">
+      <div class="eyebrow">October 16, 2026 &middot; Taste Test</div>
+      <h1>Judgment Calls While Building a <em>Keynote with AI</em></h1>
+      <p class="session-sub">
+        David Coad recently used AI to develop a keynote speech for a conference: bouncing ideas
+        around, exploring slide designs, and creating images that express the emotion behind his
+        thoughts. He also leaned on colleagues, friends, and his own judgment to make the
+        presentation work. In this session, he walks through how to bring AI and human judgment
+        together when developing an oral presentation.
+      </p>
+      <p class="session-meta"><strong>Friday, October 16, 2026 &middot; 1:00&ndash;3:00 p.m.</strong><br>
+        California Mission Room &middot; Benson Memorial Center 036 (basement), Santa Clara University</p>
+    </div>
+  </section>
+
+  <!-- ===== THE WORKFLOW ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">What David will <em>show</em></h2>
+      <p class="session-intro">
+        Follow the choices behind a real keynote, from developing ideas to deciding what belongs
+        in the final presentation.
+      </p>
+      <ul class="goals-list">
+        <li><span><strong>Brainstorm with AI.</strong> Use a chatbot to bounce ideas around as you develop a speech.</span></li>
+        <li><span><strong>Explore slide designs.</strong> Work with AI to find ways to present your ideas visually.</span></li>
+        <li><span><strong>Create and refine images.</strong> Iterate on visuals that express the emotion behind what you want to say.</span></li>
+        <li><span><strong>Bring in human judgment.</strong> Combine feedback from colleagues and friends with your own decisions about what makes the presentation effective.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== HANDS-ON PRACTICE ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Try it <em>yourself</em></h2>
+      <div class="recipes-row">
+        <div class="recipe-card">
+          <div class="recipe-num">First &middot; About 45 minutes</div>
+          <div class="recipe-title">A live workflow</div>
+          <div class="recipe-desc">Watch David walk through his process, including the judgment calls that shaped his keynote.</div>
+        </div>
+        <div class="recipe-card">
+          <div class="recipe-num">Then &middot; Hands-on practice</div>
+          <div class="recipe-title">Develop your own presentation</div>
+          <div class="recipe-desc">Try the workflow with your own ideas while David circulates to help. Practice brainstorming, exploring visuals, and deciding what to keep or revise.</div>
+        </div>
+        <div class="recipe-card">
+          <div class="recipe-num">Afterward &middot; Open project time</div>
+          <div class="recipe-title">Keep working</div>
+          <div class="recipe-desc">Continue developing your presentation or work on your AI Kitchen project. This session ends at 3:00 p.m.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PREPARATION ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Before you <em>come</em></h2>
+      <p class="session-intro">
+        Bring a laptop. It helps to have a presentation topic in mind so you have something to
+        explore during the hands-on portion.
+      </p>
+      <div class="callout">
+        <h3>Have your AI tools ready</h3>
+        <p class="session-intro">
+          David uses Claude through Perplexity, but the workflow is tool agnostic. Use tools you
+          can access that support both of these activities:
+        </p>
+        <ol>
+          <li><strong>Chatbot brainstorming:</strong> discuss and develop ideas for a presentation.</li>
+          <li><strong>Image generation:</strong> create an image and refine it through three or four consecutive iterations.</li>
+        </ol>
+        <div class="callout-note">
+          Sign in and check that you can use both capabilities before the session. You may use
+          one tool or separate tools for brainstorming and images. See the
+          <a href="tools.html">AI Tools Guide for SCU Students</a> for options.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <p class="session-footer-note">
+        Part of the AI Kitchen Taste Test series at Santa Clara University.
+        <br>Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a> &middot; <a href="schedule.html">Full schedule</a>.
+      </p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-wordmark">AI Kitchen</div>
+      <div class="footer-divider" aria-hidden="true"></div>
+      <p>
+        Faculty Lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>
+        Faculty Advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> and Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a>
+      </p>
+      <p>
+        Santa Clara University
+      </p>
+      <img src="scu-logo.png" alt="Santa Clara University" class="footer-logo">
+      <div class="footer-social" aria-label="Follow AI Kitchen">
+        <span class="footer-social-label">Follow AI Kitchen</span>
+        <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on LinkedIn"><img src="linkedin-icon.svg" alt="">LinkedIn</a>
+        <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on YouTube"><img src="youtube-icon.svg" alt="">YouTube</a>
+      </div>
+      <p>
+        Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="sessions.js"></script>
+  <script src="speaker-block.js"></script>
+
+</body>
+</html>
