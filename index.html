@@ -665,6 +665,21 @@
         if (info) info.appendChild(topicNode);
       }
 
+      if (next.studentHost && next.studentHost.name) {
+        var hostCredit = document.createElement('span');
+        hostCredit.className = 'student-host';
+        hostCredit.textContent = 'Student host: ';
+        var hostName = document.createElement(next.studentHost.url ? 'a' : 'span');
+        hostName.textContent = next.studentHost.name;
+        if (next.studentHost.url) {
+          hostName.href = next.studentHost.url;
+          hostName.target = '_blank';
+          hostName.rel = 'noopener noreferrer';
+        }
+        hostCredit.appendChild(hostName);
+        document.querySelector('#spotlight-card .schedule-info').appendChild(hostCredit);
+      }
+
       var avatar = document.getElementById('spotlight-avatar');
       if (next.photo) {
         avatar.style.backgroundImage = "url('" + next.photo + "')";

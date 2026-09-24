@@ -195,6 +195,15 @@
           : '';
       }
 
+      function studentHost(s) {
+        if (!s.studentHost || !s.studentHost.name) return '';
+        var host = s.studentHost;
+        var name = host.url
+          ? '<a href="' + esc(host.url) + '" target="_blank" rel="noopener noreferrer">' + esc(host.name) + '</a>'
+          : esc(host.name);
+        return '<span class="student-host">Student host: ' + name + '</span>';
+      }
+
       function card(s, i) {
         var delay = 'delay-' + Math.min(3, Math.floor(i / 2) + 1);
         var roomClass = s.roomChange ? ' schedule-card--room-change' : '';
@@ -223,6 +232,7 @@
                   '<span class="schedule-title">' + esc(s.name) + '</span>'
                 : '<span class="schedule-topic" style="color: var(--text-muted);">' + esc(s.name) + '</span>') +
               (s.note ? '<span class="schedule-title">' + esc(s.note) + '</span>' : '') +
+              studentHost(s) +
               roomAlert(s) +
             '</div>' +
           '</div>';
@@ -241,6 +251,7 @@
               fName +
               '<span class="schedule-title">' + esc(s.title) + '</span>' +
               fTopic +
+              studentHost(s) +
             '</div>' +
             '<div class="speaker-avatar" style="text-indent: 0; font-size: 2rem; background-color: var(--coral-light);" aria-hidden="true">' + (s.emoji || '') + '</div>' +
           '</div>';
@@ -267,6 +278,7 @@
             '<span class="schedule-title">' + esc(s.title) + (s.copresenter ? ' \u00b7 ' + esc(s.copresenter.title) : '') + '</span>' +
             toolsHtml +
             (s.note ? '<span class="schedule-title">' + esc(s.note) + '</span>' : '') +
+            studentHost(s) +
             roomAlert(s) +
             flexAlert(s) +
           '</div>' +

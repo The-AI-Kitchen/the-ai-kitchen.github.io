@@ -707,6 +707,28 @@ a.schedule-topic:hover {
   margin-right: 4px;
 }
 
+.student-host {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.student-host a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(154, 110, 53, 0.4);
+}
+
+.student-host a:hover,
+.student-host a:focus-visible {
+  color: var(--coral);
+  text-decoration-color: currentColor;
+}
+
 .schedule-note {
   font-size: 0.9375rem;
   color: var(--text-muted);

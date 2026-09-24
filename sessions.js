@@ -131,10 +131,13 @@ window.AI_KITCHEN_SUMMER_SESSIONS = [
 // renders as an alert on that card rather than in the quarter intro.
 // "Soft finish" dates wrap around 4:00 p.m. with open project time after;
 // the others end at 3:00 p.m. sharp so the room can turn over.
+// Student hosts come from the Fall 2026 sign-up sheet; profile links match
+// the public leadership page. Omit studentHost until a week is claimed.
 window.AI_KITCHEN_FALL_SESSIONS = [
   {
     date: '2026-09-25',
     label: 'Sep 25',
+    studentHost: { name: 'Tiffany Le', url: 'https://www.linkedin.com/in/tiffle/' },
     name: 'Kai Lukoff',
     title: 'Professor of Human-Computer Interaction, Santa Clara University',
     topic: 'Interview Me First: Rebuilding My Website Live with AI',
@@ -147,6 +150,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
   {
     date: '2026-10-02',
     label: 'Oct 2',
+    studentHost: { name: 'Bridget Hestad', url: 'https://www.linkedin.com/in/bridget-hestad/' },
     name: 'Jeremy Kemp',
     title: 'Online and Hybrid Learning Specialist, Academic Technology, Santa Clara University',
     topic: 'Vibe Coding Camino: Claude Cowork as a Recipe for Students and Teachers',
@@ -159,6 +163,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
   {
     date: '2026-10-09',
     label: 'Oct 9',
+    studentHost: { name: 'Sandy Cai', url: 'https://www.linkedin.com/in/sc098/' },
     name: 'Rishan Mohamed',
     title: 'Founder, HiringCoach.ai',
     topic: 'Building an AI Chief of Staff',
@@ -183,6 +188,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
   {
     date: '2026-10-23',
     label: 'Oct 23',
+    studentHost: { name: 'Sandy Cai', url: 'https://www.linkedin.com/in/sc098/' },
     name: 'Toby O\u2019Brien',
     title: 'Co-Founder & CRO, Oliver AI \u00b7 SCU Regent',
     topic: 'Research the Prospect, Tailor the Pitch: AI for Sales Outreach',
@@ -210,6 +216,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
   {
     date: '2026-11-20',
     label: 'Nov 20',
+    studentHost: { name: 'Linus Wong', url: 'https://www.linkedin.com/in/linus-e-wong/' },
     name: 'Danielle Heitmuller',
     title: 'Professor of Art and Art History, Santa Clara University',
     topic: 'AI in the Art Studio: Where It Helps and Where It Doesn\u2019t',
