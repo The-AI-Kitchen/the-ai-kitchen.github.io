@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview Me First: Rebuilding My Website Live with AI — AI Kitchen</title>
+  <meta name="description" content="Kai Lukoff explores how an interview-first approach can guide AI in rebuilding a personal website. September 25, 2026, 1–3 p.m. at Santa Clara University.">
+
+  <meta property="og:title" content="Interview Me First: Rebuilding My Website Live with AI — AI Kitchen">
+  <meta property="og:description" content="A live website-building demo and hands-on practice in clarifying your goals, giving AI context, and refining what it creates. September 25, 2026, 1–3 p.m., Benson Memorial Center 036, Santa Clara University.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .section { padding: 24px 0; }
+
+    .session-container { max-width: 960px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 32px); }
+    .session-hero { padding-top: clamp(40px, 6vh, 64px); padding-bottom: clamp(20px, 3vh, 32px); }
+    .session-hero .eyebrow {
+      font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1.5px; color: var(--coral); margin-bottom: 8px;
+    }
+    .session-hero h1 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem); color: var(--text-primary);
+      line-height: 1.1; margin-bottom: 12px;
+    }
+    .session-hero h1 em { font-style: italic; color: var(--coral); }
+    .session-hero .session-sub {
+      color: var(--text-secondary); font-size: 1.0625rem; line-height: 1.5;
+      max-width: 720px; margin-bottom: 6px;
+    }
+    .session-hero .session-meta { color: var(--text-muted); font-size: 0.875rem; margin-top: 8px; }
+
+    .session-heading {
+      font-family: 'Bodoni Moda', Georgia, serif; font-size: 1.5rem;
+      color: var(--text-primary); margin-top: 48px; margin-bottom: 16px;
+    }
+    .session-heading em { font-style: italic; color: var(--coral); }
+    .session-intro { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 20px; }
+
+    /* Takeaway / "when to use" list */
+    .goals-list {
+      list-style: none; padding: 0; margin: 0;
+      background: white; border: 1px solid var(--bg-alt); border-radius: var(--radius-sm); box-shadow: var(--shadow-soft);
+    }
+    .goals-list li {
+      padding: 12px 18px; border-bottom: 1px solid var(--bg-alt);
+      font-size: 0.9375rem; line-height: 1.55; color: var(--text-secondary);
+      display: grid; grid-template-columns: 16px 1fr; gap: 12px; align-items: start;
+    }
+    .goals-list li:last-child { border-bottom: none; }
+    .goals-list li::before { content: "\2014"; color: var(--coral); font-weight: 700; line-height: 1.55; }
+    .goals-list li strong { color: var(--text-primary); }
+
+    /* Demo cards */
+    .recipes-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .recipe-card { background: var(--mint-light); border-left: 4px solid var(--mint); border-radius: var(--radius-sm); padding: 12px 16px; }
+    .recipe-card .recipe-num { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 4px; }
+    .recipe-card .recipe-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.9375rem; color: var(--text-primary); margin-bottom: 6px; }
+    .recipe-card .recipe-desc { font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5; }
+
+    .session-footer-note {
+      margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--bg-alt);
+      color: var(--text-muted); font-size: 13px; margin-bottom: clamp(48px, 6vh, 64px);
+    }
+    .session-footer-note a { color: var(--coral); }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" role="navigation" aria-label="Main">
+    <a href="index.html" class="nav-wordmark" style="text-decoration:none; color:var(--text-primary);">AI Kitchen</a>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="const links=this.nextElementSibling;const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open);">
+      <svg viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-links">
+      <a href="schedule.html" class="nav-link">Schedule</a>
+      <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" class="nav-link" target="_blank" rel="noopener noreferrer">Projects &#8599;</a>
+      <a href="tools.html" class="nav-link">Tools Guide</a>
+      <a href="roles.html" class="nav-link">Leadership Roles</a>
+      <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
+    </div>
+  </nav>
+
+  <main>
+
+  <!-- ===== HERO ===== -->
+  <section class="section session-hero">
+    <div class="session-container">
+      <div class="eyebrow">September 25, 2026 &middot; Taste Test</div>
+      <h1>Interview Me First: Rebuilding My <em>Website Live with AI</em></h1>
+      <p class="session-sub">
+        Start the academic year with AI Kitchen. We will look back at spring events,
+        preview the fall lineup, and get to know one another through student-led introductions
+        before the live demo and hands-on practice.
+      </p>
+      <p class="session-sub">
+        What changes when AI asks you questions before it starts building? Kai Lukoff uses
+        his own website to explore the difference between a quick request and a process
+        shaped by your goals, examples, and feedback. Follow the live demo, then practice
+        turning a fuzzy idea into a useful brief and a first attempt.
+      </p>
+      <p class="session-meta"><strong>Friday, September 25, 2026 &middot; 1:00&ndash;3:00 p.m.</strong><br>
+        California Mission Room &middot; Benson Memorial Center 036 (basement), Santa Clara University<br>
+        <a href="https://docs.google.com/document/d/183Ro43EVI7GLUZzQPJxGG65-fi1HjjMZV5E3wEpY_uQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Directions to Benson 036</a></p>
+    </div>
+  </section>
+
+  <!-- ===== THE WORKFLOW ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Recipes to <em>take home</em></h2>
+      <p class="session-intro">
+        A website involves choices about who it is for, what it should say, and what matters
+        most. We will explore how to make those choices visible as you work with AI,
+        and when a quick request is enough. The same approach can help with presentations,
+        research, and other projects where a good result depends on context and judgment.
+      </p>
+      <ul class="goals-list">
+        <li><span><strong>Understand how AI agents work.</strong> See how software connects a model to tools and a workspace so it can act, inspect results, and revise. Explore how reasoning and feedback guide those steps.</span></li>
+        <li><span><strong>Interview me first.</strong> Ask AI to help clarify a fuzzy goal, your audience, and the choices you still need to make before it starts building.</span></li>
+        <li><span><strong>Choose the right amount of planning.</strong> A quick prompt can be enough for a clear, bounded task with adequate context. When important choices are unresolved, make room for questions and a plan.</span></li>
+        <li><span><strong>Give AI context it can use.</strong> Bring source materials, examples, and your preferences together in a brief you can reuse. This is context engineering.</span></li>
+        <li><span><strong>Keep human judgment in the loop.</strong> Inspect the result, decide what to keep, and steer the next revision with specific feedback.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== HANDS-ON PRACTICE ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Try it <em>yourself</em></h2>
+      <p class="session-intro">
+        Use a website idea to practice the process: a personal page, a project portfolio,
+        or a page for a club, lab, program, or event. The goal is to learn a way of working
+        with AI that you can reuse, whether or not you finish or publish the page.
+      </p>
+      <div class="recipes-row">
+        <div class="recipe-card">
+          <div class="recipe-num">Watch</div>
+          <div class="recipe-title">A real website, real decisions</div>
+          <div class="recipe-desc">Follow Kai's process and the choices that shape the result.</div>
+        </div>
+        <div class="recipe-card">
+          <div class="recipe-num">Try</div>
+          <div class="recipe-title">Practice the workflow</div>
+          <div class="recipe-desc">Clarify what you want, give AI useful context, and work toward a first draft.</div>
+        </div>
+        <div class="recipe-card">
+          <div class="recipe-num">Discuss</div>
+          <div class="recipe-title">Compare what changed</div>
+          <div class="recipe-desc">Reflect on where the interview helped and where your own judgment was essential.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PREPARATION ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Before you <em>come</em></h2>
+      <p class="session-intro">
+        Bring a charged laptop. If you have them, bring a short bio, resume, or project
+        description and two or three websites you like. You can also practice with a sample
+        project during the exercise.
+      </p>
+      <p class="session-intro" style="font-size:0.875rem; color:var(--text-muted);">This is the basic plan; examples and tool setup details are still being refined.</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <p class="session-footer-note">
+        Part of the AI Kitchen Taste Test series at Santa Clara University.
+        <br>Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a> &middot; <a href="schedule.html">Full schedule</a>.
+      </p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-wordmark">AI Kitchen</div>
+      <div class="footer-divider" aria-hidden="true"></div>
+      <p>
+        Faculty Lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>
+        Faculty Advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> and Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a>
+      </p>
+      <p>
+        Santa Clara University
+      </p>
+      <img src="scu-logo.png" alt="Santa Clara University" class="footer-logo">
+      <div class="footer-social" aria-label="Follow AI Kitchen">
+        <span class="footer-social-label">Follow AI Kitchen</span>
+        <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on LinkedIn"><img src="linkedin-icon.svg" alt="">LinkedIn</a>
+        <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on YouTube"><img src="youtube-icon.svg" alt="">YouTube</a>
+      </div>
+      <p>
+        Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="sessions.js"></script>
+  <script src="speaker-block.js"></script>
+
+</body>
+</html>

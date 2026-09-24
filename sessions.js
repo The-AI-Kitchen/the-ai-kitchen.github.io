@@ -141,7 +141,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     name: 'Kai Lukoff',
     title: 'Professor of Human-Computer Interaction, Santa Clara University',
     topic: 'Interview Me First: Rebuilding My Website Live with AI',
-    tools: ['Claude', 'Claude Code'],
+    topicUrl: 'interview-me-first.html',
     url: 'https://kailukoff.com/',
     photo: 'speakers/kai-lukoff.jpeg',
     initials: 'KL',
