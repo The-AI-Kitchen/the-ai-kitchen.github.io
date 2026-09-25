@@ -1,0 +1,38 @@
+/* Scoped additions for the September 25 participant kit. */
+.attendee-kit [id] { scroll-margin-top: 90px; }
+.attendee-kit h3 { margin: 28px 0 10px; font-size: 1.0625rem; color: var(--text-primary); }
+.attendee-kit p, .attendee-kit li { color: var(--text-secondary); font-size: .9375rem; line-height: 1.65; }
+.attendee-kit a { color: var(--coral); text-underline-offset: 3px; overflow-wrap: anywhere; }
+.attendee-kit ul { margin: 0 0 20px; padding-left: 24px; }
+.attendee-kit blockquote { overflow-wrap: anywhere; }
+.attendee-kit ol { margin: 0 0 20px; padding-left: 24px; }
+.attendee-kit ol > li { margin-bottom: 12px; padding-left: 4px; }
+.attendee-kit .kit-callout { background: var(--mint-light); border-left: 4px solid var(--mint); border-radius: var(--radius-sm); padding: 18px 20px; margin: 18px 0; }
+.attendee-kit .kit-callout p { margin: 0; }
+.attendee-kit .kit-small { font-size: .875rem; }
+.attendee-kit .kit-links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 18px 0 24px; }
+.attendee-kit .kit-links a { font-size: .875rem; font-weight: 600; }
+.attendee-kit details { background: white; border: 1px solid var(--bg-alt); border-radius: var(--radius-sm); margin: 12px 0; }
+.attendee-kit summary { cursor: pointer; padding: 16px 18px; font-weight: 600; font-size: .9375rem; color: var(--text-primary); }
+.attendee-kit summary:hover { color: var(--coral); }
+.attendee-kit summary:focus-visible, .attendee-kit a:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+.attendee-kit .kit-detail { padding: 0 18px 18px; }
+.attendee-kit blockquote { padding: 16px 18px; margin: 0; border-left: 3px solid var(--coral); background: var(--bg-primary, #faf8f5); font-size: .9375rem; line-height: 1.65; color: var(--text-primary); }
+.attendee-kit .kit-times { list-style: none; padding: 0; margin: 20px 0; border-top: 1px solid var(--bg-alt); }
+.attendee-kit .kit-times li { display: grid; grid-template-columns: 118px 1fr; gap: 16px; margin: 0; padding: 12px 0; border-bottom: 1px solid var(--bg-alt); }
+.attendee-kit .kit-times time { color: var(--coral); font-size: .875rem; font-weight: 600; }
+.attendee-kit .kit-times strong { color: var(--text-primary); }
+@media (max-width: 480px) { .attendee-kit .kit-times li { grid-template-columns: 1fr; gap: 2px; } .attendee-kit .kit-callout { padding: 16px; } }
+
+.attendee-kit .kit-pitch-card { display: grid; grid-template-columns: minmax(0, 1fr) 200px; align-items: center; gap: 28px; padding: 28px; margin-top: 22px; background: var(--mint-light); border: 1px solid var(--mint); border-radius: var(--radius-sm); }
+.attendee-kit .kit-pitch-card .session-heading { margin-top: 0; margin-bottom: 12px; }
+.attendee-kit .kit-pitch-card p { margin: 0 0 12px; }
+.attendee-kit .kit-pitch-card p:last-child { margin-bottom: 0; }
+.attendee-kit .kit-pitch-card .kit-eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 8px; }
+.attendee-kit .kit-pitch-button { display: inline-block; padding: 10px 16px; background: var(--coral); color: white; font-weight: 600; text-decoration: none; border-radius: var(--radius-sm); }
+.attendee-kit .kit-pitch-button:hover { background: var(--text-primary); }
+.attendee-kit .kit-qr { margin: 0; text-align: center; }
+.attendee-kit .kit-qr img { display: block; width: 176px; height: 176px; margin: 0 auto; background: white; }
+.attendee-kit .kit-qr figcaption { margin-top: 8px; font-size: .875rem; font-weight: 600; }
+.attendee-kit .kit-closing-qr { width: 220px; margin: 20px 0; }
+@media (max-width: 620px) { .attendee-kit .kit-pitch-card { grid-template-columns: 1fr; gap: 20px; padding: 20px; } .attendee-kit .kit-closing-qr { margin: 20px auto; } }

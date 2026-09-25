@@ -17,6 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="attendee-kit.css">
 
   <style>
     .section { padding: 24px 0; }
@@ -116,6 +117,28 @@
     </div>
   </section>
 
+  <!-- ===== EARLY PROJECT INVITATION ===== -->
+  <section class="section attendee-kit" style="padding-top:0;" aria-labelledby="campus-invitation">
+    <div class="session-container">
+      <div class="kit-pitch-card">
+        <div>
+          <p class="kit-eyebrow">An invitation for the end of today</p>
+          <h2 class="session-heading" id="campus-invitation">What’s cooking <em>on campus?</em></h2>
+          <p><strong>Working on an AI project? Add your slide now.</strong> At 2:50 p.m., we will open the floor for 30-second invitations to share what you are working on and ask for feedback or collaborators.</p>
+          <p>Use one slide with your project title, name(s), a one-sentence description, your request, and an optional email or project link. <strong>Sign in with your SCU Google account</strong> to edit.</p>
+          <p><a class="kit-pitch-button" href="https://theaikitchen.org/pitch" target="_blank" rel="noopener noreferrer">Add your project slide &rarr;</a></p>
+        </div>
+        <figure class="kit-qr">
+          <a href="https://theaikitchen.org/pitch" target="_blank" rel="noopener noreferrer"><img src="images/qr/sep25-2026-pitch.png" width="176" height="176" alt="QR code: open the shared project slide deck at theaikitchen.org/pitch"></a>
+          <figcaption><a href="https://theaikitchen.org/pitch" target="_blank" rel="noopener noreferrer">theaikitchen.org/pitch</a></figcaption>
+        </figure>
+      </div>
+      <nav class="kit-links" aria-label="Jump to session resources">
+        <a href="#getting-started">Setup at 1 p.m.</a><a href="#sponsored-access">Plus reimbursement</a><a href="#your-recipe">Exercise &amp; prompts</a><a href="#sample-project">AI Kitchen example</a>
+      </nav>
+    </div>
+  </section>
+
   <!-- ===== THE WORKFLOW ===== -->
   <section class="section" style="padding-top:0;">
     <div class="session-container">
@@ -127,56 +150,101 @@
         research, and other projects where a good result depends on context and judgment.
       </p>
       <ul class="goals-list">
-        <li><span><strong>Understand how AI agents work.</strong> See how software connects a model to tools and a workspace so it can act, inspect results, and revise. Explore how reasoning and feedback guide those steps.</span></li>
+        <li><span><strong>Understand how AI agents work.</strong> See how software connects a model to tools and a workspace so it can act, inspect results, and revise.</span></li>
         <li><span><strong>Interview me first.</strong> Ask AI to help clarify a fuzzy goal, your audience, and the choices you still need to make before it starts building.</span></li>
-        <li><span><strong>Choose the right amount of planning.</strong> A quick prompt can be enough for a clear, bounded task with adequate context. When important choices are unresolved, make room for questions and a plan.</span></li>
+        <li><span><strong>Choose the right amount of planning.</strong> A quick prompt can be enough for a clear, bounded task with adequate context. When important choices are unresolved, ask questions first. For a larger job, use a plan and checkpoints to reduce costly rework.</span></li>
         <li><span><strong>Give AI context it can use.</strong> Bring source materials, examples, and your preferences together in a brief you can reuse. This is context engineering.</span></li>
         <li><span><strong>Keep human judgment in the loop.</strong> Inspect the result, decide what to keep, and steer the next revision with specific feedback.</span></li>
       </ul>
+      <p class="session-intro" style="margin-top:20px;"><strong>From one useful update to an ongoing task.</strong> We will also explore scheduling a weekly check of a reviewed CV to prepare local website updates for human review.</p>
     </div>
   </section>
 
-  <!-- ===== HANDS-ON PRACTICE ===== -->
-  <section class="section" style="padding-top:0;">
+  <!-- ===== PARTICIPANT KIT ===== -->
+<div class="attendee-kit">
+  <section class="section" style="padding-top:0;" aria-labelledby="getting-started">
     <div class="session-container">
-      <h2 class="session-heading">Try it <em>yourself</em></h2>
-      <p class="session-intro">
-        Use a website idea to practice the process: a personal page, a project portfolio,
-        or a page for a club, lab, program, or event. The goal is to learn a way of working
-        with AI that you can reuse, whether or not you finish or publish the page.
-      </p>
-      <div class="recipes-row">
-        <div class="recipe-card">
-          <div class="recipe-num">Watch</div>
-          <div class="recipe-title">A real website, real decisions</div>
-          <div class="recipe-desc">Follow Kai's process and the choices that shape the result.</div>
-        </div>
-        <div class="recipe-card">
-          <div class="recipe-num">Try</div>
-          <div class="recipe-title">Practice the workflow</div>
-          <div class="recipe-desc">Clarify what you want, give AI useful context, and work toward a first draft.</div>
-        </div>
-        <div class="recipe-card">
-          <div class="recipe-num">Discuss</div>
-          <div class="recipe-title">Compare what changed</div>
-          <div class="recipe-desc">Reflect on where the interview helped and where your own judgment was essential.</div>
-        </div>
-      </div>
+      <h2 class="session-heading" id="getting-started">Getting started <em>at 1 p.m.</em></h2>
+      <p class="session-intro"><strong>We start at 1 p.m. Bring a charged laptop.</strong> If you have time beforehand, install the desktop app and sign in using the steps below. You are also welcome to arrive a little early for setup help. Advance setup is optional.</p>
+      <div class="kit-callout"><p><strong>Arriving at 1? Start here with us.</strong> We will point you to the download and sign-in steps during the welcome. Let the download run as we introduce AI Kitchen. If something gets stuck, flag it for help. We will check readiness again before the exercise.</p></div>
+      <nav class="kit-links" aria-label="Participant instructions">
+        <a href="#setup-check">Check your setup</a><a href="#sponsored-access">Sponsored access</a><a href="#your-recipe">Your exercise</a><a href="#sample-project">Sample project</a><a href="#project-invitations">Project invitations</a>
+      </nav>
+      <ol>
+        <li><strong>Install the ChatGPT desktop app.</strong> Follow the <a href="https://learn.chatgpt.com/docs/quickstart" target="_blank" rel="noopener noreferrer">official desktop quickstart</a> and choose the download for your computer.</li>
+        <li><strong>Sign in with your ChatGPT account.</strong> Use an existing account if you have one. There is no need to create a second account or purchase a duplicate subscription.</li>
+        <li><strong>Choose ChatGPT, then Work.</strong> Start a new task and select <strong>Work locally</strong>. If Work or the local option is missing, bring the laptop for setup help. Availability can depend on your account, computer, and workspace settings.</li>
+        <li><strong>Make a small practice folder.</strong> Call it “AI Kitchen practice” and select it in the app. Add a short bio, project description, or current website content. One or two reference pages plus a sentence about what you like are useful, too. Use the AI Kitchen website exercise below if you arrive without a project.</li>
+        <li><strong>Check that a preview opens.</strong> Try the short setup prompt below. Once you see the page, you are ready. Leave the main exercise until after the demo.</li>
+      </ol>
+      <details id="setup-check" open><summary>Setup-check prompt</summary><div class="kit-detail"><blockquote>Create a tiny HTML page in this practice folder with the heading “Ready to cook.” Open it in the built-in browser so I can see it. Keep it local; do not publish it.</blockquote></div></details>
+      <div class="kit-callout"><p><strong>No GitHub, domain, or hosting account needed.</strong> The desktop app includes a built-in browser for viewing your page. If setup is still blocked when the exercise starts, pair with someone whose app is ready. Take turns giving directions and reviewing the result.</p></div>
+      <p class="kit-small">Try an existing working account first. Free access and usage limits vary; we cannot promise it will cover the whole exercise. Contact <a href="mailto:klukoff@scu.edu">Kai</a> about access before buying an additional subscription.</p>
     </div>
   </section>
 
-  <!-- ===== PREPARATION ===== -->
-  <section class="section" style="padding-top:0;">
+  <section class="section" style="padding-top:0;" aria-labelledby="sponsored-access">
     <div class="session-container">
-      <h2 class="session-heading">Before you <em>come</em></h2>
-      <p class="session-intro">
-        Bring a charged laptop. If you have them, bring a short bio, resume, or project
-        description and two or three websites you like. You can also practice with a sample
-        project during the exercise.
-      </p>
-      <p class="session-intro" style="font-size:0.875rem; color:var(--text-muted);">This is the basic plan; examples and tool setup details are still being refined.</p>
+      <h2 class="session-heading" id="sponsored-access">A month <em>on us</em></h2>
+      <p class="session-intro">AI Kitchen can reimburse <strong>one monthly ChatGPT Plus payment, including applicable tax</strong>, for <strong>current SCU students, faculty, and staff</strong> attending this session. Alumni and public attendees are welcome but are not eligible for this reimbursement.</p>
+      <ol>
+        <li><strong>Check access before buying.</strong> Read the <a href="https://docs.google.com/forms/d/e/1FAIpQLSdcxjH-Ul1z5sVRwthg_cfidIX2eVirE0zPan-93NTfghCFrQ/viewform" target="_blank" rel="noopener noreferrer">reimbursement instructions and participant form</a>. If you already subscribe, use that account and contact Kai before making an additional purchase.</li>
+        <li><strong>Save your paid receipt.</strong> It should show the service, payment date, total including tax, your name/account identifier, and last four payment digits. An unpaid invoice alone is not proof of payment.</li>
+        <li><strong>Complete and sign the <a href="https://drive.google.com/file/d/1r6GVkh5ySEiBYg_DLLQs3wbR5CT5HpWn/view" target="_blank" rel="noopener noreferrer">prefilled expense PDF</a>.</strong> Add your details, SCU ID after your name, actual purchase date and amount, and your signature/date. Leave manager signature and funding fields for Kai.</li>
+        <li><strong>Submit both documents by Friday, October 2, 2026.</strong> Use your <strong>SCU Google account</strong> for the PDF and <a href="https://docs.google.com/forms/d/e/1FAIpQLSdcxjH-Ul1z5sVRwthg_cfidIX2eVirE0zPan-93NTfghCFrQ/viewform" target="_blank" rel="noopener noreferrer">participant reimbursement form</a>. You do not need to wait for Kai’s manager signature. Keep the emailed response copy.</li>
+      </ol>
+      <p class="kit-small"><strong>Paperwork can wait until after the session.</strong> Only one month is covered; subsequent charges are your responsibility. Questions, existing subscriptions, or a corrected upload? Contact <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>. Do not submit bank-account details or a full card number.</p>
     </div>
   </section>
+
+  <section class="section" style="padding-top:0;" aria-labelledby="your-recipe">
+    <div class="session-container">
+      <h2 class="session-heading" id="your-recipe">Your <em>40-minute recipe</em></h2>
+      <p class="session-intro">Choose a small page for yourself, a research project, a club, a lab, a program, or an event. An existing website is optional. Aim for <strong>a useful brief, a viewable first version, and one revision you can explain.</strong> We will work from 2:05 to 2:45 p.m.</p>
+      <ol class="kit-times">
+        <li><time>2:05–2:08</time><span><strong>Name your idea.</strong> Write a one-sentence goal and identify what is still unclear.</span></li>
+        <li><time>2:08–2:16</time><span><strong>Let AI interview you.</strong> Answer questions about your audience, purpose, and priorities.</span></li>
+        <li><time>2:16–2:21</time><span><strong>Add context.</strong> Supply useful facts and an example with your reaction.</span></li>
+        <li><time>2:21–2:24</time><span><strong>Read and correct the brief.</strong> Make sure it describes what you want.</span></li>
+        <li><time>2:24–2:36</time><span><strong>Build and inspect.</strong> Ask AI to open a local preview. Click through it and check the facts.</span></li>
+        <li><time>2:36–2:45</time><span><strong>Revise with a reason.</strong> Show a partner, choose one meaningful change, and revise.</span></li>
+      </ol>
+      <h3>Prompts to make your own</h3>
+      <p>Replace the brackets with your own idea or material. Keep the interview, brief, and revisions in the same task.</p>
+      <details open><summary>1. Start with the interview</summary><div class="kit-detail"><blockquote>I want to make a small website for [myself / this project / this group / this event]. Interview me one question at a time before building. Focus on who it is for, what they should understand or do, and what matters most to me. Ask up to three main questions, with a short follow-up when needed. Do not start building yet.</blockquote></div></details>
+      <details><summary>2. Turn the conversation into a brief</summary><div class="kit-detail"><blockquote>Use my answers and these materials to write a short brief: audience, purpose, essential facts, preferences, and scope. Separate facts I supplied from suggestions. Keep it to one page and a local preview. Wait while I read and correct it.</blockquote></div></details>
+      <details><summary>3. Build and inspect</summary><div class="kit-detail"><blockquote>Build the page from the brief I approved, using my source materials. Handle the preview setup and open it in the built-in browser. Check that navigation works and that the page fits a narrow screen. Check the facts against my materials and tell me what you actually checked. Save the files in this practice folder without publishing anything.</blockquote></div></details>
+      <details><summary>4. Make a substantive revision</summary><div class="kit-detail"><blockquote>I want to change [specific content or behavior] because [reason]. Use [my feedback / this updated source] to make the change. Preserve what already works. Reopen the preview, check the changed part, and summarize what you changed.</blockquote></div></details>
+      <p>A meaningful revision could add a missing publication from a CV, update a course or event detail from a newer source, make the contact path clearer, or change which project appears first for your intended audience. Aim for one change that matters. Save the brief and website files; no public publishing is required.</p>
+      <p class="kit-small">One user prompt can trigger many agent steps. Watch what the AI creates, checks, and changes, then decide what still needs your judgment.</p>
+      <h3 id="sample-project">No project prepared? Make a new AI Kitchen website</h3>
+      <p>Design your own one-page introduction to AI Kitchen. Use the material below, then decide during the interview who you most want to reach and what they should do next. This is a practice version you can view locally.</p>
+      <details open><summary>Initial material — use this first</summary><div class="kit-detail"><blockquote>AI Kitchen is a hands-on community at Santa Clara University where people from different disciplines build AI fluency by trying tools, working on real projects, and learning with others. Students from every major are welcome, alongside faculty, staff, and guests. No technical background or application is required. Friday sessions start with a live demonstration, followed by time to experiment. Create a welcoming one-page site that helps a newcomer understand AI Kitchen and find a session to attend. Use https://theaikitchen.org/ and its FAQ for background, and link to https://theaikitchen.org/schedule.html for the session schedule. Keep this practice site local.</blockquote><p>Pick an audience, such as a student trying AI for the first time or a staff member curious about using it at work. Choose one main action for that audience. You can use the existing site as a factual source while making your own design choices.</p></div></details>
+      <details><summary>Revision material — introduce after the first preview</summary><div class="kit-detail"><blockquote>Add “What’s cooking on campus?” to the page. At the end of each AI Kitchen session, students, faculty, and staff can give a 30-second invitation to an AI project they are working on and ask for feedback or collaborators. For September 25, this runs from 2:50 to 3:00 p.m. Each project gets one slide with its title, names, a one-sentence description, what help would be useful, and an optional email or project link. Add a clear link to the shared slide deck: https://theaikitchen.org/pitch. Explain that people should sign in with their SCU Google account to add a slide. Keep the rest of the page useful for newcomers, then reopen the preview and check the new link and section.</blockquote></div></details>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;" aria-labelledby="project-invitations">
+    <div class="session-container">
+      <h2 class="session-heading" id="project-invitations">What’s cooking <em>on campus?</em></h2>
+      <p class="session-intro">We will save the final ten minutes, <strong>2:50–3:00 p.m.</strong>, for AI projects from across the university. Students, faculty, and staff can share something they are working on and invite feedback or collaborators.</p>
+      <p><strong><a href="https://theaikitchen.org/pitch" target="_blank" rel="noopener noreferrer">Add your project slide to the shared deck</a></strong> using your <strong>SCU Google account</strong>. Everyone at SCU with the link can edit. Choose an unused project slide or duplicate the template, and fill in one slide per project.</p>
+      <ul>
+        <li><strong>Project title and name(s).</strong> Add your role or affiliation if useful.</li>
+        <li><strong>One sentence about the project.</strong> What are you working on?</li>
+        <li><strong>Your invitation.</strong> What feedback or collaborators would help?</li>
+        <li><strong>Optional contact.</strong> Add an email or project link you are comfortable sharing with the SCU community.</li>
+      </ul>
+      <div class="kit-callout"><p><strong>Your 30-second invitation:</strong> Say who you are, what you are working on, and what help you would welcome. Your slide keeps the project and contact details on screen.</p></div>
+      <figure class="kit-qr kit-closing-qr">
+        <a href="https://theaikitchen.org/pitch" target="_blank" rel="noopener noreferrer"><img src="images/qr/sep25-2026-pitch.png" width="176" height="176" alt="QR code: open the shared project slide deck at theaikitchen.org/pitch" loading="lazy"></a>
+        <figcaption><a href="https://theaikitchen.org/pitch" target="_blank" rel="noopener noreferrer">theaikitchen.org/pitch</a></figcaption>
+      </figure>
+      <p class="kit-small">Keep to one slide and 30 seconds so we can hear from people across the university. Add your slide before the closing round, and edit only your own project slide.</p>
+    </div>
+  </section>
+</div>
+
 
   <!-- ===== FOOTER ===== -->
   <section class="section" style="padding-top:0;">
