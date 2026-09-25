@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Coding Canvas: Claude Cowork as a Recipe for Students and Teachers — AI Kitchen</title>
+  <meta name="description" content="Jeremy Kemp shares three concepts for using Claude Cowork with Camino: an Air Gap, a Policy as Code, and an Agent designer. October 2, 2026, 1–4 p.m. at Santa Clara University.">
+
+  <meta property="og:title" content="Vibe Coding Canvas: Claude Cowork as a Recipe for Students and Teachers — AI Kitchen">
+  <meta property="og:description" content="Use an Air Gap, write a Policy as Code, and install an Agent designer with Jeremy Kemp. October 2, 2026, 1–4 p.m., Benson Memorial Center 036, Santa Clara University.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .section { padding: 24px 0; }
+
+    .session-container { max-width: 960px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 32px); }
+    .session-hero { padding-top: clamp(40px, 6vh, 64px); padding-bottom: clamp(20px, 3vh, 32px); }
+    .session-hero .eyebrow {
+      font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1.5px; color: var(--coral); margin-bottom: 8px;
+    }
+    .session-hero h1 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem); color: var(--text-primary);
+      line-height: 1.1; margin-bottom: 12px;
+    }
+    .session-hero h1 em { font-style: italic; color: var(--coral); }
+    .session-hero .session-sub {
+      color: var(--text-secondary); font-size: 1.0625rem; line-height: 1.5;
+      max-width: 720px; margin-bottom: 6px;
+    }
+    .session-hero .session-meta { color: var(--text-muted); font-size: 0.875rem; margin-top: 8px; }
+
+    .session-heading {
+      font-family: 'Bodoni Moda', Georgia, serif; font-size: 1.5rem;
+      color: var(--text-primary); margin-top: 48px; margin-bottom: 16px;
+    }
+    .session-heading em { font-style: italic; color: var(--coral); }
+    .session-intro { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 20px; }
+
+    /* Takeaway / "when to use" list */
+    .goals-list {
+      list-style: none; padding: 0; margin: 0;
+      background: white; border: 1px solid var(--bg-alt); border-radius: var(--radius-sm); box-shadow: var(--shadow-soft);
+    }
+    .goals-list li {
+      padding: 12px 18px; border-bottom: 1px solid var(--bg-alt);
+      font-size: 0.9375rem; line-height: 1.55; color: var(--text-secondary);
+      display: grid; grid-template-columns: 16px 1fr; gap: 12px; align-items: start;
+    }
+    .goals-list li:last-child { border-bottom: none; }
+    .goals-list li::before { content: "\2014"; color: var(--coral); font-weight: 700; line-height: 1.55; }
+    .goals-list li strong { color: var(--text-primary); }
+
+    .session-footer-note {
+      margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--bg-alt);
+      color: var(--text-muted); font-size: 13px; margin-bottom: clamp(48px, 6vh, 64px);
+    }
+    .session-footer-note a { color: var(--coral); }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" role="navigation" aria-label="Main">
+    <a href="index.html" class="nav-wordmark" style="text-decoration:none; color:var(--text-primary);">AI Kitchen</a>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="const links=this.nextElementSibling;const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open);">
+      <svg viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-links">
+      <a href="schedule.html" class="nav-link">Schedule</a>
+      <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" class="nav-link" target="_blank" rel="noopener noreferrer">Projects &#8599;</a>
+      <a href="tools.html" class="nav-link">Tools Guide</a>
+      <a href="roles.html" class="nav-link">Leadership Roles</a>
+      <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
+    </div>
+  </nav>
+
+  <main>
+
+  <!-- ===== HERO ===== -->
+  <section class="section session-hero">
+    <div class="session-container">
+      <div class="eyebrow">October 2, 2026 &middot; Taste Test</div>
+      <h1>Vibe Coding Canvas: <em>Claude Cowork</em> as a Recipe for Students and Teachers</h1>
+      <p class="session-sub">
+        Jeremy Kemp will lead a session on Claude Cowork with three concepts you can use in
+        your own work: use an Air Gap, write a Policy as Code, and install an Agent designer.
+        Explore working locally with data from Camino and building teaching and learning
+        content directly in Camino.
+      </p>
+      <p class="session-meta"><strong>Friday, October 2, 2026 &middot; 1:00&ndash;4:00 p.m. &middot; soft finish</strong><br>
+        California Mission Room &middot; Benson Memorial Center 036 (basement), Santa Clara University<br>
+        <a href="https://docs.google.com/document/d/183Ro43EVI7GLUZzQPJxGG65-fi1HjjMZV5E3wEpY_uQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Directions to Benson 036</a></p>
+      <p class="student-host">Student host: <a href="https://www.linkedin.com/in/bridget-hestad/" target="_blank" rel="noopener noreferrer">Bridget Hestad</a></p>
+    </div>
+  </section>
+
+  <!-- ===== THREE CONCEPTS ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Three concepts to <em>try</em></h2>
+      <p class="session-intro">Jeremy will cover three concepts you can use in your own work.</p>
+      <ul class="goals-list">
+        <li><span><strong>Use an Air Gap.</strong> Extract your data package from Camino and stir it into a useful dish locally.</span></li>
+        <li><span><strong>Write a Policy as Code.</strong> Craft your own personal guardrails for your Agent in Camino.</span></li>
+        <li><span><strong>Install an Agent designer.</strong> Build directly in Camino &mdash; teaching and learning content.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <p class="session-footer-note">
+        Part of the AI Kitchen Taste Test series at Santa Clara University.
+        <br>Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a> &middot; <a href="schedule.html">Full schedule</a>.
+      </p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-wordmark">AI Kitchen</div>
+      <div class="footer-divider" aria-hidden="true"></div>
+      <p>
+        Faculty Lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>
+        Faculty Advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> and Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a>
+      </p>
+      <p>
+        Santa Clara University
+      </p>
+      <img src="scu-logo.png" alt="Santa Clara University" class="footer-logo">
+      <div class="footer-social" aria-label="Follow AI Kitchen">
+        <span class="footer-social-label">Follow AI Kitchen</span>
+        <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on LinkedIn"><img src="linkedin-icon.svg" alt="">LinkedIn</a>
+        <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on YouTube"><img src="youtube-icon.svg" alt="">YouTube</a>
+      </div>
+      <p>
+        Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="sessions.js"></script>
+  <script src="speaker-block.js"></script>
+
+</body>
+</html>

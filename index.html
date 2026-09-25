@@ -658,6 +658,12 @@
         topicEl.textContent = next.topic;
         topicNode = topicEl;
       }
+      if (next.description) {
+        var description = document.createElement('span');
+        description.className = 'schedule-description';
+        description.textContent = next.description;
+        topicNode.insertAdjacentElement('afterend', description);
+      }
       // For featured events the topic is a description, not a talk title, so move it
       // below the name and details to keep the event name as the headline.
       if (next.featured) {

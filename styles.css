@@ -691,6 +691,13 @@ a.schedule-topic:hover {
   text-decoration-color: var(--coral);
 }
 
+.schedule-description {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
 .schedule-tools {
   font-size: 0.75rem;
   color: var(--text-muted);
