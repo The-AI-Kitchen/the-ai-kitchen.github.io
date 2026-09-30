@@ -198,10 +198,20 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     photo: 'speakers/toby-obrien.jpeg',
     initials: 'TO',
     tools: ['Claude'],
-    note: '1:00\u20134:00 p.m. \u00b7 soft finish \u00b7 plus a second speaker, to be announced',
+    note: '1:00\u20134:00 p.m. \u00b7 soft finish',
     roomChange: 'Sobrato Hall 024BC'
   },
-  { date: '2026-10-30', label: 'Oct 30', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish' },
+  {
+    date: '2026-10-30',
+    label: 'Oct 30',
+    name: 'AJ Gauravdeep',
+    // Working title and summary from the Sep 28 prep call; final guest copy pending.
+    topic: 'AI for Family Activity Planning',
+    description: 'Explore how an AI activity planner uses family interests, calendars, and location to suggest activities and resolve scheduling conflicts, and how better context leads to more useful recommendations.',
+    url: 'https://www.linkedin.com/in/ajdeep/',
+    initials: 'AJ',
+    note: '1:00\u20134:00 p.m. \u00b7 soft finish'
+  },
   {
     date: '2026-11-06',
     label: 'Nov 6',

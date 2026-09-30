@@ -176,7 +176,8 @@
       function esc(s) { return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 
       function avatar(photo, initials, extraStyle) {
-        return '<div class="speaker-avatar" style="background-image: url(\'' + esc(photo) + '\');' + (extraStyle || '') + '" aria-hidden="true">' + esc(initials || '') + '</div>';
+        var style = photo ? 'background-image: url(\'' + esc(photo) + '\');' : 'text-indent: 0;';
+        return '<div class="speaker-avatar" style="' + style + (extraStyle || '') + '" aria-hidden="true">' + esc(initials || '') + '</div>';
       }
 
       // A one-off room change is called out on the card itself, so the quarter
@@ -276,7 +277,7 @@
                   '<a href="' + esc(s.copresenter.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.copresenter.name) + '</a>' +
                 '</span>'
               : '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>') +
-            '<span class="schedule-title">' + esc(s.title) + (s.copresenter ? ' \u00b7 ' + esc(s.copresenter.title) : '') + '</span>' +
+            (s.title ? '<span class="schedule-title">' + esc(s.title) + (s.copresenter ? ' \u00b7 ' + esc(s.copresenter.title) : '') + '</span>' : '') +
             toolsHtml +
             (s.note ? '<span class="schedule-title">' + esc(s.note) + '</span>' : '') +
             studentHost(s) +

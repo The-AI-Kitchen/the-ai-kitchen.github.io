@@ -638,11 +638,11 @@
         nameEl.removeAttribute('target');
         nameEl.removeAttribute('rel');
         nameEl.textContent = next.name;
-        document.getElementById('spotlight-title').textContent = next.title;
+        document.getElementById('spotlight-title').textContent = next.title || '';
       } else {
         nameEl.href = next.url;
         nameEl.textContent = next.name;
-        document.getElementById('spotlight-title').textContent = next.title;
+        document.getElementById('spotlight-title').textContent = next.title || '';
       }
 
       var topicEl = document.getElementById('spotlight-topic');
@@ -694,6 +694,9 @@
         avatar.style.fontSize = '2rem';
         avatar.style.backgroundColor = 'var(--coral-light)';
         avatar.textContent = next.emoji;
+      } else if (next.initials) {
+        avatar.style.textIndent = '0';
+        avatar.textContent = next.initials;
       }
       if (next.copresenter && next.copresenter.photo) {
         var coAvatar = document.createElement('div');
