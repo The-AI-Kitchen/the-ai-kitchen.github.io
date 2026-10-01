@@ -209,6 +209,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     topic: 'AI for Family Activity Planning',
     description: 'Explore how an AI activity planner uses family interests, calendars, and location to suggest activities and resolve scheduling conflicts, and how better context leads to more useful recommendations.',
     url: 'https://www.linkedin.com/in/ajdeep/',
+    photo: 'speakers/aj-gauravdeep.jpeg',
     initials: 'AJ',
     note: '1:00\u20134:00 p.m. \u00b7 soft finish'
   },
