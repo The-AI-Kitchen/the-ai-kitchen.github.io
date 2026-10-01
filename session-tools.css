@@ -1,0 +1,91 @@
+/* Getting-started banner shared by the schedule and session pages. */
+.session-tools {
+  margin: 24px 0 32px;
+  padding: clamp(20px, 3vw, 28px);
+  background: var(--bg-cta);
+  border: 1px solid rgba(139, 93, 49, 0.25);
+  border-top: 4px solid var(--cta-bg);
+  border-radius: var(--radius-sm);
+}
+
+.session-tools h2 {
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+  margin-bottom: 8px;
+}
+
+.session-tools-intro {
+  font-size: 0.9375rem;
+  margin-bottom: 20px;
+}
+
+.session-tools-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.session-tools-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.session-tools-label {
+  display: inline-block;
+  padding: 3px 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  background: rgba(139, 93, 49, 0.09);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.session-tools-label--recommended {
+  background: #dce8d7;
+  color: #355b3a;
+}
+
+.session-tools h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.session-tools-option p {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+
+.session-tools a {
+  color: var(--cta-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.session-tools-option > a {
+  margin-top: auto;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.session-tools a:focus-visible {
+  outline: 2px solid var(--cta-hover);
+  outline-offset: 4px;
+}
+
+.session-tools-checked {
+  margin-top: 20px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .session-tools-options { grid-template-columns: 1fr; gap: 20px; }
+  .session-tools-option + .session-tools-option {
+    padding-top: 20px;
+    border-top: 1px solid rgba(139, 93, 49, 0.2);
+  }
+}
