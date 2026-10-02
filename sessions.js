@@ -225,7 +225,15 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     tools: ['Claude'],
     note: '1:00\u20134:00 p.m. \u00b7 soft finish'
   },
-  { date: '2026-11-13', label: 'Nov 13', tbd: true, name: 'Speaker to be announced', note: '1:00\u20133:00 p.m.' },
+  {
+    date: '2026-11-13',
+    label: 'Nov 13',
+    tbd: true,
+    name: 'Adam Smith \u00b7 OpenAI',
+    topic: 'Ski patrol awards workflow with AI',
+    description: 'Adam Smith (OpenAI; SCU \u201908) will share how he uses AI to prepare a ski patrol awards banquet, followed by hands-on practice. Full session details coming soon.',
+    note: '1:00\u20133:00 p.m.'
+  },
   {
     date: '2026-11-20',
     label: 'Nov 20',
