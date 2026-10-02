@@ -205,6 +205,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     date: '2026-10-30',
     label: 'Oct 30',
     name: 'AJ Gauravdeep',
+    title: 'Interim Chief Marketing Officer, Joolian',
     // Working title and summary from the Sep 28 prep call; final guest copy pending.
     topic: 'AI for Family Activity Planning',
     description: 'Explore how an AI activity planner uses family interests, calendars, and location to suggest activities and resolve scheduling conflicts, and how better context leads to more useful recommendations.',
