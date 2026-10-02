@@ -1,0 +1,9 @@
+{
+  "asset": "pea-pod-community-chef.png",
+  "created": "2026-10-02",
+  "method": "Built-in image_gen tool",
+  "reference": "assets/design/veggie-cast-transparent.png",
+  "transparent_background": true,
+  "purpose": "A larger, welcoming pea-pod chef variant for the ATXpo campus starter handout.",
+  "prompt": "Create ONE new standalone pea-pod chef illustration, using the attached transparent six-vegetable sprite sheet ONLY as a reference for the exact playful watercolor illustration style and color palette. The output must contain only the new pea-pod character, with a genuinely transparent alpha background. Design a plumper, rounder, more substantial pea pod than the thin tall pod in the reference: broad curved green shell, THREE distinct round green peas stacked within the open pod, each with its own friendly smiling face so it suggests a welcoming little community. A single soft white chef's hat sits atop the pod, short charming arms open in a welcoming gesture, tiny feet, tasteful watercolor texture. Keep the full silhouette compact and easy to recognize when printed small. Do not include any other vegetable, text, logo, border, rectangular paper background, checkerboard texture, drop shadow or ground plane. Preserve the authentic hand-painted whimsical style. Generous transparent margins around the complete character; do not crop the hat, arms or feet. This is a new character variant, not a re-rendering of the entire reference sheet."
+}
