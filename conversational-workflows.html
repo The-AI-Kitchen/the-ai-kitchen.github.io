@@ -12,12 +12,12 @@
   <meta property="og:type" content="website">
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+  <link rel="icon" href="assets/design/ai-kitchen-mark.svg" type="image/svg+xml">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Main site styles -->
   <link rel="stylesheet" href="styles.css">
@@ -36,7 +36,7 @@
     }
 
     .session-hero .eyebrow {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Figtree', sans-serif;
       font-size: 0.8125rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -46,7 +46,7 @@
     }
 
     .session-hero h1 {
-      font-family: 'Bodoni Moda', Georgia, serif;
+      font-family: 'Figtree', Georgia, serif;
       font-size: clamp(2rem, 5vw, 3rem);
       color: var(--text-primary);
       line-height: 1.1;
@@ -73,7 +73,7 @@
 
     /* Section headings */
     .session-heading {
-      font-family: 'Bodoni Moda', Georgia, serif;
+      font-family: 'Figtree', Georgia, serif;
       font-size: 1.5rem;
       color: var(--text-primary);
       margin-top: 40px;
@@ -111,7 +111,7 @@
 
     .resource-card h3 {
       margin: 0 0 4px;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Figtree', sans-serif;
       font-size: 1rem;
       font-weight: 700;
       color: var(--text-primary);
@@ -183,31 +183,32 @@
       margin-bottom: clamp(48px, 6vh, 64px);
     }
   </style>
+  <link rel="stylesheet" href="site-shell.css">
 </head>
-<body>
+<body class="site-page">
 
   <!-- ===== NAV ===== -->
-  <nav class="nav" role="navigation" aria-label="Main">
-    <a href="index.html" class="nav-wordmark" style="text-decoration:none; color:var(--text-primary);">AI Kitchen</a>
-    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="const links=this.nextElementSibling;const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open);">
-      <svg viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-    <div class="nav-links">
-      <a href="schedule.html" class="nav-link">Schedule</a>
-      <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" class="nav-link" target="_blank" rel="noopener noreferrer">Projects &#8599;</a>
-      <a href="tools.html" class="nav-link">Tools Guide</a>
-      <a href="roles.html" class="nav-link">Leadership Roles</a>
-      <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
-    </div>
-  </nav>
+  <a class="site-skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="site-wordmark" href="index.html" aria-label="AI Kitchen home"><span class="option-chef-tile" aria-hidden="true"><span class="chef-badge" aria-hidden="true"><svg class="chef-tile-hat" viewBox="0 0 30 22" aria-hidden="true"><path d="M7 15V11C3 10 2 7 4 4c2-3 6-3 8-1 2-3 7-3 9 0 3-1 7 1 7 4 0 3-2 4-5 5v3H7Z" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 18h14" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round"/></svg><span class="chef-green-ai">AI</span></span><span class="chef-tile-kitchen" aria-hidden="true">Kitchen</span></span></a>
+      <div class="site-nav-links">
+        <a class="site-nav-link" href="schedule.html">Schedule</a>
+        <a class="site-nav-link" href="tools.html">Tools guide</a>
+        <a class="site-nav-link" href="roles.html">Our people</a>
+        <a class="site-nav-cta" href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">Get involved <span aria-hidden="true">↗</span></a>
+      </div>
+      <a class="site-scu-brand" aria-label="Santa Clara University website" href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University"></a>
+    </nav>
+  </header>
 
-  <main>
+  <main id="main" tabindex="-1">
 
   <!-- ===== HERO ===== -->
   <section class="section session-hero">
     <div class="session-container">
       <div class="eyebrow">May 15, 2026 &middot; Taste Test</div>
-      <h1>AI Workflows for <em>Real-World Conversations</em></h1>
+      <div class="page-heading-peek"><h1>AI Workflows for <em>Real-World Conversations</em></h1><div class="page-peek" aria-hidden="true"><span class="page-veggie-tomato"></span></div></div>
       <p class="session-sub">Featuring Neo Zhang, MSx Candidate at Stanford GSB and former COO of Zhihu.</p>
       <p class="session-meta">Lucas 306 &middot; 1:30 to 5:00 p.m. &middot; Live tutorial at 2:30</p>
     </div>
@@ -274,29 +275,36 @@
 
   </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-wordmark">AI Kitchen</div>
-      <div class="footer-divider" aria-hidden="true"></div>
-      <p>
-        Faculty Lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>
-        Faculty Advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> &amp; Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a>
-      </p>
-      <p>
-        Santa Clara University
-      </p>
-      <img src="scu-logo.png" alt="Santa Clara University" class="footer-logo">
-      <div class="footer-social" aria-label="Follow AI Kitchen">
-        <span class="footer-social-label">Follow AI Kitchen</span>
-        <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on LinkedIn"><img src="linkedin-icon.svg" alt="">LinkedIn</a>
-        <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on YouTube"><img src="youtube-icon.svg" alt="">YouTube</a>
+  <!-- ===== SHARED FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University" loading="lazy"></a>
+        <p>AI Kitchen · Everyone’s invited.</p>
+        <p class="site-footer-tagline">There’s room at the kitchen table.</p>
       </div>
-      <p>
-        Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>
-      </p>
+      <nav class="site-footer-links" aria-label="Footer navigation">
+        <a href="schedule.html">Schedule</a>
+        <a href="tools.html">Tools guide</a>
+        <a href="roles.html">Leadership</a>
+        <a href="news.html">News</a>
+        <a href="index.html#press">In the press</a>
+        <a href="start-an-ai-kitchen.html">Start an AI Kitchen</a>
+        <a href="guest-chefs.html">Guest chef guide</a>
+        <a href="faq.html">More questions</a>
+        <a href="mailto:klukoff@scu.edu">Contact</a>
+      </nav>
+      <div class="site-footer-community">
+        <p>Follow AI Kitchen</p>
+        <div class="site-footer-social">
+          <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer"><img src="linkedin-icon.svg" width="20" height="20" alt="">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer"><img src="youtube-icon.svg" width="20" height="20" alt="">YouTube <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="site-footer-faculty">Faculty lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>Faculty advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> and Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a></p>
+      </div>
     </div>
   </footer>
+
 
   <!-- ===== Scroll Reveal Script ===== -->
   <script>
@@ -314,5 +322,6 @@
   <script src="sessions.js"></script>
   <script src="speaker-block.js"></script>
 
+  <script src="site-shell.js" defer></script>
 </body>
 </html>

@@ -53,6 +53,7 @@
     function card(p) {
       var label = (p.url && /linkedin\.com/i.test(p.url)) ? 'Connect on LinkedIn →'
                 : (p.url ? 'Visit website →' : '');
+      var profileLabel = /linkedin\.com/i.test(p.url || '') ? 'Connect on LinkedIn with ' + p.name : 'Visit website for ' + p.name;
       var photo = p.photo ? "background-image:url('" + esc(p.photo) + "');" : '';
       return '<div class="sb-card">' +
         '<div class="speaker-avatar" style="' + photo + '" aria-hidden="true">' + esc(p.initials || '') + '</div>' +
@@ -60,7 +61,7 @@
         '<div class="sb-name">' + esc(p.name) + '</div>' +
         (p.title ? '<div class="sb-title">' + esc(p.title) + '</div>' : '') +
         (p.bio ? '<div class="sb-bio">' + esc(p.bio) + '</div>' : '') +
-        (p.url ? '<a class="sb-link" href="' + esc(p.url) + '" target="_blank" rel="noopener noreferrer">' + label + '</a>' : '') +
+        (p.url ? '<a class="sb-link" href="' + esc(p.url) + '" aria-label="' + esc(profileLabel) + '" target="_blank" rel="noopener noreferrer">' + label + '</a>' : '') +
         '</div></div>';
     }
 

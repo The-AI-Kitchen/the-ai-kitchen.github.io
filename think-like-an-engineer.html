@@ -10,34 +10,18 @@
   <meta property="og:description" content="Go beyond vibes. A tool-agnostic way to think about building with AI, demonstrated by building a knitting app. May 1, 2026 AI Kitchen session.">
   <meta property="og:type" content="website">
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2615;</text></svg>">
+  <link rel="icon" href="assets/design/ai-kitchen-mark.svg" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* Local fallback variables so the page is previewable without styles.css. */
-    :root {
-      --coral: #c4884a;
-      --mint: #4f9b8a;
-      --mint-light: #ecf5f2;
-      --lavender: #8a7fb8;
-      --text-primary: #2a2118;
-      --text-secondary: #58504a;
-      --text-muted: #8b837d;
-      --bg-alt: #efe9e0;
-      --bg-cta: #faf3e8;
-      --radius-sm: 8px;
-      --shadow-soft: 0 1px 2px rgba(40, 32, 24, 0.06);
-      --shadow-card: 0 4px 14px rgba(40, 32, 24, 0.10);
-      --ease-out: cubic-bezier(.2,.7,.2,1);
-    }
     body {
-      font-family: 'DM Sans', system-ui, sans-serif;
-      background: #fbf7f0;
+      font-family: 'Crimson Pro', Georgia, serif;
+      background: var(--bg-page);
       color: var(--text-primary);
       margin: 0;
       line-height: 1.5;
@@ -48,11 +32,11 @@
     .session-container { max-width: 960px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 32px); }
     .session-hero { padding-top: clamp(40px, 6vh, 64px); padding-bottom: clamp(20px, 3vh, 32px); }
     .session-hero .eyebrow {
-      font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; font-weight: 600;
+      font-family: 'Figtree', sans-serif; font-size: 0.8125rem; font-weight: 600;
       text-transform: uppercase; letter-spacing: 1.5px; color: var(--coral); margin-bottom: 8px;
     }
     .session-hero h1 {
-      font-family: 'Bodoni Moda', Georgia, serif;
+      font-family: 'Figtree', Georgia, serif;
       font-size: clamp(2rem, 5vw, 3rem); color: var(--text-primary);
       line-height: 1.1; margin-bottom: 12px;
     }
@@ -64,7 +48,7 @@
     .session-hero .session-meta { color: var(--text-muted); font-size: 0.875rem; margin-top: 8px; }
 
     .session-heading {
-      font-family: 'Bodoni Moda', Georgia, serif; font-size: 1.5rem;
+      font-family: 'Figtree', Georgia, serif; font-size: 1.5rem;
       color: var(--text-primary); margin-top: 48px; margin-bottom: 16px;
     }
     .session-heading em { font-style: italic; color: var(--coral); }
@@ -74,7 +58,7 @@
     .media-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
     @media (min-width: 820px) { .media-grid { grid-template-columns: 1fr 1fr; } }
     .media-card { background: white; border: 1px solid var(--bg-alt); border-radius: var(--radius-sm); padding: 16px; box-shadow: var(--shadow-soft); display: flex; flex-direction: column; }
-    .media-card h3 { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-primary); margin: 0 0 10px 0; }
+    .media-card h3 { font-family: 'Figtree', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-primary); margin: 0 0 10px 0; }
     .media-embed { position: relative; width: 100%; padding-top: 56.25%; background: var(--bg-alt); border-radius: var(--radius-sm); overflow: hidden; }
     .media-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
     .media-card .media-link { display: inline-block; margin-top: 10px; font-size: 0.8125rem; color: var(--coral); text-decoration: underline; text-decoration-color: rgba(154, 110, 53, 0.35); text-underline-offset: 2px; }
@@ -96,8 +80,8 @@
     /* Three-move cards */
     .recipes-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
     .recipe-card { background: var(--mint-light); border-left: 4px solid var(--mint); border-radius: var(--radius-sm); padding: 12px 16px; }
-    .recipe-card .recipe-num { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.75rem; color: var(--mint); margin-bottom: 4px; }
-    .recipe-card .recipe-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.9375rem; color: var(--text-primary); margin-bottom: 6px; }
+    .recipe-card .recipe-num { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 0.75rem; color: var(--mint); margin-bottom: 4px; }
+    .recipe-card .recipe-title { font-family: 'Figtree', sans-serif; font-weight: 600; font-size: 0.9375rem; color: var(--text-primary); margin-bottom: 6px; }
     .recipe-card .recipe-desc { font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5; }
 
     /* Worked-example callout */
@@ -105,7 +89,7 @@
       background: white; border: 1px solid var(--bg-alt); border-left: 4px solid var(--lavender);
       border-radius: var(--radius-sm); padding: 18px 22px; margin-top: 18px; box-shadow: var(--shadow-soft);
     }
-    .callout h3 { font-family: 'DM Sans', sans-serif; font-size: 1.0625rem; font-weight: 700; color: var(--text-primary); margin: 0 0 10px 0; }
+    .callout h3 { font-family: 'Figtree', sans-serif; font-size: 1.0625rem; font-weight: 700; color: var(--text-primary); margin: 0 0 10px 0; }
     .callout ul { margin: 0; padding-left: 20px; }
     .callout ul li { margin-bottom: 7px; font-size: 0.875rem; line-height: 1.5; color: var(--text-secondary); }
     .callout ul li strong { color: var(--text-primary); }
@@ -117,7 +101,7 @@
     }
     .exercise.two { border-left-color: var(--mint); }
     .exercise.three { border-left-color: var(--lavender); }
-    .exercise h3 { font-family: 'DM Sans', sans-serif; font-size: 1.0625rem; font-weight: 700; color: var(--text-primary); margin: 0 0 4px 0; }
+    .exercise h3 { font-family: 'Figtree', sans-serif; font-size: 1.0625rem; font-weight: 700; color: var(--text-primary); margin: 0 0 4px 0; }
     .exercise .exercise-sub { font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 10px; font-style: italic; }
     .exercise p { margin: 0; font-size: 0.9375rem; line-height: 1.55; color: var(--text-secondary); }
 
@@ -133,31 +117,32 @@
     }
     .session-footer-note a { color: var(--coral); }
   </style>
+  <link rel="stylesheet" href="site-shell.css">
 </head>
-<body>
+<body class="site-page">
 
   <!-- ===== NAV ===== -->
-  <nav class="nav" role="navigation" aria-label="Main">
-    <a href="index.html" class="nav-wordmark" style="text-decoration:none; color:var(--text-primary);">AI Kitchen</a>
-    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="const links=this.nextElementSibling;const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open);">
-      <svg viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-    <div class="nav-links">
-      <a href="schedule.html" class="nav-link">Schedule</a>
-      <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" class="nav-link" target="_blank" rel="noopener noreferrer">Projects &#8599;</a>
-      <a href="tools.html" class="nav-link">Tools Guide</a>
-      <a href="roles.html" class="nav-link">Leadership Roles</a>
-      <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
-    </div>
-  </nav>
+  <a class="site-skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="site-wordmark" href="index.html" aria-label="AI Kitchen home"><span class="option-chef-tile" aria-hidden="true"><span class="chef-badge" aria-hidden="true"><svg class="chef-tile-hat" viewBox="0 0 30 22" aria-hidden="true"><path d="M7 15V11C3 10 2 7 4 4c2-3 6-3 8-1 2-3 7-3 9 0 3-1 7 1 7 4 0 3-2 4-5 5v3H7Z" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 18h14" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round"/></svg><span class="chef-green-ai">AI</span></span><span class="chef-tile-kitchen" aria-hidden="true">Kitchen</span></span></a>
+      <div class="site-nav-links">
+        <a class="site-nav-link" href="schedule.html">Schedule</a>
+        <a class="site-nav-link" href="tools.html">Tools guide</a>
+        <a class="site-nav-link" href="roles.html">Our people</a>
+        <a class="site-nav-cta" href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">Get involved <span aria-hidden="true">↗</span></a>
+      </div>
+      <a class="site-scu-brand" aria-label="Santa Clara University website" href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University"></a>
+    </nav>
+  </header>
 
-  <main>
+  <main id="main" tabindex="-1">
 
   <!-- ===== HERO ===== -->
   <section class="section session-hero">
     <div class="session-container">
       <div class="eyebrow">May 1, 2026 &middot; Taste Test</div>
-      <h1>How to Think Like an <em>Engineer</em></h1>
+      <div class="page-heading-peek"><h1>How to Think Like an <em>Engineer</em></h1><div class="page-peek" aria-hidden="true"><span class="page-veggie-tomato"></span></div></div>
       <p class="session-sub">
         Vibe coding gets you a working first version in minutes. Going further, without AI breaking what
         already works, takes a systems mindset. Luis Sarmenta shares a tool-agnostic way to think about
@@ -183,7 +168,7 @@
         <div class="media-card">
           <h3>Slides</h3>
           <div class="media-embed">
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTFr6nuWvhIzWj9newmIFYPvNdbW6VnTQtWdod_ZcRrVX-NGWujaJEW_19c98g7fw/pubembed?start=false&loop=false&delayms=3000" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTFr6nuWvhIzWj9newmIFYPvNdbW6VnTQtWdod_ZcRrVX-NGWujaJEW_19c98g7fw/pubembed?start=false&loop=false&delayms=3000" title="How to Think Like an Engineer — slides" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
           </div>
           <a class="media-link" href="https://docs.google.com/presentation/d/e/2PACX-1vTFr6nuWvhIzWj9newmIFYPvNdbW6VnTQtWdod_ZcRrVX-NGWujaJEW_19c98g7fw/pub?start=false&loop=false&delayms=3000" target="_blank" rel="noopener noreferrer">Open the slides &rarr;</a>
         </div>
@@ -318,7 +303,6 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
   <section class="section" style="padding-top:0;">
     <div class="session-container">
       <p class="session-footer-note">
@@ -330,8 +314,39 @@
 
   </main>
 
+  <!-- ===== SHARED FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University" loading="lazy"></a>
+        <p>AI Kitchen · Everyone’s invited.</p>
+        <p class="site-footer-tagline">There’s room at the kitchen table.</p>
+      </div>
+      <nav class="site-footer-links" aria-label="Footer navigation">
+        <a href="schedule.html">Schedule</a>
+        <a href="tools.html">Tools guide</a>
+        <a href="roles.html">Leadership</a>
+        <a href="news.html">News</a>
+        <a href="index.html#press">In the press</a>
+        <a href="start-an-ai-kitchen.html">Start an AI Kitchen</a>
+        <a href="guest-chefs.html">Guest chef guide</a>
+        <a href="faq.html">More questions</a>
+        <a href="mailto:klukoff@scu.edu">Contact</a>
+      </nav>
+      <div class="site-footer-community">
+        <p>Follow AI Kitchen</p>
+        <div class="site-footer-social">
+          <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer"><img src="linkedin-icon.svg" width="20" height="20" alt="">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer"><img src="youtube-icon.svg" width="20" height="20" alt="">YouTube <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="site-footer-faculty">Faculty lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>Faculty advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> and Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a></p>
+      </div>
+    </div>
+  </footer>
+
   <script src="sessions.js"></script>
   <script src="speaker-block.js"></script>
 
+  <script src="site-shell.js" defer></script>
 </body>
 </html>

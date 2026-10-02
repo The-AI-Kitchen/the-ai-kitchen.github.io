@@ -7,16 +7,16 @@
   <meta name="description" content="AI Kitchen Taste Test schedule: weekly guest tutorials and hands-on sessions at Santa Clara University.">
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+  <link rel="icon" href="assets/design/ai-kitchen-mark.svg" type="image/svg+xml">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="session-tools.css?v=20260930">
+  <link rel="stylesheet" href="session-tools.css?v=20261002">
 
   <style>
     /* Muted "Completed" tag on the past quarter heading */
@@ -45,7 +45,7 @@
       padding: 5px 10px;
       border-radius: var(--radius-sm);
       background: rgba(196, 122, 106, 0.16);
-      color: #9c4a33;          /* 5.7:1 on the page background — AA pass */
+      color: #803118;
       font-size: 0.8125rem;
       font-weight: 600;
       line-height: 1.35;
@@ -65,38 +65,38 @@
       line-height: 1.35;
     }
   </style>
+  <link rel="stylesheet" href="site-shell.css">
 </head>
-<body>
+<body class="site-page">
 
   <!-- ===== NAV ===== -->
-  <nav class="nav" role="navigation" aria-label="Main">
-    <a href="index.html" class="nav-wordmark">AI Kitchen</a>
-    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="const links=this.nextElementSibling;const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open);">
-      <svg viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-    <div class="nav-links">
-      <a href="schedule.html" class="nav-link">Schedule</a>
-      <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" class="nav-link" target="_blank" rel="noopener noreferrer">Projects &#8599;</a>
-      <a href="tools.html" class="nav-link">Tools Guide</a>
-      <a href="roles.html" class="nav-link">Leadership Roles</a>
-      <a href="index.html#press" class="nav-link">Press</a>
-      <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
-    </div>
-  </nav>
+  <a class="site-skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="site-wordmark" href="index.html" aria-label="AI Kitchen home"><span class="option-chef-tile" aria-hidden="true"><span class="chef-badge" aria-hidden="true"><svg class="chef-tile-hat" viewBox="0 0 30 22" aria-hidden="true"><path d="M7 15V11C3 10 2 7 4 4c2-3 6-3 8-1 2-3 7-3 9 0 3-1 7 1 7 4 0 3-2 4-5 5v3H7Z" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 18h14" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round"/></svg><span class="chef-green-ai">AI</span></span><span class="chef-tile-kitchen" aria-hidden="true">Kitchen</span></span></a>
+      <div class="site-nav-links">
+        <a class="site-nav-link" href="schedule.html" aria-current="page">Schedule</a>
+        <a class="site-nav-link" href="tools.html">Tools guide</a>
+        <a class="site-nav-link" href="roles.html">Our people</a>
+        <a class="site-nav-cta" href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">Get involved <span aria-hidden="true">↗</span></a>
+      </div>
+      <a class="site-scu-brand" aria-label="Santa Clara University website" href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University"></a>
+    </nav>
+  </header>
 
-  <main>
+  <main id="main" tabindex="-1">
 
   <!-- ===== CURRENT QUARTER: FALL ===== -->
   <section class="section section--alt" id="current">
     <div class="container">
-      <h1 class="section-heading reveal"><em>Taste Test</em> Schedule</h1>
+      <div class="page-heading-peek"><h1 class="section-heading reveal"><em>Taste Test</em> Schedule</h1><div class="page-peek" aria-hidden="true"><span class="page-veggie-tomato"></span></div></div>
       <span class="section-accent reveal delay-1" aria-hidden="true"></span>
 
       <aside class="session-tools" id="getting-started" aria-labelledby="session-tools-heading">
         <h2 id="session-tools-heading">Get ready to build</h2>
         <p class="session-tools-intro">Bring your laptop. We recommend ChatGPT Work for the hands-on build.</p>
         <div class="session-tools-options">
-          <div class="session-tools-option">
+          <div class="session-tools-option" data-offer-expires="2026-10-31">
             <span class="session-tools-label session-tools-label--recommended">First choice for students</span>
             <h3>ChatGPT Work: 4 months free</h3>
             <p>Eligible U.S. college students can get four free months of ChatGPT Plus, including Work. Verify student status and <strong>claim by October 31, 2026</strong>.</p>
@@ -106,7 +106,7 @@
           <div class="session-tools-option">
             <span class="session-tools-label">Student offer</span>
             <h3>$100 in Codex credits</h3>
-            <p>Current university students studying and residing in the U.S. or Canada can claim $100 in credits for Codex after verifying student status. One offer per student; credits expire after 12 months.</p>
+            <p>Current university students enrolled and residing in the U.S. or Canada can claim $100 in ChatGPT credits for Codex after verifying student status. One offer per student; credits expire 12 months after grant. These are Codex credits, rather than API credits.</p>
             <a href="https://developers.openai.com/community/students" target="_blank" rel="noopener noreferrer">Get student credits &rarr;</a>
           </div>
           <div class="session-tools-option">
@@ -116,7 +116,7 @@
             <a href="https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork" target="_blank" rel="noopener noreferrer">Claude Cowork access &rarr;</a>
           </div>
         </div>
-        <p class="session-tools-checked">Offers and access checked September 30, 2026. Eligibility and usage limits apply.</p>
+        <p class="session-tools-checked">Student offers checked October 2, 2026; Claude access checked September 30. Eligibility and usage limits apply. <a href="tools.html#student-offers">More free student opportunities &rarr;</a></p>
       </aside>
 
       <h2 class="schedule-quarter reveal delay-1">Fall Quarter 2026</h2>
@@ -125,11 +125,10 @@
         <a href="https://docs.google.com/document/d/183Ro43EVI7GLUZzQPJxGG65-fi1HjjMZV5E3wEpY_uQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Directions to Benson 036</a>
       </p>
       <p class="section-intro reveal delay-1" style="margin-top: 0;">
-        Every session follows the same shape: a live tutorial from our guest at 1:00, a hands-on build for
-        everyone in the room, then open pitches where faculty, students, and staff share the AI projects
-        they&rsquo;re working on and recruit collaborators. Most Fridays have a soft finish around 4:00, and
-        you&rsquo;re welcome to stay and keep working with your project team. Sessions marked 1:00&ndash;3:00
-        wrap at 3:00 sharp so the room can turn over to the next event.
+        Every session starts with a live tutorial from our guest at 1:00, followed by a hands-on build for
+        everyone in the room and time for open experimentation and questions. Most Fridays have a soft
+        finish around 4:00, and you&rsquo;re welcome to stay and keep trying things together. Sessions marked
+        1:00&ndash;3:00 wrap at 3:00 sharp so the room can turn over to the next event.
       </p>
       <p class="section-intro reveal delay-1" style="margin-top: 0;">
         Want to be a guest chef? Dates marked &ldquo;Speaker to be announced&rdquo; are open. Read the <a href="guest-chefs.html">guest chef guide</a> or
@@ -142,6 +141,7 @@
         <a href="webcal://calendar.google.com/calendar/ical/c_65897020b77ac3e46324b38ad1ca4588a7f92815f3926a76bd855684906732d5%40group.calendar.google.com/public/basic.ics">Apple / Outlook</a>
       </p>
 
+      <noscript><p class="section-intro">For the latest dates and session details, open the <a href="https://calendar.google.com/calendar/u/0/r?cid=c_65897020b77ac3e46324b38ad1ca4588a7f92815f3926a76bd855684906732d5%40group.calendar.google.com" target="_blank" rel="noopener noreferrer">AI Kitchen calendar</a>.</p></noscript>
       <div class="schedule-grid" id="fall-grid"></div>
     </div>
   </section>
@@ -171,29 +171,36 @@
 
   </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-wordmark">AI Kitchen</div>
-      <div class="footer-divider" aria-hidden="true"></div>
-      <p>
-        Faculty Lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>
-        Faculty Advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> and Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a>
-      </p>
-      <p>
-        Santa Clara University
-      </p>
-      <img src="scu-logo.png" alt="Santa Clara University" class="footer-logo">
-      <div class="footer-social" aria-label="Follow AI Kitchen">
-        <span class="footer-social-label">Follow AI Kitchen</span>
-        <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on LinkedIn"><img src="linkedin-icon.svg" alt="">LinkedIn</a>
-        <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on YouTube"><img src="youtube-icon.svg" alt="">YouTube</a>
+  <!-- ===== SHARED FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University" loading="lazy"></a>
+        <p>AI Kitchen · Everyone’s invited.</p>
+        <p class="site-footer-tagline">There’s room at the kitchen table.</p>
       </div>
-      <p>
-        Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>
-      </p>
+      <nav class="site-footer-links" aria-label="Footer navigation">
+        <a href="schedule.html">Schedule</a>
+        <a href="tools.html">Tools guide</a>
+        <a href="roles.html">Leadership</a>
+        <a href="news.html">News</a>
+        <a href="index.html#press">In the press</a>
+        <a href="start-an-ai-kitchen.html">Start an AI Kitchen</a>
+        <a href="guest-chefs.html">Guest chef guide</a>
+        <a href="faq.html">More questions</a>
+        <a href="mailto:klukoff@scu.edu">Contact</a>
+      </nav>
+      <div class="site-footer-community">
+        <p>Follow AI Kitchen</p>
+        <div class="site-footer-social">
+          <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer"><img src="linkedin-icon.svg" width="20" height="20" alt="">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer"><img src="youtube-icon.svg" width="20" height="20" alt="">YouTube <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="site-footer-faculty">Faculty lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>Faculty advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> and Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a></p>
+      </div>
     </div>
   </footer>
+
 
   <!-- ===== Schedule data (single source of truth, shared with index.html) ===== -->
   <script src="sessions.js?v=20260930-2"></script>
@@ -238,7 +245,7 @@
         var roomClass = s.roomChange ? ' schedule-card--room-change' : '';
 
         if (s.cancelled) {
-          return '<div class="schedule-card reveal ' + delay + '" style="opacity: 0.7;">' +
+          return '<div class="schedule-card reveal ' + delay + '">' +
             '<div class="schedule-date" style="text-decoration: line-through; text-decoration-color: var(--text-muted);">' + esc(s.label) + '</div>' +
             '<div class="schedule-info">' +
               '<span class="schedule-topic" style="color: var(--text-muted);">' + esc(s.topic || 'Session cancelled') + '</span>' +
@@ -247,13 +254,7 @@
         }
 
         if (s.tbd) {
-          // Room-change cards hand their dimming to the stylesheet as --tbd-dim
-          // so the alert can opt out of it; everything else dims as a whole.
-          var tbdDim = s.topic ? '0.85' : '0.55';
-          var tbdStyle = s.roomChange
-            ? 'opacity: 1; --tbd-dim: ' + tbdDim + ';'
-            : 'opacity: ' + tbdDim + ';';
-          return '<div class="schedule-card reveal ' + delay + roomClass + '" style="' + tbdStyle + '">' +
+          return '<div class="schedule-card schedule-card--tbd reveal ' + delay + roomClass + '">' +
             '<div class="schedule-date">' + esc(s.label) + '</div>' +
             '<div class="schedule-info">' +
               (s.topic
@@ -342,5 +343,7 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 
+  <script src="site-shell.js" defer></script>
+  <script src="student-offers.js" defer></script>
 </body>
 </html>

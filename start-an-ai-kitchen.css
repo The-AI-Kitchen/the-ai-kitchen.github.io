@@ -41,8 +41,11 @@
 .starter-hero-copy { position: relative; z-index: 1; }
 .starter-hero-copy > p:not(.eyebrow) { max-width: 530px; }
 .starter-hero .lede { font-size: clamp(1.8rem, 2.7vw, 2.4rem); line-height: 1.15; color: var(--text-primary); margin-bottom: 25px; }
-.starter-hero-art { align-self: end; position: relative; width: 100%; height: 465px; overflow: hidden; }
-.starter-hero-art img { position: absolute; bottom: 0; right: 0; width: 185%; max-width: none; height: auto; }
+/* Three chefs greet visitors from a reserved shelf, with no textured image edge. */
+.starter-hero-art { align-self: center; display: flex; align-items: flex-end; justify-content: center; gap: 18px; position: relative; width: 100%; height: 248px; overflow: hidden; border-bottom: 1px solid #173e2c40; }
+.starter-hero-art .radish { --scale: .43; transform: translateY(32px); }
+.starter-hero-art .tomato { --scale: .57; transform: translateY(28px); }
+.starter-hero-art .broccoli { --scale: .47; transform: translateY(22px); }
 .guide-button { display: inline-flex; align-items: center; gap: 20px; padding: 16px 23px; border-radius: 7px; background: var(--text-primary); color: var(--bg-page); font-size: 1rem; font-weight: 700; margin-top: 28px; }
 .guide-button:hover { background: var(--cta-hover); text-decoration: none; }
 .guide-intro { border-top: 1px solid #173f2e40; border-bottom: 1px solid #173f2e40; padding-block: 25px; }
@@ -121,8 +124,10 @@
   .starter-guide .nav-links { gap: 17px; }
   .starter-guide .nav-link { font-size: .83rem; }
   .starter-hero { grid-template-columns: 1.2fr .9fr; padding-top: 48px; }
-  .starter-hero-art { height: 370px; }
-  .starter-hero-art img { width: 185%; }
+  .starter-hero-art { height: 164px; gap: 9px; }
+  .starter-hero-art .radish { --scale: .25; transform: translateY(18px); }
+  .starter-hero-art .tomato { --scale: .32; transform: translateY(16px); }
+  .starter-hero-art .broccoli { --scale: .28; transform: translateY(15px); }
   .ingredient-grid { gap: 34px; }
   .checklist-section, .grow-section { gap: 38px; }
   .lesson-grid { gap: 24px; }
@@ -134,8 +139,10 @@
   .starter-guide .nav-links.open { display: flex; }
   .starter-guide .nav-link { font-size: .95rem; padding: 12px 0; }
   .starter-hero { display: block; padding-top: 38px; padding-bottom: 25px; }
-  .starter-hero-art { height: 250px; margin-top: 12px; }
-  .starter-hero-art img { width: 155%; }
+  .starter-hero-art { height: 164px; margin-top: 36px; gap: 10px; }
+  .starter-hero-art .radish { --scale: .28; transform: translateY(22px); }
+  .starter-hero-art .tomato { --scale: .40; transform: translateY(20px); }
+  .starter-hero-art .broccoli { --scale: .31; transform: translateY(18px); }
   .starter-hero-copy > p:not(.eyebrow) { max-width: 480px; }
   .starter-guide h1 { font-size: clamp(3.1rem,13vw,4.5rem); }
   .starter-guide h2 { font-size: 2rem; }
@@ -160,6 +167,12 @@
   .guide-closing h2 + p { font-size: 1.4rem; }
   .guide-footer { display: block; }
   .guide-footer p { margin: 16px 0; }
+}
+@media (max-width: 370px) {
+  .starter-hero-art { height: 137px; gap: 7px; }
+  .starter-hero-art .radish { --scale: .22; transform: translateY(18px); }
+  .starter-hero-art .tomato { --scale: .30; transform: translateY(16px); }
+  .starter-hero-art .broccoli { --scale: .24; transform: translateY(15px); }
 }
 @media print {
   .starter-guide { font-size: 11pt; background: white; color: #173f2e; }

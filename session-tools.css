@@ -1,4 +1,4 @@
-/* Getting-started banner shared by the schedule and session pages. */
+/* Student opportunities shared by the tools guide, schedule, and session pages. */
 .session-tools {
   margin: 24px 0 32px;
   padding: clamp(20px, 3vw, 28px);
@@ -20,7 +20,7 @@
 
 .session-tools-options {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
   gap: 24px;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .session-tools h3 {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 1rem;
   line-height: 1.3;
   margin-bottom: 8px;
@@ -82,10 +82,48 @@
   color: var(--text-muted);
 }
 
+.student-offers {
+  margin-top: 0;
+  scroll-margin-top: 32px;
+}
+
+.student-offers .session-tools-options {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 28px;
+}
+
+.student-offers .session-tools-option {
+  padding: 20px;
+  border-radius: 18px;
+  background: var(--bg-page);
+  border: 1px solid rgba(23, 62, 44, 0.1);
+}
+
+.student-offers .student-offer-featured {
+  background: #e6eddf;
+  border-color: rgba(23, 62, 44, 0.18);
+}
+
+.student-offers h3 { font-size: 1.125rem; }
+
+.student-offers-more {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(23, 62, 44, 0.15);
+}
+
+.student-offers-more ul { padding-left: 20px; margin: 0; }
+.student-offers-more li { font-size: 0.9375rem; line-height: 1.55; margin-bottom: 12px; }
+.student-offers-more li:last-child { margin-bottom: 0; }
+
 @media (max-width: 640px) {
   .session-tools-options { grid-template-columns: 1fr; gap: 20px; }
   .session-tools-option + .session-tools-option {
     padding-top: 20px;
     border-top: 1px solid rgba(139, 93, 49, 0.2);
+  }
+  .student-offers .session-tools-option + .session-tools-option {
+    padding-top: 20px;
+    border-top: 1px solid rgba(23, 62, 44, 0.1);
   }
 }

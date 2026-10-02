@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Tools Guide for SCU Students — AI Kitchen</title>
-  <meta name="description" content="A curated guide to AI tools for SCU students, including what the university provides and what it does not. Updated September 2026.">
+  <meta name="description" content="Free student AI opportunities and a curated tools guide for SCU students. Student offers checked October 2, 2026.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="AI Tools Guide for SCU Students — AI Kitchen">
-  <meta property="og:description" content="Chatbots vs. harnesses, what SCU actually provides, and the best free AI tools for students. Updated September 2026.">
+  <meta property="og:description" content="Free student opportunities, what SCU provides, and AI tools for your next project. Student offers checked October 2, 2026.">
   <meta property="og:type" content="website">
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+  <link rel="icon" href="assets/design/ai-kitchen-mark.svg" type="image/svg+xml">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Main site styles -->
   <link rel="stylesheet" href="styles.css">
@@ -36,7 +36,7 @@
     }
 
     .tools-hero h1 {
-      font-family: 'Bodoni Moda', Georgia, serif;
+      font-family: 'Figtree', Georgia, serif;
       font-size: clamp(2rem, 5vw, 3rem);
       color: var(--text-primary);
       line-height: 1.1;
@@ -56,7 +56,7 @@
 
     /* Category headings */
     .cat-heading {
-      font-family: 'Bodoni Moda', Georgia, serif;
+      font-family: 'Figtree', Georgia, serif;
       font-size: 1.3125rem;
       line-height: 1.2;
       margin-top: 36px;
@@ -152,7 +152,7 @@
     .alt-tool { border-top: 1px solid var(--bg-alt); padding-top: 12px; margin-top: 12px; }
 
     .category-block h3 {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Figtree', sans-serif;
       font-size: 16px;
       font-weight: 700;
       margin: 18px 0 6px 0;
@@ -191,17 +191,17 @@
 
     /* Summary table */
     table.summary { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
-    table.summary th { background: var(--cta-bg); color: white; padding: 8px 10px; text-align: left; font-weight: 600; }
-    table.summary td { padding: 8px 10px; border-bottom: 1px solid var(--bg-alt); vertical-align: top; }
-    table.summary td a:not(.tool-link) { color: var(--text-primary); text-decoration: none; }
-    table.summary td a:not(.tool-link):hover { color: var(--cta-bg); }
-    table.summary tr:nth-child(even) { background: var(--bg-page); }
+    table.summary thead th { background: var(--cta-bg); color: white; padding: 8px 10px; text-align: left; font-weight: 600; }
+    table.summary tbody :is(th, td) { text-align: left; font-weight: 400; background: transparent; color: var(--text-primary); padding: 8px 10px; border-bottom: 1px solid var(--bg-alt); vertical-align: top; }
+    table.summary tbody :is(th, td) a:not(.tool-link) { color: var(--text-primary); text-decoration: none; }
+    table.summary tbody :is(th, td) a:not(.tool-link):hover { color: var(--cta-bg); }
+    table.summary tbody tr:nth-child(odd) { background: var(--bg-page); }
 
     /* The one paid recommendation, called out in the table */
     table.summary tr.row-pick,
-    table.summary tr.row-pick:nth-child(even) { background: var(--bg-cta); }
-    table.summary tr.row-pick td { border-bottom-color: rgba(139, 93, 49, 0.25); }
-    table.summary tr.row-pick td:first-child { box-shadow: inset 3px 0 0 var(--cta-bg); }
+    table.summary tbody tr.row-pick:nth-child(odd) { background: var(--bg-cta); }
+    table.summary tr.row-pick :is(th, td) { border-bottom-color: rgba(139, 93, 49, 0.25); }
+    table.summary tr.row-pick th:first-child { box-shadow: inset 3px 0 0 var(--cta-bg); }
     /* --coral drops to 3.9:1 on this warmer background; use the darker amber for AA */
     table.summary tr.row-pick a.tool-link { color: var(--cta-bg); text-decoration-color: rgba(139, 93, 49, 0.5); }
     table.summary tr.row-pick a.tool-link:hover { text-decoration-color: var(--cta-bg); }
@@ -245,7 +245,7 @@
     }
 
     .standalone-heading {
-      font-family: 'Bodoni Moda', Georgia, serif;
+      font-family: 'Figtree', Georgia, serif;
       font-size: 1.3125rem;
       line-height: 1.2;
       margin-top: 36px;
@@ -267,7 +267,7 @@
     .standalone-block ul { margin: 6px 0 12px 0; padding-left: 20px; }
     .standalone-block li { margin-bottom: 6px; font-size: 0.9375rem; line-height: 1.6; color: var(--text-secondary); }
     .standalone-block h3 {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Figtree', sans-serif;
       font-size: 16px;
       font-weight: 700;
       margin: 20px 0 6px 0;
@@ -310,8 +310,8 @@
 
     .mode-card.harness .mode-label { color: #3d6b4e; }
 
-    .mode-card h4 {
-      font-family: 'Bodoni Moda', Georgia, serif;
+    .mode-card h3 {
+      font-family: 'Figtree', Georgia, serif;
       font-size: 1.125rem;
       color: var(--text-primary);
       margin-bottom: 6px;
@@ -330,10 +330,10 @@
 
     /* Comparison table */
     table.compare { width: 100%; border-collapse: collapse; margin: 8px 0 18px 0; font-size: 14px; }
-    table.compare th { background: var(--bg-alt); color: var(--text-primary); padding: 8px 10px; text-align: left; font-weight: 700; }
+    table.compare thead th { background: var(--bg-alt); color: var(--text-primary); padding: 8px 10px; text-align: left; font-weight: 700; }
     table.compare th:first-child { width: 30%; }
-    table.compare td { padding: 8px 10px; border-bottom: 1px solid var(--bg-alt); color: var(--text-secondary); vertical-align: top; }
-    table.compare td:first-child { font-weight: 600; color: var(--text-primary); }
+    table.compare tbody :is(th, td) { padding: 8px 10px; border-bottom: 1px solid var(--bg-alt); color: var(--text-secondary); vertical-align: top; }
+    table.compare tbody th { background: transparent; text-align: left; font-weight: 600; color: var(--text-primary); }
 
     /* SCU status boxes */
     .scu-box {
@@ -355,7 +355,7 @@
     }
 
     .scu-box h4 {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Figtree', sans-serif;
       font-size: 15px;
       font-weight: 700;
       color: var(--text-primary);
@@ -383,7 +383,7 @@
 
     /* Nav link active state for tools page */
     .nav-tools-link {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Figtree', sans-serif;
       font-size: 0.875rem;
       font-weight: 600;
       color: var(--text-secondary);
@@ -396,32 +396,33 @@
       text-decoration: none;
     }
   </style>
+  <link rel="stylesheet" href="session-tools.css?v=20261002">
+  <link rel="stylesheet" href="site-shell.css">
 </head>
-<body>
+<body class="site-page">
 
   <!-- ===== NAV ===== -->
-  <nav class="nav" role="navigation" aria-label="Main">
-    <a href="index.html" class="nav-wordmark" style="text-decoration:none; color:var(--text-primary);">AI Kitchen</a>
-    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="const links=this.nextElementSibling;const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open);">
-      <svg viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-    <div class="nav-links">
-      <a href="schedule.html" class="nav-link">Schedule</a>
-      <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" class="nav-link" target="_blank" rel="noopener noreferrer">Projects &#8599;</a>
-      <a href="tools.html" class="nav-link active">Tools Guide</a>
-      <a href="roles.html" class="nav-link">Leadership Roles</a>
-      <a href="index.html#press" class="nav-link">Press</a>
-      <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
-    </div>
-  </nav>
+  <a class="site-skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="site-wordmark" href="index.html" aria-label="AI Kitchen home"><span class="option-chef-tile" aria-hidden="true"><span class="chef-badge" aria-hidden="true"><svg class="chef-tile-hat" viewBox="0 0 30 22" aria-hidden="true"><path d="M7 15V11C3 10 2 7 4 4c2-3 6-3 8-1 2-3 7-3 9 0 3-1 7 1 7 4 0 3-2 4-5 5v3H7Z" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 18h14" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round"/></svg><span class="chef-green-ai">AI</span></span><span class="chef-tile-kitchen" aria-hidden="true">Kitchen</span></span></a>
+      <div class="site-nav-links">
+        <a class="site-nav-link" href="schedule.html">Schedule</a>
+        <a class="site-nav-link" href="tools.html" aria-current="page">Tools guide</a>
+        <a class="site-nav-link" href="roles.html">Our people</a>
+        <a class="site-nav-cta" href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">Get involved <span aria-hidden="true">↗</span></a>
+      </div>
+      <a class="site-scu-brand" aria-label="Santa Clara University website" href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University"></a>
+    </nav>
+  </header>
 
-  <main>
+  <main id="main" tabindex="-1">
 
   <!-- ===== TOOLS HERO ===== -->
   <section class="section tools-hero">
     <div class="tools-container">
-      <h1><em>AI Tools</em> Guide for SCU Students</h1>
-      <p class="tools-subtitle">Santa Clara University, Fall 2026. Last updated September 1, 2026.<br>
+      <div class="page-heading-peek"><h1><em>AI Tools</em> Guide for SCU Students</h1><div class="page-peek" aria-hidden="true"><span class="page-veggie-tomato"></span></div></div>
+      <p class="tools-subtitle">Santa Clara University, Fall 2026. Student offers checked October 2, 2026; general guide updated September 1.<br>
       A curated reference for students in CS, business, arts, and other disciplines.</p>
     </div>
   </section>
@@ -430,67 +431,104 @@
   <section class="section" style="padding-top:0; overflow:visible;">
     <div class="tools-container">
 
+<!-- FREE STUDENT OPPORTUNITIES -->
+
+<aside class="session-tools student-offers" id="student-offers" aria-labelledby="student-offers-heading">
+  <h2 id="student-offers-heading">Start with the free student offers</h2>
+  <p class="session-tools-intro">Try these before paying for an AI subscription. Use your school email to verify student status; some offers belong on a personal account.</p>
+  <div class="session-tools-options">
+    <div class="session-tools-option student-offer-featured" data-offer-expires="2026-10-31">
+      <span class="session-tools-label session-tools-label--recommended">Our first recommendation · Claim by Oct 31</span>
+      <h3>ChatGPT Work: 4 months free</h3>
+      <p>Eligible current full- or part-time students at U.S. degree-granting institutions can get <strong>four free months of ChatGPT Plus, including Work</strong>. Verify with SheerID using your school email; your ChatGPT account can use a personal email.</p>
+      <p><strong>Claim by October 31, 2026.</strong> New subscriptions require a payment method and renew at $20/month afterward unless canceled. Canceling early ends access after the current billing period and forfeits later free months.</p>
+      <p>Existing Plus subscriptions billed directly by OpenAI qualify too. App Store and Google Play subscriptions are excluded.</p>
+      <a href="https://chatgpt.com/students/2026/" target="_blank" rel="noopener noreferrer">Claim 4 free months &rarr;</a>
+    </div>
+    <div class="session-tools-option">
+      <span class="session-tools-label">Extra help for building</span>
+      <h3>$100 in Codex credits</h3>
+      <p>Current university students enrolled and residing in the U.S. or Canada can claim <strong>$100 in ChatGPT credits for Codex</strong>. Verify student status with your school email; a personal ChatGPT Free, Go, Plus, or Pro account works.</p>
+      <p>One offer per student. Credits expire 12 months after they are granted and apply to Codex usage, rather than API usage.</p>
+      <a href="https://developers.openai.com/community/students" target="_blank" rel="noopener noreferrer">Get student credits &rarr;</a>
+    </div>
+  </div>
+  <div class="student-offers-more">
+    <h3>More free opportunities</h3>
+    <ul>
+      <li data-offer-expires="2026-12-31"><strong><a href="https://gemini.google/students/" target="_blank" rel="noopener noreferrer">Google AI Pro: 12 months free</a>.</strong> Eligible U.S. college students age 18+. Claim by December 31, 2026 on a personal Google account and verify through SheerID. A payment method is required; it renews at $19.99/month afterward unless canceled.</li>
+      <li><strong><a href="https://help.figma.com/hc/en-us/articles/360041061214-Figma-for-Education" target="_blank" rel="noopener noreferrer">Figma Education</a>.</strong> Verified students and educators get the Professional plan free. Higher education includes Make, Sites, and 3,000 AI credits per month. Students reverify annually.</li>
+      <li><strong><a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students" target="_blank" rel="noopener noreferrer">GitHub Copilot Student</a>.</strong> Free for verified students through GitHub Education. The Student plan uses Auto model selection and excludes third-party agents.</li>
+    </ul>
+  </div>
+  <p class="session-tools-checked">These five opportunities were checked against official offer pages on October 2, 2026. Eligibility and usage limits apply. For subscriptions, set a reminder before your own free period ends.</p>
+</aside>
+
 <!-- QUICK REFERENCE TABLE -->
 
 <h2 class="standalone-heading" id="top-picks">Top Picks by Category</h2>
-<div class="standalone-block table-wrap" style="border-top:none; border-radius: 0 0 var(--radius-sm) var(--radius-sm);">
-<p style="font-size:14px; color:#6b5d4d; margin: 0 0 12px 0;">We prioritize free tools that offer premium capabilities for SCU students. Everything below is free except the highlighted row, which is the one thing we think is worth paying for.</p>
-<table class="summary">
+<div class="standalone-block table-wrap" role="region" aria-labelledby="top-picks" tabindex="0" style="border-top:none; border-radius: 0 0 var(--radius-sm) var(--radius-sm);">
+<p style="font-size:14px; color:#6b5d4d; margin: 0 0 12px 0;">Start with the <a class="tool-link" href="#student-offers">free student offers above</a>. The category picks below include an optional paid recommendation for when you know which tool you prefer.</p>
+<table class="summary" aria-labelledby="top-picks">
+<thead>
 <tr>
-  <th>Category</th>
-  <th>Top Pick</th>
-  <th>Why It's Great</th>
+  <th scope="col">Category</th>
+  <th scope="col">Top Pick</th>
+  <th scope="col">Why It's Great</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-  <td><a href="#general-ai">General-Purpose AI (chat)</a></td>
+  <th scope="row"><a href="#general-ai">General-Purpose AI (chat)</a></th>
   <td><a class="tool-link" href="https://gemini.google.com" target="_blank">Google Gemini</a></td>
   <td>Free through SCU, private under the campus agreement, good enough for chat</td>
 </tr>
 <tr class="row-pick">
-  <td><a href="#agentic">Agentic AI &amp; Code</a><br><span class="pay-badge">Worth paying for</span></td>
+  <th scope="row"><a href="#agentic">Agentic AI &amp; Code</a><br><span class="pay-badge">Optional paid pick</span></th>
   <td><a class="tool-link" href="https://claude.ai" target="_blank">Claude</a> <span style="color:var(--text-muted);">($20/mo)</span></td>
-  <td>Claude Cowork and Claude Code do work a chatbot cannot. Free alternative: Google Antigravity</td>
+  <td>Claude Cowork and Claude Code for multi-step work. Try the free student offers first; Google Antigravity also has a free tier.</td>
 </tr>
 <tr>
-  <td><a href="#design">Visual Design / UI</a></td>
+  <th scope="row"><a href="#design">Visual Design / UI</a></th>
   <td><a class="tool-link" href="https://www.figma.com/education/" target="_blank">Figma</a></td>
   <td>Industry standard for design, free Pro plan for students</td>
 </tr>
 <tr>
-  <td><a href="#image">Image Generation</a></td>
+  <th scope="row"><a href="#image">Image Generation</a></th>
   <td><a class="tool-link" href="https://gemini.google.com" target="_blank">Google Gemini</a></td>
   <td>Best-in-class image gen, and it works on your SCU account</td>
 </tr>
 <tr>
-  <td><a href="#research">Research</a></td>
+  <th scope="row"><a href="#research">Research</a></th>
   <td><a class="tool-link" href="https://notebooklm.google" target="_blank">Gemini Notebook</a></td>
   <td>Free through SCU and excellent on your own sources</td>
 </tr>
 <tr>
-  <td><a href="#data-science">Data Science</a></td>
+  <th scope="row"><a href="#data-science">Data Science</a></th>
   <td><a class="tool-link" href="https://colab.research.google.com" target="_blank">Google Colab</a></td>
   <td>Free GPU access and AI coding help in your browser</td>
 </tr>
 <tr>
-  <td><a href="#presentations">Presentations</a></td>
+  <th scope="row"><a href="#presentations">Presentations</a></th>
   <td><a class="tool-link" href="https://gamma.app" target="_blank">Gamma</a></td>
   <td>Describe your topic, get a polished deck in seconds</td>
 </tr>
 <tr>
-  <td><a href="#nocode">No-Code App Building</a></td>
+  <th scope="row"><a href="#nocode">No-Code App Building</a></th>
   <td><a class="tool-link" href="https://bolt.new" target="_blank">Bolt.new</a></td>
   <td>Build and deploy a full web app from a text description</td>
 </tr>
 <tr>
-  <td><a href="#video">Video / Animation</a></td>
+  <th scope="row"><a href="#video">Video / Animation</a></th>
   <td style="color:#7a6520;">Pending review</td>
   <td style="color:#7a6520;">We're still evaluating tools in this space</td>
 </tr>
 <tr>
-  <td><a href="#audio">Audio / Music</a></td>
+  <th scope="row"><a href="#audio">Audio / Music</a></th>
   <td style="color:#7a6520;">Pending review</td>
   <td style="color:#7a6520;">We're still evaluating tools in this space</td>
 </tr>
+</tbody>
 </table>
 </div>
 
@@ -504,13 +542,13 @@
 <div class="mode-grid">
   <div class="mode-card">
     <div class="mode-label">Mode 1</div>
-    <h4>The chatbot</h4>
+    <h3>The chatbot</h3>
     <p>A text box in a browser tab. You type, it replies. It cannot see the files on your laptop, run your code, open your other apps, or check whether its own answer actually worked. Everything crosses the boundary by copy and paste, and you are the one doing the copying.</p>
     <p class="examples"><strong>Examples:</strong> gemini.google.com, chatgpt.com, claude.ai in a browser.</p>
   </div>
   <div class="mode-card harness">
     <div class="mode-label">Mode 2</div>
-    <h4>The harness (agentic AI)</h4>
+    <h3>The harness (agentic AI)</h3>
     <p>The same model, wrapped in a program that hands it real tools: read and write files in a folder you choose, run commands, browse the web, call APIs, and keep going until the task is done. You describe an outcome, and it plans, acts, checks its own work, and retries when it fails.</p>
     <p class="examples"><strong>Examples:</strong> Claude Code, Claude Cowork in Claude Desktop, Codex in the ChatGPT desktop app, Google Antigravity, Cursor.</p>
   </div>
@@ -518,48 +556,52 @@
 
 <p><strong>Why the distinction matters:</strong> a chatbot writes you a script. A harness writes the script, runs it against your actual data, reads the error message, fixes the bug, reruns it, and hands you the finished chart. For anything that touches more than one file or takes more than one step, this is not an incremental upgrade. It is a different category of tool, and it is how most professional work with AI is now done.</p>
 
-<div class="table-wrap">
-<table class="compare">
+<div class="table-wrap" role="region" aria-label="Chatbot and harness comparison" tabindex="0">
+<table class="compare" aria-labelledby="modes">
+<thead>
 <tr>
-  <th></th>
-  <th>Chatbot</th>
-  <th>Harness</th>
+  <th scope="col">Feature</th>
+  <th scope="col">Chatbot</th>
+  <th scope="col">Harness</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-  <td>Where it runs</td>
+  <th scope="row">Where it runs</th>
   <td>A browser tab</td>
   <td>On your computer, or in a sandbox it controls</td>
 </tr>
 <tr>
-  <td>Sees your files</td>
+  <th scope="row">Sees your files</th>
   <td>Only what you paste or upload</td>
   <td>Yes, in a folder you point it at</td>
 </tr>
 <tr>
-  <td>Runs code and commands</td>
+  <th scope="row">Runs code and commands</th>
   <td>No, or only in a walled-off snippet runner</td>
   <td>Yes, including tests, scripts, and installs</td>
 </tr>
 <tr>
-  <td>Multi-step work</td>
+  <th scope="row">Multi-step work</th>
   <td>You drive every step</td>
   <td>It plans, acts, checks, and retries on its own</td>
 </tr>
 <tr>
-  <td>Best for</td>
+  <th scope="row">Best for</th>
   <td>Questions, drafting, explaining, brainstorming</td>
   <td>Refactors, data cleaning, analysis, whole projects</td>
 </tr>
 <tr>
-  <td>Main risk</td>
+  <th scope="row">Main risk</th>
   <td>Confident wrong answers</td>
   <td>Confident wrong answers that also change your files</td>
 </tr>
 <tr>
-  <td>Provided by SCU</td>
+  <th scope="row">Provided by SCU</th>
   <td>Yes</td>
   <td><strong>No</strong></td>
 </tr>
+</tbody>
 </table>
 </div>
 
@@ -617,7 +659,7 @@
 <h3>Also Consider</h3>
 <ul>
   <li><strong><a class="tool-link" href="https://claude.ai" target="_blank">Claude</a></strong> <span class="price-tag free">FREE tier</span> - Anthropic's assistant, and the best of the three judged purely on writing and reasoning quality. The free plan includes artifacts (live previews of code, documents, and diagrams that render as Claude writes them), projects, memory across conversations, web search, and connectors into Gmail, Calendar, Slack, GitHub, and Figma. Worth having open alongside Gemini for anything where the quality of the prose or the argument matters. Claude is also our top pick in <a class="tool-link" href="#agentic">section 2</a>, where its paid harness products live.</li>
-  <li><strong><a class="tool-link" href="https://chatgpt.com" target="_blank">ChatGPT</a></strong> <span class="price-tag free">FREE tier</span> - OpenAI's assistant and still a strong all-rounder. <span class="changed">Changed</span> Since July 2026 the unified desktop app for Mac and Windows is a free download and combines Chat, Work, and Codex in one place, which makes the free tier meaningfully more capable than a browser tab. Go is $8/mo and Plus is $20/mo. <span class="cc-req">Ads appear on the free tier and, in some regions, on Go.</span></li>
+  <li><strong><a class="tool-link" href="https://chatgpt.com" target="_blank">ChatGPT</a></strong> <span class="price-tag free">FREE tier</span> - OpenAI's assistant for chat, writing, images, and work with files. The desktop app brings Chat, Work, and Codex together. <span data-offer-expires="2026-10-31"><strong>Eligible U.S. students can claim four free months of Plus by October 31, 2026</strong>; see the <a class="tool-link" href="#student-offers">student offers</a> for verification and renewal terms.</span></li>
 </ul>
 </div>
 
@@ -633,15 +675,15 @@
 
 <p style="font-size:0.875rem; color:var(--text-muted); border-bottom:1px solid var(--bg-alt); padding-bottom:10px;">The same vendors as section 1, in their agentic form: given a folder and a goal, these tools act on their own. See <a class="tool-link" href="#modes">Two Modes</a> if that distinction is new to you. SCU provides nothing in this category.</p>
 
-<h3>If you pay for one AI tool, buy a model with a harness</h3>
+<h3>Try free access before choosing a subscription</h3>
 
 <div class="scu-box buy">
-<p><strong>This is the single clearest recommendation on this page.</strong> You cannot buy a harness on its own; every subscription below sells you a frontier model <em>and</em> the harness wrapped around it. That is exactly the point. SCU already gives you a good model, but it gives it to you in a web interface, which makes it a chatbot. The thing your money actually buys that SCU cannot give you is the harness.</p>
-<p>So the comparison is not "free model vs. paid model." It is closer to "the same class of model, in a browser tab, versus that model with hands." All three below cost about the same, and any of them beats not having one:</p>
+<p><strong>Start with the <a class="tool-link" href="#student-offers">student offers</a>.</strong> They give you time to try tools that can work with files and complete multi-step tasks. Choose a paid plan later if it fits your work and budget.</p>
+<p>Here are three options to compare:</p>
 <ul>
-  <li><strong>Claude Pro</strong>, $20/mo or $17/mo annual - <strong>our pick.</strong> Unlocks Claude Cowork, Claude Code, Claude Design, and Claude Science. The most mature harness lineup, the best coverage of non-coding work, and the closest to how industry actually works today.</li>
-  <li><strong>Google AI Pro</strong>, $19.99/mo, <strong>but free for 12 months for U.S. college students</strong> - expanded Antigravity limits plus Deep Research and expanded Gemini Notebook. Claim this first: it is the only way to get a paid-tier harness for a year without spending anything. It goes on a personal Google account, verified with your SCU email, and needs a payment method on file.</li>
-  <li><strong>ChatGPT Plus</strong>, $20/mo - Codex in the desktop app and CLI, with cloud task delegation. Go at $8/mo covers lighter local work.</li>
+  <li><strong>Claude Pro</strong>, $20/mo or $17/mo annual - <strong>our optional paid pick.</strong> Includes Claude Cowork and Claude Code for non-coding and coding tasks.</li>
+  <li><strong>Google AI Pro</strong>, $19.99/mo. <span data-offer-expires="2026-12-31">Eligible U.S. college students can claim <a class="tool-link" href="#student-offers">12 free months by December 31, 2026</a>.</span> Includes expanded Antigravity limits, Deep Research, and expanded Gemini Notebook on a personal account.</li>
+  <li><strong>ChatGPT Plus</strong>, $20/mo, includes Work and Codex. <span data-offer-expires="2026-10-31">Eligible U.S. students can <a class="tool-link" href="#student-offers">claim four free months by October 31, 2026</a>.</span> The separate $100 Codex student credit offer is also worth checking.</li>
 </ul>
 <p><strong>If you cannot spend anything:</strong> Google Antigravity is free for individuals and bundles Gemini 3 Pro, so you can work in harness mode today at no cost. It is a real harness, not a demo. Start there, and upgrade only once you know which one you reach for.</p>
 </div>
@@ -649,7 +691,7 @@
 
 
 <div class="top-pick">
-  <div class="label">Top Pick</div>
+  <div class="label">Optional Paid Pick</div>
   <div class="tool-name"><a href="https://claude.ai" target="_blank">Claude</a> (Claude Cowork and Claude Code) <span class="price-tag paid">Requires Claude Pro, $20/mo</span></div>
 </div>
 
@@ -660,11 +702,11 @@
 </ul>
 <p>The same subscription also includes Claude Design (visual and slide work) and Claude Science.</p>
 
-<p><strong>Why it's the top pick:</strong> It is the most complete harness lineup available to a student, and the only one that seriously covers non-coding work. Claude Cowork in particular has no real equivalent at any other vendor: every competing harness assumes you are a developer. For a campus where most people are not, that matters more than benchmark scores.</p>
+<p><strong>Why you might choose it:</strong> Claude Cowork offers a graphical interface for research, writing, and other work with files; Claude Code is aimed at coding. Try your free options first, then compare which interface and workflow suit you.</p>
 
 <p><strong>Student access:</strong> <span class="changed">Changed</span> Claude Code and Claude Cowork are no longer on the free tier; both require Pro, at $20/mo monthly or $17/mo billed annually. Anthropic runs <a class="tool-link" href="https://www.anthropic.com/education" target="_blank">Claude for Education</a>, which gives free access to everyone at participating universities, but SCU is not a participant as of September 2026, and there is no individual student discount.</p>
 
-<p><strong>Limitations:</strong> It costs money, and that is the honest catch: this is the one category in this guide where the best answer is not free. All the harness products draw from the same usage pool as chat, so a heavy session eats your allowance.</p>
+<p><strong>Limitations:</strong> Claude Pro costs money. All its harness products draw from the same usage pool as chat, so a heavy session eats your allowance.</p>
 
 <div class="top-pick" style="background:var(--bg-cta); border-left-color:var(--cta-bg); margin-top:16px;">
   <div class="label" style="color:var(--cta-bg);">Best Free Option</div>
@@ -675,7 +717,7 @@
 
 <p><strong>Why we recommend it:</strong> It is the most capable harness a student can use without paying anything, and it is a real one rather than a limited trial. Cross-platform on macOS, Windows, and Linux, with generous rate limits on a frontier model. If money is the constraint, start here and do not feel you are getting a toy.</p>
 
-<p><strong>Student access:</strong> Free with a personal Google account. Antigravity is not provisioned through SCU accounts and Workspace sign-in is inconsistent, so use a personal Google account. Claiming the free 12-month Google AI Pro student offer (see <a class="tool-link" href="#image">section 4</a>) raises your Antigravity rate limits.</p>
+<p><strong>Student access:</strong> Free with a personal Google account. Antigravity is not provisioned through SCU accounts and Workspace sign-in is inconsistent, so use a personal Google account. <span data-offer-expires="2026-12-31">Claiming the free 12-month Google AI Pro student offer (see <a class="tool-link" href="#student-offers">student opportunities</a>) raises your Antigravity rate limits.</span></p>
 
 <p><strong>Limitations:</strong> Moving fast, so expect rough edges and shifting limits. It is developer-shaped: unlike Claude Cowork, it assumes you are working on code. <span class="changed">Changed</span> Google retired the standalone Gemini CLI for individuals on June 18, 2026 and folded it into Antigravity CLI, so older tutorials are out of date.</p>
 
@@ -686,7 +728,7 @@
 <ul>
   <li><strong><a class="tool-link" href="https://cursor.com" target="_blank">Cursor</a></strong> <span class="price-tag free">Hobby tier free</span> / <span class="price-tag gone">Student plan discontinued</span> - A VS Code fork with AI built into the editor: completions, chat, and agent mode for multi-file changes. <span class="changed">Changed</span> <strong>The free year of Cursor Pro for students ended on June 25, 2026.</strong> Cursor cited fraud in the verification program. Students who already redeemed it keep their rate until the plan expires; new sign-ups are not accepted. What remains: the free Hobby plan with limited agent requests, discounts and credits distributed at on-campus and online events, and a credit-request form for master's students, PhD students, researchers, and educators. Pro is $20/mo.</li>
   <li><strong><a class="tool-link" href="https://github.com/features/copilot" target="_blank">GitHub Copilot</a></strong> <span class="price-tag free">Free tier</span> / <span class="price-tag edu">FREE Student plan, sign-ups open</span> - AI pair programmer as an extension in VS Code, JetBrains, and other IDEs. <span class="changed">Changed</span> A confusing year worth summarizing. GitHub paused new Student, Pro, and Pro+ sign-ups on April 20, 2026, then <strong>reopened them effective June 16, 2026</strong>, so the Student plan is available again. If you were turned away in the spring, apply again. Two lasting changes: Auto model selection is now the only option on Free and Student plans, so you cannot pick Claude or GPT models directly; and all Copilot plans moved to usage-based billing, with Student receiving a monthly allowance of AI credits. Copilot Free, open to anyone, gives 2,000 completions per month plus limited chat. The rest of the <a href="https://education.github.com/pack" target="_blank">Student Developer Pack</a> (JetBrains, Azure credits, and more) was never affected.</li>
-  <li><strong><a class="tool-link" href="https://developers.openai.com/codex/" target="_blank">OpenAI Codex</a></strong> <span class="price-tag free">FREE tier</span> / <span class="price-tag paid">$8-20/mo for real limits</span> - OpenAI's coding agent, available as a CLI, in the IDE, and inside the free ChatGPT desktop app. It works on a free ChatGPT account, though you will hit limits quickly. ChatGPT Go ($8/mo) covers light local work; Plus ($20/mo) adds cloud task delegation and is the cheapest tier that supports sustained use.</li>
+  <li><strong><a class="tool-link" href="https://developers.openai.com/codex/" target="_blank">OpenAI Codex</a></strong> <span class="price-tag free">FREE tier + student credits</span> - OpenAI's coding agent, available in the CLI, IDE, and ChatGPT desktop app. Eligible students can claim <a class="tool-link" href="https://developers.openai.com/community/students" target="_blank" rel="noopener noreferrer">$100 in Codex credits</a>, including on a free ChatGPT account. Credits expire 12 months after they are granted.</li>
 </ul>
 </div>
 
@@ -695,7 +737,7 @@
 </div>
 
 <div class="note">
-<strong>Recommendation:</strong> Get yourself a harness. That is the headline advice of this whole guide, and it matters more than any other choice on this page. If you can spend $20/mo, make it Claude Pro: Claude Cowork if you are not a programmer, Claude Code if you are. If you cannot, use Google Antigravity, which is free and genuinely capable, and claim the free year of Google AI Pro to raise its limits. Either way, install GitHub Copilot Free in VS Code for everyday completions. Do not plan around Cursor's student year; it is gone.
+<strong>Recommendation:</strong> Try a tool that can do multi-step work with your files. Start with the <a class="tool-link" href="#student-offers">free student opportunities</a>, including ChatGPT Work, Codex credits, and Copilot Student. Google Antigravity also has a free tier. Claude Pro is an optional paid choice once you know which workflow you prefer.
 </div>
 </div>
 
@@ -713,7 +755,7 @@
 
 <p><strong>Student access:</strong> Higher education students still get the full Professional plan free, verified via <a href="https://www.figma.com/education/" target="_blank">figma.com/education</a>. This includes 3,000 AI credits per month, unlimited files, design systems, branching, FigJam, and collaboration features. This is one of the few student offers in this guide that has not been cut back in 2026.</p>
 
-<p><strong>Limitations:</strong> AI credits are capped at 3,000 per month and Figma Make is credit-hungry, so plan on roughly 50 to 70 Make prompts rather than unlimited generation. Some AI features, including the Figma AI Agent during its beta, are unavailable on Education. K-12 students do not get Figma AI tools at all.</p>
+<p><strong>Limitations:</strong> AI use draws from 3,000 credits per month. Higher education access includes the agent in Figma Design, but editor visual search is unavailable on the Education plan. See <a href="https://help.figma.com/hc/en-us/articles/360041061214-Figma-for-Education" target="_blank" rel="noopener noreferrer">Figma's Education documentation</a> for current access and limits.</p>
 
 <p class="no-cc">No credit card required.</p>
 
@@ -737,29 +779,29 @@
 
 <div class="top-pick">
   <div class="label">Top Pick</div>
-  <div class="tool-name"><a href="https://gemini.google.com" target="_blank">Google Gemini</a> (Nano Banana) <span class="price-tag edu">FREE 12-month student offer, personal account</span></div>
+  <div class="tool-name"><a href="https://gemini.google.com" target="_blank">Google Gemini</a> (Nano Banana) <span class="price-tag edu" data-offer-expires="2026-12-31">FREE 12-month student offer, personal account</span></div>
 </div>
 
 <p><strong>What it does:</strong> Google's image generation models, marketed as Nano Banana, generate and edit images directly inside Gemini. Highly realistic output, unusually good text rendering inside images, inpainting and style transfer, upscaling, and the ability to use live web search to inform what it draws.</p>
 
 <p><strong>SCU student access:</strong> Sign in at <a href="https://gemini.google.com" target="_blank">gemini.google.com</a> with your SCU account and image generation works normally, covered by the campus data agreement. SCU's own <a class="tool-link" href="https://libguides.scu.edu/genAI-resources-faculty/gemini-notebooklm" target="_blank">faculty library guide</a> confirms image generation is part of the campus subscription. (The student-facing library page still carries an older note saying otherwise. Disregard it.)</p>
 
-<p><strong>If you need more volume:</strong> eligible U.S. college students aged 18 and over can claim a <strong>free 12-month Google AI Pro subscription</strong>, announced August 19, 2026 and redeemable through December 31, 2026 at <a href="https://gemini.google/students/" target="_blank">gemini.google/students</a>. It adds expanded generation limits along with Deep Research, expanded Gemini Notebook, and 5 TB of storage. You verify with your SCU email through SheerID, but <strong>the subscription itself has to sit on a personal Google account</strong>; Google explicitly excludes school-issued accounts from this offer.</p>
+<p data-offer-expires="2026-12-31"><strong>If you need more volume:</strong> eligible U.S. college students aged 18 and over can claim a <strong>free 12-month Google AI Pro subscription by December 31, 2026</strong> at <a href="https://gemini.google/students/" target="_blank">gemini.google/students</a>. It adds expanded generation limits along with Deep Research, expanded Gemini Notebook, and 5 TB of storage. You verify with your SCU email through SheerID, but <strong>the subscription itself has to sit on a personal Google account</strong>; Google excludes school-issued accounts from this offer.</p>
 
-<p><strong>Watch the renewal.</strong> <span class="cc-req">The student offer requires a valid payment method at sign-up and auto-renews at $19.99/mo when the free year ends.</span> Put a calendar reminder on the expiration date.</p>
+<p data-offer-expires="2026-12-31"><strong>Watch the renewal.</strong> <span class="cc-req">The student offer requires a valid payment method at sign-up and auto-renews at $19.99/mo when the free year ends.</span> Put a calendar reminder before your own free year ends.</p>
 
 <p><strong>Limitations:</strong> Generation volume depends on your tier, and your SCU account's roughly 1,000 monthly queries are shared across chat and image generation. If the student offer does not fit your situation, Google AI Plus is a cheaper paid alternative with limited Nano Banana access.</p>
 
 <div class="alt-tool">
 <h3>Also Consider</h3>
 <ul>
-  <li><strong><a class="tool-link" href="https://chatgpt.com" target="_blank">ChatGPT</a> (GPT Image)</strong> <span class="price-tag free">FREE: a few images/day</span> - Generate images from prompts inside ChatGPT. The free tier allows a small number of images per day, which is fine for quick one-offs. No student discount. Plus ($20/mo) raises the volume.</li>
+  <li><strong><a class="tool-link" href="https://chatgpt.com" target="_blank">ChatGPT</a> (GPT Image)</strong> <span class="price-tag free">FREE tier</span> - Generate images from prompts inside ChatGPT, with usage limits depending on your plan. Plus is $20/month. <span data-offer-expires="2026-10-31">Eligible U.S. students can <a class="tool-link" href="#student-offers">claim four free months of Plus by October 31, 2026</a>.</span></li>
   <li><strong><a class="tool-link" href="https://www.midjourney.com" target="_blank">Midjourney</a></strong> <span class="price-tag paid">$10/mo (Basic)</span> - Still widely regarded as producing the most aesthetically striking AI images. No free tier and no free trial. Basic ($10/mo) includes roughly 3.3 hours of fast GPU time, about 200 images. Annual billing takes 20% off. Best for students doing creative or artistic work who want the highest visual quality. No student discount.</li>
 </ul>
 </div>
 
 <div class="note">
-<strong>Recommendation:</strong> Start with Gemini on your SCU account, since it is free, covered by the campus data agreement, and currently the best image model available. Claim the free 12-month AI Pro student offer if you need more volume, and set a reminder before it auto-renews. ChatGPT's free image generation is fine for quick one-offs. If you are doing serious creative work, Midjourney at $10/mo is worth the money.
+<strong>Recommendation:</strong> Start with Gemini on your SCU account, since it is free and covered by the campus data agreement. <span data-offer-expires="2026-12-31">Claim the free 12-month AI Pro student offer if you need more volume, and set a reminder before it auto-renews.</span> ChatGPT's free image generation is also useful for quick experiments. Try those before choosing a paid image tool.
 </div>
 </div>
 
@@ -784,7 +826,7 @@
 <div class="alt-tool">
 <h3>Also Consider</h3>
 <ul>
-  <li><strong><a class="tool-link" href="https://gemini.google.com" target="_blank">Gemini Deep Research</a></strong> <span class="price-tag edu">Free 12-month student offer, personal account</span> - Give it a research question and it builds a research plan, searches dozens of sources, iterates through rounds of search and analysis, and produces a long-form, source-cited report. It automates work that would otherwise take hours. <span class="changed">Changed</span> Deep Research is <strong>not</strong> included in SCU's Workspace for Education plan; it requires Google AI Pro on a personal account. The free 12-month student offer at <a href="https://gemini.google/students/" target="_blank">gemini.google/students</a> covers it through December 31, 2026, with the same payment-method and auto-renewal caveat noted in section 4. Queries take several minutes, so save it for substantial questions.</li>
+  <li><strong><a class="tool-link" href="https://gemini.google.com" target="_blank">Gemini Deep Research</a></strong> <span class="price-tag edu" data-offer-expires="2026-12-31">Free 12-month student offer, personal account</span> - Give it a research question and it builds a research plan, searches dozens of sources, iterates through rounds of search and analysis, and produces a long-form, source-cited report. It automates work that would otherwise take hours. <span class="changed">Changed</span> Deep Research is <strong>not</strong> included in SCU's Workspace for Education plan; it requires Google AI Pro on a personal account. <span data-offer-expires="2026-12-31">Eligible students can claim 12 free months by December 31, 2026 at <a href="https://gemini.google/students/" target="_blank">gemini.google/students</a>, with the payment-method and auto-renewal terms noted above.</span> Queries take several minutes, so save it for substantial questions.</li>
   <li><strong><a class="tool-link" href="https://www.perplexity.ai/students" target="_blank">Perplexity</a></strong> <span class="price-tag edu">Discounted Education Pro for students</span> - AI research engine that searches the web, synthesizes, and cites its sources. <span class="changed">Changed</span> The universal free-year student campaign ended in January 2026. What remains is a discounted Education Pro tier for verified students and educators, claimed via <a href="https://www.perplexity.ai/students" target="_blank">perplexity.ai/students</a> with SheerID verification, plus a referral program that earns free months. Perplexity does not publish the student rate on a page we can verify, and its Comet browser promotions appear and disappear, so check the price on the official student page at sign-up rather than trusting a coupon site (including this one). Excellent for fast, citation-backed lookups and fact-checking.</li>
   <li><strong><a class="tool-link" href="https://claude.ai" target="_blank">Claude Research</a></strong> <span class="price-tag paid">Requires Claude Pro, $20/mo</span> - Claude's own multi-source research mode, included with Pro. A reasonable substitute for Deep Research if you already pay for Claude rather than Google.</li>
 </ul>
@@ -848,7 +890,7 @@
 <h3>Alternatives</h3>
 <ul>
   <li><strong><a class="tool-link" href="https://www.beautiful.ai" target="_blank">Beautiful.ai</a></strong> <span class="price-tag edu">FREE for 1 year (students with .edu email)</span> - AI presentation maker with smart templates that auto-adjust layouts. Students with a verified .edu address still get a full year of Pro free at <a href="https://www.beautiful.ai/education" target="_blank">beautiful.ai/education</a>, for new student subscribers, valid 12 months from activation. Produces polished, professional decks. Great for business students.</li>
-  <li><strong>Google Slides + Gemini</strong> <span class="price-tag free">FREE (basic)</span> / <span class="price-tag paid">AI features need AI Pro</span> - Google Slides is free for all SCU students and remains the default for collaborative class projects. The Gemini features that auto-generate presentations and suggest layouts require Google AI Pro, which the SCU plan does not include. The student offer in section 4 covers it on a personal account.</li>
+  <li><strong>Google Slides + Gemini</strong> <span class="price-tag free">FREE (basic)</span> / <span class="price-tag paid">AI features need AI Pro</span> - Google Slides is free for all SCU students and remains the default for collaborative class projects. The Gemini features that auto-generate presentations and suggest layouts require Google AI Pro, which the SCU plan does not include. <span data-offer-expires="2026-12-31">The student offer above covers it on a personal account.</span></li>
   <li><strong><a class="tool-link" href="https://claude.ai" target="_blank">Claude</a> + slide skills, or Claude Design</strong> <span class="price-tag free">FREE tier</span> / <span class="price-tag paid">Pro for Design</span> - Claude can generate polished, animation-rich HTML presentations using community-built skills such as <a class="tool-link" href="https://github.com/ZaraZhang-SCU/frontend-slides" target="_blank">Zara Zhang's frontend-slides skill</a>. Results are genuinely good: smooth transitions, custom layouts, responsive design, all from a description. Claude Design on Pro does the same thing with a visual editor and exports straight to PPTX. Worth trying if you already use Claude.</li>
 </ul>
 </div>
@@ -978,46 +1020,53 @@
 <ul style="margin:0; padding-left:20px;">
   <li style="margin-bottom:6px;"><strong>Data privacy:</strong> Only Gemini and Gemini Notebook accessed through your SCU account are covered by the campus agreement with Google. Everything else on this page is a consumer service under its own terms. SCU guidance is that you should not enter internal, sensitive, or restricted university data into any generative AI tool or service, and that entering data into a public AI tool should be treated like posting it publicly.</li>
   <li style="margin-bottom:6px;"><strong>Harnesses touch your files.</strong> Agentic tools run commands and edit files on your machine. Scope them to a project folder, keep your work in version control, and read changes before committing them.</li>
-  <li style="margin-bottom:6px;"><strong>Free trials that auto-renew:</strong> several student offers here, including Google's 12-month AI Pro offer, require a payment method and renew at full price automatically. Set a calendar reminder the day you sign up.</li>
+  <li style="margin-bottom:6px;"><strong>Free subscriptions that auto-renew:</strong> check the terms of each student offer and set a reminder before your own free period ends. <span data-offer-expires="2026-10-31">ChatGPT's four-month offer renews at $20/month; canceling early forfeits later free months.</span> <span data-offer-expires="2026-12-31">Google AI Pro's year renews at $19.99/month unless canceled.</span></li>
   <li style="margin-bottom:6px;"><strong>AI output quality:</strong> free tiers often route to older or lighter models. If output seems weak, that may be a tier limitation rather than a tool limitation.</li>
   <li style="margin-bottom:6px;"><strong>Academic integrity:</strong> there is no blanket campus policy on AI use in coursework. Check your syllabus and ask your instructor before using these tools on an assignment, and cite appropriately.</li>
   <li style="margin-bottom:6px;"><strong>Pricing changes fast.</strong> Roughly a third of the entries on this page changed between April and September 2026. Verify current pricing at each tool's own site before committing money.</li>
-  <li style="margin-bottom:0;"><strong>How we checked this.</strong> Every claim about a major tool (Claude, Gemini, ChatGPT, Copilot, Cursor, Figma, Antigravity, Gemini Notebook, Suno, Bolt, Replit, v0, Lovable) was verified on September 1, 2026 against the vendor's own pricing, help, or documentation pages, and the SCU claims against SCU's library guides. A few smaller tools (Gamma, CapCut, Pika, Julius, Canva, Midjourney, ElevenLabs) block automated access to their pricing pages, so those figures come from recent secondary reporting and should be treated as approximate. Tell us when we get something wrong; we did on this page before.</li>
+  <li style="margin-bottom:0;"><strong>How we checked this.</strong> The five student opportunities at the top were checked against official offer and documentation pages on October 2, 2026. The broader guide and SCU access information were checked September 1, 2026. A few smaller tools (Gamma, CapCut, Pika, Julius, Canva, Midjourney, ElevenLabs) block automated access to their pricing pages, so those figures come from recent secondary reporting and should be treated as approximate. Tell us when we get something wrong.</li>
 </ul>
 </div>
 
 <div class="tools-footer-note">
-  AI Kitchen Tools Guide, Santa Clara University. Compiled March 2026, last updated September 1, 2026. Pricing, plan terms, and university access verified as of publication date and subject to change. Corrections welcome at <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>.
+  AI Kitchen Tools Guide, Santa Clara University. Student offers checked October 2, 2026; broader guide updated September 1, 2026. Pricing, plan terms, and university access can change. Corrections welcome at <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>.
 </div>
 
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-wordmark">AI Kitchen</div>
-      <div class="footer-divider" aria-hidden="true"></div>
-      <p>
-        Faculty Lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>
-        Faculty Advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> &amp; Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a>
-      </p>
-      <p>
-        Santa Clara University
-      </p>
-      <img src="scu-logo.png" alt="Santa Clara University" class="footer-logo">
-      <div class="footer-social" aria-label="Follow AI Kitchen">
-        <span class="footer-social-label">Follow AI Kitchen</span>
-        <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on LinkedIn"><img src="linkedin-icon.svg" alt="">LinkedIn</a>
-        <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on YouTube"><img src="youtube-icon.svg" alt="">YouTube</a>
-      </div>
-      <p>
-        Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>
-      </p>
-    </div>
-  </footer>
 
   </main>
+
+  <!-- ===== SHARED FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University" loading="lazy"></a>
+        <p>AI Kitchen · Everyone’s invited.</p>
+        <p class="site-footer-tagline">There’s room at the kitchen table.</p>
+      </div>
+      <nav class="site-footer-links" aria-label="Footer navigation">
+        <a href="schedule.html">Schedule</a>
+        <a href="tools.html">Tools guide</a>
+        <a href="roles.html">Leadership</a>
+        <a href="news.html">News</a>
+        <a href="index.html#press">In the press</a>
+        <a href="start-an-ai-kitchen.html">Start an AI Kitchen</a>
+        <a href="guest-chefs.html">Guest chef guide</a>
+        <a href="faq.html">More questions</a>
+        <a href="mailto:klukoff@scu.edu">Contact</a>
+      </nav>
+      <div class="site-footer-community">
+        <p>Follow AI Kitchen</p>
+        <div class="site-footer-social">
+          <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer"><img src="linkedin-icon.svg" width="20" height="20" alt="">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer"><img src="youtube-icon.svg" width="20" height="20" alt="">YouTube <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="site-footer-faculty">Faculty lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>Faculty advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> and Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a></p>
+      </div>
+    </div>
+  </footer>
 
   <!-- ===== Scroll Reveal Script ===== -->
   <script>
@@ -1032,5 +1081,7 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 
+  <script src="site-shell.js" defer></script>
+  <script src="student-offers.js" defer></script>
 </body>
 </html>

@@ -12,29 +12,30 @@
   <meta property="og:image" content="https://theaikitchen.org/images/start-an-ai-kitchen/chef-vegetables.jpeg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://theaikitchen.org/start-an-ai-kitchen.html">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+  <link rel="icon" href="assets/design/ai-kitchen-mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="start-an-ai-kitchen.css">
+  <link rel="stylesheet" href="site-shell.css">
 </head>
-<body class="starter-guide">
-  <a class="skip-link" href="#main">Skip to the guide</a>
-  <nav class="nav" aria-label="Main">
-    <a href="index.html" class="nav-wordmark">AI Kitchen</a>
-    <button class="nav-hamburger" type="button" aria-label="Toggle menu" aria-controls="main-links" aria-expanded="false">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-    <div class="nav-links" id="main-links">
-      <a href="schedule.html" class="nav-link">Sessions</a>
-      <a href="tools.html" class="nav-link">Tools guide</a>
-      <a href="guest-chefs.html" class="nav-link">Guest chef guide</a>
-      <a href="start-an-ai-kitchen.html" class="nav-link active" aria-current="page">Start a Kitchen</a>
-    </div>
-  </nav>
+<body class="starter-guide site-page">
+  <a class="site-skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="site-wordmark" href="index.html" aria-label="AI Kitchen home"><span class="option-chef-tile" aria-hidden="true"><span class="chef-badge" aria-hidden="true"><svg class="chef-tile-hat" viewBox="0 0 30 22" aria-hidden="true"><path d="M7 15V11C3 10 2 7 4 4c2-3 6-3 8-1 2-3 7-3 9 0 3-1 7 1 7 4 0 3-2 4-5 5v3H7Z" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 18h14" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round"/></svg><span class="chef-green-ai">AI</span></span><span class="chef-tile-kitchen" aria-hidden="true">Kitchen</span></span></a>
+      <div class="site-nav-links">
+        <a class="site-nav-link" href="schedule.html">Schedule</a>
+        <a class="site-nav-link" href="tools.html">Tools guide</a>
+        <a class="site-nav-link" href="roles.html">Our people</a>
+        <a class="site-nav-cta" href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">Get involved <span aria-hidden="true">↗</span></a>
+      </div>
+      <a class="site-scu-brand" aria-label="Santa Clara University website" href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University"></a>
+    </nav>
+  </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <header class="starter-hero wrap">
       <div class="starter-hero-copy">
         <p class="eyebrow">A recipe for your campus</p>
@@ -43,8 +44,10 @@
         <p>Bring students, faculty, and staff together to experiment with AI. Start with a borrowed room, a useful question, and a small team ready to help.</p>
         <a class="guide-button" href="#first-session">Plan your first session <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="starter-hero-art" aria-hidden="true">
-        <img src="images/start-an-ai-kitchen/chef-vegetables.jpeg" alt="" width="1920" height="1080" fetchpriority="high">
+      <div class="starter-hero-art peek-window" aria-hidden="true">
+        <span class="veggie radish"></span>
+        <span class="veggie tomato"></span>
+        <span class="veggie broccoli"></span>
       </div>
     </header>
 
@@ -63,7 +66,7 @@
         <article><span class="ingredient-number" aria-hidden="true">3</span><h3>Student hosts with time to prepare</h3><p>Students help choose the exercise, test it beforehand, and get participants unstuck. Budget for paid preparation and hosting, with clear hours, supervision, and someone to turn to for help. Begin with a session small enough for your hosts to support.</p></article>
         <article><span class="ingredient-number" aria-hidden="true">4</span><h3>Faculty and staff learning, too</h3><p>Find a campus partner who can help with the room, tools, and continuity. Invite advisers, teachers, researchers, and artists to bring their expertise and questions. Everyone can contribute knowledge while learning alongside others.</p></article>
       </div>
-      <aside class="invitation" aria-labelledby="invitation-heading"><p class="eyebrow" id="invitation-heading">An invitation you can adapt</p><p>“Curious about AI? Come watch someone use it for a real task, then try one small step with help nearby. Students, faculty, and staff from every field are welcome. No coding experience needed.”</p><p class="small-note">Add your task, date, room, tool-access plan, and contact for questions or access needs.</p></aside>
+      <div role="note" class="invitation" aria-labelledby="invitation-heading"><p class="eyebrow" id="invitation-heading">An invitation you can adapt</p><p>“Curious about AI? Come watch someone use it for a real task, then try one small step with help nearby. Students, faculty, and staff from every field are welcome. No coding experience needed.”</p><p class="small-note">Add your task, date, room, tool-access plan, and contact for questions or access needs.</p></div>
     </section>
 
     <section class="session-band" id="first-session" aria-labelledby="session-heading">
@@ -77,13 +80,13 @@
           <li><span class="session-time">65–80 min</span><div><h3>Compare what happened</h3><p>Invite a few people to show a result or a sticking point. Ask: What did you notice? What would you check? What would you change next?</p></div></li>
           <li><span class="session-time">80–90 min</span><div><h3>Make a connection</h3><p>Invite brief project questions and introductions. Name the next opportunity to meet, and share the exercise and useful links afterward.</p></div></li>
         </ol>
-        <aside class="worked-example" aria-labelledby="movie-exercise-heading">
+        <div role="note" class="worked-example" aria-labelledby="movie-exercise-heading">
           <p class="eyebrow">A small exercise to borrow</p>
           <h3 id="movie-exercise-heading">Choose a movie for two people.</h3>
           <p>Pair up, or use two fictional profiles. Open a browser AI tool your campus provides. The goal: three movies both people would enjoy tonight.</p>
           <blockquote>“Interview us one person at a time about our preferences, constraints, films we’ve seen, time available, and where we can watch. Ask one question and wait for the answer. Then suggest three films we might both enjoy, explain the fit for each person, and flag assumptions to check.”</blockquote>
           <p><strong>Leave with:</strong> a three-film shortlist, reasons each fits both people, and one refinement. Check availability yourself; verify any streaming claims before choosing.</p>
-        </aside>
+        </div>
       </div>
     </section>
 
@@ -130,7 +133,7 @@
         <tr><th scope="row">Continuity</th><td>A page for the schedule and materials, reminders, host debriefs, and time for introductions and project follow-up.</td></tr>
       </tbody></table></div>
       <p class="resource-note"><strong>Match the exercise to the access.</strong> A guest can show an advanced workflow while participants try a smaller step in a browser tool. See our <a href="tools.html">tools guide</a> for examples, and check what your campus supports.</p>
-      <aside class="handout-links" aria-labelledby="handout-heading"><h3 id="handout-heading">Take the recipe with you.</h3><p><a href="assets/ai-kitchen-starter-flyer.pdf">Download the ATXpo handout (PDF)</a><br><a href="assets/ai-kitchen-starter-flyer-two-up.pdf">Print two handouts per sheet (PDF)</a></p><p class="small-note">For the two-per-sheet version, print single-sided on US Letter paper in landscape orientation, at actual size, then cut in half. 50 sheets make 100 handouts.</p></aside>
+      <div role="note" class="handout-links" aria-labelledby="handout-heading"><h3 id="handout-heading">Take the recipe with you.</h3><p><a href="assets/ai-kitchen-starter-flyer.pdf">Download the ATXpo handout (PDF)</a><br><a href="assets/ai-kitchen-starter-flyer-two-up.pdf">Print two handouts per sheet (PDF)</a></p><p class="small-note">For the two-per-sheet version, print single-sided on US Letter paper in landscape orientation, at actual size, then cut in half. 50 sheets make 100 handouts.</p></div>
     </section>
 
     <section class="guide-section wrap grow-section" id="next" aria-labelledby="next-heading">
@@ -141,22 +144,38 @@
     <section class="guide-closing" aria-labelledby="closing-heading"><div class="wrap"><p class="eyebrow">Everyone brings an ingredient</p><h2 id="closing-heading">There’s no such thing as too many cooks in the AI Kitchen.</h2><p>Borrow the recipe. Adapt it to your campus. Tell us what you try.</p><div class="closing-links"><a class="guide-button" href="mailto:klukoff@scu.edu">Talk with Kai <span aria-hidden="true">↗</span></a><a href="schedule.html">Browse our sessions <span aria-hidden="true">↗</span></a><a href="guest-chefs.html">Read the guest chef guide <span aria-hidden="true">↗</span></a></div></div></section>
   </main>
 
-  <footer class="guide-footer wrap"><a href="index.html" class="nav-wordmark">AI Kitchen</a><p>A learning community at Santa Clara University.</p><a href="index.html">Back to the Kitchen <span aria-hidden="true">↗</span></a></footer>
+  <!-- ===== SHARED FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University" loading="lazy"></a>
+        <p>AI Kitchen · Everyone’s invited.</p>
+        <p class="site-footer-tagline">There’s room at the kitchen table.</p>
+      </div>
+      <nav class="site-footer-links" aria-label="Footer navigation">
+        <a href="schedule.html">Schedule</a>
+        <a href="tools.html">Tools guide</a>
+        <a href="roles.html">Leadership</a>
+        <a href="news.html">News</a>
+        <a href="index.html#press">In the press</a>
+        <a href="start-an-ai-kitchen.html">Start an AI Kitchen</a>
+        <a href="guest-chefs.html">Guest chef guide</a>
+        <a href="faq.html">More questions</a>
+        <a href="mailto:klukoff@scu.edu">Contact</a>
+      </nav>
+      <div class="site-footer-community">
+        <p>Follow AI Kitchen</p>
+        <div class="site-footer-social">
+          <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer"><img src="linkedin-icon.svg" width="20" height="20" alt="">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer"><img src="youtube-icon.svg" width="20" height="20" alt="">YouTube <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="site-footer-faculty">Faculty lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>Faculty advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> and Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a></p>
+      </div>
+    </div>
+  </footer>
   <script>
-    const menuButton = document.querySelector('.nav-hamburger');
-    const menuLinks = document.getElementById('main-links');
-    menuButton.addEventListener('click', () => {
-      const isOpen = menuLinks.classList.toggle('open');
-      menuButton.setAttribute('aria-expanded', String(isOpen));
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && menuLinks.classList.contains('open')) {
-        menuLinks.classList.remove('open');
-        menuButton.setAttribute('aria-expanded', 'false');
-        menuButton.focus();
-      }
-    });
     document.getElementById('print-guide').addEventListener('click', () => window.print());
   </script>
+  <script src="site-shell.js" defer></script>
 </body>
 </html>

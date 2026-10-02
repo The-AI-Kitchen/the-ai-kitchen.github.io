@@ -12,12 +12,12 @@
   <meta property="og:type" content="website">
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
+  <link rel="icon" href="assets/design/ai-kitchen-mark.svg" type="image/svg+xml">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
@@ -70,7 +70,7 @@
     }
 
     .role-label {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Figtree', sans-serif;
       font-size: 0.6875rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -83,7 +83,7 @@
     .role-card--creative .role-label { color: #4a5570; }
     .role-card--hr .role-label { color: #8a3030; }
 
-    .role-card h3 {
+    .role-card h2 {
       font-size: clamp(1.25rem, 2.5vw, 1.625rem);
       margin-bottom: var(--space-sm);
     }
@@ -152,26 +152,26 @@
       color: var(--text-primary);
     }
   </style>
+  <link rel="stylesheet" href="site-shell.css">
 </head>
-<body>
+<body class="site-page">
 
   <!-- ===== NAV ===== -->
-  <nav class="nav" role="navigation" aria-label="Main">
-    <a href="index.html" class="nav-wordmark" style="text-decoration:none; color:var(--text-primary);">AI Kitchen</a>
-    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="const links=this.nextElementSibling;const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open);">
-      <svg viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-    <div class="nav-links">
-      <a href="schedule.html" class="nav-link">Schedule</a>
-      <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" class="nav-link" target="_blank" rel="noopener noreferrer">Projects &#8599;</a>
-      <a href="tools.html" class="nav-link">Tools Guide</a>
-      <a href="roles.html" class="nav-link active">Leadership Roles</a>
-      <a href="index.html#press" class="nav-link">Press</a>
-      <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
-    </div>
-  </nav>
+  <a class="site-skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="site-wordmark" href="index.html" aria-label="AI Kitchen home"><span class="option-chef-tile" aria-hidden="true"><span class="chef-badge" aria-hidden="true"><svg class="chef-tile-hat" viewBox="0 0 30 22" aria-hidden="true"><path d="M7 15V11C3 10 2 7 4 4c2-3 6-3 8-1 2-3 7-3 9 0 3-1 7 1 7 4 0 3-2 4-5 5v3H7Z" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 18h14" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round"/></svg><span class="chef-green-ai">AI</span></span><span class="chef-tile-kitchen" aria-hidden="true">Kitchen</span></span></a>
+      <div class="site-nav-links">
+        <a class="site-nav-link" href="schedule.html">Schedule</a>
+        <a class="site-nav-link" href="tools.html">Tools guide</a>
+        <a class="site-nav-link" href="roles.html" aria-current="page">Our people</a>
+        <a class="site-nav-cta" href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">Get involved <span aria-hidden="true">↗</span></a>
+      </div>
+      <a class="site-scu-brand" aria-label="Santa Clara University website" href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University"></a>
+    </nav>
+  </header>
 
-  <main>
+  <main id="main" tabindex="-1">
 
   <!-- ===== HERO ===== -->
   <section class="section hero" id="hero" style="padding-bottom: clamp(32px, 6vh, 48px);">
@@ -179,7 +179,7 @@
     <div class="blob blob--2" aria-hidden="true"></div>
 
     <div class="container">
-      <h1 style="font-size: clamp(2rem, 5.5vw, 3.5rem);">Join the <em>Leadership Team</em></h1>
+      <div class="page-heading-peek"><h1 style="font-size: clamp(2rem, 5.5vw, 3.5rem);">Join the <em>Leadership Team</em></h1><div class="page-peek" aria-hidden="true"><span class="page-veggie-tomato"></span></div></div>
       <p class="hero-sub">
         AI Kitchen is looking for students who are curious, experimental, and
         ready to help shape something new. These roles are how the Kitchen runs.
@@ -204,7 +204,7 @@
         <!-- Studio Lead -->
         <div class="role-card role-card--studio reveal delay-1">
           <div class="role-label">Now recruiting</div>
-          <h3>AI Studio Lead</h3>
+          <h2>AI Studio Lead</h2>
           <p>
             The backbone of AI Kitchen. Studio Leads run the Friday sessions,
             coordinate guest mentors, and make sure the space works for everyone
@@ -213,7 +213,7 @@
           <ul>
             <li>Plan and facilitate weekly Taste Test sessions</li>
             <li>Coordinate with industry mentors and guest speakers</li>
-            <li>Support students working on Slow Roast projects</li>
+            <li>Help students experiment with AI tools during Friday sessions</li>
             <li>Help onboard new leadership team members</li>
           </ul>
           <p class="role-commitment">~8 hours/week</p>
@@ -222,7 +222,7 @@
         <!-- Outreach Lead -->
         <div class="role-card role-card--outreach reveal delay-2">
           <div class="role-label">Now recruiting</div>
-          <h3>AI Marketing Lead</h3>
+          <h2>AI Marketing Lead</h2>
           <p>
             The voice of AI Kitchen on campus and beyond. The AI Marketing Lead owns
             marketing and promotion, making sure students across every major know
@@ -239,7 +239,7 @@
         <!-- Creative Lead -->
         <div class="role-card role-card--creative reveal delay-3">
           <div class="role-label">Now recruiting</div>
-          <h3>AI Creative Lead</h3>
+          <h2>AI Creative Lead</h2>
           <p>
             The person who shapes the look, feel, and personality of AI Kitchen.
             This role combines design skills with a willingness to leverage AI
@@ -257,7 +257,7 @@
         <!-- HR Lead -->
         <div class="role-card role-card--hr reveal delay-3">
           <div class="role-label">Now recruiting</div>
-          <h3>AI HR Lead</h3>
+          <h2>AI HR Lead</h2>
           <p>
             The people person of AI Kitchen. The AI HR Lead identifies students
             who'd be a great fit for the initiative, manages recruitment and
@@ -310,6 +310,7 @@
           <div class="schedule-info">
             <span style="font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #8a6030;">Student Lead</span>
             <a href="https://www.linkedin.com/in/tripti-agrawal/" class="schedule-name" target="_blank" rel="noopener noreferrer">Tripti Agrawal</a>
+            <span class="schedule-title">Information Systems, M.S.</span>
           </div>
           <div class="speaker-avatar" style="background-image: url('team/tripti-agrawal.jpeg');" aria-hidden="true">TA</div>
         </div>
@@ -318,6 +319,7 @@
           <div class="schedule-info">
             <span style="font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #8a6030;">Student Lead</span>
             <a href="https://www.linkedin.com/in/misa-truong/" class="schedule-name" target="_blank" rel="noopener noreferrer">Misa Truong</a>
+            <span class="schedule-title">Mechanical Engineering</span>
           </div>
           <div class="speaker-avatar" style="background-image: url('team/misa-truong.jpeg');" aria-hidden="true">MT</div>
         </div>
@@ -326,6 +328,7 @@
           <div class="schedule-info">
             <span style="font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #8a6030;">Student Lead</span>
             <a href="https://www.linkedin.com/in/bridget-hestad/" class="schedule-name" target="_blank" rel="noopener noreferrer">Bridget Hestad</a>
+            <span class="schedule-title">Economics</span>
           </div>
           <div class="speaker-avatar" style="background-image: url('team/bridget-hestad.jpeg');" aria-hidden="true">BH</div>
         </div>
@@ -422,27 +425,38 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-wordmark">AI Kitchen</div>
-      <div class="footer-divider" aria-hidden="true"></div>
-      <p>
-        Santa Clara University
-      </p>
-      <img src="scu-logo.png" alt="Santa Clara University" class="footer-logo">
-      <div class="footer-social" aria-label="Follow AI Kitchen">
-        <span class="footer-social-label">Follow AI Kitchen</span>
-        <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on LinkedIn"><img src="linkedin-icon.svg" alt="">LinkedIn</a>
-        <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on YouTube"><img src="youtube-icon.svg" alt="">YouTube</a>
-      </div>
-      <p>
-        Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>
-      </p>
-    </div>
-  </footer>
 
   </main>
+
+  <!-- ===== SHARED FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University" loading="lazy"></a>
+        <p>AI Kitchen · Everyone’s invited.</p>
+        <p class="site-footer-tagline">There’s room at the kitchen table.</p>
+      </div>
+      <nav class="site-footer-links" aria-label="Footer navigation">
+        <a href="schedule.html">Schedule</a>
+        <a href="tools.html">Tools guide</a>
+        <a href="roles.html">Leadership</a>
+        <a href="news.html">News</a>
+        <a href="index.html#press">In the press</a>
+        <a href="start-an-ai-kitchen.html">Start an AI Kitchen</a>
+        <a href="guest-chefs.html">Guest chef guide</a>
+        <a href="faq.html">More questions</a>
+        <a href="mailto:klukoff@scu.edu">Contact</a>
+      </nav>
+      <div class="site-footer-community">
+        <p>Follow AI Kitchen</p>
+        <div class="site-footer-social">
+          <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer"><img src="linkedin-icon.svg" width="20" height="20" alt="">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer"><img src="youtube-icon.svg" width="20" height="20" alt="">YouTube <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="site-footer-faculty">Faculty lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>Faculty advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> and Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a></p>
+      </div>
+    </div>
+  </footer>
 
   <!-- ===== Scroll Reveal Script ===== -->
   <script>
@@ -457,5 +471,6 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 
+  <script src="site-shell.js" defer></script>
 </body>
 </html>

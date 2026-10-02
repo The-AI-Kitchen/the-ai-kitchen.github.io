@@ -1,813 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Kitchen — Santa Clara University</title>
-  <meta name="description" content="AI Kitchen: an open-access initiative at SCU where students across every major build AI fluency through hands-on work with AI tools. No code required to cook.">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="AI Kitchen — Santa Clara University">
-  <meta property="og:description" content="Build real AI skills. Open to all majors. No application required.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Favicon (placeholder) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F373;</text></svg>">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-  <!-- ===== NAV ===== -->
-  <nav class="nav" role="navigation" aria-label="Main">
-    <span class="nav-wordmark">AI Kitchen</span>
-    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="const links=this.nextElementSibling;const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open);">
-      <svg viewBox="0 0 24 24" fill="none"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-    <div class="nav-links">
-      <a href="schedule.html" class="nav-link">Schedule</a>
-      <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" class="nav-link" target="_blank" rel="noopener noreferrer">Projects &#8599;</a>
-      <a href="tools.html" class="nav-link">Tools Guide</a>
-      <a href="roles.html" class="nav-link">Leadership Roles</a>
-      <a href="index.html#press" class="nav-link">Press</a>
-      <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="nav-cta" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
-    </div>
-  </nav>
-
-  <main>
-
-  <!-- ===== HERO ===== -->
-  <section class="section hero" id="hero">
-    <!-- Decorative blobs -->
-    <div class="blob blob--1" aria-hidden="true"></div>
-    <div class="blob blob--2" aria-hidden="true"></div>
-    <div class="blob blob--3" aria-hidden="true"></div>
-
-    <div class="container">
-      <img src="scu-logo-color.png" alt="Santa Clara University" class="hero-logo">
-
-      <div class="hero-badges">
-        <span class="badge badge--coral">🌶️ Open to the Public</span>
-        <span class="badge badge--mint">🍳 No Code Required</span>
-        <span class="badge badge--lavender">👐 Hands-On</span>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Kitchen — Santa Clara University</title><meta name="description" content="Try AI tools, trade ideas, and make things together at Santa Clara University. Every major. Every level of experience. No code required to cook."><meta property="og:title" content="AI Kitchen — Santa Clara University"><meta property="og:description" content="No code required to cook. There’s room at the kitchen table."><meta property="og:type" content="website"><meta property="og:image" content="https://theaikitchen.org/assets/design/session-hero.webp"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="assets/design/ai-kitchen-mark.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="home.css"><link rel="stylesheet" href="site-shell.css"></head>
+<body class="site-page home-page">
+  <a class="site-skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="site-wordmark" href="index.html" aria-label="AI Kitchen home"><span class="option-chef-tile" aria-hidden="true"><span class="chef-badge" aria-hidden="true"><svg class="chef-tile-hat" viewBox="0 0 30 22" aria-hidden="true"><path d="M7 15V11C3 10 2 7 4 4c2-3 6-3 8-1 2-3 7-3 9 0 3-1 7 1 7 4 0 3-2 4-5 5v3H7Z" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 18h14" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round"/></svg><span class="chef-green-ai">AI</span></span><span class="chef-tile-kitchen" aria-hidden="true">Kitchen</span></span></a>
+      <div class="site-nav-links">
+        <a class="site-nav-link" href="schedule.html">Schedule</a>
+        <a class="site-nav-link" href="tools.html">Tools guide</a>
+        <a class="site-nav-link" href="roles.html">Our people</a>
+        <a class="site-nav-cta" href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">Get involved <span aria-hidden="true">↗</span></a>
       </div>
+      <a class="site-scu-brand" aria-label="Santa Clara University website" href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University"></a>
+    </nav>
+  </header>
 
-      <h1>No code required<br>to <em>cook.</em> 🧑‍🍳</h1>
-
-      <p class="hero-sub">
-        AI Kitchen is a new initiative at Santa Clara University
-        giving students, faculty, and community members hands-on experience
-        with the AI tools reshaping their fields. Open to the public.
-      </p>
-
-      <div class="hero-cta-wrap">
-        <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="cta-button" target="_blank" rel="noopener noreferrer">Get Involved &rarr;</a>
-      </div>
-
-      <p class="hero-launch" data-expires="2026-04-24">Launch: Friday, April 24</p>
-    </div>
-  </section>
-
-  <!-- ===== NEXT TASTE TEST SPOTLIGHT ===== -->
-  <section class="section section--alt" id="next-session" style="padding-top: clamp(24px, 4vh, 48px); padding-bottom: clamp(24px, 4vh, 48px);">
-    <div class="container" style="max-width: 700px;">
-      <div id="spotlight-card" class="schedule-card reveal delay-1" style="display: none;">
-        <div class="schedule-date" id="spotlight-date"></div>
-        <div class="schedule-info">
-          <span id="spotlight-eyebrow" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 600;">Next Taste Test</span>
-          <span class="schedule-topic" id="spotlight-topic"></span>
-          <a id="spotlight-name" class="schedule-name" target="_blank" rel="noopener noreferrer"></a>
-          <span class="schedule-title" id="spotlight-title"></span>
+<main id="main" tabindex="-1">
+    <section id="hero" class="hero" aria-labelledby="hero-heading">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="hero-topline"><p class="eyebrow">AI experimentation. Everyone’s invited.</p><div class="peek-window top-peek" aria-hidden="true"><span class="veggie tomato"></span></div></div>
+          <h1 id="hero-heading">No code required <span class="invitation">to cook.</span></h1>
+          <p class="hero-description">A place to try AI tools, trade ideas, and make things together. Bring your curiosity. Find some good company.</p>
+          <div class="actions">
+            <a class="button" href="#next-session">See next session <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">Get updates ↗</a>
+          </div>
+          <div class="hero-welcome"><p class="hero-assurance">Every major. Every level of experience.<br>Open to the public · Just show up.</p></div>
         </div>
-        <div class="speaker-avatar" id="spotlight-avatar" aria-hidden="true"></div>
+        <figure class="hero-photo">
+          <img src="assets/design/session-hero.webp" alt="AI Kitchen participants smiling and sharing ideas with laptops open during a session." width="1600" height="1067" fetchpriority="high">
+          <figcaption><span>A little curiosity. Good company.</span><span>Inside AI Kitchen · May 2026</span></figcaption>
+        </figure>
       </div>
-      <div id="spotlight-fallback" style="display: none; text-align: center;">
-        <span style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 600; margin-bottom: 6px;">See you in the fall</span>
-        <h2 class="section-heading" style="margin: 0;">AI Kitchen returns <em>Fall 2026</em></h2>
+    </section>
+
+    <section class="next-section" id="next-session" aria-label="Next session">
+      <div class="wrap next-session" id="spotlight-card" hidden>
+        <time class="date-stamp" id="spotlight-date"></time>
+        <div class="next-main">
+          <p class="eyebrow" id="spotlight-eyebrow">Next in the Kitchen · Taste Test</p>
+          <h2 id="next-heading"><span id="spotlight-topic"></span></h2>
+          <p class="home-speaker"><span id="spotlight-speakers"></span><span class="home-speaker-title" id="spotlight-title"></span></p>
+          <p class="home-session-description" id="spotlight-description" hidden></p>
+          <p class="home-session-host" id="spotlight-host" hidden></p>
+        </div>
+        <div class="session-logistics"><strong id="spotlight-time"></strong><span id="spotlight-finish"></span><p class="location" id="spotlight-location"></p><a id="spotlight-directions" href="https://docs.google.com/document/d/183Ro43EVI7GLUZzQPJxGG65-fi1HjjMZV5E3wEpY_uQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Directions ↗</a> <span id="spotlight-directions-divider">·</span> <a href="schedule.html">Full schedule →</a></div>
       </div>
-      <p class="schedule-note reveal delay-1" style="margin-top: var(--space-md);">
-        <a href="schedule.html">See full schedule &rarr;</a><br>
-        <a href="https://docs.google.com/document/d/183Ro43EVI7GLUZzQPJxGG65-fi1HjjMZV5E3wEpY_uQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Directions to Benson 036 (California Mission Room)</a>
-      </p>
-    </div>
-  </section>
+      <div class="wrap home-next-fallback" id="spotlight-fallback"><p class="eyebrow">Pull up a chair</p><h2 id="fallback-heading">Find your next Friday.</h2><p>Check the schedule for upcoming sessions and recordings, or get updates from the Kitchen.</p><div class="actions"><a class="button" href="schedule.html">See the schedule →</a><a class="text-link" href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">Get updates ↗</a></div></div>
+    </section>
 
-  <!-- ===== LATEST NEWS ===== -->
-  <section class="section" id="news" style="padding-top: clamp(24px, 4vh, 48px); padding-bottom: clamp(24px, 4vh, 48px); display: none;">
-    <div class="container" style="max-width: 700px;">
-      <h2 class="section-heading reveal">Latest <em>News</em></h2>
-      <span class="section-accent reveal delay-1" aria-hidden="true"></span>
-      <ul class="news-list" id="news-list"></ul>
-    </div>
-  </section>
-
-  <!-- ===== IN THE PRESS ===== -->
-  <section class="section section--alt" id="press" style="padding-top: clamp(32px, 5vh, 56px); padding-bottom: clamp(32px, 5vh, 56px); display: none;">
-    <div class="container">
-      <h2 class="section-heading reveal">In the <em>Press</em></h2>
-      <span class="section-accent reveal delay-1" aria-hidden="true"></span>
-      <p class="press-intro reveal">What reporters found when they dropped in on a Friday session.</p>
-      <ul class="press-grid" id="press-grid"></ul>
-    </div>
-  </section>
-
-  <!-- ===== WHAT IS AI KITCHEN? ===== -->
-  <section class="section" id="what">
-    <div class="container">
-      <h2 class="section-heading reveal">What is <em>AI Kitchen?</em></h2>
-      <span class="section-accent reveal delay-1" aria-hidden="true"></span>
-      <p class="section-intro reveal delay-1">
-        A place where students from any major build
-        <a href="#ai-fluency">AI fluency</a> through real projects, industry
-        connections, and peer collaboration. No application process. Just show up.
-      </p>
-
-      <div class="feature-grid">
-        <div class="feature-card reveal delay-1">
-          <div class="feature-dot feature-dot--coral" aria-hidden="true"></div>
-          <h3>Every discipline</h3>
-          <p>English, business, psych, engineering, art, you name it</p>
+    <section id="what" class="inside" aria-labelledby="inside-heading">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow">A Friday in the Kitchen</p><h2 id="inside-heading">Show. Try. Ask.</h2></div>
+          <div class="heading-aside"><p>Start with a real workflow.<br>Then take a turn, with help nearby.</p><div class="peek-window heading-peek" aria-hidden="true"><span class="veggie eggplant"></span></div></div>
         </div>
-        <div class="feature-card reveal delay-2">
-          <div class="feature-dot feature-dot--mint" aria-hidden="true"></div>
-          <h3>Industry mentors</h3>
-          <p>Professionals lead tutorials on their real AI workflows every Friday</p>
+        <div class="experience-grid">
+          <figure>
+            <img src="assets/design/watch-a-workflow.webp" alt="A room of participants watches presenters demonstrate a workflow at the front of AI Kitchen." width="1200" height="800" loading="lazy">
+            <figcaption><span class="step">01</span><h3>Watch it happen.</h3><p>A guest chef shows how they actually use AI, including the choices and wrong turns.</p></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/design/try-together.webp" alt="Two participants talk and smile across their laptops during the hands-on portion of an AI Kitchen session." width="1100" height="734" loading="lazy">
+            <figcaption><span class="step">02</span><h3>Try something.</h3><p>Open your laptop. Follow the exercise, explore a tool, or bring your own idea.</p></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/design/ask-for-help.webp" alt="A facilitator and participants discuss their work together around laptops in the classroom." width="1100" height="734" loading="lazy">
+            <figcaption><span class="step">03</span><h3>Ask a neighbor.</h3><p>Work alongside people from across campus. Compare notes and get unstuck together.</p></figcaption>
+          </figure>
         </div>
-        <div class="feature-card reveal delay-3">
-          <div class="feature-dot feature-dot--lavender" aria-hidden="true"></div>
-          <h3>Real projects</h3>
-          <p>Work on projects that matter, for communities that need them</p>
+        <p class="photo-credit">Session photography: Miguel Ozuna / Santa Clara University · May 1, 2026</p>
+      </div>
+    </section>
+
+    <section id="formats" class="formats" aria-labelledby="formats-heading">
+      <div class="wrap friday-grid">
+        <div class="format-heading"><p class="eyebrow">Friday Taste Tests</p><h2 id="formats-heading">Drop in.<br>Try something new.</h2><div class="peek-window friday-peeks" aria-hidden="true"><span class="veggie carrot"></span><span class="veggie pea"></span></div></div>
+        <article class="format">
+          <p class="format-label">Fridays at 1 p.m. · Drop in anytime</p>
+          <p>A live tutorial to spark ideas, followed by time to experiment. Bring a laptop and your curiosity. No signup or technical background needed.</p>
+          <p>Follow along, try a tool, or explore a question of your own. There’s help nearby when you need it.</p>
+          <a class="text-link" href="schedule.html">Find your next Friday →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="guest-section" aria-labelledby="guest-heading">
+      <div class="wrap guest-grid">
+        <img class="guest-hat" src="assets/design/guest-chef-hat.png" alt="" loading="lazy">
+        <div><p class="eyebrow">Guest chefs welcome</p><h2 id="guest-heading">What’s your AI recipe?</h2><p>Show students a workflow you use in the real world. Lead a Taste Test and help them try it for themselves.</p></div>
+        <div class="guest-links"><a class="button" href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">Come cook with us <span aria-hidden="true">↗</span></a><a href="guest-chefs.html">Read the guest chef guide →</a></div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq" aria-labelledby="faq-heading">
+      <div class="wrap faq-grid">
+        <div class="faq-heading"><p class="eyebrow">Before you stop by</p><h2 id="faq-heading">A few good questions.</h2><p>Still wondering about something?<br><a href="mailto:klukoff@scu.edu">Say hello.</a></p><div class="peek-window faq-peek" aria-hidden="true"><span class="veggie broccoli"></span></div></div>
+        <div>
+          <details id="technical-background"><summary>Do I need to know how to code?</summary><p>No. AI Kitchen welcomes every major and every level of experience. The Friday tutorials are designed to give you a place to start.</p></details>
+          <details id="signup-faq"><summary>Do I need to sign up?</summary><p>No signup is required for Friday Taste Tests. Just show up. You can <a href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">join the update list</a> to hear about upcoming sessions.</p></details>
+          <details id="bring-laptop"><summary>What should I bring?</summary><p>A laptop and a little curiosity. Check the <a href="schedule.html">session details</a> and <a href="tools.html">tools guide</a> for any suggested setup before you arrive.</p></details>
+          <details id="open-to-public"><summary>Can I come if I’m not an SCU student?</summary><p>Yes. AI Kitchen is open to the public, including faculty, staff, and community members.</p></details>
+          <a class="home-faq-more" href="faq.html">More questions about AI Kitchen →</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== TWO FORMATS ===== -->
-  <section class="section" id="formats">
-    <div class="container">
-      <h2 class="section-heading reveal"><em>Fusion Cuisine.</em><br>All majors welcome.</h2>
-      <span class="section-accent reveal delay-1" aria-hidden="true"></span>
-      <p class="section-intro reveal delay-1">
-        Two ways to get involved, whether you have an afternoon or a whole quarter.
-      </p>
 
-      <div class="tier-grid">
-        <div class="tier-card tier-card--taste reveal delay-1">
-          <div class="tier-label">Drop in anytime</div>
-          <h3>Taste Tests 🍴</h3>
-          <p class="tier-subtitle">Fridays at 1:00 p.m. &middot; Benson 036 (California Mission Room)</p>
-          <p>
-            Each session kicks off with a live tutorial from someone doing interesting
-            things with AI, whether that's an industry professional, a faculty member,
-            or a fellow student. Then it's open time to experiment, hack, and work on
-            whatever you're curious about. Walk in any Friday, no signup required.
-          </p>
-          <p class="tier-flavor">A short tutorial to spark ideas, then hours of open time to try things with people who can help.</p>
+    <section class="home-updates" id="news" hidden aria-labelledby="news-heading"><div class="wrap"><p class="eyebrow">From the Kitchen</p><h2 id="news-heading">The latest.</h2><ul class="news-list" id="news-list"></ul><a class="home-news-more" href="news.html">All news from the Kitchen →</a></div></section>
+    <section class="home-press" id="press" hidden aria-labelledby="press-heading"><div class="wrap"><p class="eyebrow">In the press</p><h2 id="press-heading">Word is getting around.</h2><p class="press-intro">What reporters found when they dropped in on a Friday session.</p><ul class="press-grid" id="press-grid"></ul></div></section>
+
+    <section id="signup" class="invitation-section" aria-labelledby="invite-heading">
+      <div class="wrap invitation-grid invitation-with-community">
+        <div class="invitation-story">
+          <figure class="community-photo">
+            <img src="assets/design/community-wall.webp" alt="AI Kitchen participants stand together along the classroom wall, smiling during a session." width="1600" height="1067" loading="lazy">
+            <figcaption>A moment together at AI Kitchen · May 1, 2026</figcaption>
+          </figure>
+          <div class="peek-window closing-peeks" aria-hidden="true"><span class="veggie tomato"></span><span class="veggie radish"></span></div>
         </div>
-
-        <div class="tier-card tier-card--slow reveal delay-2">
-          <div class="tier-label">Go deeper</div>
-          <h3>Slow Roasts 🍲</h3>
-          <p class="tier-subtitle">Quarter-long projects</p>
-          <p>
-            Found something you love in a Taste Test? Pitch a project, form a
-            team across majors, and work with a faculty or industry mentor over
-            a full quarter. Present your work at the end-of-year Potluck Showcase.
-          </p>
-          <p class="tier-flavor">Example projects: Automate tedious workflows for campus staff. Build a custom AI pipeline for a local nonprofit. Create an AI agent skill that helps SCU students plan their coursework.</p>
-          <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" class="tier-link" target="_blank" rel="noopener noreferrer">Browse project ideas &rarr;</a>
+        <div class="invitation-content"><p class="eyebrow">There’s room at the kitchen table.</p><h2 id="invite-heading">Come curious.<br>See what you can make.</h2><p>You don’t need the perfect idea. Start with a Friday, a friendly face, and something you want to try.</p><div class="actions"><a class="button" href="schedule.html">See the schedule <span aria-hidden="true">→</span></a><a class="text-link" href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">Get updates ↗</a></div><a class="home-campus-link" href="start-an-ai-kitchen.html">Bringing this to your campus? Start an AI Kitchen →</a></div></div>
+    </section>
+</main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University" loading="lazy"></a>
+        <p>AI Kitchen · Everyone’s invited.</p>
+        <p class="site-footer-tagline">There’s room at the kitchen table.</p>
+      </div>
+      <nav class="site-footer-links" aria-label="Footer navigation">
+        <a href="schedule.html">Schedule</a>
+        <a href="tools.html">Tools guide</a>
+        <a href="roles.html">Leadership</a>
+        <a href="news.html">News</a>
+        <a href="index.html#press">In the press</a>
+        <a href="start-an-ai-kitchen.html">Start an AI Kitchen</a>
+        <a href="guest-chefs.html">Guest chef guide</a>
+        <a href="faq.html">More questions</a>
+        <a href="mailto:klukoff@scu.edu">Contact</a>
+      </nav>
+      <div class="site-footer-community">
+        <p>Follow AI Kitchen</p>
+        <div class="site-footer-social">
+          <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer"><img src="linkedin-icon.svg" width="20" height="20" alt="">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer"><img src="youtube-icon.svg" width="20" height="20" alt="">YouTube <span aria-hidden="true">↗</span></a>
         </div>
+        <p class="site-footer-faculty">Faculty lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>Faculty advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> and Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a></p>
       </div>
-
-      <!-- Mentor callout -->
-      <div class="mentor-callout reveal delay-3">
-        <p class="mentor-heading">Industry Mentors: Want to share your AI workflow? 🧑‍🍳</p>
-        <p class="mentor-body">
-          We're looking for industry professionals to lead Friday Taste Test sessions.
-          Lead a tutorial on how you actually use AI in your work, then guide students
-          through a hands-on exercise. Mentor the next generation.
-        </p>
-        <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="mentor-link" target="_blank" rel="noopener noreferrer">Get involved &rarr;</a>
-        <span class="mentor-questions">Read the <a href="guest-chefs.html">guest chef guide</a> &middot; Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a></span>
-      </div>
-      <p class="schedule-note reveal" style="margin-top: var(--space-xl);">
-        Bringing this model to your campus? <a href="start-an-ai-kitchen.html">Start an AI Kitchen &rarr;</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- ===== WHO IT'S FOR ===== -->
-  <section class="section section--alt" id="who">
-    <div class="container">
-      <h2 class="section-heading reveal">AI Kitchen is for you if you're...</h2>
-      <span class="section-accent reveal delay-1" aria-hidden="true"></span>
-
-      <ul class="audience-list">
-        <li class="reveal delay-1">An English major curious about AI writing tools</li>
-        <li class="reveal delay-1">A business student who wants to automate spreadsheet work</li>
-        <li class="reveal delay-2">A psych major wondering if AI can help code interviews</li>
-        <li class="reveal delay-2">An engineer who wants to build things outside the curriculum</li>
-        <li class="reveal delay-3">A first-gen student who has never had access to these tools</li>
-        <li class="reveal delay-3">Anyone who is curious and willing to show up</li>
-      </ul>
-
-      <p class="audience-closer reveal">No technical background needed. Seriously.</p>
-    </div>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section class="section" id="faq">
-    <div class="container">
-      <h2 class="section-heading reveal"><em>Frequently Asked</em> Questions</h2>
-      <span class="section-accent reveal delay-1" aria-hidden="true"></span>
-
-      <div class="faq-list">
-        <details class="faq-item reveal delay-1" id="friday-session">
-          <summary class="faq-question"><span>What happens at a Friday session?</span><a href="#friday-session" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            Each session starts with a live tutorial (about an hour) from someone doing
-            interesting work with AI, whether that's an industry professional, a faculty
-            member, or a fellow student. After the tutorial, the rest of the afternoon is
-            open time to experiment with tools, work on projects, or just explore
-            whatever you're curious about.
-          </p>
-        </details>
-
-        <details class="faq-item reveal delay-1" id="is-this-a-course">
-          <summary class="faq-question"><span>Is this a course?</span><a href="#is-this-a-course" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            No. There's no fixed curriculum, no grades, and no learning progression
-            you need to follow. AI Kitchen is an experimental space. What we work on
-            each week is shaped by who shows up and what they're interested in.
-          </p>
-        </details>
-
-        <details class="faq-item reveal delay-1" id="ai-fluency">
-          <summary class="faq-question"><span>What do you mean by "AI fluency"?</span><a href="#ai-fluency" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            AI literacy means understanding what AI tools can and can't do and how
-            to use them responsibly. AI Kitchen builds on that foundation. Think of
-            literacy as reading a recipe and fluency as knowing how to cook. Fluency
-            comes with practice: you pick up a new tool without waiting for a
-            tutorial, you work through it when the output is wrong, and you know
-            when not to use AI at all. People get fluent in a language by using it
-            with others, so AI Kitchen meets every Friday for hands-on work
-            alongside other students, faculty, and industry mentors.
-          </p>
-        </details>
-
-        <details class="faq-item reveal delay-1" id="technical-background">
-          <summary class="faq-question"><span>Do I need a technical background?</span><a href="#technical-background" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            Not at all. We welcome students from every major. Some sessions will be
-            more technical than others, but the goal is to make AI tools accessible
-            to everyone. A lot of working with AI is really about thinking clearly,
-            breaking problems into steps, and expressing what you want in plain
-            language, not writing code.
-          </p>
-        </details>
-
-        <details class="faq-item reveal delay-2" id="engineering-student">
-          <summary class="faq-question"><span>I'm an engineering student. Will this be useful for me?</span><a href="#engineering-student" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            Yes. You'll get exposure to tools and workflows you won't encounter in
-            your coursework, work alongside students from other disciplines (which
-            changes how you think about problems), and have the chance to build
-            projects with real-world impact.
-          </p>
-        </details>
-
-        <details class="faq-item reveal delay-2" id="projects">
-          <summary class="faq-question"><span>What kind of projects can I work on?</span><a href="#projects" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            Projects range from automating workflows for campus staff to building
-            AI pipelines for local nonprofits. Some may lead to research publications,
-            others to entrepreneurial or social impact ventures. Check out our
-            <a href="https://docs.google.com/spreadsheets/d/1_RGlUrvj9ENh2hhxiKnKPsmQ5TVAV-Ac/edit?usp=sharing&ouid=109443908969045779208&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">project ideas spreadsheet</a>
-            for inspiration, or pitch your own.
-          </p>
-        </details>
-
-        <details class="faq-item reveal delay-2" id="research-with-faculty">
-          <summary class="faq-question"><span>How can I get involved in research with a faculty member?</span><a href="#research-with-faculty" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            Start by showing up to a Friday session, picking a project to work on,
-            and getting to know the faculty who are there. The best way to work with
-            a faculty member is to demonstrate your motivation, effort, and skills
-            on a real project, and the Friday sessions are open to everyone, so
-            they're a natural starting point. Some projects eventually "graduate"
-            into individual faculty research labs on campus. You can think of
-            AI Kitchen as an incubator that connects students, faculty, and
-            industry mentors.
-          </p>
-        </details>
-
-        <details class="faq-item reveal delay-2" id="industry-demo">
-          <summary class="faq-question"><span>I'm an industry professional. What would my tutorial cover?</span><a href="#industry-demo" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            Whatever you actually do with AI in your work. That might be using AI
-            for coding, writing, data analysis, design, research, or something else
-            entirely. You don't need a polished talk or a textbook workflow. Showing
-            students how you actually think through problems with AI tools is what's
-            most valuable, including the parts where it doesn't work and you have to
-            debug or iterate.
-          </p>
-        </details>
-
-        <details class="faq-item reveal delay-3" id="ai-expert">
-          <summary class="faq-question"><span>What if I don't feel like an "expert" in AI?</span><a href="#ai-expert" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            That's fine. Many of us are figuring this out as we go, and that's part
-            of the point. If you're not ready to lead a tutorial, you're welcome to just
-            drop in, help mentor students, and learn alongside everyone else.
-          </p>
-        </details>
-
-        <details class="faq-item reveal delay-3" id="weekly-commitment">
-          <summary class="faq-question"><span>Do I need to commit to every week?</span><a href="#weekly-commitment" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            No. Come when you can. Some people will be here every Friday, others
-            will drop in once or twice. Both are great.
-          </p>
-        </details>
-
-        <details class="faq-item reveal delay-3" id="hci-lab">
-          <summary class="faq-question"><span>How is AI Kitchen related to the Human-Computer Interaction Lab?</span><a href="#hci-lab" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            Think of AI Kitchen as a complementary creative studio or maker space
-            for AI. It's open-access, no application needed, and welcomes students
-            from every major. The
-            <a href="http://scuhci.com/" target="_blank" rel="noopener noreferrer">Human-Computer Interaction (HCI) Lab</a>
-            is a research lab (by application only) focused on human-computer
-            interaction. Prof. Kai Lukoff leads both, but AI Kitchen involves
-            faculty from across departments.
-            AI Kitchen also addresses a practical challenge: the HCI Lab receives
-            over 500 applications from interested students but can only accept a
-            very limited number. AI Kitchen is an open space where any student can
-            show up and start exploring AI workflows and incubating project ideas.
-            Projects that emerge here may grow into research projects in any
-            faculty lab involved with AI Kitchen, or into entrepreneurial and
-            social impact ventures.
-          </p>
-        </details>
-
-        <details class="faq-item reveal delay-3" id="ai-collaborate">
-          <summary class="faq-question"><span>How is AI Kitchen related to AI Collaborate?</span><a href="#ai-collaborate" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            <a href="https://www.scuaiclub.com/" target="_blank" rel="noopener noreferrer">AI Collaborate</a>
-            is an amazing and pioneering student organization at SCU. AI Kitchen
-            has more direct faculty leadership, with student Studio Leads and a
-            research focus. We plan to collaborate! In format, AI Kitchen is closer
-            to the
-            <a href="https://www.scu.edu/imaginarium/" target="_blank" rel="noopener noreferrer">Imaginarium</a>,
-            another interdisciplinary initiative on campus focused on XR
-            technologies that is also faculty-led with student leads.
-          </p>
-        </details>
-
-        <details class="faq-item reveal delay-3" id="responsible-ai">
-          <summary class="faq-question"><span>How is AI Kitchen related to the Responsible AI initiative?</span><a href="#responsible-ai" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            SCU's
-            <a href="https://www.scu.edu/engineering/responsible-ai/" target="_blank" rel="noopener noreferrer">Responsible AI</a>
-            initiative focuses on interdisciplinary research, ethical AI
-            education, and curriculum development, addressing questions like how
-            AI should be used in teaching and what policies should guide its
-            adoption. AI Kitchen complements that work from the other direction:
-            it is a hands-on creative studio and maker space where students and
-            faculty build with AI tools, learning what they can and cannot do
-            through direct experience. We believe getting your hands dirty with
-            the technology is one of the best ways to develop informed, critical
-            perspectives on its implications.
-          </p>
-        </details>
-
-        <details class="faq-item reveal delay-3" id="ai-tools">
-          <summary class="faq-question"><span>What are good AI tools for me to get started with?</span><a href="#ai-tools" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            We put together an
-            <a href="tools.html">AI Tools Guide for SCU Students</a>
-            with our top picks across 10 categories, from general-purpose AI
-            assistants to code generation, design, research, and more. Every tool
-            on the list is free or offers premium access for students. Start with
-            <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude</a>
-            for its strong model quality and approachable app, and use
-            <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer">Google Gemini</a>
-            for work inside Google Workspace since it is free through your SCU account.
-          </p>
-        </details>
-
-        <details class="faq-item reveal delay-3" id="no-code">
-          <summary class="faq-question"><span>Why "no code required to cook"?</span><a href="#no-code" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            Programming has always been moving closer to how humans actually
-            think and communicate. Early computers required instructions written
-            in raw numbers. Over the decades, programming languages became more
-            readable and expressive, from lower-level languages closer to the
-            machine to higher-level languages like Python that read almost like
-            natural language. Generative AI is the latest leap: today, you can
-            build working software by describing what you want in plain English.
-            Our thesis is
-            that this shift will allow a much wider range of people to participate
-            in creating software and digital experiences, bringing their own domain
-            expertise to problems that technology alone can't solve.
-            <br><br>
-            That said, understanding what's happening further down the stack can
-            be very helpful and sometimes essential. It depends on the context.
-            For early-stage prototyping, the emphasis is on speed and exploration,
-            and natural-language tools can get you remarkably far. For something
-            like a hospital application, where privacy, security, and reliability
-            are paramount, more robust and careful engineering is required.
-            <br><br>
-            That's exactly why AI Kitchen brings together faculty and students
-            from different disciplines, both technical and non-technical. A
-            business student might prototype a workflow automation using AI,
-            then partner with a CS student to harden it for production. A
-            psychology student might design an intervention, then collaborate
-            with engineers to build it reliably. The mix is the point.
-          </p>
-        </details>
-
-        <details class="faq-item reveal delay-3" id="kitchen-theme">
-          <summary class="faq-question"><span>Why the "AI Kitchen" theme?</span><a href="#kitchen-theme" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            It's deliberate. Research shows that framing shapes who shows up:
-            when computer science spaces look and sound like stereotypical tech culture,
-            women and underrepresented students opt out
-            (<a href="https://doi.org/10.1037/a0016239" target="_blank" rel="noopener noreferrer">Cheryan et al., 2009</a>).
-            A kitchen is familiar, communal, and creative. Everyone has
-            some relationship to a kitchen, regardless of major or background.
-            The name signals that this space isn't just for CS students.
-            <br><br>
-            Our visual identity is inspired by
-            <a href="https://designbuddies.community/" target="_blank" rel="noopener noreferrer">Design Buddies</a>,
-            the 200,000+ member design community founded by SCU alumna Grace Ling
-            (BS '19, MS '21). Ling's approachable, kawaii-influenced branding helped
-            build one of the largest and most inclusive design communities in the world.
-            We're taking a similar approach: if the vibe is welcoming, the people will be too.
-          </p>
-        </details>
-        <details class="faq-item reveal delay-3" id="bridge-academia-industry">
-          <summary class="faq-question"><span>Why bridge academia and industry?</span><a href="#bridge-academia-industry" class="faq-link" aria-label="Copy link to this question">#</a></summary>
-          <p class="faq-answer">
-            AI tools and workflows are evolving so fast that academia often struggles to keep pace.
-            At the same time, one of the biggest barriers to leveraging AI for non-technical
-            applications is simply knowing what's possible. AI Kitchen creates a space where
-            industry practitioners share what's actually working in the field, faculty bring
-            critical thinking and domain expertise, and students get hands-on exposure to both.
-            Everyone benefits from this kind of knowledge exchange: students see real-world
-            applications, professionals get fresh perspectives, and faculty stay connected to
-            how these tools are being used in practice.
-          </p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SIGNUP CTA ===== -->
-  <section class="section section--cta cta-section" id="signup">
-    <div class="container">
-      <h2 class="section-heading reveal">Get Involved</h2>
-      <span class="section-accent reveal delay-1" aria-hidden="true"></span>
-      <p class="cta-sub reveal delay-1">
-        Taste Tests every Friday at 1:00 p.m.<br>
-        Benson Memorial Center 036 (California Mission Room), Santa Clara University. 🍽️<br>
-        <a href="https://docs.google.com/document/d/183Ro43EVI7GLUZzQPJxGG65-fi1HjjMZV5E3wEpY_uQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Directions to Benson 036</a>
-      </p>
-      <div class="reveal delay-2">
-        <!-- Replace # with your Google Form URL -->
-        <a href="https://forms.gle/qyQmKthPgfaQUMkn7" class="cta-button" target="_blank" rel="noopener noreferrer">
-          Get Involved &rarr;
-        </a>
-      </div>
-      <p class="cta-fine reveal delay-3">Takes 30 seconds. We will only email you about AI Kitchen.</p>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-wordmark">AI Kitchen</div>
-      <div class="footer-divider" aria-hidden="true"></div>
-      <p>
-        Faculty Lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>
-        Faculty Advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> and Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a>
-      </p>
-      <p>
-        Santa Clara University
-      </p>
-      <img src="scu-logo.png" alt="Santa Clara University" class="footer-logo">
-      <div class="footer-social" aria-label="Follow AI Kitchen">
-        <span class="footer-social-label">Follow AI Kitchen</span>
-        <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on LinkedIn"><img src="linkedin-icon.svg" alt="">LinkedIn</a>
-        <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer" aria-label="Follow AI Kitchen on YouTube"><img src="youtube-icon.svg" alt="">YouTube</a>
-      </div>
-      <p>
-        Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>
-      </p>
     </div>
   </footer>
 
-  </main>
-
-  <!-- ===== Date-based visibility ===== -->
-  <!-- Elements with data-expires="YYYY-MM-DD" hide after that day passes.
-       Elements with data-visible-from="YYYY-MM-DD" stay hidden until that day. -->
-  <script>
-    (function() {
-      var today = new Date();
-      today.setHours(0, 0, 0, 0);
-      document.querySelectorAll('[data-expires]').forEach(function(el) {
-        var exp = new Date(el.getAttribute('data-expires') + 'T23:59:59');
-        if (exp < today) el.style.display = 'none';
-      });
-      document.querySelectorAll('[data-visible-from]').forEach(function(el) {
-        var from = new Date(el.getAttribute('data-visible-from') + 'T00:00:00');
-        if (from <= today) el.style.display = '';
-      });
-    })();
-  </script>
-
-  <!-- ===== FAQ Deep-Linking ===== -->
-  <script>
-    (function() {
-      function openFromHash() {
-        var hash = location.hash.slice(1);
-        if (!hash) return;
-        var el = document.getElementById(hash);
-        if (el && el.tagName === 'DETAILS' && el.classList.contains('faq-item')) {
-          el.open = true;
-          requestAnimationFrame(function() {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          });
-        }
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', openFromHash);
-      } else {
-        openFromHash();
-      }
-      window.addEventListener('hashchange', openFromHash);
-
-      document.querySelectorAll('.faq-link').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          e.stopPropagation(); // keep the details from toggling
-          var details = link.closest('details');
-          if (details) details.open = true;
-          var href = link.getAttribute('href');
-          var url = location.origin + location.pathname + href;
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(url).then(function() {
-              link.classList.add('copied');
-              setTimeout(function() { link.classList.remove('copied'); }, 1500);
-            }).catch(function() {});
-          }
-        });
-      });
-    })();
-  </script>
-
-  <!-- ===== Session data (shared with schedule.html) ===== -->
-  <script src="sessions.js?v=20260930-2"></script>
-
-  <!-- ===== Next Taste Test Spotlight ===== -->
-  <script>
-    (function() {
-      var spring = window.AI_KITCHEN_SESSIONS || [];
-      var summer = window.AI_KITCHEN_SUMMER_SESSIONS || [];
-      var fall = window.AI_KITCHEN_FALL_SESSIONS || [];
-
-      var today = new Date();
-      today.setHours(0, 0, 0, 0);
-
-      // Show the next upcoming event of any kind (talks and featured events like
-      // Demo Night). Skip placeholder TBD and cancelled entries.
-      var candidates = spring.concat(summer).concat(fall).filter(function(s) { return !s.tbd && !s.cancelled; });
-      var next = null;
-      for (var i = 0; i < candidates.length; i++) {
-        var sessionDate = new Date(candidates[i].date + 'T23:59:59');
-        if (sessionDate >= today) { next = candidates[i]; break; }
-      }
-
-      if (!next) {
-        var fb = document.getElementById('spotlight-fallback');
-        if (fb) fb.style.display = '';
-        return;
-      }
-
-      var card = document.getElementById('spotlight-card');
-      card.style.display = '';
-      if (next.featured) card.classList.add('schedule-card--featured');
-
-      var eyebrow = document.getElementById('spotlight-eyebrow');
-      if (eyebrow) {
-        eyebrow.textContent = next.featured ? 'Up Next'
-          : (summer.indexOf(next) !== -1 ? 'Summer Test Kitchen' : 'Next Taste Test');
-      }
-
-      document.getElementById('spotlight-date').textContent = next.label;
-      var nameEl = document.getElementById('spotlight-name');
-      if (next.copresenter) {
-        var wrap = document.createElement('span');
-        wrap.className = 'schedule-names';
-        var a1 = document.createElement('a');
-        a1.className = 'schedule-name';
-        a1.href = next.url;
-        a1.target = '_blank';
-        a1.rel = 'noopener noreferrer';
-        a1.textContent = next.name;
-        var a2 = document.createElement('a');
-        a2.className = 'schedule-name';
-        a2.href = next.copresenter.url;
-        a2.target = '_blank';
-        a2.rel = 'noopener noreferrer';
-        a2.textContent = next.copresenter.name;
-        wrap.appendChild(a1);
-        wrap.appendChild(document.createTextNode(' & '));
-        wrap.appendChild(a2);
-        nameEl.replaceWith(wrap);
-        document.getElementById('spotlight-title').textContent = next.title + ' · ' + next.copresenter.title;
-      } else if (next.featured) {
-        // Featured events link to their detail page and have no LinkedIn profile.
-        nameEl.href = next.topicUrl || '#';
-        nameEl.removeAttribute('target');
-        nameEl.removeAttribute('rel');
-        nameEl.textContent = next.name;
-        document.getElementById('spotlight-title').textContent = next.title || '';
-      } else {
-        nameEl.href = next.url;
-        nameEl.textContent = next.name;
-        document.getElementById('spotlight-title').textContent = next.title || '';
-      }
-
-      var topicEl = document.getElementById('spotlight-topic');
-      var topicNode;
-      if (next.topicUrl) {
-        var a = document.createElement('a');
-        a.href = next.topicUrl;
-        a.className = 'schedule-topic';
-        a.textContent = next.topic + ' \u2192';
-        topicEl.replaceWith(a);
-        topicNode = a;
-      } else {
-        topicEl.textContent = next.topic;
-        topicNode = topicEl;
-      }
-      if (next.description) {
-        var description = document.createElement('span');
-        description.className = 'schedule-description';
-        description.textContent = next.description;
-        topicNode.insertAdjacentElement('afterend', description);
-      }
-      // For featured events the topic is a description, not a talk title, so move it
-      // below the name and details to keep the event name as the headline.
-      if (next.featured) {
-        var info = document.querySelector('#spotlight-card .schedule-info');
-        if (info) info.appendChild(topicNode);
-      }
-
-      if (next.studentHost && next.studentHost.name) {
-        var hostCredit = document.createElement('span');
-        hostCredit.className = 'student-host';
-        hostCredit.textContent = 'Student host: ';
-        var hostName = document.createElement(next.studentHost.url ? 'a' : 'span');
-        hostName.textContent = next.studentHost.name;
-        if (next.studentHost.url) {
-          hostName.href = next.studentHost.url;
-          hostName.target = '_blank';
-          hostName.rel = 'noopener noreferrer';
-        }
-        hostCredit.appendChild(hostName);
-        document.querySelector('#spotlight-card .schedule-info').appendChild(hostCredit);
-      }
-
-      var avatar = document.getElementById('spotlight-avatar');
-      if (next.photo) {
-        avatar.style.backgroundImage = "url('" + next.photo + "')";
-      } else if (next.emoji) {
-        avatar.style.textIndent = '0';
-        avatar.style.fontSize = '2rem';
-        avatar.style.backgroundColor = 'var(--coral-light)';
-        avatar.textContent = next.emoji;
-      } else if (next.initials) {
-        avatar.style.textIndent = '0';
-        avatar.textContent = next.initials;
-      }
-      if (next.copresenter && next.copresenter.photo) {
-        var coAvatar = document.createElement('div');
-        coAvatar.className = 'speaker-avatar';
-        coAvatar.style.backgroundImage = "url('" + next.copresenter.photo + "')";
-        coAvatar.style.marginLeft = '-12px';
-        coAvatar.setAttribute('aria-hidden', 'true');
-        coAvatar.textContent = next.copresenter.initials || '';
-        avatar.after(coAvatar);
-      }
-    })();
-  </script>
-
-  <!-- ===== Latest News ===== -->
-  <script src="news.js"></script>
-  <script>
-    (function() {
-      var list = document.getElementById('news-list');
-      var section = document.getElementById('news');
-      if (!list || !section) return;
-      var items = window.AI_KITCHEN_NEWS || [];
-
-      var today = new Date();
-      today.setHours(0, 0, 0, 0);
-
-      var visible = items.filter(function(n) {
-        if (!n.expires) return true;
-        var exp = new Date(n.expires + 'T23:59:59');
-        return exp >= today;
-      }).sort(function(a, b) {
-        return new Date(b.date) - new Date(a.date);
-      });
-
-      if (visible.length === 0) return; // section stays hidden
-
-      function esc(s) { return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
-      function fmtDate(s) {
-        var d = new Date(s + 'T12:00:00');
-        return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-      }
-
-      list.innerHTML = visible.map(function(n) {
-        // body is allowed to contain HTML (e.g., links) since news.js is
-        // an author-controlled file. Headline and date are still escaped.
-        return '<li class="news-item reveal">' +
-          '<div class="news-date">' + esc(fmtDate(n.date)) + '</div>' +
-          '<div class="news-headline">' + esc(n.headline) + '</div>' +
-          '<div class="news-body">' + (n.body || '') + '</div>' +
-        '</li>';
-      }).join('');
-      section.style.display = '';
-    })();
-  </script>
-
-  <!-- ===== In the Press ===== -->
-  <script src="press.js"></script>
-  <script>
-    (function() {
-      var grid = document.getElementById('press-grid');
-      var section = document.getElementById('press');
-      if (!grid || !section) return;
-      var items = (window.AI_KITCHEN_PRESS || []).slice().sort(function(a, b) {
-        // Featured story leads, then newest first.
-        if (!!a.featured !== !!b.featured) return a.featured ? -1 : 1;
-        return new Date(b.date) - new Date(a.date);
-      });
-      if (items.length === 0) return; // section stays hidden
-
-      function esc(s) { return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
-      function fmtDate(s) {
-        var d = new Date(s + 'T12:00:00');
-        return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-      }
-
-      grid.innerHTML = items.map(function(p) {
-        var quote = p.excerpt
-          ? '<blockquote class="press-quote">&ldquo;' + esc(p.excerpt) + '&rdquo;' +
-            (p.speaker ? '<cite class="press-cite">&mdash; ' + esc(p.speaker) + '</cite>' : '') +
-            '</blockquote>'
-          : '';
-        return '<li class="press-card reveal' + (p.featured ? ' press-card--featured' : '') + '">' +
-          '<div class="press-meta">' +
-            '<span class="press-outlet">' + esc(p.outlet) + '</span>' +
-            '<span class="press-date">' + esc(fmtDate(p.date)) + '</span>' +
-          '</div>' +
-          '<h3 class="press-title">' +
-            '<a href="' + esc(p.url) + '" target="_blank" rel="noopener noreferrer">' + esc(p.title) +
-            '<span class="press-arrow" aria-hidden="true">&#8599;</span></a>' +
-          '</h3>' +
-          quote +
-        '</li>';
-      }).join('');
-      section.style.display = '';
-    })();
-  </script>
-
-  <!-- ===== Scroll Reveal Script (runs last so it picks up dynamic content) ===== -->
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
-
-</body>
-</html>
+<script src="sessions.js?v=20260930-2"></script><script src="news.js"></script><script src="press.js"></script><script src="home.js"></script><script src="site-shell.js"></script></body></html>
