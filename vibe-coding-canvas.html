@@ -61,6 +61,29 @@
     .goals-list li::before { content: "\2014"; color: var(--coral); font-weight: 700; line-height: 1.55; }
     .goals-list li strong { color: var(--text-primary); }
 
+    .session-recipes {
+      list-style: none; padding: 0; margin: 0;
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;
+    }
+    .session-recipes li {
+      background: white; border: 1px solid var(--bg-alt); border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-soft); padding: 20px;
+    }
+    .recipe-audience {
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--coral); margin-bottom: 6px;
+    }
+    .session-recipes h3 { font-size: 1.125rem; line-height: 1.4; margin-bottom: 10px; }
+    .session-recipes p {
+      color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 12px;
+      overflow-wrap: anywhere;
+    }
+    .session-recipes p:last-child { margin-bottom: 0; }
+    .session-recipes a, .helper-tips a, .session-jump a { color: var(--coral); }
+    .session-jump { font-size: 0.9375rem; margin-top: 12px; }
+    #mise-en-place { scroll-margin-top: 90px; }
+    @media (max-width: 640px) { .session-recipes { grid-template-columns: 1fr; } }
+
     .session-footer-note {
       margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--bg-alt);
       color: var(--text-muted); font-size: 13px; margin-bottom: clamp(48px, 6vh, 64px);
@@ -102,6 +125,7 @@
         California Mission Room &middot; Benson Memorial Center 036 (basement), Santa Clara University<br>
         <a href="https://docs.google.com/document/d/183Ro43EVI7GLUZzQPJxGG65-fi1HjjMZV5E3wEpY_uQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Directions to Benson 036</a></p>
       <p class="student-host">Student host: <a href="https://www.linkedin.com/in/bridget-hestad/" target="_blank" rel="noopener noreferrer">Bridget Hestad</a></p>
+      <p class="session-jump"><a href="#mise-en-place">Hands-on recipes &amp; helper tips &darr;</a></p>
 
       <aside class="session-tools" id="getting-started" aria-labelledby="session-tools-heading">
         <h2 id="session-tools-heading">Get ready to build</h2>
@@ -141,6 +165,58 @@
         <li><span><strong>Use an Air Gap.</strong> Extract your data package from Camino and stir it into a useful dish locally.</span></li>
         <li><span><strong>Write a Policy as Code.</strong> Craft your own personal guardrails for your Agent in Camino.</span></li>
         <li><span><strong>Install an Agent designer.</strong> Build directly in Camino &mdash; teaching and learning content.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== HANDS-ON RECIPES & HELPER TIPS ===== -->
+  <section class="section helper-tips" id="mise-en-place" aria-labelledby="helper-tips-heading" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading" id="helper-tips-heading">Mise en place: <em>get ready to help</em></h2>
+      <p class="session-intro">Adapted from Jeremy&rsquo;s guide for the October 2 session. Choose one of four recipes below, or help a participant get started. Students and teachers can use Camino (Canvas); staff can use a PDF or materials from their own work.</p>
+
+      <ol class="session-recipes">
+        <li>
+          <div class="recipe-audience">For students</div>
+          <h3>1. Make an academic integrity skill</h3>
+          <p>Combine the <a href="https://www.scu.edu/academic-integrity/about-the-pledge/" target="_blank" rel="noopener noreferrer">SCU academic integrity pledge</a>, your syllabus&rsquo;s AI policy, and your personal boundaries into <code>integrity.md</code>.</p>
+          <p>Turn those instructions into a reusable skill, save it, and test it on an academic task.</p>
+        </li>
+        <li>
+          <div class="recipe-audience">For teachers &amp; staff</div>
+          <h3>2. Make a commitments skill</h3>
+          <p>Use a syllabus or workplace guidance to create <code>commitments.md</code>: what AI can help with, which decisions you keep, and when approval is required.</p>
+          <p>Save it as a reusable skill and test whether it flags a task that conflicts with your commitments.</p>
+        </li>
+        <li>
+          <div class="recipe-audience">For teachers</div>
+          <h3>3. Export and audit a course</h3>
+          <p>In your course, go to <strong>Settings &rarr; Export Course Content &rarr; Course &rarr; Create Export &rarr; New Export</strong>.</p>
+          <p>When the export is ready, download the <code>.imscc</code> file and extract a copy (rename the copy to <code>.zip</code> if needed). Ask AI to flag confusing instructions, missing resources, and inconsistencies.</p>
+          <p><a href="https://community.instructure.com/en/kb/articles/660734-how-do-i-export-a-canvas-course" target="_blank" rel="noopener noreferrer">Canvas course export help &rarr;</a></p>
+        </li>
+        <li>
+          <div class="recipe-audience">For students</div>
+          <h3>4. Turn coursework into a portfolio</h3>
+          <p>Go to <strong>Account &rarr; Settings &rarr; Download Submissions &rarr; Create Export &rarr; New Export</strong>.</p>
+          <p>Unzip the download, choose two or three pieces, and draft LinkedIn-ready descriptions of your contribution and skills. Verify the descriptions and credit collaborators before posting.</p>
+          <p><a href="https://community.instructure.com/en/kb/articles/661234-how-do-i-download-assignment-submissions-from-all-my-courses" target="_blank" rel="noopener noreferrer">Canvas submission download help &rarr;</a></p>
+        </li>
+      </ol>
+
+      <h2 class="session-heading">Save your <em>guardrails</em></h2>
+      <ul class="goals-list">
+        <li><span><strong>Claude for Mac:</strong> In Cowork, open <strong>+ &rarr; Record a skill</strong>. Review and save the result. <a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills" target="_blank" rel="noopener noreferrer">Claude skill help</a>.</span></li>
+        <li><span><strong>ChatGPT for Mac:</strong> Select Work or Codex, then open <strong>Plugins &rarr; + &rarr; Record a skill</strong>. Demonstrate your workflow, stop recording, and review the drafted skill. Recording requires Computer Use to be enabled. <a href="https://learn.chatgpt.com/docs/extend/record-and-replay" target="_blank" rel="noopener noreferrer">ChatGPT recording help</a>.</span></li>
+        <li><span><strong>Keep the instructions handy:</strong> Save and enable the skill, then add a memory or preference: &ldquo;Before academic or work tasks, consult my guardrail skill and flag conflicts.&rdquo;</span></li>
+      </ul>
+
+      <h2 class="session-heading">Quick help for <em>participants</em></h2>
+      <ul class="goals-list">
+        <li><span><strong>No desktop app?</strong> Download your files and upload selected materials to a browser chat, along with your guardrail instructions.</span></li>
+        <li><span><strong>Need a syllabus PDF?</strong> Open the page, then choose <strong>Print &rarr; Save as PDF</strong>. <a href="https://extensionhelpcenter.ucsd.edu/hc/en-us/articles/360055762332-How-to-save-a-Canvas-page-as-a-PDF" target="_blank" rel="noopener noreferrer">Canvas page-to-PDF help</a>.</span></li>
+        <li><span><strong>No Camino or Canvas?</strong> Use a PDF, report, instructions, or other workplace materials.</span></li>
+        <li><span><strong>Privacy or policy question?</strong> Remove sensitive information before uploading or recording, and work on copies.</span></li>
       </ul>
     </div>
   </section>
