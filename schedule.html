@@ -64,10 +64,51 @@
       font-weight: 600;
       line-height: 1.35;
     }
+
+    /* Keep current dates close to the page heading; preparation lives below. */
+    .site-page.schedule-page #current { padding-top: 28px; }
+    .site-page.schedule-page #current .page-heading-peek { margin-bottom: 12px; }
+    .site-page.schedule-page #current .section-heading { margin-bottom: 0; }
+    .schedule-location { margin: 0 0 18px; font: 500 16px/1.5 var(--sans); }
+    .schedule-location a { display: inline-block; margin-left: 12px; }
+    .schedule-prep-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 4px 20px;
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--mint-light);
+      color: var(--green);
+    }
+    .schedule-prep-banner p { margin: 0; font: 400 14px/1.5 var(--sans); }
+    .schedule-prep-banner a { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; font: 650 14px/1.5 var(--sans); }
+    .schedule-quarter-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; margin: 24px 0 16px; }
+    .site-page.schedule-page .schedule-quarter-header .schedule-quarter { margin: 0; }
+    .site-page.schedule-page .schedule-quarter-header .schedule-subscribe { margin: 0; text-align: left; font-size: 13px; }
+    .site-page.schedule-page #fall-grid { margin-top: 0; }
+    .site-page.schedule-page .schedule-preparation { padding-block: 40px; }
+    .site-page.schedule-page #getting-started { margin-top: 0; scroll-margin-top: 24px; }
+    .schedule-how { max-width: 850px; margin-top: 36px; }
+    .schedule-how h2 { font-size: 26px; margin-bottom: 14px; }
+    .site-page.schedule-page .schedule-how .section-intro { margin: 0 0 16px; text-align: left; }
+    @media (max-width: 760px) {
+      .site-page.schedule-page #current { padding-top: 22px; }
+      .site-page.schedule-page #current .page-heading-peek { display: grid; grid-template-columns: minmax(0, 1fr) 72px; align-items: center; gap: 12px; }
+      .site-page.schedule-page #current .section-heading { font-size: 32px; }
+      .site-page.schedule-page #current .page-peek { width: 72px; height: 76px; margin-left: 0; }
+      .site-page.schedule-page #current .page-veggie-tomato { width: 69.4px; height: 79.5px; background-size: 262.2px 262.2px; background-position: -183.8px -164.6px; transform: translateY(12.5px); }
+      .schedule-location { font-size: 14px; }
+      .schedule-prep-banner { padding: 10px 14px; }
+      .schedule-quarter-header { margin-top: 20px; }
+      .site-page.schedule-page .schedule-quarter-header .schedule-quarter { font-size: 23px; }
+    }
   </style>
   <link rel="stylesheet" href="site-shell.css">
 </head>
-<body class="site-page">
+<body class="site-page schedule-page">
 
   <!-- ===== NAV ===== -->
   <a class="site-skip-link" href="#main">Skip to content</a>
@@ -90,9 +131,36 @@
   <section class="section section--alt" id="current">
     <div class="container">
       <div class="page-heading-peek"><h1 class="section-heading reveal"><em>Taste Test</em> Schedule</h1><div class="page-peek" aria-hidden="true"><span class="page-veggie-tomato"></span></div></div>
-      <span class="section-accent reveal delay-1" aria-hidden="true"></span>
 
-      <aside class="session-tools" id="getting-started" aria-labelledby="session-tools-heading">
+      <p class="schedule-location">
+        Fridays at 1:00 p.m. &middot; Benson 036 (California Mission Room)
+        <a href="https://docs.google.com/document/d/183Ro43EVI7GLUZzQPJxGG65-fi1HjjMZV5E3wEpY_uQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Directions</a>
+      </p>
+
+      <aside class="schedule-prep-banner" aria-label="Recommended tools">
+        <p><strong>Ready to build?</strong> Bring your laptop.</p>
+        <a href="#getting-started">Tools &amp; free student offers <span aria-hidden="true">&darr;</span></a>
+      </aside>
+
+      <div class="schedule-quarter-header">
+        <h2 class="schedule-quarter" id="fall-heading">Fall Quarter 2026</h2>
+        <p class="schedule-subscribe">
+          Subscribe:
+          <a href="https://calendar.google.com/calendar/u/0/r?cid=c_65897020b77ac3e46324b38ad1ca4588a7f92815f3926a76bd855684906732d5%40group.calendar.google.com" target="_blank" rel="noopener noreferrer">Google Calendar</a>
+          &middot;
+          <a href="webcal://calendar.google.com/calendar/ical/c_65897020b77ac3e46324b38ad1ca4588a7f92815f3926a76bd855684906732d5%40group.calendar.google.com/public/basic.ics">Apple / Outlook</a>
+        </p>
+      </div>
+
+      <noscript><p class="section-intro">For the latest dates and session details, open the <a href="https://calendar.google.com/calendar/u/0/r?cid=c_65897020b77ac3e46324b38ad1ca4588a7f92815f3926a76bd855684906732d5%40group.calendar.google.com" target="_blank" rel="noopener noreferrer">AI Kitchen calendar</a>.</p></noscript>
+      <div class="schedule-grid" id="fall-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== BUILD PREPARATION: AFTER CURRENT SESSIONS ===== -->
+  <section class="section schedule-preparation">
+    <div class="container">
+      <aside class="session-tools" id="getting-started" aria-labelledby="session-tools-heading" tabindex="-1">
         <h2 id="session-tools-heading">Get ready to build</h2>
         <p class="session-tools-intro">Bring your laptop. We recommend ChatGPT Work for the hands-on build.</p>
         <div class="session-tools-options">
@@ -118,31 +186,19 @@
         </div>
         <p class="session-tools-checked">Student offers checked October 2, 2026; Claude access checked September 30. Eligibility and usage limits apply. <a href="tools.html#student-offers">More free student opportunities &rarr;</a></p>
       </aside>
-
-      <h2 class="schedule-quarter reveal delay-1">Fall Quarter 2026</h2>
-      <p class="section-intro reveal delay-1">
-        Fridays at 1:00 p.m. &middot; Benson Memorial Center 036 (California Mission Room), Santa Clara University<br>
-        <a href="https://docs.google.com/document/d/183Ro43EVI7GLUZzQPJxGG65-fi1HjjMZV5E3wEpY_uQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Directions to Benson 036</a>
-      </p>
-      <p class="section-intro reveal delay-1" style="margin-top: 0;">
+      <div class="schedule-how" aria-labelledby="friday-format-heading">
+        <h2 id="friday-format-heading">How Fridays work</h2>
+      <p class="section-intro">
         Every session starts with a live tutorial from our guest at 1:00, followed by a hands-on build for
         everyone in the room and time for open experimentation and questions. Most Fridays have a soft
         finish around 4:00, and you&rsquo;re welcome to stay and keep trying things together. Sessions marked
         1:00&ndash;3:00 wrap at 3:00 sharp so the room can turn over to the next event.
       </p>
-      <p class="section-intro reveal delay-1" style="margin-top: 0;">
+      <p class="section-intro">
         Want to be a guest chef? Dates marked &ldquo;Speaker to be announced&rdquo; are open. Read the <a href="guest-chefs.html">guest chef guide</a> or
         email <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a>.
       </p>
-      <p class="schedule-subscribe reveal delay-1">
-        Subscribe:
-        <a href="https://calendar.google.com/calendar/u/0/r?cid=c_65897020b77ac3e46324b38ad1ca4588a7f92815f3926a76bd855684906732d5%40group.calendar.google.com" target="_blank" rel="noopener noreferrer">Google Calendar</a>
-        &middot;
-        <a href="webcal://calendar.google.com/calendar/ical/c_65897020b77ac3e46324b38ad1ca4588a7f92815f3926a76bd855684906732d5%40group.calendar.google.com/public/basic.ics">Apple / Outlook</a>
-      </p>
-
-      <noscript><p class="section-intro">For the latest dates and session details, open the <a href="https://calendar.google.com/calendar/u/0/r?cid=c_65897020b77ac3e46324b38ad1ca4588a7f92815f3926a76bd855684906732d5%40group.calendar.google.com" target="_blank" rel="noopener noreferrer">AI Kitchen calendar</a>.</p></noscript>
-      <div class="schedule-grid" id="fall-grid"></div>
+      </div>
     </div>
   </section>
 
