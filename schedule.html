@@ -71,6 +71,9 @@
     .site-page.schedule-page #current .section-heading { margin-bottom: 0; }
     .schedule-location { margin: 0 0 18px; font: 500 16px/1.5 var(--sans); }
     .schedule-location a { display: inline-block; margin-left: 12px; }
+    .schedule-recordings-intro { margin: 0 0 18px; font: 500 15px/1.5 var(--sans); }
+    .schedule-recordings-intro a { text-decoration: underline; text-underline-offset: 4px; }
+    .schedule-recording-link { display: inline-flex; align-self: flex-start; align-items: center; gap: 5px; min-height: 32px; margin-top: 10px; font: 650 14px/1.5 var(--sans); text-decoration: underline; text-underline-offset: 4px; }
     .schedule-prep-banner {
       display: flex;
       align-items: center;
@@ -117,6 +120,7 @@
       <a class="site-wordmark" href="index.html" aria-label="AI Kitchen home"><span class="option-chef-tile" aria-hidden="true"><span class="chef-badge" aria-hidden="true"><svg class="chef-tile-hat" viewBox="0 0 30 22" aria-hidden="true"><path d="M7 15V11C3 10 2 7 4 4c2-3 6-3 8-1 2-3 7-3 9 0 3-1 7 1 7 4 0 3-2 4-5 5v3H7Z" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 18h14" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round"/></svg><span class="chef-green-ai">AI</span></span><span class="chef-tile-kitchen" aria-hidden="true">Kitchen</span></span></a>
       <div class="site-nav-links">
         <a class="site-nav-link" href="schedule.html" aria-current="page">Schedule</a>
+        <a class="site-nav-link" href="recordings.html">Recordings</a>
         <a class="site-nav-link" href="tools.html">Tools guide</a>
         <a class="site-nav-link" href="roles.html">Our people</a>
         <a class="site-nav-cta" href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">Get involved <span aria-hidden="true">↗</span></a>
@@ -136,6 +140,8 @@
         Fridays at 1:00 p.m. &middot; Benson 036 (California Mission Room)
         <a href="https://docs.google.com/document/d/183Ro43EVI7GLUZzQPJxGG65-fi1HjjMZV5E3wEpY_uQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Directions</a>
       </p>
+
+      <p class="schedule-recordings-intro">Looking for past sessions? <a href="recordings.html">Browse recordings <span aria-hidden="true">→</span></a></p>
 
       <aside class="schedule-prep-banner" aria-label="Recommended tools">
         <p><strong>Ready to build?</strong> Bring your laptop.</p>
@@ -237,6 +243,7 @@
       </div>
       <nav class="site-footer-links" aria-label="Footer navigation">
         <a href="schedule.html">Schedule</a>
+        <a href="recordings.html">Recordings</a>
         <a href="tools.html">Tools guide</a>
         <a href="roles.html">Leadership</a>
         <a href="news.html">News</a>
@@ -259,7 +266,7 @@
 
 
   <!-- ===== Schedule data (single source of truth, shared with index.html) ===== -->
-  <script src="sessions.js?v=20261002-2"></script>
+  <script src="sessions.js?v=20261006-recordings"></script>
 
   <!-- ===== Render schedule cards from sessions.js (shared by all quarters) ===== -->
   <script>
@@ -294,6 +301,12 @@
           ? '<a href="' + esc(host.url) + '" target="_blank" rel="noopener noreferrer">' + esc(host.name) + '</a>'
           : esc(host.name);
         return '<span class="student-host">Student host: ' + name + '</span>';
+      }
+
+      function recordingLink(s) {
+        return s.youtubeId
+          ? '<a class="schedule-recording-link" href="https://www.youtube.com/watch?v=' + encodeURIComponent(s.youtubeId) + '" target="_blank" rel="noopener noreferrer">Watch recording <span aria-hidden="true">↗</span></a>'
+          : '';
       }
 
       function card(s, i) {
@@ -338,6 +351,7 @@
               '<span class="schedule-title">' + esc(s.title) + '</span>' +
               fTopic +
               studentHost(s) +
+              recordingLink(s) +
             '</div>' +
             '<div class="speaker-avatar" style="text-indent: 0; font-size: 2rem; background-color: var(--coral-light);" aria-hidden="true">' + (s.emoji || '') + '</div>' +
           '</div>';
@@ -368,6 +382,7 @@
             studentHost(s) +
             roomAlert(s) +
             flexAlert(s) +
+            recordingLink(s) +
           '</div>' +
           avatar(s.photo, s.initials) +
           (s.copresenter ? avatar(s.copresenter.photo, s.copresenter.initials, ' margin-left: -12px;') : '') +

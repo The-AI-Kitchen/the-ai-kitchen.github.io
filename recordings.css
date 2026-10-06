@@ -1,0 +1,42 @@
+/* Recording archive and its homepage invitation, using the shared site palette. */
+.recordings-library { width: min(1180px, calc(100% - 80px)); margin-inline: auto; padding: 48px 0 24px; }
+.recordings-library h1 { font-size: clamp(36px, 5vw, 58px); }
+.recordings-intro { max-width: 680px; margin: 20px 0; font-size: 24px; }
+.recordings-utilities { display: flex; flex-wrap: wrap; gap: 12px 28px; margin: 0 0 32px; font: 600 15px/1.5 var(--sans); }
+.recordings-utilities a { text-decoration: underline; text-underline-offset: 4px; }
+.recordings-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.recording-card { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden; background: var(--panel); }
+.recording-thumbnail { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--wash); }
+.recording-thumbnail img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.recording-play { position: absolute; left: 16px; bottom: 14px; display: grid; place-items: center; width: 44px; height: 36px; border-radius: 8px; background: var(--green); color: var(--cream); font-size: 18px; }
+.recording-content { display: flex; flex: 1; flex-direction: column; padding: 24px; }
+.recording-content time { font: 600 12px/1.5 var(--sans); color: var(--text-muted); }
+.recording-content h2 { margin: 12px 0; font-size: 24px; line-height: 1.2; }
+.recording-presenter { margin: 0 0 24px; font-size: 20px; }
+.recording-links { display: flex; flex-wrap: wrap; gap: 12px 20px; margin-top: auto; font: 600 13px/1.5 var(--sans); }
+.recording-links a { min-height: 32px; display: inline-flex; align-items: center; gap: 5px; text-decoration: underline; text-underline-offset: 4px; }
+.recording-watch { color: var(--rust); }
+.recordings-page main a:focus-visible { outline: 3px solid var(--rust); outline-offset: 5px; }
+.home-page .home-recordings { padding: 0 0 30px; }
+.home-page .home-recordings-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 28px 32px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); }
+.home-page .home-recordings h2 { font-size: clamp(27px, 3vw, 34px); }
+.home-page .home-recordings p { margin-top: 10px; font-size: 21px; }
+.home-page .home-recordings .text-link { flex: none; font: 700 14px/1.5 var(--sans); color: var(--rust); }
+@media (max-width: 1040px) {
+  .recordings-library { width: calc(100% - 48px); }
+  .recordings-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .recordings-library { width: calc(100% - 40px); padding-top: 32px; }
+  .recordings-library .page-heading-peek { display: grid; grid-template-columns: minmax(0, 1fr) 72px; align-items: center; gap: 12px; }
+  .recordings-library .page-heading-peek .page-peek { width: 72px; height: 76px; margin-left: 0; }
+  .recordings-library .page-veggie-tomato { width: 69.4px; height: 79.5px; background-size: 262.2px 262.2px; background-position: -183.8px -164.6px; transform: translateY(12.5px); }
+  .recordings-intro { font-size: 22px; }
+  .recordings-grid { gap: 20px; }
+  .recording-content { padding: 20px; }
+  .recording-content h2 { font-size: 22px; }
+  .home-page .home-recordings-inner { align-items: flex-start; flex-direction: column; gap: 18px; padding: 24px; }
+}
+@media (max-width: 600px) {
+  .recordings-grid { grid-template-columns: 1fr; }
+}

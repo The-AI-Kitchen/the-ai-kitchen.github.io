@@ -1,6 +1,8 @@
 // AI Kitchen session data. Single source of truth for both the schedule page
 // and the home-page spotlight. To update a session, edit this file and both
-// pages will pick up the change.
+// pages will pick up the change. The recordings archive also uses this data.
+// Add youtubeId only after a recording is available, then refresh its static
+// HTML with: node scripts/build-recordings.mjs
 window.AI_KITCHEN_SESSIONS = [
   {
     date: '2026-04-24',
@@ -9,6 +11,7 @@ window.AI_KITCHEN_SESSIONS = [
     title: 'Professor of Human-Computer Interaction, Santa Clara University',
     topic: 'Slide Deck Recipes with Claude Design',
     topicUrl: 'slide-recipes.html',
+    youtubeId: 'rI36pT6fzkw',
     url: 'https://kailukoff.com/',
     photo: 'speakers/kai-lukoff.jpeg',
     initials: 'KL',
@@ -21,6 +24,7 @@ window.AI_KITCHEN_SESSIONS = [
     title: 'Software Engineer \u00b7 MIT PhD EECS',
     topic: 'How to Think Like an Engineer (Building a Game with AI)',
     topicUrl: 'think-like-an-engineer.html',
+    youtubeId: '7ue9g8IWmMg',
     url: 'https://www.linkedin.com/in/ACoAAAKXFzwByxtFT4agESe5Vbpyk1T6nGMkkbw',
     photo: 'speakers/luis-sarmenta.jpeg',
     initials: 'LS',
@@ -33,6 +37,7 @@ window.AI_KITCHEN_SESSIONS = [
     title: 'CTO & Co-founder, Sprinter Health',
     topic: 'Ralph Loops for Movie Recommendations',
     topicUrl: 'ralph-loops-movies.html',
+    youtubeId: '25oosZptkOc',
     url: 'https://www.linkedin.com/in/cameron-behar/',
     photo: 'speakers/cameron-behar.jpeg',
     initials: 'CB',
@@ -57,6 +62,7 @@ window.AI_KITCHEN_SESSIONS = [
     title: 'Head of Research, Google DeepMind',
     topic: 'From Reviews to Insights: AI-Assisted UX Research',
     topicUrl: 'reviews-to-insights.html',
+    youtubeId: 'G06usEhVS5w',
     url: 'https://www.linkedin.com/in/zachary-schendel-38353157/',
     photo: 'speakers/zachary-schendel.jpeg',
     initials: 'ZS',
@@ -69,6 +75,7 @@ window.AI_KITCHEN_SESSIONS = [
     title: 'Professor of Finance, Santa Clara University',
     topic: 'Jupyter AI for Research',
     topicUrl: 'jupyter-ai-research.html',
+    youtubeId: '-WCGuJZ2gWs',
     url: 'https://www.linkedin.com/in/sanjivd/',
     photo: 'speakers/sanjiv-das.jpeg',
     initials: 'SD',
@@ -102,6 +109,7 @@ window.AI_KITCHEN_SUMMER_SESSIONS = [
     title: 'Autonomy Systems Engineer, DiDi Global',
     topic: 'OpenClaw for Work',
     topicUrl: 'openclaw-for-work.html',
+    youtubeId: 'Wb5wpjvbNwM',
     url: 'https://www.linkedin.com/in/xiaohan-liu-5b3914110/',
     photo: 'speakers/xiaohan-liu.jpeg',
     initials: 'XL'
@@ -113,6 +121,7 @@ window.AI_KITCHEN_SUMMER_SESSIONS = [
     title: 'Senior Product Manager, Electronic Arts (EA)',
     topic: 'Build a Game in an Afternoon',
     topicUrl: 'build-a-game-in-an-afternoon.html',
+    youtubeId: 'i55sVcSs23w',
     url: 'https://www.linkedin.com/in/sherriecao/',
     photo: 'speakers/sherrie-cao.jpeg',
     initials: 'SC',
@@ -142,6 +151,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     title: 'Professor of Human-Computer Interaction, Santa Clara University',
     topic: 'Interview Me First: Rebuilding My Website Live with AI',
     topicUrl: 'interview-me-first.html',
+    youtubeId: 'TFI572seIT0',
     url: 'https://kailukoff.com/',
     photo: 'speakers/kai-lukoff.jpeg',
     initials: 'KL',
