@@ -64,6 +64,13 @@
 .example-link span { margin-left: 6px; }
 .example-link small { display: block; font: 450 .83rem/1.5 var(--sans); margin-top: 5px; color: var(--text-muted); }
 .exercise > .closing-line { margin-top: 24px; font: 650 1.2rem/1.4 var(--sans); color: var(--green); }
+.lecture-slides { padding: 0 0 44px; margin-bottom: 44px; border-bottom: 1px solid var(--guide-rule); scroll-margin-top: 24px; }
+.lecture-slides h2 { font-size: 1.8rem; margin-bottom: 15px; }
+.lecture-slides > p { margin-bottom: 18px; font-size: 1.15rem; line-height: 1.6; }
+.lecture-slides > .slides-access { font: 450 .94rem/1.65 var(--sans); }
+.lecture-slides a { text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.slides-viewer { aspect-ratio: 16 / 9; width: 100%; overflow: hidden; border: 1px solid var(--guide-rule); border-radius: 6px; background: #fffdf6; }
+.slides-viewer iframe { display: block; width: 100%; height: 100%; border: 0; }
 .keep-going { padding: 0 0 30px; }
 .keep-going h2 { font-size: 1.8rem; margin-bottom: 15px; }
 .keep-going > p { margin-bottom: 18px; font-size: 1.15rem; line-height: 1.6; }
@@ -107,7 +114,8 @@
  .check-in p { font-size: .95rem; }
  .example-body { padding-inline: 13px; }
  .exercise summary { font-size: .9rem; padding: 14px; }
- .keep-going h2 { font-size: 1.6rem; }
+ .lecture-slides { padding-bottom: 34px; margin-bottom: 34px; }
+ .lecture-slides h2, .keep-going h2 { font-size: 1.6rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print {
@@ -126,6 +134,8 @@
  .prompt-toolbar { padding: 7pt 10pt; }
  .prompt-text { padding: 10pt; }
  .exercise details:not([open]) { display: none; }
+ .lecture-slides { break-inside: avoid; padding-bottom: 15pt; margin-bottom: 18pt; }
+ .slides-viewer { display: none; }
  .keep-going { break-inside: avoid; }
  a { color: inherit; }
 }
