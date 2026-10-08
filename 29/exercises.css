@@ -26,12 +26,12 @@
 .step-nav a[aria-current="step"] { font-weight: 750; color: var(--rust); }
 .nav-note { max-width: 190px; font: 400 .84rem/1.55 var(--sans); color: var(--text-muted); margin-top: 20px; }
 .exercise-content { min-width: 0; }
-.field-guide-page .exercise { padding: 0 0 44px; margin-bottom: 44px; background: transparent; border: 0; border-bottom: 1px solid var(--guide-rule); border-radius: 0; box-shadow: none; scroll-margin-top: 24px; }
+.field-guide-page main .exercise { padding: 0 0 44px; margin-bottom: 44px; background: transparent; border: 0; border-bottom: 1px solid var(--guide-rule); border-radius: 0; box-shadow: none; scroll-margin-top: 24px; }
 .exercise-heading { display: grid; grid-template-columns: 46px minmax(0, 1fr); align-items: center; gap: 16px; margin-bottom: 16px; }
 .step-number { font: 600 1.95rem/1 var(--serif); color: var(--rust); width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--guide-rule); border-radius: 50%; }
-.field-guide-page .exercise-meta { margin: 0 0 6px; color: var(--text-muted); font: 500 .76rem/1.4 var(--sans); }
+.field-guide-page main .exercise .exercise-meta { margin: 0 0 6px; color: var(--text-muted); font: 500 .76rem/1.4 var(--sans); }
 .exercise h2 { font-size: clamp(1.5rem, 2.3vw, 1.9rem); line-height: 1.18; }
-.field-guide-page .pattern { color: var(--rust); font: 650 .8rem/1.5 var(--sans); margin: 0 0 20px; }
+.field-guide-page main .exercise .pattern { color: var(--rust); font: 650 .8rem/1.5 var(--sans); margin: 0 0 20px; }
 .exercise > p, .exercise > ul, .exercise > ol { margin: 0 0 20px; font-size: 1.19rem; line-height: 1.55; }
 .exercise ul, .exercise ol { padding-left: 23px; }
 .exercise li { padding-left: 3px; margin: 7px 0; }
@@ -47,8 +47,8 @@
 .copy-button[data-copy-state="success"] { color: var(--cream); background: var(--green); }
 .copy-button[disabled] { cursor: wait; opacity: .7; }
 .prompt-text { display: block; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 450 1rem/1.65 var(--sans); margin: 0; padding: 19px 20px 7px; color: var(--green); max-width: 100%; user-select: text; }
-.field-guide-page .copy-status { padding: 0 20px 12px; margin: 0; min-height: 30px; color: var(--text-muted); font: 500 .75rem/1.5 var(--sans); }
-.field-guide-page .copy-status:empty::before { content: "Select the text to copy it manually, if needed."; }
+.field-guide-page main .exercise .copy-status { padding: 0 20px 12px; margin: 0; min-height: 30px; color: var(--text-muted); font: 500 .75rem/1.5 var(--sans); }
+.field-guide-page main .exercise .copy-status:empty::before { content: "Select the text to copy it manually, if needed."; }
 .check-in { display: grid; grid-template-columns: 80px minmax(0, 1fr); gap: 16px; padding: 17px 0 4px; border-top: 1px solid #173e2c25; margin-top: 26px; }
 .check-label { color: var(--rust); font: 750 .78rem/1.5 var(--sans); padding-top: 3px; }
 .check-in p { font: 500 1rem/1.65 var(--sans); margin: 0; }
@@ -92,17 +92,17 @@
  .step-nav ol { display: grid; grid-template-columns: 1fr 1fr; gap: 0 17px; }
  .step-nav a { font-size: .84rem; gap: 7px; }
  .nav-note { max-width: none; margin-top: 13px; font-size: .79rem; }
- .field-guide-page .exercise { margin-bottom: 34px; padding-bottom: 34px; }
+ .field-guide-page main .exercise { margin-bottom: 34px; padding-bottom: 34px; }
  .exercise-heading { gap: 12px; grid-template-columns: 38px minmax(0, 1fr); }
  .step-number { width: 38px; height: 38px; font-size: 1.6rem; }
- .field-guide-page .exercise-meta { font-size: .71rem; }
+ .field-guide-page main .exercise .exercise-meta { font-size: .71rem; }
  .exercise h2 { font-size: 1.5rem; }
  .exercise > p, .exercise > ul, .exercise > ol { font-size: 1.14rem; }
  .prompt-toolbar { padding: 9px 12px; gap: 8px; }
  .prompt-toolbar > span { font-size: .72rem; }
  .copy-button { font-size: .76rem; padding-inline: 9px; }
  .prompt-text { padding: 16px 15px 7px; font-size: .95rem; line-height: 1.65; }
- .field-guide-page .copy-status { padding-inline: 15px; }
+ .field-guide-page main .exercise .copy-status { padding-inline: 15px; }
  .check-in { grid-template-columns: 1fr; gap: 7px; }
  .check-in p { font-size: .95rem; }
  .example-body { padding-inline: 13px; }
@@ -117,7 +117,7 @@
  .guide-hero h1 { font-size: 26pt; }
  .guide-hero .page-peek, .step-nav, .download-links, .copy-button, .copy-status, .share-page img { display: none; }
  .guide-layout { display: block; padding-top: 18pt; }
- .field-guide-page .exercise { padding-bottom: 15pt; margin-bottom: 18pt; }
+ .field-guide-page main .exercise { padding-bottom: 15pt; margin-bottom: 18pt; }
  .exercise-heading, .pattern, .check-in { break-inside: avoid; }
  .exercise-heading { break-after: avoid; }
  .exercise h2 { font-size: 16pt; }
