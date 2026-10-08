@@ -235,10 +235,14 @@ window.AI_KITCHEN_FALL_SESSIONS = [
   {
     date: '2026-11-13',
     label: 'Nov 13',
-    tbd: true,
-    name: 'Adam Smith \u00b7 OpenAI',
-    topic: 'Ski patrol awards workflow with AI',
-    description: 'Adam Smith (OpenAI; SCU \u201908) will share how he uses AI to prepare a ski patrol awards banquet, followed by hands-on practice. Full session details coming soon.',
+    name: 'Adam Smith',
+    title: 'OpenAI \u00b7 CEO, Bear Valley National Ski Patrol',
+    topic: 'Beyond the Prompt: Getting Real Work Done with AI Agents',
+    description: 'See how Adam Smith collaborates with his AI assistant, Kepler, on volunteer leadership, community responsibilities, and home projects, then practice deciding what to delegate, verify, and handle yourself.',
+    topicUrl: 'beyond-the-prompt.html',
+    url: 'https://www.linkedin.com/in/a16h/',
+    photo: 'speakers/adam-smith.jpeg',
+    initials: 'AS',
     note: '1:00\u20133:00 p.m.'
   },
   {
