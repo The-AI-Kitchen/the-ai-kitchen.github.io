@@ -97,13 +97,25 @@
         return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
       }
 
+      function storyLink(n) {
+        return ' href="' + esc(n.url) + '"' + (n.external ? ' target="_blank" rel="noopener noreferrer"' : '');
+      }
+      function thumbnail(n) {
+        if (!n.image) return '';
+        var photo = n.image;
+        return '<a class="news-thumbnail' + (photo.kind === 'logo' ? ' news-thumbnail--logo' : '') + (photo.dark ? ' news-thumbnail--dark' : '') + '"' + storyLink(n) + ' aria-label="' + esc('Read: ' + n.headline) + '">' +
+          '<img src="' + esc(photo.src) + '" alt="' + esc(photo.alt) + '" width="' + esc(photo.width) + '" height="' + esc(photo.height) + '" loading="lazy" decoding="async">' +
+        '</a>';
+      }
+
       list.innerHTML = visible.map(function(n) {
         // body is allowed to contain HTML (e.g., links) since news.js is
         // an author-controlled file. Headline and date are still escaped.
         return '<li class="news-item reveal">' +
           '<div class="news-date">' + esc(fmtDate(n.date)) + '</div>' +
-          '<div class="news-headline">' + esc(n.headline) + '</div>' +
-          '<div class="news-body">' + (n.body || '') + '</div>' +
+          '<h3 class="news-headline">' + (n.url ? '<a' + storyLink(n) + '>' + esc(n.headline) + '</a>' : esc(n.headline)) + '</h3>' +
+          '<div class="news-body">' + (n.summary || n.body || '') + '</div>' +
+          thumbnail(n) +
         '</li>';
       }).join('');
       section.hidden = false;

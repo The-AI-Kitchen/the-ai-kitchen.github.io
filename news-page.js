@@ -24,13 +24,25 @@
         return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
       }
 
+      function storyLink(n) {
+        return ' href="' + esc(n.url) + '"' + (n.external ? ' target="_blank" rel="noopener noreferrer"' : '');
+      }
+      function thumbnail(n) {
+        if (!n.image) return '';
+        var photo = n.image;
+        return '<a class="news-thumbnail' + (photo.kind === 'logo' ? ' news-thumbnail--logo' : '') + (photo.dark ? ' news-thumbnail--dark' : '') + '"' + storyLink(n) + ' aria-label="' + esc('Read: ' + n.headline) + '">' +
+          '<img src="' + esc(photo.src) + '" alt="' + esc(photo.alt) + '" width="' + esc(photo.width) + '" height="' + esc(photo.height) + '" loading="lazy" decoding="async">' +
+        '</a>';
+      }
+
       list.innerHTML = visible.map(function(n) {
         // body is allowed to contain HTML (e.g., links) since news.js is
         // an author-controlled file. Headline and date are still escaped.
-        return '<li class="news-item reveal">' +
+        return '<li class="news-item reveal"' + (n.id ? ' id="' + esc(n.id) + '"' : '') + '>' +
           '<div class="news-date">' + esc(fmtDate(n.date)) + '</div>' +
-          '<div class="news-headline">' + esc(n.headline) + '</div>' +
-          '<div class="news-body">' + (n.body || '') + '</div>' +
+          '<h2 class="news-headline">' + (n.url ? '<a' + storyLink(n) + '>' + esc(n.headline) + '</a>' : esc(n.headline)) + '</h2>' +
+          '<div class="news-body">' + (n.summary || n.body || '') + '</div>' +
+          thumbnail(n) +
         '</li>';
       }).join('');
       document.getElementById('news-fallback').hidden = true;
@@ -39,3 +51,12 @@
     })();
 
 document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("visible")});
+
+// News items are inserted after the browser initially looks for a URL fragment.
+// Wait for fonts so a heading above the item cannot move the scroll position.
+function scrollToNewsItem() {
+  var newsTarget = window.location.hash && document.getElementById(window.location.hash.slice(1));
+  if (newsTarget && newsTarget.classList.contains('news-item')) newsTarget.scrollIntoView();
+}
+if (document.fonts) document.fonts.ready.then(scrollToNewsItem);
+else scrollToNewsItem();

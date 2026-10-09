@@ -956,6 +956,80 @@ a.schedule-topic:hover {
   line-height: 1.3;
 }
 
+.news-headline a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.news-headline a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.news-thumbnail {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: var(--space-lg);
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--wash);
+}
+
+.news-thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-thumbnail--logo {
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.news-thumbnail--logo img {
+  object-fit: contain;
+  padding: 28px;
+}
+
+.news-thumbnail--dark {
+  background: #222;
+}
+
+.news-thumbnail:focus-visible {
+  outline: 3px solid var(--rust);
+  outline-offset: 4px;
+}
+
+.news-index .news-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xl) var(--space-2xl);
+}
+
+.news-index .news-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.news-index .news-body {
+  margin-bottom: var(--space-lg);
+}
+
+.news-index .news-thumbnail {
+  margin-top: auto;
+}
+
+@media (max-width: 760px) {
+  .news-index .news-list {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
 .news-body {
   font-size: clamp(0.875rem, 1.2vw, 1rem);
   color: var(--text-secondary);
@@ -971,6 +1045,57 @@ a.schedule-topic:hover {
 
 .news-body a:hover {
   text-decoration-color: var(--coral);
+}
+
+.news-body p + p {
+  margin-top: var(--space-md);
+}
+
+.news-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  max-width: 960px;
+}
+
+.news-gallery figure {
+  min-width: 0;
+}
+
+.news-gallery figure:first-child {
+  grid-column: 1 / -1;
+}
+
+.news-gallery a {
+  display: block;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.news-gallery a:focus-visible {
+  outline: 3px solid var(--rust);
+  outline-offset: 4px;
+}
+
+.news-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+.news-gallery figcaption {
+  margin-top: var(--space-sm);
+  color: var(--text-muted);
+  font: 400 14px/1.45 var(--sans);
+}
+
+@media (max-width: 760px) {
+  .news-gallery {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
 }
 
 /* --- In the Press --- */
