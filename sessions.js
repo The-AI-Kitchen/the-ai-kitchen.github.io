@@ -179,6 +179,8 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     name: 'Rishan Mohamed',
     title: 'Founder, HiringCoach.ai',
     topic: 'Building an AI Chief of Staff',
+    topicUrl: 'https://hiringcoach.ai/talks/ai-kitchen',
+    description: 'Build a personal AI chief of staff in ChatGPT with Rishan Mohamed. Design a morning briefing, connect approved information sources, and save reusable instructions for daily priorities, schedules, and relevant SCU events.',
     url: 'https://www.linkedin.com/in/rishanmohamed/',
     photo: 'speakers/rishan-mohamed.jpeg',
     initials: 'RM',

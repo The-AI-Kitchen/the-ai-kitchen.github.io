@@ -528,6 +528,13 @@ html{ scroll-behavior:smooth; }
 .home-page .home-speaker { font-size:19px; margin-top:12px; }
 .home-page .home-speaker a { color:var(--body); }
 .home-page .home-speaker-title { display:block; font-size:17px; margin-top:4px; }
+.home-page .home-speaker-profile { display:flex; align-items:center; gap:14px; margin-top:14px; }
+.home-page .home-speaker-profile .home-speaker { min-width:0; margin:0; }
+.home-page .home-speaker-photos { display:flex; flex:none; }
+.home-page .home-speaker-photos[hidden] { display:none; }
+.home-page .home-speaker-photos img { width:64px; height:64px; object-fit:cover; border-radius:50%; border:1px solid var(--line); }
+.home-page .home-speaker-photos img + img { margin-left:-20px; }
+.home-page .next-main h2 a { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:5px; }
 .home-page .home-session-description { margin-top:12px; font-size:18px; line-height:1.4; }
 .home-page .home-session-host { display:block; font-size:17px; margin-top:12px; }
 .home-page .session-logistics p { margin:0; }
@@ -570,6 +577,8 @@ html{ scroll-behavior:smooth; }
  .home-page .home-updates .news-list { grid-template-columns:1fr; }
  .home-page .home-updates .news-item { padding:21px; }
  .home-page .home-speaker { font-size:18px; }
+ .home-page .home-speaker-profile { gap:12px; }
+ .home-page .home-speaker-photos img { width:48px; height:48px; }
  .home-page .home-session-description { font-size:17px; }
  .home-page .home-press .press-title { font-size:24px; }
  .home-page .home-press .press-card { padding:22px; }

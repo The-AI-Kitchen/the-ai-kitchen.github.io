@@ -35,6 +35,14 @@
   }
   var speakers = document.getElementById('spotlight-speakers');
   if (!next.featured) {
+    var photos = document.getElementById('spotlight-photos');
+    [next, next.copresenter].forEach(function (person) {
+      if (!person || !person.photo) return;
+      var photo = document.createElement('img');
+      photo.src = person.photo; photo.alt = person.name;
+      photo.width = 64; photo.height = 64; photo.loading = 'lazy'; photo.decoding = 'async';
+      photos.appendChild(photo); photos.hidden = false;
+    });
     speakers.appendChild(document.createTextNode('With ')); speakers.appendChild(speaker(next));
     if (next.copresenter) { speakers.appendChild(document.createTextNode(' & ')); speakers.appendChild(speaker(next.copresenter)); }
     document.getElementById('spotlight-title').textContent = (next.title || '') + (next.copresenter && next.copresenter.title ? ' · ' + next.copresenter.title : '');
