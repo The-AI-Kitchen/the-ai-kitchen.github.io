@@ -207,7 +207,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     title: 'Founder, AI Security University',
     // Working title based on the guest’s proposed workflow; final title and materials pending.
     topic: 'Turning Slides into Videos with AI',
-    description: 'Dan Barahona shares his workflow for turning static course slides into videos with Claude Code and HyperFrames. Full session details and hands-on setup coming soon.',
+    description: 'Dan Barahona shares his workflow for turning static course slides into videos with Claude Code and HyperFrames, alongside practical AI security tips. Full session details and hands-on setup coming soon.',
     url: 'https://aisec.university',
     initials: 'DB',
     note: '1:00\u20134:00 p.m. \u00b7 soft finish',
