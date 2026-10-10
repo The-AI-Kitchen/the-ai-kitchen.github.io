@@ -203,9 +203,13 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     date: '2026-10-23',
     label: 'Oct 23',
     studentHost: { name: 'Sandy Cai', url: 'https://www.linkedin.com/in/sc098/' },
-    tbd: true,
-    name: 'Speaker to be announced',
-    topic: 'Topic to be announced',
+    name: 'Dan Barahona',
+    title: 'Founder, AI Security University',
+    // Working title based on the guest’s proposed workflow; final title and materials pending.
+    topic: 'Turning Slides into Videos with AI',
+    description: 'Dan Barahona shares his workflow for turning static course slides into videos with Claude Code and HyperFrames. Full session details and hands-on setup coming soon.',
+    url: 'https://aisec.university',
+    initials: 'DB',
     note: '1:00\u20134:00 p.m. \u00b7 soft finish',
     roomChange: 'Sobrato Hall 024BC'
   },
@@ -260,5 +264,16 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     note: '1:00\u20134:00 p.m. \u00b7 soft finish'
   },
   { date: '2026-11-27', label: 'Nov 27', cancelled: true, topic: 'No session \u00b7 Thanksgiving break' },
-  { date: '2026-12-04', label: 'Dec 4', tbd: true, name: 'Speaker to be announced', note: '1:00\u20134:00 p.m. \u00b7 soft finish' }
+  {
+    date: '2026-12-04',
+    label: 'Dec 4',
+    name: 'Aria Shi',
+    title: 'SCU PhD Student; GTM Lead, AdaL',
+    // Working title and summary based on the proposed workflow; final guest copy pending.
+    topic: 'From Data to a Chart and Narrated Video with AI',
+    description: 'Use AdaL Desktop to turn a small dataset into a visualization and a short narrated video, checking calculations and refining the explanation along the way. Full session details coming soon.',
+    tools: ['AdaL Desktop'],
+    initials: 'AS',
+    note: '1:00\u20134:00 p.m. \u00b7 soft finish'
+  }
 ];

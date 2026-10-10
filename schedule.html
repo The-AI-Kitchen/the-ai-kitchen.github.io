@@ -266,7 +266,7 @@
 
 
   <!-- ===== Schedule data (single source of truth, shared with index.html) ===== -->
-  <script src="sessions.js?v=20261006-recordings"></script>
+  <script src="sessions.js?v=20261010-speakers"></script>
 
   <!-- ===== Render schedule cards from sessions.js (shared by all quarters) ===== -->
   <script>
@@ -276,6 +276,12 @@
       function avatar(photo, initials, extraStyle) {
         var style = photo ? 'background-image: url(\'' + esc(photo) + '\');' : 'text-indent: 0;';
         return '<div class="speaker-avatar" style="' + style + (extraStyle || '') + '" aria-hidden="true">' + esc(initials || '') + '</div>';
+      }
+
+      function speakerName(person) {
+        return person.url
+          ? '<a href="' + esc(person.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(person.name) + '</a>'
+          : '<span class="schedule-name">' + esc(person.name) + '</span>';
       }
 
       // A one-off room change is called out on the card itself, so the quarter
@@ -371,11 +377,11 @@
             (s.description ? '<span class="schedule-description">' + esc(s.description) + '</span>' : '') +
             (s.copresenter
               ? '<span class="schedule-names">' +
-                  '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>' +
+                  speakerName(s) +
                   ' &amp; ' +
-                  '<a href="' + esc(s.copresenter.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.copresenter.name) + '</a>' +
+                  speakerName(s.copresenter) +
                 '</span>'
-              : '<a href="' + esc(s.url) + '" class="schedule-name" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>') +
+              : speakerName(s)) +
             (s.title ? '<span class="schedule-title">' + esc(s.title) + (s.copresenter ? ' \u00b7 ' + esc(s.copresenter.title) : '') + '</span>' : '') +
             toolsHtml +
             (s.note ? '<span class="schedule-title">' + esc(s.note) + '</span>' : '') +
