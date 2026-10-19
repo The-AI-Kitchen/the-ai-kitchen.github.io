@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make Great Videos with Claude | AI Kitchen</title>
+  <meta name="description" content="Turn slides and recordings into videos with Dan Barahona, Claude Code, and HyperFrames. October 23, 2026, 1–4 p.m., Sobrato Hall 024BC, Santa Clara University.">
+
+  <meta property="og:title" content="Make Great Videos with Claude | AI Kitchen">
+  <meta property="og:description" content="Turn your slides, recordings, and webinar replays into videos. A hands-on session with Dan Barahona on October 23, 2026, 1–4 p.m., Sobrato Hall 024BC, Santa Clara University.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theaikitchen.org/make-great-videos-with-claude.html">
+  <meta property="og:image" content="https://theaikitchen.org/speakers/dan-barahona.png">
+  <meta property="og:image:alt" content="Dan Barahona, founder of AI Security University">
+  <link rel="canonical" href="https://theaikitchen.org/make-great-videos-with-claude.html">
+
+  <link rel="icon" href="assets/design/ai-kitchen-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .section { padding: 24px 0; }
+    .session-container { max-width: 960px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 32px); }
+    .session-hero { padding-top: clamp(40px, 6vh, 64px); padding-bottom: clamp(20px, 3vh, 32px); }
+    .session-hero .eyebrow {
+      font-family: 'Figtree', sans-serif; font-size: 0.8125rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1.5px; color: var(--coral); margin-bottom: 8px;
+    }
+    .session-hero h1 {
+      font-family: 'Figtree', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem); color: var(--text-primary);
+      line-height: 1.1; margin-bottom: 12px;
+    }
+    .session-hero h1 em { font-style: italic; color: var(--coral); }
+    .session-hero .session-sub {
+      color: var(--text-secondary); font-size: 1.0625rem; line-height: 1.5;
+      max-width: 720px; margin-bottom: 6px;
+    }
+    .session-hero .session-meta { color: var(--text-muted); font-size: 0.875rem; margin-top: 8px; }
+    .session-heading {
+      font-family: 'Figtree', Georgia, serif; font-size: 1.5rem;
+      color: var(--text-primary); margin-top: 24px; margin-bottom: 16px;
+    }
+    .session-heading em { font-style: italic; color: var(--coral); }
+    .session-prose { max-width: 760px; }
+    .session-prose p { color: var(--text-secondary); font-size: 1rem; line-height: 1.65; margin-bottom: 0; }
+    .session-prose p + p { margin-top: 16px; }
+    .session-prose ul, .session-prose ol { padding-left: 24px; margin: 16px 0; }
+    .session-prose li { color: var(--text-secondary); font-size: 1rem; line-height: 1.65; margin-bottom: 10px; }
+    .session-prose strong { color: var(--text-primary); }
+    .session-room-note { color: var(--coral); font-weight: 600; }
+    .session-prep { background: var(--bg-cta); border-left: 4px solid var(--coral); border-radius: var(--radius-sm); padding: 20px 24px; }
+    .session-prep h3 { font-family: 'Figtree', sans-serif; font-size: 1.125rem; margin-bottom: 12px; }
+    .session-prose .materials-note { font-size: 0.9375rem; }
+    .session-footer-note {
+      margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--bg-alt);
+      color: var(--text-muted); font-size: 13px; margin-bottom: clamp(48px, 6vh, 64px);
+    }
+    .session-footer-note a { color: var(--coral); }
+  </style>
+  <link rel="stylesheet" href="site-shell.css">
+</head>
+<body class="site-page">
+
+  <!-- ===== NAV ===== -->
+  <a class="site-skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="site-wordmark" href="index.html" aria-label="AI Kitchen home"><span class="option-chef-tile" aria-hidden="true"><span class="chef-badge" aria-hidden="true"><svg class="chef-tile-hat" viewBox="0 0 30 22" aria-hidden="true"><path d="M7 15V11C3 10 2 7 4 4c2-3 6-3 8-1 2-3 7-3 9 0 3-1 7 1 7 4 0 3-2 4-5 5v3H7Z" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 18h14" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round"/></svg><span class="chef-green-ai">AI</span></span><span class="chef-tile-kitchen" aria-hidden="true">Kitchen</span></span></a>
+      <div class="site-nav-links">
+        <a class="site-nav-link" href="schedule.html">Schedule</a>
+        <a class="site-nav-link" href="recordings.html">Recordings</a>
+        <a class="site-nav-link" href="tools.html">Tools guide</a>
+        <a class="site-nav-link" href="roles.html">Our people</a>
+        <a class="site-nav-cta" href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">Get involved <span aria-hidden="true">↗</span></a>
+      </div>
+      <a class="site-scu-brand" aria-label="Santa Clara University website" href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University"></a>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+  <section class="section session-hero">
+    <div class="session-container">
+      <div class="eyebrow">October 23, 2026 &middot; Fall Taste Test</div>
+      <div class="page-heading-peek"><h1>Make Great Videos <em>with Claude</em></h1><div class="page-peek" aria-hidden="true"><span class="page-veggie-tomato"></span></div></div>
+      <p class="session-sub">Turn slides and recordings into course videos and Instagram reels with Dan Barahona.</p>
+      <p class="session-meta"><strong>Friday, October 23, 2026 &middot; 1:00&ndash;4:00 p.m. &middot; Soft finish</strong><br>
+        <span class="session-room-note">Different room this week: Sobrato Hall 024BC, Santa Clara University</span><br>
+        Student host: <a href="https://www.linkedin.com/in/sc098/" target="_blank" rel="noopener noreferrer">Sandy Cai</a><br>
+        Everyone is welcome. No coding experience or registration required.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">About the <em>session</em></h2>
+      <div class="session-prose">
+        <p>You already have the raw material: slides, a recording of yourself talking, a webinar replay. Dan Barahona, founder of <a href="https://aisec.university" target="_blank" rel="noopener noreferrer">AI Security University</a>, will show how he turns those into polished course videos and Instagram reels with Claude Code and HyperFrames, starting from an empty folder and one prompt.</p>
+        <p>Along the way, we&rsquo;ll cover what to share with an AI assistant, what permissions to give it, and how to check its work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="session-container">
+      <h2 class="session-heading">Try it <em>yourself</em></h2>
+      <div class="session-prose">
+        <p>Follow the same workflow as Dan and make an animated video from a short starter slide deck or your own material.</p>
+        <ol>
+          <li><strong>Start with an empty folder.</strong> Open Claude Code in a new project folder.</li>
+          <li><strong>Ask Claude to set up HyperFrames.</strong> Claude installs the video tool during the session.</li>
+          <li><strong>Turn your material into a video.</strong> Use the starter slides provided in the session, or bring a presentation, webinar, podcast, or recording of your own.</li>
+          <li><strong>Review the result.</strong> Check the video and decide what needs to change.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;" id="prepare">
+    <div class="session-container">
+      <h2 class="session-heading">Before you <em>come</em></h2>
+      <div class="session-prose session-prep">
+        <h3>Bring a laptop with your tools ready</h3>
+        <ul>
+          <li><strong>Node.js installed.</strong> Get it from the <a href="https://nodejs.org/en/download" target="_blank" rel="noopener noreferrer">official Node.js download page</a>.</li>
+          <li><strong>Claude Code installed and signed in.</strong> Follow the <a href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener noreferrer">Claude Code quickstart</a> and check that you can open a project. See the <a href="tools.html">AI Kitchen tools guide</a> for SCU access options.</li>
+          <li><strong>Optional: something you want to turn into a video.</strong> Bring slides or a recording, such as a webinar or podcast. A starter slide deck will also be provided.</li>
+        </ul>
+        <p><a href="https://hyperframes.heygen.com/quickstart" target="_blank" rel="noopener noreferrer">HyperFrames</a> is free. You do not need to install it ahead of time; Claude will set it up during the session. Claude Code access may have its own cost.</p>
+        <p class="materials-note">Dan&rsquo;s detailed setup checklist is forthcoming. We&rsquo;ll add it here when it is available.</p>
+      </div>
+      <p class="session-footer-note">
+        Part of the AI Kitchen Taste Test series at Santa Clara University.
+        <br>Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a> &middot; <a href="schedule.html">Full schedule</a>.
+      </p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===== SHARED FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University" loading="lazy"></a>
+        <p>AI Kitchen · Everyone’s invited.</p>
+        <p class="site-footer-tagline">There’s room at the kitchen table.</p>
+      </div>
+      <nav class="site-footer-links" aria-label="Footer navigation">
+        <a href="schedule.html">Schedule</a>
+        <a href="recordings.html">Recordings</a>
+        <a href="tools.html">Tools guide</a>
+        <a href="roles.html">Leadership</a>
+        <a href="news.html">News</a>
+        <a href="index.html#press">In the press</a>
+        <a href="start-an-ai-kitchen.html">Start an AI Kitchen</a>
+        <a href="guest-chefs.html">Guest chef guide</a>
+        <a href="faq.html">More questions</a>
+        <a href="mailto:klukoff@scu.edu">Contact</a>
+      </nav>
+      <div class="site-footer-community">
+        <p>Follow AI Kitchen</p>
+        <div class="site-footer-social">
+          <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer"><img src="linkedin-icon.svg" width="20" height="20" alt="">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer"><img src="youtube-icon.svg" width="20" height="20" alt="">YouTube <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="site-footer-faculty">Faculty lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>Staff advisor: <a href="https://www.scu.edu/is/academic-technology/about-us/staff-profiles/kemp.html" target="_blank" rel="noopener noreferrer">Jeremy Kemp</a><br>Faculty advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> and Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="sessions.js?v=20261019-dan"></script>
+  <script src="speaker-block.js"></script>
+
+  <script src="site-shell.js" defer></script>
+</body>
+</html>

@@ -205,11 +205,13 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     studentHost: { name: 'Sandy Cai', url: 'https://www.linkedin.com/in/sc098/' },
     name: 'Dan Barahona',
     title: 'Founder, AI Security University',
-    // Working title based on the guest’s proposed workflow; final title and materials pending.
-    topic: 'Turning Slides into Videos with AI',
-    description: 'Dan Barahona shares his workflow for turning static course slides into videos with Claude Code and HyperFrames, alongside practical AI security tips. Full session details and hands-on setup coming soon.',
-    url: 'https://aisec.university',
+    topic: 'Make Great Videos with Claude',
+    description: 'Turn slides, recordings, and webinar replays into course videos and Instagram reels with Claude Code and HyperFrames. Try the workflow yourself while learning what to share with AI, which permissions to give it, and how to check its work.',
+    topicUrl: 'make-great-videos-with-claude.html',
+    url: 'https://www.linkedin.com/in/rdbarahona/',
+    photo: 'speakers/dan-barahona.png',
     initials: 'DB',
+    tools: ['Claude Code', 'HyperFrames'],
     note: '1:00\u20134:00 p.m. \u00b7 soft finish',
     roomChange: 'Sobrato Hall 024BC'
   },
