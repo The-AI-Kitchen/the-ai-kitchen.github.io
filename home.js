@@ -54,6 +54,11 @@
   }
   var note = next.note || (next.featured ? (next.title || '').split(' · ')[0] : (spring.indexOf(next) !== -1 ? '1:30–5:00 p.m.' : '1:00 p.m.'));
   document.getElementById('spotlight-time').textContent = note.split(' · ')[0];
+  if (next.timeChange) {
+    var timeAlert = document.createElement('p'); timeAlert.className = 'home-session-host home-room-alert';
+    timeAlert.textContent = next.timeChange;
+    document.getElementById('spotlight-host').parentNode.appendChild(timeAlert);
+  }
   document.getElementById('spotlight-finish').textContent = /soft finish/i.test(note) ? 'Soft finish · stay to experiment' : '';
   var location = document.getElementById('spotlight-location');
   if (next.roomChange) { location.textContent = next.roomChange; location.classList.add('home-room-alert'); }

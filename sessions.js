@@ -212,7 +212,8 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     photo: 'speakers/dan-barahona.png',
     initials: 'DB',
     tools: ['Claude Code', 'HyperFrames'],
-    note: '1:00\u20134:00 p.m. \u00b7 soft finish',
+    note: '1:30\u20134:00 p.m. \u00b7 soft finish',
+    timeChange: 'Special start time this week: 1:30 p.m., following Sherry Turkle. Dan\u2019s demo begins around 1:50 p.m.',
     roomChange: 'Sobrato Hall 024BC'
   },
   {

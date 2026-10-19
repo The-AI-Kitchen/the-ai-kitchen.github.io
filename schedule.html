@@ -266,7 +266,7 @@
 
 
   <!-- ===== Schedule data (single source of truth, shared with index.html) ===== -->
-  <script src="sessions.js?v=20261019-dan"></script>
+  <script src="sessions.js?v=20261019-time-change"></script>
 
   <!-- ===== Render schedule cards from sessions.js (shared by all quarters) ===== -->
   <script>
@@ -287,9 +287,12 @@
       // A one-off room change is called out on the card itself, so the quarter
       // intro can keep naming just the room we are in every other week.
       function roomAlert(s) {
-        return s.roomChange
-          ? '<span class="schedule-room-alert">Room change: ' + esc(s.roomChange) + '</span>'
+        var timeChange = s.timeChange
+          ? '<span class="schedule-room-alert">' + esc(s.timeChange) + '</span>'
           : '';
+        return timeChange + (s.roomChange
+          ? '<span class="schedule-room-alert">Room change: ' + esc(s.roomChange) + '</span>'
+          : '');
       }
 
       // A host-held date: the card stays a normal confirmed card, and the chip says
