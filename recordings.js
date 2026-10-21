@@ -13,7 +13,7 @@
     var watchUrl = 'https://www.youtube.com/watch?v=' + encodeURIComponent(session.youtubeId);
     return '<article class="recording-card">' +
       '<a class="recording-thumbnail" href="' + esc(watchUrl) + '" target="_blank" rel="noopener noreferrer" aria-label="Watch recording: ' + esc(session.topic) + '">' +
-        '<img src="https://i.ytimg.com/vi/' + encodeURIComponent(session.youtubeId) + '/hqdefault.jpg" alt="" width="480" height="360" loading="lazy">' +
+        '<img src="' + esc(session.thumbnail || ('https://i.ytimg.com/vi/' + encodeURIComponent(session.youtubeId) + '/hqdefault.jpg')) + '" alt="" width="480" height="360" loading="lazy">' +
         '<span class="recording-play" aria-hidden="true">▶</span>' +
       '</a>' +
       '<div class="recording-content">' +
