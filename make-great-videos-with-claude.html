@@ -54,6 +54,36 @@
     .session-prep { background: var(--bg-cta); border-left: 4px solid var(--coral); border-radius: var(--radius-sm); padding: 20px 24px; }
     .session-prep h3 { font-family: 'Figtree', sans-serif; font-size: 1.125rem; margin-bottom: 12px; }
     .session-prose .materials-note { font-size: 0.9375rem; }
+    .session-demo-grid {
+      display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+      gap: 32px; align-items: start; margin-top: 24px;
+    }
+    .session-demo-figure { margin: 0; }
+    .session-demo-video {
+      display: block; width: 100%; height: auto; aspect-ratio: 9 / 16;
+      background: #111; border-radius: var(--radius-sm);
+    }
+    .session-demo-caption { color: var(--text-muted); font-size: 0.875rem; line-height: 1.5; margin-top: 12px; }
+    .session-demo-caption a { color: var(--coral); }
+    .session-demo-copy h3 {
+      font-family: 'Figtree', sans-serif; font-size: 1.125rem;
+      color: var(--text-primary); margin: 0 0 12px;
+    }
+    .session-demo-prompt {
+      margin: 16px 0; padding: 20px 24px; background: var(--bg-cta);
+      border-left: 4px solid var(--coral); border-radius: var(--radius-sm);
+    }
+    .session-demo-prompt p { color: var(--text-primary); }
+    .session-demo-prompt p + p { margin-top: 12px; }
+    .session-demo-details { margin-top: 16px; }
+    .session-demo-details summary { color: var(--text-primary); cursor: pointer; }
+    .session-demo-details p { margin-top: 12px; }
+    .session-prose .session-demo-credit { color: var(--text-muted); font-size: 0.875rem; margin-top: 20px; }
+    @media (max-width: 720px) {
+      .session-demo-grid { grid-template-columns: 1fr; gap: 24px; }
+      .session-demo-figure { width: 100%; max-width: 320px; margin-inline: auto; }
+      .session-demo-prompt { padding: 16px 20px; }
+    }
     .session-footer-note {
       margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--bg-alt);
       color: var(--text-muted); font-size: 13px; margin-bottom: clamp(48px, 6vh, 64px);
@@ -102,6 +132,45 @@
       <div class="session-prose">
         <p>You already have the raw material: slides, a recording of yourself talking, a webinar replay. Dan Barahona, founder of <a href="https://aisec.university" target="_blank" rel="noopener noreferrer">AI Security University</a>, will show how he turns those into polished course videos and Instagram reels with Claude Code and HyperFrames, starting from an empty folder and one prompt.</p>
         <p>Along the way, we&rsquo;ll cover what to share with an AI assistant, what permissions to give it, and how to check its work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;" id="session-demo" aria-labelledby="session-demo-heading">
+    <div class="session-container">
+      <h2 class="session-heading" id="session-demo-heading">Made together <em>in the session</em></h2>
+      <div class="session-prose">
+        <p>We built a prompt together, Mad Libs style, during Dan&rsquo;s session: a title, a genre, a character, a setting, a twist, and a final line. Here&rsquo;s the resulting 20-second fictional trailer, <em>The spicy dog-walker.</em></p>
+      </div>
+      <div class="session-demo-grid">
+        <figure class="session-demo-figure">
+          <video class="session-demo-video" controls playsinline preload="none" width="1080" height="1920" poster="assets/examples/spicy-dog-walker/poster.jpg" aria-label="The spicy dog-walker, a 20-second fictional noir trailer" aria-describedby="session-demo-caption">
+            <source src="assets/examples/spicy-dog-walker/the-spicy-dog-walker.mp4" type="video/mp4">
+            <track kind="captions" src="assets/examples/spicy-dog-walker/captions.vtt" srclang="en" label="English">
+            Your browser does not support embedded video. <a href="assets/examples/spicy-dog-walker/the-spicy-dog-walker.mp4">Download the trailer</a>.
+          </video>
+          <figcaption class="session-demo-caption" id="session-demo-caption">A fictional AI-generated demo made with HyperFrames.<br><a href="assets/examples/spicy-dog-walker/the-spicy-dog-walker.mp4" download>Download the video (MP4, 20.6 MB)</a></figcaption>
+        </figure>
+        <div class="session-prose session-demo-copy">
+          <h3>The prompt we created</h3>
+          <blockquote class="session-demo-prompt">
+            <p>Make me a 20-second movie trailer called The spicy dog-walker.</p>
+            <p>Style: a noir movie.</p>
+            <p>A dog-walker in Starbucks finds out their coffee is secretly an AI that wants their password.</p>
+            <p>Narrate it in my voice, with music that fits the mood.</p>
+            <p>End with the line: &ldquo;the end of the world.&rdquo;</p>
+            <p>Format it for Instagram sharing.</p>
+          </blockquote>
+          <p><a href="assets/examples/spicy-dog-walker/prompt.txt" download>Download the prompt (TXT)</a></p>
+          <p>Try your own version by swapping the title, genre, character, setting, twist, or final line.</p>
+          <p class="materials-note">The original prompt asks for &ldquo;my voice.&rdquo; The finished example uses ElevenLabs&rsquo; synthetic James narrator, revised for a gravelly, smoky noir delivery.</p>
+          <details class="session-demo-details">
+            <summary>Read the video transcript</summary>
+            <p><em>Noir instrumental music plays under the narration.</em></p>
+            <p>I walked dogs for a living. At Starbucks, I ordered coffee with a little spice. It knew my name. Then it asked for my password. An AI in a paper cup. I wanted caffeine. It wanted&hellip; the end of the world.</p>
+          </details>
+          <p class="session-demo-credit">Music: &ldquo;<a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1600033" target="_blank" rel="noopener noreferrer">Deadly Roulette</a>&rdquo; by Kevin MacLeod (incompetech.com), licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Edited excerpt with mixing and fades.</p>
+        </div>
       </div>
     </div>
   </section>
