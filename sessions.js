@@ -282,3 +282,32 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     note: '1:00\u20134:00 p.m. \u00b7 soft finish'
   }
 ];
+
+// Winter Quarter 2027. Session rooms and final activities are still being set.
+// Tentative sessions appear on the schedule with an explicit status, but are
+// excluded from the home-page next-session spotlight until confirmed.
+window.AI_KITCHEN_WINTER_SESSIONS = [
+  {
+    date: '2027-01-08',
+    label: 'Jan 8',
+    name: 'Shriya Garg',
+    topic: 'Creating Your Personal AI Agent',
+    subtitle: 'Everyday workflows with Instinct and Muse.',
+    description: 'See how Shriya uses personal AI agents to support everyday tasks and get time back in her day. Explore her workflow with Instinct and Muse; the hands-on activity and preparation details will follow.',
+    initials: 'SG',
+    note: '1:00\u20133:00 p.m. Pacific',
+    location: 'Room to be announced \u00b7 Santa Clara University'
+  },
+  {
+    date: '2027-02-05',
+    label: 'Feb 5',
+    name: 'Rabindra \u201cRobby\u201d Ratan',
+    title: 'Professor, Michigan State University \u00b7 Visiting Scholar, Stanford University',
+    topic: 'AI Avatars That Strengthen Human Connection',
+    description: 'How can AI avatars and XR strengthen relationships between people? Explore ways to support human interconnectedness while preserving human values and agency. The session concept and hands-on activity are still being developed.',
+    initials: 'RR',
+    tentative: true,
+    note: '1:00\u20133:00 p.m. Pacific',
+    location: 'Room to be announced \u00b7 Santa Clara University'
+  }
+];
