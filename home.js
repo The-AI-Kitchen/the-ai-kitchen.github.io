@@ -3,11 +3,12 @@
   var spring = window.AI_KITCHEN_SESSIONS || [];
   var summer = window.AI_KITCHEN_SUMMER_SESSIONS || [];
   var fall = window.AI_KITCHEN_FALL_SESSIONS || [];
+  var winter = window.AI_KITCHEN_WINTER_SESSIONS || [];
   var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date());
   var calendar = {};
   parts.forEach(function (part) { calendar[part.type] = part.value; });
   var today = calendar.year + '-' + calendar.month + '-' + calendar.day;
-  var candidates = spring.concat(summer, fall).filter(function (session) { return !session.tbd && !session.cancelled && session.date >= today; }).sort(function (a, b) { return a.date.localeCompare(b.date); });
+  var candidates = spring.concat(summer, fall, winter).filter(function (session) { return !session.tbd && !session.tentative && !session.cancelled && session.date >= today; }).sort(function (a, b) { return a.date.localeCompare(b.date); });
   var next = candidates[0];
   if (!next) return;
   var card = document.getElementById('spotlight-card');
@@ -47,7 +48,7 @@
     if (next.copresenter) { speakers.appendChild(document.createTextNode(' & ')); speakers.appendChild(speaker(next.copresenter)); }
     document.getElementById('spotlight-title').textContent = (next.title || '') + (next.copresenter && next.copresenter.title ? ' · ' + next.copresenter.title : '');
   }
-  var description = next.featured ? next.topic : next.description;
+  var description = next.featured ? next.topic : [next.subtitle, next.description].filter(Boolean).join(' ');
   if (description) { document.getElementById('spotlight-description').textContent = description; document.getElementById('spotlight-description').hidden = false; }
   if (next.studentHost && next.studentHost.name) {
     var host = document.getElementById('spotlight-host'); host.appendChild(document.createTextNode('Student host: ')); host.appendChild(speaker(next.studentHost)); host.hidden = false;
@@ -61,11 +62,12 @@
   }
   document.getElementById('spotlight-finish').textContent = /soft finish/i.test(note) ? 'Soft finish · stay to experiment' : '';
   var location = document.getElementById('spotlight-location');
-  if (next.roomChange) { location.textContent = next.roomChange; location.classList.add('home-room-alert'); }
+  if (next.location) { location.textContent = next.location; }
+  else if (next.roomChange) { location.textContent = next.roomChange; location.classList.add('home-room-alert'); }
   else if (next.featured) { location.textContent = (next.title || '').split(' · ').slice(1).join(' · '); }
   else if (spring.indexOf(next) !== -1) { location.textContent = 'Lucas 306 · Santa Clara University'; }
   else { location.appendChild(document.createTextNode('Benson 036')); location.appendChild(document.createElement('br')); location.appendChild(document.createTextNode('California Mission Room')); }
-  if (next.roomChange || next.featured || spring.indexOf(next) !== -1) {
+  if (next.location || next.roomChange || next.featured || spring.indexOf(next) !== -1) {
     document.getElementById('spotlight-directions').hidden = true; document.getElementById('spotlight-directions-divider').hidden = true;
   }
   card.hidden = false;
