@@ -21,6 +21,8 @@
   <style>
     /* Muted "Completed" tag on the past quarter heading */
     .schedule-quarter-tag { color: var(--text-muted); font-weight: 500; }
+    .schedule-subtitle { display: block; margin: -3px 0 10px; font: 600 16px/1.5 var(--sans); color: var(--green); }
+    .schedule-status { display: inline-block; align-self: flex-start; margin: 0 0 8px; padding: 4px 9px; border: 1px solid currentColor; border-radius: var(--radius-sm); color: #803118; font: 600 13px/1.4 var(--sans); }
 
     /* One-off room changes are flagged on the affected card, not in the quarter
        intro, so the standard room stays the thing people remember. The card sits
@@ -137,7 +139,7 @@
       <div class="page-heading-peek"><h1 class="section-heading reveal"><em>Taste Test</em> Schedule</h1><div class="page-peek" aria-hidden="true"><span class="page-veggie-tomato"></span></div></div>
 
       <p class="schedule-location">
-        Fridays at 1:00 p.m. &middot; Benson 036 (California Mission Room)
+        Fall sessions: Fridays at 1:00 p.m. &middot; Benson 036 (California Mission Room)
         <a href="https://docs.google.com/document/d/183Ro43EVI7GLUZzQPJxGG65-fi1HjjMZV5E3wEpY_uQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Directions</a>
       </p>
 
@@ -160,6 +162,18 @@
 
       <noscript><p class="section-intro">For the latest dates and session details, open the <a href="https://calendar.google.com/calendar/u/0/r?cid=c_65897020b77ac3e46324b38ad1ca4588a7f92815f3926a76bd855684906732d5%40group.calendar.google.com" target="_blank" rel="noopener noreferrer">AI Kitchen calendar</a>.</p></noscript>
       <div class="schedule-grid" id="fall-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== WINTER 2027 (upcoming) ===== -->
+  <section class="section" id="winter" aria-labelledby="winter-heading">
+    <div class="container">
+      <h2 class="schedule-quarter reveal" id="winter-heading">Winter Quarter 2027 <span class="schedule-quarter-tag">&middot; Taking shape</span></h2>
+      <p class="section-intro reveal delay-1">
+        Fridays, 1:00&ndash;3:00 p.m. Pacific &middot; Santa Clara University. Rooms to be announced.
+        More sessions are on the way; tentative sessions are marked below.
+      </p>
+      <div class="schedule-grid" id="winter-grid" role="list" aria-labelledby="winter-heading"></div>
     </div>
   </section>
 
@@ -195,8 +209,8 @@
       <div class="schedule-how" aria-labelledby="friday-format-heading">
         <h2 id="friday-format-heading">How Fridays work</h2>
       <p class="section-intro">
-        Every session starts with a live tutorial from our guest at 1:00, followed by a hands-on build for
-        everyone in the room and time for open experimentation and questions. Most Fridays have a soft
+        Fall sessions start with a live tutorial from our guest at 1:00, followed by a hands-on build for
+        everyone in the room and time for open experimentation and questions. Most fall Fridays have a soft
         finish around 4:00, and you&rsquo;re welcome to stay and keep trying things together. Sessions marked
         1:00&ndash;3:00 wrap at 3:00 sharp so the room can turn over to the next event.
       </p>
@@ -266,7 +280,7 @@
 
 
   <!-- ===== Schedule data (single source of truth, shared with index.html) ===== -->
-  <script src="sessions.js?v=20261019-time-change"></script>
+  <script src="sessions.js?v=20261028-winter"></script>
 
   <!-- ===== Render schedule cards from sessions.js (shared by all quarters) ===== -->
   <script>
@@ -376,7 +390,9 @@
         return '<div class="schedule-card reveal ' + delay + roomClass + '">' +
           '<div class="schedule-date">' + esc(s.label) + '</div>' +
           '<div class="schedule-info">' +
+            (s.tentative ? '<span class="schedule-status">Tentative session &middot; working title</span>' : '') +
             topicHtml +
+            (s.subtitle ? '<span class="schedule-subtitle">' + esc(s.subtitle) + '</span>' : '') +
             (s.description ? '<span class="schedule-description">' + esc(s.description) + '</span>' : '') +
             (s.copresenter
               ? '<span class="schedule-names">' +
@@ -405,6 +421,7 @@
       }
 
       render('fall-grid', window.AI_KITCHEN_FALL_SESSIONS);
+      render('winter-grid', window.AI_KITCHEN_WINTER_SESSIONS);
       render('summer-grid', window.AI_KITCHEN_SUMMER_SESSIONS);
       render('schedule-grid', window.AI_KITCHEN_SESSIONS);
     })();
