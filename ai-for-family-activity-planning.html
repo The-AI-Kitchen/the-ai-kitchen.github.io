@@ -50,6 +50,10 @@
     .session-example + .session-example { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--bg-alt); }
     .example-project-title { font-family: 'Figtree', sans-serif; font-size: 1.25rem; color: var(--text-primary); margin: 0 0 6px; }
     .example-project-intro { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; margin: 0 0 18px; }
+    .example-storyboard { margin: 0 0 28px; scroll-margin-top: 96px; }
+    .example-storyboard > a { display: block; }
+    .example-storyboard img { display: block; width: 100%; height: auto; border-radius: 12px; }
+    .example-storyboard figcaption { padding-top: 14px; }
     .example-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
     .example-comparison figure { min-width: 0; margin: 0; }
     .example-media { display: block; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 12px; background: #eceee6; }
@@ -112,6 +116,16 @@
         <article class="session-example" aria-labelledby="dino-world-heading">
           <h3 class="example-project-title" id="dino-world-heading">Dino World</h3>
           <p class="example-project-intro">One dinosaur story app, two approaches to keeping children watching and helping them stop.</p>
+          <figure class="example-storyboard" id="dino-storyboard">
+            <a href="assets/examples/family-activity-planning/dino-original-storyboard.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the original Just One More storyboard at full size in a new tab">
+              <img src="assets/examples/family-activity-planning/dino-original-storyboard.webp" alt="Just One More, a six-panel storyboard: an app looks harmless, watching earns points, surprise prizes encourage more viewing, stories never end, leaving costs stars, and a child resists stopping for dinner." width="1536" height="1024" loading="lazy" decoding="async">
+            </a>
+            <figcaption>
+              <p class="example-version">Original storyboard · Just One More</p>
+              <p class="example-description">The starting concept for Dino World’s deliberately bad version: points, surprise prizes, and cliffhangers make it hard to stop watching.</p>
+              <a class="example-link" href="assets/examples/family-activity-planning/dino-original-storyboard.webp" target="_blank" rel="noopener noreferrer">View the full-size storyboard <span aria-hidden="true">↗</span></a>
+            </figcaption>
+          </figure>
           <div class="example-comparison">
             <figure>
               <a class="example-media example-media--phone" href="https://dino.blue-avocado.chatgpt.site/" target="_blank" rel="noopener noreferrer" aria-label="Open Dino World’s deliberately bad version in a new tab">
