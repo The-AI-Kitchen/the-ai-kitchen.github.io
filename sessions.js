@@ -311,5 +311,17 @@ window.AI_KITCHEN_WINTER_SESSIONS = [
     tentative: true,
     note: '1:00\u20133:00 p.m. Pacific',
     location: 'Room to be announced \u00b7 Santa Clara University'
+  },
+  {
+    date: '2027-02-26',
+    label: 'Feb 26',
+    name: 'Danielle Heitmuller',
+    title: 'Professor of Art and Art History, Santa Clara University',
+    topic: 'AI in the Art Studio: Where It Helps and Where It Doesn\u2019t',
+    url: 'https://www.scu.edu/cas/art/faculty-and-staff/danielle-heitmuller/',
+    photo: 'speakers/danielle-heitmuller.jpeg',
+    initials: 'DH',
+    note: '1:00\u20133:00 p.m.',
+    location: 'Room to be announced \u00b7 Santa Clara University'
   }
 ];
