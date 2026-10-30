@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI for Family Activity Planning — AI Kitchen</title>
+  <meta name="description" content="AJ Gauravdeep of Joolian leads an interactive session on families, kids, technology, and AI, with a discussion and hands-on app-building challenge. October 30, 2026, at Santa Clara University.">
+  <meta property="og:title" content="AI for Family Activity Planning — AI Kitchen">
+  <meta property="og:description" content="Discuss how AI shapes family life, hear about Joolian, then build and demo an AI-powered app concept in a small team. October 30, 2026, at Santa Clara University.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/design/ai-kitchen-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="site-shell.css">
+  <style>
+    .section { padding: 24px 0; }
+    .session-container { max-width: 960px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 32px); }
+    .session-hero { padding-top: clamp(40px, 6vh, 64px); padding-bottom: clamp(20px, 3vh, 32px); }
+    .session-hero .eyebrow { font-family: 'Figtree', sans-serif; font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--coral); margin-bottom: 8px; }
+    .session-hero h1 { font-family: 'Figtree', Georgia, serif; font-size: clamp(2rem, 5vw, 3rem); color: var(--text-primary); line-height: 1.1; margin-bottom: 12px; }
+    .session-hero h1 em, .session-heading em { font-style: italic; color: var(--coral); }
+    .session-hero .session-sub { color: var(--text-secondary); font-size: 1.0625rem; line-height: 1.5; max-width: 720px; margin-bottom: 6px; }
+    .session-hero .session-meta { color: var(--text-muted); font-size: 0.875rem; margin-top: 8px; }
+    .session-heading { font-family: 'Figtree', Georgia, serif; font-size: 1.5rem; color: var(--text-primary); margin-top: 40px; margin-bottom: 16px; }
+    .tools-intro { margin-bottom: 36px; }
+    .session-prose { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.65; }
+    .session-prose p { margin: 0 0 14px; }
+    .session-prose h3 { color: var(--text-primary); font-family: 'Figtree', sans-serif; font-size: 1.0625rem; margin: 22px 0 8px; }
+    .session-prose ul, .session-prose ol { padding-left: 22px; margin: 8px 0 18px; }
+    .session-prose li { padding-left: 3px; margin-bottom: 7px; }
+    .callout { background: white; border: 1px solid var(--bg-alt); border-left: 4px solid var(--coral); border-radius: var(--radius-sm); padding: 18px 22px; margin-bottom: 20px; box-shadow: var(--shadow-soft); }
+    .callout h3 { font-family: 'Figtree', sans-serif; font-size: 1.1875rem; font-weight: 700; color: var(--text-primary); margin: 0 0 10px; }
+    .callout > .session-intro { margin-bottom: 18px; }
+    .callout ol { margin: 0 0 10px; padding-left: 22px; }
+    .callout ol li { margin-bottom: 8px; font-size: 0.9375rem; line-height: 1.55; color: var(--text-secondary); }
+    .callout ol li strong { color: var(--text-primary); }
+    .callout .callout-note { background: var(--bg-cta); border: 1px solid rgba(196, 136, 74, 0.25); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 0.8125rem; color: var(--text-secondary); margin-top: 12px; line-height: 1.55; }
+    .challenge-callout { background: var(--mint-light); border: 1px solid var(--bg-alt); border-left: 4px solid var(--coral); border-radius: var(--radius-sm); box-shadow: var(--shadow-soft); padding: 18px 22px; margin: 16px 0; }
+    .challenge-callout h3 { margin: 0 0 8px; }
+    .challenge-callout p { margin: 0; }
+    .session-footer-note { margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--bg-alt); color: var(--text-muted); font-size: 13px; margin-bottom: clamp(48px, 6vh, 64px); }
+    .session-footer-note a { color: var(--coral); }
+  </style>
+</head>
+<body class="site-page">
+  <a class="site-skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="site-wordmark" href="index.html" aria-label="AI Kitchen home"><span class="option-chef-tile" aria-hidden="true"><span class="chef-badge" aria-hidden="true"><svg class="chef-tile-hat" viewBox="0 0 30 22" aria-hidden="true"><path d="M7 15V11C3 10 2 7 4 4c2-3 6-3 8-1 2-3 7-3 9 0 3-1 7 1 7 4 0 3-2 4-5 5v3H7Z" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 18h14" fill="none" stroke="#A44024" stroke-width="1.5" stroke-linecap="round"/></svg><span class="chef-green-ai">AI</span></span><span class="chef-tile-kitchen" aria-hidden="true">Kitchen</span></span></a>
+      <div class="site-nav-links">
+        <a class="site-nav-link" href="schedule.html">Schedule</a>
+        <a class="site-nav-link" href="recordings.html">Recordings</a>
+        <a class="site-nav-link" href="tools.html">Tools guide</a>
+        <a class="site-nav-link" href="roles.html">Our people</a>
+        <a class="site-nav-cta" href="https://forms.gle/qyQmKthPgfaQUMkn7" target="_blank" rel="noopener noreferrer">Get involved <span aria-hidden="true">↗</span></a>
+      </div>
+      <a class="site-scu-brand" aria-label="Santa Clara University website" href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University"></a>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="section session-hero">
+      <div class="session-container">
+        <div class="eyebrow">October 30, 2026 · Taste Test</div>
+        <div class="page-heading-peek"><h1>AI for <em>Family Activity Planning</em></h1><div class="page-peek" aria-hidden="true"><span class="page-veggie-tomato"></span></div></div>
+        <p class="session-sub">AJ Gauravdeep introduces Joolian’s work on family activity planning, then participants will use AI tools to build and demo an app concept in a small team.</p>
+        <p class="session-meta"><strong>Friday, October 30, 2026 · 1:00–4:00 p.m. · soft finish</strong><br>
+          California Mission Room · Benson Memorial Center 036 (basement), Santa Clara University<br>
+          <a href="https://docs.google.com/document/d/183Ro43EVI7GLUZzQPJxGG65-fi1HjjMZV5E3wEpY_uQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Directions to Benson 036</a></p>
+        <p class="session-meta">Presenter: <a href="https://www.linkedin.com/in/ajdeep/" target="_blank" rel="noopener noreferrer">AJ Gauravdeep</a>, Interim Chief Marketing Officer at Joolian</p>
+      <p class="session-meta"><strong>Student host:</strong> <a href="https://www.linkedin.com/in/misa-truong/" target="_blank" rel="noopener noreferrer">Misa Truong</a></p>
+      </div>
+    </section>
+    <section class="section" style="padding-top:0;">
+      <div class="session-container">
+        <h2 class="session-heading">About the <em>session</em></h2>
+        <div class="session-prose">
+          <p>AJ Gauravdeep, Interim Chief Marketing Officer at Joolian, will introduce the family activity planning problem Joolian is working to solve, why it matters, and what the team is building. Participants will then form small teams and use an AI coding tool to create a working prototype or demo. The session closes with short presentations and demos from each team.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section" style="padding-top:0;">
+      <div class="session-container">
+        <h2 class="session-heading">Build a prototype <em>with AI</em></h2>
+        <div class="session-prose">
+          <p>Choose one of the challenges below and work with your team to turn an idea into a small prototype:</p>
+          <div class="callout challenge-callout">
+            <h3>1. Build the worst app for kids</h3>
+            <p>Imagine an app for children ages 3–8 that a parent might allow, but that is secretly terrible for them in some way. Create a deliberately flawed concept and think critically about what makes technology good or bad for children.</p>
+          </div>
+          <div class="callout challenge-callout">
+            <h3>2. Solve a problem from your childhood</h3>
+            <p>Think of a problem you experienced while growing up, or something you wish had existed. Build a small app or feature that tries to solve it.</p>
+          </div>
+          <p>Aim for a working prototype or demo; it does not need to be polished. Helpers will be available to brainstorm and support teams as they build.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section" style="padding-top:0;">
+      <div class="session-container">
+        <h2 class="session-heading">Try it <em>yourself</em></h2>
+        <div class="session-prose">
+          <p>Work with your team to turn one challenge into a simple app concept you can click through or demonstrate. Use AI as a collaborator, and make the key decisions together.</p>
+          <ol>
+            <li><strong>Choose a challenge.</strong> Pick the kids’ app you want to critique or a childhood problem you want to address. Agree on who the app is for and what it should do.</li>
+            <li><strong>Plan one useful moment.</strong> Describe a single situation the app should handle. Ask your AI tool to help brainstorm a few approaches, then choose the one your team wants to explore.</li>
+            <li><strong>Build a small prototype.</strong> Ask AI to create a simple screen or feature that shows the idea in action. Keep the scope small enough to finish and make changes as you go.</li>
+            <li><strong>Try it and revise.</strong> Walk through the prototype as if you were a child or caregiver. For the deliberately bad app, identify the hidden downside and how a parent might miss it; for the childhood-problem app, check whether the feature would actually help.</li>
+            <li><strong>Get ready to share.</strong> Prepare a short demo: name the challenge, show what you made, and explain one choice your team made about the role of AI.</li>
+          </ol>
+          <p>Your prototype can be rough. A clear idea and a thoughtful explanation matter more than a finished product.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="session-container">
+        <h2 class="session-heading">Get ready to <em>build</em></h2>
+        <p class="session-intro tools-intro">Bring a laptop. You’ll work with a team to turn one of the challenges into a demo you can share.</p>
+        <div class="callout">
+          <h3>Choose your AI tool</h3>
+          <p class="session-intro">Choose an AI tool your team can use to explore the challenge, shape an idea, and make a small app or feature:</p>
+          <ol>
+            <li><strong>Shape the idea:</strong> decide what your app should do, whether you are imagining a deliberately bad kids’ app or solving a problem from your childhood.</li>
+            <li><strong>Make it tangible:</strong> use AI to create and revise a small feature, then get your prototype ready to show.</li>
+          </ol>
+          <div class="callout-note">Claude Code, ChatGPT, and Codex are all options. Your team can use one tool throughout or use different tools to plan and build. For more choices, see the <a href="tools.html">AI Tools Guide for SCU Students</a>.</div>
+        </div>
+        <p class="session-footer-note">Part of the AI Kitchen Taste Test series at Santa Clara University.<br>Questions? <a href="mailto:klukoff@scu.edu">klukoff@scu.edu</a> · <a href="schedule.html">Full schedule</a>.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="https://www.scu.edu/" target="_blank" rel="noopener noreferrer"><img src="scu-logo-color.png" width="4140" height="1592" alt="Santa Clara University" loading="lazy"></a>
+        <p>AI Kitchen · Everyone’s invited.</p><p class="site-footer-tagline">There’s room at the kitchen table.</p>
+      </div>
+      <nav class="site-footer-links" aria-label="Footer navigation">
+        <a href="schedule.html">Schedule</a><a href="recordings.html">Recordings</a><a href="tools.html">Tools guide</a><a href="roles.html">Leadership</a><a href="news.html">News</a><a href="index.html#press">In the press</a><a href="start-an-ai-kitchen.html">Start an AI Kitchen</a><a href="guest-chefs.html">Guest chef guide</a><a href="faq.html">More questions</a><a href="mailto:klukoff@scu.edu">Contact</a>
+      </nav>
+      <div class="site-footer-community">
+        <p>Follow AI Kitchen</p>
+        <div class="site-footer-social">
+          <a href="https://www.linkedin.com/company/115444126" target="_blank" rel="noopener noreferrer"><img src="linkedin-icon.svg" width="20" height="20" alt="">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://www.youtube.com/channel/UCJuQDQn1bkfAYyImzZHP0BQ" target="_blank" rel="noopener noreferrer"><img src="youtube-icon.svg" width="20" height="20" alt="">YouTube <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="site-footer-faculty">Faculty lead: Prof. <a href="https://kailukoff.com/" target="_blank" rel="noopener noreferrer">Kai Lukoff</a><br>Staff advisor: <a href="https://www.scu.edu/is/academic-technology/about-us/staff-profiles/kemp.html" target="_blank" rel="noopener noreferrer">Jeremy Kemp</a><br>Faculty advisors: Prof. <a href="https://www.cse.scu.edu/~yfang/" target="_blank" rel="noopener noreferrer">Yi Fang</a> and Prof. <a href="https://srdas.github.io/" target="_blank" rel="noopener noreferrer">Sanjiv Das</a></p>
+      </div>
+    </div>
+  </footer>
+  <script src="sessions.js"></script>
+  <script src="speaker-block.js"></script>
+  <script src="site-shell.js" defer></script>
+</body>
+</html>

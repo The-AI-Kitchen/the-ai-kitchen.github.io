@@ -191,6 +191,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
   {
     date: '2026-10-16',
     label: 'Oct 16',
+    studentHost: { name: 'Misa Truong', url: 'https://www.linkedin.com/in/misa-truong/' },
     name: 'David Coad',
     title: 'Assistant Teaching Professor of English, Santa Clara University',
     topic: 'Judgment Calls While Building a Keynote with AI',
@@ -221,10 +222,12 @@ window.AI_KITCHEN_FALL_SESSIONS = [
   {
     date: '2026-10-30',
     label: 'Oct 30',
+    studentHost: { name: 'Misa Truong', url: 'https://www.linkedin.com/in/misa-truong/' },
     name: 'AJ Gauravdeep',
     title: 'Interim Chief Marketing Officer, Joolian',
-    // Working title and summary from the Sep 28 prep call; final guest copy pending.
+    // Session details are based on the guest outline.
     topic: 'AI for Family Activity Planning',
+    topicUrl: 'ai-for-family-activity-planning.html',
     description: 'Explore how an AI activity planner uses family interests, calendars, and location to suggest activities and resolve scheduling conflicts, and how better context leads to more useful recommendations.',
     url: 'https://www.linkedin.com/in/ajdeep/',
     photo: 'speakers/aj-gauravdeep.jpeg',
@@ -234,6 +237,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
   {
     date: '2026-11-06',
     label: 'Nov 6',
+    studentHost: { name: 'Tripti Agrawal', url: 'https://www.linkedin.com/in/tripti-agrawal/' },
     name: 'Bani Malhotra',
     title: 'Founding Head of Product, Peggy',
     topic: 'Build a Family Travel Agent, No Terminal Required',
@@ -246,6 +250,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
   {
     date: '2026-11-13',
     label: 'Nov 13',
+    studentHost: { name: 'Bridget Hestad', url: 'https://www.linkedin.com/in/bridget-hestad/' },
     name: 'Adam Smith',
     title: 'OpenAI \u00b7 CEO, Bear Valley National Ski Patrol',
     topic: 'Beyond the Prompt: Getting Real Work Done with AI Agents',
@@ -268,6 +273,7 @@ window.AI_KITCHEN_FALL_SESSIONS = [
   {
     date: '2026-12-04',
     label: 'Dec 4',
+    studentHost: { name: 'Alex Lee', url: 'https://www.linkedin.com/in/alee23/' },
     name: 'Aria Shi',
     title: 'SCU PhD Student; GTM Lead, AdaL',
     // Working title and summary based on the proposed workflow; final guest copy pending.
