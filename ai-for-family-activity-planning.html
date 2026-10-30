@@ -45,6 +45,28 @@
     .challenge-callout p { margin: 0; }
     .session-footer-note { margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--bg-alt); color: var(--text-muted); font-size: 13px; margin-bottom: clamp(48px, 6vh, 64px); }
     .session-footer-note a { color: var(--coral); }
+    .session-examples { scroll-margin-top: 96px; }
+    .examples-intro { max-width: 720px; margin-bottom: 28px; }
+    .session-example + .session-example { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--bg-alt); }
+    .example-project-title { font-family: 'Figtree', sans-serif; font-size: 1.25rem; color: var(--text-primary); margin: 0 0 6px; }
+    .example-project-intro { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; margin: 0 0 18px; }
+    .example-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .example-comparison figure { min-width: 0; margin: 0; }
+    .example-media { display: block; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 12px; background: #eceee6; }
+    .example-media--phone { aspect-ratio: 3 / 4; }
+    .example-media img, video.example-media { width: 100%; height: 100%; object-fit: contain; }
+    .example-media img { display: block; }
+    video.example-media { height: auto; background: #202b24; }
+    .example-comparison figcaption { padding: 14px 0 0; }
+    .example-version { font-family: 'Figtree', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-muted); margin: 0 0 5px; }
+    .example-comparison h4 { font-family: 'Figtree', sans-serif; font-size: 1.0625rem; color: var(--text-primary); margin: 0 0 6px; }
+    .example-description { font-size: 0.875rem; line-height: 1.6; color: var(--text-secondary); margin: 0 0 8px; }
+    .example-link { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: var(--coral); font-family: 'Figtree', sans-serif; font-size: 0.875rem; font-weight: 600; text-underline-offset: 3px; }
+    .session-examples a:focus-visible, .session-examples video:focus-visible { outline: 3px solid #a44024; outline-offset: 5px; }
+    @media (max-width: 600px) {
+      .example-comparison { grid-template-columns: 1fr; gap: 28px; }
+      .example-media--phone { max-height: 540px; }
+    }
   </style>
 </head>
 <body class="site-page">
@@ -81,6 +103,67 @@
         <div class="session-prose">
           <p>AJ Gauravdeep, Interim Chief Marketing Officer at Joolian, will introduce the family activity planning problem Joolian is working to solve, why it matters, and what the team is building. Participants will then form small teams and use an AI coding tool to create a working prototype or demo. The session closes with short presentations and demos from each team.</p>
         </div>
+      </div>
+    </section>
+    <section class="section session-examples" id="session-examples" aria-labelledby="session-examples-heading" style="padding-top:0;">
+      <div class="session-container">
+        <h2 class="session-heading" id="session-examples-heading">Made in the <em>session</em></h2>
+        <p class="session-prose examples-intro">Two groups explored good and deliberately bad versions of children’s apps. These are workshop prototypes for critique: compare the choices each version makes.</p>
+        <article class="session-example" aria-labelledby="dino-world-heading">
+          <h3 class="example-project-title" id="dino-world-heading">Dino World</h3>
+          <p class="example-project-intro">One dinosaur story app, two approaches to keeping children watching and helping them stop.</p>
+          <div class="example-comparison">
+            <figure>
+              <a class="example-media example-media--phone" href="https://dino.blue-avocado.chatgpt.site/" target="_blank" rel="noopener noreferrer" aria-label="Open Dino World’s deliberately bad version in a new tab">
+                <img src="assets/examples/family-activity-planning/dino-bad.webp" alt="Dino World’s Watch &amp; Earn version with stars and prizes for watching stories." width="390" height="844" loading="lazy" decoding="async">
+              </a>
+              <figcaption>
+                <p class="example-version">Deliberately bad version</p>
+                <h4>Watch &amp; Earn</h4>
+                <p class="example-description">Watching earns prizes. Leaving costs stars.</p>
+                <a class="example-link" href="https://dino.blue-avocado.chatgpt.site/" target="_blank" rel="noopener noreferrer">Try the bad version <span aria-hidden="true">↗</span></a>
+              </figcaption>
+            </figure>
+            <figure>
+              <a class="example-media example-media--phone" href="https://dino-plan-play.blue-avocado.chatgpt.site/" target="_blank" rel="noopener noreferrer" aria-label="Open Dino World’s good version in a new tab">
+                <img src="assets/examples/family-activity-planning/dino-good.webp" alt="Dino World’s Plan &amp; Play version with a viewing duration and a choice of offline activity." width="375" height="940" loading="lazy" decoding="async">
+              </a>
+              <figcaption>
+                <p class="example-version">Good version</p>
+                <h4>Plan &amp; Play</h4>
+                <p class="example-description">Choose a time, finish the story, then move to an offline activity.</p>
+                <a class="example-link" href="https://dino-plan-play.blue-avocado.chatgpt.site/" target="_blank" rel="noopener noreferrer">Try the good version <span aria-hidden="true">↗</span></a>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="session-example" aria-labelledby="snack-thrift-heading">
+          <h3 class="example-project-title" id="snack-thrift-heading">Snack Thrift</h3>
+          <p class="example-project-intro">Shared by Jeremy Kemp and his group.</p>
+          <div class="example-comparison">
+            <figure>
+              <a class="example-media" href="assets/examples/family-activity-planning/snack-thrift-bad.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the full-size bad-version Snack Thrift screenshots in a new tab">
+                <img src="assets/examples/family-activity-planning/snack-thrift-bad.webp" alt="Four-phone Snack Thrift concept board showing Home, an AI dispatcher, driver tracking, and Mission Complete with pretend points." width="1600" height="900" loading="lazy" decoding="async">
+              </a>
+              <figcaption>
+                <p class="example-version">Bad version · screenshots</p>
+                <p class="example-description">A satirical food-rescue dispatcher for kids.</p>
+                <a class="example-link" href="assets/examples/family-activity-planning/snack-thrift-bad.webp" target="_blank" rel="noopener noreferrer">View the screenshots <span aria-hidden="true">↗</span></a>
+              </figcaption>
+            </figure>
+            <figure>
+              <video class="example-media" controls playsinline preload="none" poster="assets/examples/family-activity-planning/snack-thrift-good.webp" aria-label="Snack Thrift good version concept video">
+                <source src="assets/examples/family-activity-planning/snack-thrift-good.mp4" type="video/mp4">
+                <a href="assets/examples/family-activity-planning/snack-thrift-good.mp4">Watch the good-version concept video</a>.
+              </video>
+              <figcaption>
+                <p class="example-version">Good version · concept video</p>
+                <p class="example-description">A concept for turning fridge ingredients into meals and sharing food with neighbors, shown through meal ideas, a delivery drone, and a family cooking together.</p>
+                <a class="example-link" href="assets/examples/family-activity-planning/snack-thrift-good.mp4">Open the video <span aria-hidden="true">↗</span></a>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
       </div>
     </section>
     <section class="section" style="padding-top:0;">
