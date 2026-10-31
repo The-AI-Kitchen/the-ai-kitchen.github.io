@@ -299,7 +299,7 @@ window.AI_KITCHEN_WINTER_SESSIONS = [
     subtitle: 'Everyday workflows with Instinct and Muse.',
     description: 'See how Shriya uses personal AI agents to support everyday tasks and get time back in her day. Explore her workflow with Instinct and Muse; the hands-on activity and preparation details will follow.',
     initials: 'SG',
-    note: '1:00\u20133:00 p.m. Pacific',
+    note: '1:00\u20133:00 p.m.',
     location: 'Room to be announced \u00b7 Santa Clara University'
   },
   {
@@ -313,7 +313,7 @@ window.AI_KITCHEN_WINTER_SESSIONS = [
     description: 'How can AI avatars and XR strengthen relationships between people? Explore ways to support human interconnectedness while preserving human values and agency. The session concept and hands-on activity are still being developed.',
     initials: 'RR',
     tentative: true,
-    note: '1:00\u20133:00 p.m. Pacific',
+    note: '1:00\u20133:00 p.m.',
     location: 'Room to be announced \u00b7 Santa Clara University'
   },
   {
