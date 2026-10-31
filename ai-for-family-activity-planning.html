@@ -45,6 +45,11 @@
     .challenge-callout p { margin: 0; }
     .session-footer-note { margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--bg-alt); color: var(--text-muted); font-size: 13px; margin-bottom: clamp(48px, 6vh, 64px); }
     .session-footer-note a { color: var(--coral); }
+    .session-slides { margin-top: 22px; scroll-margin-top: 96px; }
+    .session-slides h3 { font-family: 'Figtree', sans-serif; font-size: 1.0625rem; color: var(--text-primary); margin: 0 0 4px; }
+    .session-slides p { font-size: 0.875rem; color: var(--text-secondary); margin: 0; }
+    .session-resource-links { display: flex; flex-wrap: wrap; gap: 0 24px; margin-top: 3px; }
+    .session-resource-links a:focus-visible { outline: 3px solid #a44024; outline-offset: 5px; }
     .session-examples { scroll-margin-top: 96px; }
     .examples-intro { max-width: 720px; margin-bottom: 28px; }
     .session-example + .session-example { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--bg-alt); }
@@ -106,6 +111,14 @@
         <h2 class="session-heading">About the <em>session</em></h2>
         <div class="session-prose">
           <p>AJ Gauravdeep, Interim Chief Marketing Officer at Joolian, will introduce the family activity planning problem Joolian is working to solve, why it matters, and what the team is building. Participants will then form small teams and use an AI coding tool to create a working prototype or demo. The session closes with short presentations and demos from each team.</p>
+        </div>
+        <div class="session-slides" id="session-slides">
+          <h3 id="session-slides-heading">Session slides</h3>
+          <p>AJ Gauravdeep · Joolian · 12 slides</p>
+          <nav class="session-resource-links" aria-labelledby="session-slides-heading">
+            <a class="example-link" href="assets/slides/family-activity-planning-2026-10-30.pdf" target="_blank" rel="noopener noreferrer">View session slides (PDF) <span aria-hidden="true">↗</span></a>
+            <a class="example-link" href="assets/slides/family-activity-planning-2026-10-30.pptx" download>Download PowerPoint (PPTX) <span aria-hidden="true">↓</span></a>
+          </nav>
         </div>
       </div>
     </section>
