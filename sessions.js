@@ -293,6 +293,7 @@ window.AI_KITCHEN_WINTER_SESSIONS = [
     date: '2027-01-08',
     label: 'Jan 8',
     name: 'Shriya Garg',
+    title: 'Chief Operating Officer, Numera',
     url: 'https://www.linkedin.com/in/gargshriya/',
     photo: 'speakers/shriya-garg.png',
     topic: 'Creating Your Personal AI Agent',
