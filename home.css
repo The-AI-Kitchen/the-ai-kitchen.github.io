@@ -602,3 +602,9 @@ html{ scroll-behavior:smooth; }
  .home-page .community-photo figcaption { font-size:10px; }
  .home-page .invitation-story .closing-peeks { margin:18px 0 0 auto; }
 }
+
+/* A dated cancellation stays visible through the affected Friday. */
+.home-page .home-cancellation{margin-block:28px 0;padding:22px 26px;border:2px solid var(--rust);border-radius:12px;background:#fffaf2;}
+.home-page .home-cancellation h2{color:var(--rust);font-size:clamp(23px,3vw,30px);line-height:1.2;}
+.home-page .home-cancellation p{margin-top:10px;font-size:18px;line-height:1.45;}
+@media(max-width:760px){.home-page .home-cancellation{padding:18px;margin-top:20px;}.home-page .home-cancellation p{font-size:17px;}}

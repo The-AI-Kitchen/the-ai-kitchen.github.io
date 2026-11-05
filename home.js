@@ -8,6 +8,15 @@
   var calendar = {};
   parts.forEach(function (part) { calendar[part.type] = part.value; });
   var today = calendar.year + '-' + calendar.month + '-' + calendar.day;
+  var cancellations = spring.concat(summer, fall, winter).filter(function (session) {
+    return session.cancelled && session.cancellationStarts && session.cancellationStarts <= today && session.date >= today;
+  }).sort(function (a, b) { return a.date.localeCompare(b.date); });
+  var notice = document.getElementById('cancellation-notice');
+  if (notice && cancellations.length) {
+    document.getElementById('cancellation-heading').textContent = cancellations[0].cancellationTitle;
+    document.getElementById('cancellation-description').textContent = cancellations[0].cancellationNote;
+    notice.hidden = false;
+  }
   var candidates = spring.concat(summer, fall, winter).filter(function (session) { return !session.tbd && !session.tentative && !session.cancelled && session.date >= today; }).sort(function (a, b) { return a.date.localeCompare(b.date); });
   var next = candidates[0];
   if (!next) return;

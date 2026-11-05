@@ -237,6 +237,10 @@ window.AI_KITCHEN_FALL_SESSIONS = [
   {
     date: '2026-11-06',
     label: 'Nov 6',
+    cancelled: true,
+    cancellationStarts: '2026-11-04',
+    cancellationTitle: 'No session November 6: canceled due to illness',
+    cancellationNote: 'Bani Malhotra\u2019s session will be rescheduled for winter quarter. We\u2019ll share the new date once it\u2019s confirmed.',
     studentHost: { name: 'Tripti Agrawal', url: 'https://www.linkedin.com/in/tripti-agrawal/' },
     name: 'Bani Malhotra',
     title: 'Founding Head of Product, Peggy',

@@ -280,7 +280,7 @@
 
 
   <!-- ===== Schedule data (single source of truth, shared with index.html) ===== -->
-  <script src="sessions.js?v=20261030-shriya-title"></script>
+  <script src="sessions.js?v=20261104-nov6-cancelled"></script>
 
   <!-- ===== Render schedule cards from sessions.js (shared by all quarters) ===== -->
   <script>
@@ -340,7 +340,8 @@
           return '<div class="schedule-card reveal ' + delay + '">' +
             '<div class="schedule-date" style="text-decoration: line-through; text-decoration-color: var(--text-muted);">' + esc(s.label) + '</div>' +
             '<div class="schedule-info">' +
-              '<span class="schedule-topic" style="color: var(--text-muted);">' + esc(s.topic || 'Session cancelled') + '</span>' +
+              '<span class="schedule-topic" style="color: var(--text-muted);">' + esc(s.cancellationTitle || s.topic || 'Session cancelled') + '</span>' +
+              (s.cancellationNote ? '<span class="schedule-description">' + esc(s.cancellationNote) + '</span>' : '') +
             '</div>' +
           '</div>';
         }
