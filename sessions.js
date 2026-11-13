@@ -258,6 +258,10 @@ window.AI_KITCHEN_FALL_SESSIONS = [
   {
     date: '2026-11-13',
     label: 'Nov 13',
+    cancelled: true,
+    cancellationStarts: '2026-11-13',
+    cancellationTitle: 'No session November 13: canceled',
+    cancellationNote: 'We hope to reschedule Adam Smith\u2019s session for winter quarter.',
     studentHost: { name: 'Bridget Hestad', url: 'https://www.linkedin.com/in/bridget-hestad/' },
     name: 'Adam Smith',
     title: 'OpenAI \u00b7 CEO, Bear Valley National Ski Patrol',
