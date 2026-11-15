@@ -17,7 +17,7 @@
     document.getElementById('cancellation-description').textContent = cancellations[0].cancellationNote;
     notice.hidden = false;
   }
-  var candidates = spring.concat(summer, fall, winter).filter(function (session) { return !session.tbd && !session.tentative && !session.cancelled && session.date >= today; }).sort(function (a, b) { return a.date.localeCompare(b.date); });
+  var candidates = spring.concat(summer, fall, winter).filter(function (session) { return !session.tbd && (!session.tentative || session.spotlight) && !session.cancelled && session.date >= today; }).sort(function (a, b) { return a.date.localeCompare(b.date); });
   var next = candidates[0];
   if (!next) return;
   var card = document.getElementById('spotlight-card');
@@ -33,6 +33,11 @@
   visualDate.appendChild(document.createTextNode(date.toLocaleDateString('en-US', { timeZone: 'America/Los_Angeles', weekday: 'long' })));
   stamp.appendChild(visualDate);
   document.getElementById('spotlight-eyebrow').textContent = next.featured ? 'Up next in the Kitchen' : (next.date === today ? 'Today in the Kitchen' : 'Next in the Kitchen') + (summer.indexOf(next) !== -1 ? ' · Summer Test Kitchen' : ' · Taste Test');
+  if (next.tentative) {
+    var status = document.getElementById('spotlight-status');
+    status.textContent = next.tentativeLabel || 'Tentative session · working title';
+    status.hidden = false;
+  }
   var topic = document.getElementById('spotlight-topic');
   if (next.topicUrl) {
     var link = document.createElement('a'); link.href = next.topicUrl; link.textContent = next.featured ? next.name : next.topic; topic.appendChild(link);
@@ -185,3 +190,4 @@
       section.hidden = false;
       section.style.display = '';
     })();
+

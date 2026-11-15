@@ -260,8 +260,8 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     label: 'Nov 13',
     cancelled: true,
     cancellationStarts: '2026-11-13',
-    cancellationTitle: 'No session November 13: canceled',
-    cancellationNote: 'We hope to reschedule Adam Smith\u2019s session for winter quarter.',
+    cancellationTitle: 'No session November 13: canceled due to illness',
+    cancellationNote: 'Unfortunately, illness forced us to cancel for the second week in a row. We hope to reschedule Adam Smith\u2019s session for winter quarter.',
     studentHost: { name: 'Bridget Hestad', url: 'https://www.linkedin.com/in/bridget-hestad/' },
     name: 'Adam Smith',
     title: 'OpenAI \u00b7 CEO, Bear Valley National Ski Patrol',
@@ -280,8 +280,9 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     name: 'Viral Parekh',
     title: 'Founder, Banavu',
     tentative: true,
-    tentativeLabel: 'Tentative session \u00b7 details being confirmed',
-    topic: 'Session details to be announced',
+    spotlight: true,
+    tentativeLabel: 'Tentative title \u00b7 details being confirmed',
+    topic: 'Bring Your Product Ideas to Life Using AI',
     description: 'Viral Parekh, founder of Banavu, joins AI Kitchen. Session details are still being confirmed.',
     url: 'https://www.linkedin.com/in/viralnparekh/',
     photo: 'speakers/viral-parekh.png',
@@ -349,3 +350,4 @@ window.AI_KITCHEN_WINTER_SESSIONS = [
     location: 'Room to be announced \u00b7 Santa Clara University'
   }
 ];
+
