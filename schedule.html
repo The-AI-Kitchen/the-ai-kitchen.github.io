@@ -280,7 +280,7 @@
 
 
   <!-- ===== Schedule data (single source of truth, shared with index.html) ===== -->
-  <script src="sessions.js?v=20261113-adam-cancelled"></script>
+  <script src="sessions.js?v=20261115-viral-tentative"></script>
 
   <!-- ===== Render schedule cards from sessions.js (shared by all quarters) ===== -->
   <script>
@@ -391,7 +391,7 @@
         return '<div class="schedule-card reveal ' + delay + roomClass + '">' +
           '<div class="schedule-date">' + esc(s.label) + '</div>' +
           '<div class="schedule-info">' +
-            (s.tentative ? '<span class="schedule-status">Tentative session &middot; working title</span>' : '') +
+            (s.tentative ? '<span class="schedule-status">' + esc(s.tentativeLabel || 'Tentative session \u00b7 working title') + '</span>' : '') +
             topicHtml +
             (s.subtitle ? '<span class="schedule-subtitle">' + esc(s.subtitle) + '</span>' : '') +
             (s.description ? '<span class="schedule-description">' + esc(s.description) + '</span>' : '') +

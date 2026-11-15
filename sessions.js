@@ -277,9 +277,16 @@ window.AI_KITCHEN_FALL_SESSIONS = [
     date: '2026-11-20',
     label: 'Nov 20',
     studentHost: { name: 'Linus Wong', url: 'https://www.linkedin.com/in/linus-e-wong/' },
-    name: 'To be confirmed',
-    tbd: true,
-    note: '1:00\u20134:00 p.m. \u00b7 soft finish'
+    name: 'Viral Parekh',
+    title: 'Founder, Banavu',
+    tentative: true,
+    tentativeLabel: 'Tentative session \u00b7 details being confirmed',
+    topic: 'Session details to be announced',
+    description: 'Viral Parekh, founder of Banavu, joins AI Kitchen. Session details are still being confirmed.',
+    url: 'https://www.linkedin.com/in/viralnparekh/',
+    photo: 'speakers/viral-parekh.png',
+    initials: 'VP',
+    note: '1:00\u20133:00 p.m.'
   },
   { date: '2026-11-27', label: 'Nov 27', cancelled: true, topic: 'No session \u00b7 Thanksgiving break' },
   {
