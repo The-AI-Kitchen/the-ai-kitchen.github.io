@@ -24,6 +24,8 @@
     .schedule-subtitle { display: block; margin: -3px 0 10px; font: 600 16px/1.5 var(--sans); color: var(--green); }
     .schedule-status { display: inline-block; align-self: flex-start; margin: 0 0 8px; padding: 4px 9px; border: 1px solid currentColor; border-radius: var(--radius-sm); color: #803118; font: 600 13px/1.4 var(--sans); }
 
+    .schedule-card:target { scroll-margin-top: 5rem; }
+
     /* One-off room changes are flagged on the affected card, not in the quarter
        intro, so the standard room stays the thing people remember. The card sits
        at the same weight as every other unannounced date: only the alert is
@@ -280,7 +282,7 @@
 
 
   <!-- ===== Schedule data (single source of truth, shared with index.html) ===== -->
-  <script src="sessions.js?v=20261115-session-recordings"></script>
+  <script src="sessions.js?v=20261119-viral-workshop"></script>
 
   <!-- ===== Render schedule cards from sessions.js (shared by all quarters) ===== -->
   <script>
@@ -388,7 +390,7 @@
           ? '<span class="schedule-tools"><span class="schedule-tools-label">Tools:</span> ' + s.tools.map(esc).join(', ') + '</span>'
           : '';
 
-        return '<div class="schedule-card reveal ' + delay + roomClass + '">' +
+        return '<div id="session-' + esc(s.date) + '" class="schedule-card reveal ' + delay + roomClass + '">' +
           '<div class="schedule-date">' + esc(s.label) + '</div>' +
           '<div class="schedule-info">' +
             (s.tentative ? '<span class="schedule-status">' + esc(s.tentativeLabel || 'Tentative session \u00b7 working title') + '</span>' : '') +
